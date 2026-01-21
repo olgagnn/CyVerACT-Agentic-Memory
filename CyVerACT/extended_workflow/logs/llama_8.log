@@ -1,0 +1,3704 @@
+Note: Environment variable`HF_TOKEN` is set and is the current active token independently from the token you've just configured.
+Starting evaluation for llama3_1_8b on benchmark2025 ...
+  0%|          | 0/2128 [00:00<?, ?it/s]Skipping row 0, already computed.
+Skipping row 1, already computed.
+Skipping row 2, already computed.
+Skipping row 3, already computed.
+Skipping row 4, already computed.
+Skipping row 5, already computed.
+Skipping row 6, already computed.
+Skipping row 7, already computed.
+Skipping row 8, already computed.
+Skipping row 9, already computed.
+Skipping row 10, already computed.
+Skipping row 11, already computed.
+Skipping row 12, already computed.
+Skipping row 13, already computed.
+Skipping row 14, already computed.
+Skipping row 15, already computed.
+Skipping row 16, already computed.
+Skipping row 17, already computed.
+Skipping row 18, already computed.
+Skipping row 19, already computed.
+Skipping row 20, already computed.
+Skipping row 21, already computed.
+Skipping row 22, already computed.
+Skipping row 23, already computed.
+Skipping row 24, already computed.
+Skipping row 25, already computed.
+Skipping row 26, already computed.
+Skipping row 27, already computed.
+Skipping row 28, already computed.
+Skipping row 29, already computed.
+Skipping row 30, already computed.
+Skipping row 31, already computed.
+Skipping row 32, already computed.
+Skipping row 33, already computed.
+Skipping row 34, already computed.
+Skipping row 35, already computed.
+Skipping row 36, already computed.
+Skipping row 37, already computed.
+Skipping row 38, already computed.
+Skipping row 39, already computed.
+Skipping row 40, already computed.
+Skipping row 41, already computed.
+Skipping row 42, already computed.
+Skipping row 43, already computed.
+Skipping row 44, already computed.
+Skipping row 45, already computed.
+Skipping row 46, already computed.
+Skipping row 47, already computed.
+Skipping row 48, already computed.
+Skipping row 49, already computed.
+Skipping row 50, already computed.
+Skipping row 51, already computed.
+Skipping row 52, already computed.
+Skipping row 53, already computed.
+Skipping row 54, already computed.
+Skipping row 55, already computed.
+Skipping row 56, already computed.
+Skipping row 57, already computed.
+Skipping row 58, already computed.
+Skipping row 59, already computed.
+Skipping row 60, already computed.
+Skipping row 61, already computed.
+Skipping row 62, already computed.
+Skipping row 63, already computed.
+Skipping row 64, already computed.
+Skipping row 65, already computed.
+Skipping row 66, already computed.
+Skipping row 67, already computed.
+Skipping row 68, already computed.
+Skipping row 69, already computed.
+Skipping row 70, already computed.
+Skipping row 71, already computed.
+Skipping row 72, already computed.
+Skipping row 73, already computed.
+Skipping row 74, already computed.
+Skipping row 75, already computed.
+Skipping row 76, already computed.
+Skipping row 77, already computed.
+Skipping row 78, already computed.
+Skipping row 79, already computed.
+Skipping row 80, already computed.
+Skipping row 81, already computed.
+Skipping row 82, already computed.
+Skipping row 83, already computed.
+Skipping row 84, already computed.
+Skipping row 85, already computed.
+Skipping row 86, already computed.
+Skipping row 87, already computed.
+Skipping row 88, already computed.
+Skipping row 89, already computed.
+Skipping row 90, already computed.
+Skipping row 91, already computed.
+Skipping row 92, already computed.
+Skipping row 93, already computed.
+Skipping row 94, already computed.
+Skipping row 95, already computed.
+Skipping row 96, already computed.
+Skipping row 97, already computed.
+Skipping row 98, already computed.
+Skipping row 99, already computed.
+Skipping row 100, already computed.
+Skipping row 101, already computed.
+Skipping row 102, already computed.
+Skipping row 103, already computed.
+Skipping row 104, already computed.
+Skipping row 105, already computed.
+Skipping row 106, already computed.
+Skipping row 107, already computed.
+Skipping row 108, already computed.
+Skipping row 109, already computed.
+Skipping row 110, already computed.
+Skipping row 111, already computed.
+Skipping row 112, already computed.
+Skipping row 113, already computed.
+Skipping row 114, already computed.
+Skipping row 115, already computed.
+Skipping row 116, already computed.
+Skipping row 117, already computed.
+Skipping row 118, already computed.
+Skipping row 119, already computed.
+Skipping row 120, already computed.
+Skipping row 121, already computed.
+Skipping row 122, already computed.
+Skipping row 123, already computed.
+Skipping row 124, already computed.
+Skipping row 125, already computed.
+Skipping row 126, already computed.
+Skipping row 127, already computed.
+Skipping row 128, already computed.
+Skipping row 129, already computed.
+Skipping row 130, already computed.
+Skipping row 131, already computed.
+Skipping row 132, already computed.
+Skipping row 133, already computed.
+Skipping row 134, already computed.
+Skipping row 135, already computed.
+Skipping row 136, already computed.
+Skipping row 137, already computed.
+Skipping row 138, already computed.
+Skipping row 139, already computed.
+Skipping row 140, already computed.
+Skipping row 141, already computed.
+Skipping row 142, already computed.
+Skipping row 143, already computed.
+Skipping row 144, already computed.
+Skipping row 145, already computed.
+Skipping row 146, already computed.
+Skipping row 147, already computed.
+Skipping row 148, already computed.
+Skipping row 149, already computed.
+Skipping row 150, already computed.
+Skipping row 151, already computed.
+Skipping row 152, already computed.
+Skipping row 153, already computed.
+Skipping row 154, already computed.
+Skipping row 155, already computed.
+Skipping row 156, already computed.
+Skipping row 157, already computed.
+Skipping row 158, already computed.
+Skipping row 159, already computed.
+Skipping row 160, already computed.
+Skipping row 161, already computed.
+Skipping row 162, already computed.
+Skipping row 163, already computed.
+Skipping row 164, already computed.
+Skipping row 165, already computed.
+Skipping row 166, already computed.
+Skipping row 167, already computed.
+Skipping row 168, already computed.
+Skipping row 169, already computed.
+Skipping row 170, already computed.
+Skipping row 171, already computed.
+Skipping row 172, already computed.
+Skipping row 173, already computed.
+Skipping row 174, already computed.
+Skipping row 175, already computed.
+Skipping row 176, already computed.
+Skipping row 177, already computed.
+Skipping row 178, already computed.
+Skipping row 179, already computed.
+Skipping row 180, already computed.
+Skipping row 181, already computed.
+Skipping row 182, already computed.
+Skipping row 183, already computed.
+Skipping row 184, already computed.
+Skipping row 185, already computed.
+Skipping row 186, already computed.
+Skipping row 187, already computed.
+Skipping row 188, already computed.
+Skipping row 189, already computed.
+Skipping row 190, already computed.
+Skipping row 191, already computed.
+Skipping row 192, already computed.
+Skipping row 193, already computed.
+Skipping row 194, already computed.
+Skipping row 195, already computed.
+Skipping row 196, already computed.
+Skipping row 197, already computed.
+Skipping row 198, already computed.
+Skipping row 199, already computed.
+Skipping row 200, already computed.
+Skipping row 201, already computed.
+Skipping row 202, already computed.
+Skipping row 203, already computed.
+Skipping row 204, already computed.
+Skipping row 205, already computed.
+Skipping row 206, already computed.
+Skipping row 207, already computed.
+Skipping row 208, already computed.
+Skipping row 209, already computed.
+Skipping row 210, already computed.
+Skipping row 211, already computed.
+Skipping row 212, already computed.
+Skipping row 213, already computed.
+Skipping row 214, already computed.
+Skipping row 215, already computed.
+Skipping row 216, already computed.
+Skipping row 217, already computed.
+Skipping row 218, already computed.
+Skipping row 219, already computed.
+Skipping row 220, already computed.
+Skipping row 221, already computed.
+Skipping row 222, already computed.
+Skipping row 223, already computed.
+Skipping row 224, already computed.
+Skipping row 225, already computed.
+Skipping row 226, already computed.
+Skipping row 227, already computed.
+Skipping row 228, already computed.
+Skipping row 229, already computed.
+Skipping row 230, already computed.
+Skipping row 231, already computed.
+Skipping row 232, already computed.
+Skipping row 233, already computed.
+Skipping row 234, already computed.
+Skipping row 235, already computed.
+Skipping row 236, already computed.
+Skipping row 237, already computed.
+Skipping row 238, already computed.
+Skipping row 239, already computed.
+Skipping row 240, already computed.
+Skipping row 241, already computed.
+Skipping row 242, already computed.
+Skipping row 243, already computed.
+Skipping row 244, already computed.
+Skipping row 245, already computed.
+Skipping row 246, already computed.
+Skipping row 247, already computed.
+Skipping row 248, already computed.
+Skipping row 249, already computed.
+Skipping row 250, already computed.
+Skipping row 251, already computed.
+Skipping row 252, already computed.
+Skipping row 253, already computed.
+Skipping row 254, already computed.
+Skipping row 255, already computed.
+Skipping row 256, already computed.
+Skipping row 257, already computed.
+Skipping row 258, already computed.
+Skipping row 259, already computed.
+Skipping row 260, already computed.
+Skipping row 261, already computed.
+Skipping row 262, already computed.
+Skipping row 263, already computed.
+Skipping row 264, already computed.
+Skipping row 265, already computed.
+Skipping row 266, already computed.
+Skipping row 267, already computed.
+Skipping row 268, already computed.
+Skipping row 269, already computed.
+Skipping row 270, already computed.
+Skipping row 271, already computed.
+Skipping row 272, already computed.
+Skipping row 273, already computed.
+Skipping row 274, already computed.
+Skipping row 275, already computed.
+Skipping row 276, already computed.
+Skipping row 277, already computed.
+Skipping row 278, already computed.
+Skipping row 279, already computed.
+Skipping row 280, already computed.
+Skipping row 281, already computed.
+Skipping row 282, already computed.
+Skipping row 283, already computed.
+Skipping row 284, already computed.
+Skipping row 285, already computed.
+Skipping row 286, already computed.
+Skipping row 287, already computed.
+Skipping row 288, already computed.
+Skipping row 289, already computed.
+Skipping row 290, already computed.
+Skipping row 291, already computed.
+Skipping row 292, already computed.
+Skipping row 293, already computed.
+Skipping row 294, already computed.
+Skipping row 295, already computed.
+Skipping row 296, already computed.
+Skipping row 297, already computed.
+Skipping row 298, already computed.
+Skipping row 299, already computed.
+Skipping row 300, already computed.
+Skipping row 301, already computed.
+Skipping row 302, already computed.
+Skipping row 303, already computed.
+Skipping row 304, already computed.
+Skipping row 305, already computed.
+Skipping row 306, already computed.
+Skipping row 307, already computed.
+Skipping row 308, already computed.
+Skipping row 309, already computed.
+Skipping row 310, already computed.
+Skipping row 311, already computed.
+Skipping row 312, already computed.
+Skipping row 313, already computed.
+Skipping row 314, already computed.
+Skipping row 315, already computed.
+Skipping row 316, already computed.
+Skipping row 317, already computed.
+Skipping row 318, already computed.
+Skipping row 319, already computed.
+Skipping row 320, already computed.
+Skipping row 321, already computed.
+Skipping row 322, already computed.
+Skipping row 323, already computed.
+Skipping row 324, already computed.
+Skipping row 325, already computed.
+Skipping row 326, already computed.
+Skipping row 327, already computed.
+Skipping row 328, already computed.
+Skipping row 329, already computed.
+Skipping row 330, already computed.
+Skipping row 331, already computed.
+Skipping row 332, already computed.
+Skipping row 333, already computed.
+Skipping row 334, already computed.
+Skipping row 335, already computed.
+Skipping row 336, already computed.
+Skipping row 337, already computed.
+Skipping row 338, already computed.
+Skipping row 339, already computed.
+Skipping row 340, already computed.
+Skipping row 341, already computed.
+Skipping row 342, already computed.
+Skipping row 343, already computed.
+Skipping row 344, already computed.
+Skipping row 345, already computed.
+Skipping row 346, already computed.
+Skipping row 347, already computed.
+Skipping row 348, already computed.
+Skipping row 349, already computed.
+Skipping row 350, already computed.
+Skipping row 351, already computed.
+Skipping row 352, already computed.
+Skipping row 353, already computed.
+Skipping row 354, already computed.
+Skipping row 355, already computed.
+Skipping row 356, already computed.
+Skipping row 357, already computed.
+Skipping row 358, already computed.
+Skipping row 359, already computed.
+Skipping row 360, already computed.
+Skipping row 361, already computed.
+Skipping row 362, already computed.
+Skipping row 363, already computed.
+Skipping row 364, already computed.
+Skipping row 365, already computed.
+Skipping row 366, already computed.
+Skipping row 367, already computed.
+Skipping row 368, already computed.
+Skipping row 369, already computed.
+Skipping row 370, already computed.
+Skipping row 371, already computed.
+Skipping row 372, already computed.
+Skipping row 373, already computed.
+Skipping row 374, already computed.
+Skipping row 375, already computed.
+Skipping row 376, already computed.
+Skipping row 377, already computed.
+Skipping row 378, already computed.
+Skipping row 379, already computed.
+Skipping row 380, already computed.
+Skipping row 381, already computed.
+Skipping row 382, already computed.
+Skipping row 383, already computed.
+Skipping row 384, already computed.
+Skipping row 385, already computed.
+Skipping row 386, already computed.
+Skipping row 387, already computed.
+Skipping row 388, already computed.
+Skipping row 389, already computed.
+Skipping row 390, already computed.
+Skipping row 391, already computed.
+Skipping row 392, already computed.
+Skipping row 393, already computed.
+Skipping row 394, already computed.
+Skipping row 395, already computed.
+Skipping row 396, already computed.
+Skipping row 397, already computed.
+Skipping row 398, already computed.
+Skipping row 399, already computed.
+Skipping row 400, already computed.
+Skipping row 401, already computed.
+Skipping row 402, already computed.
+Skipping row 403, already computed.
+Skipping row 404, already computed.
+Skipping row 405, already computed.
+Skipping row 406, already computed.
+Skipping row 407, already computed.
+Skipping row 408, already computed.
+Skipping row 409, already computed.
+Skipping row 410, already computed.
+Skipping row 411, already computed.
+Skipping row 412, already computed.
+Skipping row 413, already computed.
+Skipping row 414, already computed.
+Skipping row 415, already computed.
+Skipping row 416, already computed.
+Skipping row 417, already computed.
+Skipping row 418, already computed.
+Skipping row 419, already computed.
+Skipping row 420, already computed.
+Skipping row 421, already computed.
+Skipping row 422, already computed.
+Skipping row 423, already computed.
+Skipping row 424, already computed.
+Skipping row 425, already computed.
+Skipping row 426, already computed.
+Skipping row 427, already computed.
+Skipping row 428, already computed.
+Skipping row 429, already computed.
+Skipping row 430, already computed.
+Skipping row 431, already computed.
+Skipping row 432, already computed.
+Skipping row 433, already computed.
+Skipping row 434, already computed.
+Skipping row 435, already computed.
+Skipping row 436, already computed.
+Skipping row 437, already computed.
+Skipping row 438, already computed.
+Skipping row 439, already computed.
+Skipping row 440, already computed.
+Skipping row 441, already computed.
+Skipping row 442, already computed.
+Skipping row 443, already computed.
+Skipping row 444, already computed.
+Skipping row 445, already computed.
+Skipping row 446, already computed.
+Skipping row 447, already computed.
+Skipping row 448, already computed.
+Skipping row 449, already computed.
+Skipping row 450, already computed.
+Skipping row 451, already computed.
+Skipping row 452, already computed.
+Skipping row 453, already computed.
+Skipping row 454, already computed.
+Skipping row 455, already computed.
+Skipping row 456, already computed.
+Skipping row 457, already computed.
+Skipping row 458, already computed.
+Skipping row 459, already computed.
+Skipping row 460, already computed.
+Skipping row 461, already computed.
+Skipping row 462, already computed.
+Skipping row 463, already computed.
+Skipping row 464, already computed.
+Skipping row 465, already computed.
+Skipping row 466, already computed.
+Skipping row 467, already computed.
+Skipping row 468, already computed.
+Skipping row 469, already computed.
+Skipping row 470, already computed.
+Skipping row 471, already computed.
+Skipping row 472, already computed.
+Skipping row 473, already computed.
+Skipping row 474, already computed.
+Skipping row 475, already computed.
+Skipping row 476, already computed.
+Skipping row 477, already computed.
+Skipping row 478, already computed.
+Skipping row 479, already computed.
+Skipping row 480, already computed.
+Skipping row 481, already computed.
+Skipping row 482, already computed.
+Skipping row 483, already computed.
+Skipping row 484, already computed.
+Skipping row 485, already computed.
+Skipping row 486, already computed.
+Skipping row 487, already computed.
+Skipping row 488, already computed.
+Skipping row 489, already computed.
+Skipping row 490, already computed.
+Skipping row 491, already computed.
+Skipping row 492, already computed.
+Skipping row 493, already computed.
+Skipping row 494, already computed.
+Skipping row 495, already computed.
+Skipping row 496, already computed.
+Skipping row 497, already computed.
+Skipping row 498, already computed.
+Skipping row 499, already computed.
+Skipping row 500, already computed.
+Skipping row 501, already computed.
+Skipping row 502, already computed.
+Skipping row 503, already computed.
+Skipping row 504, already computed.
+Skipping row 505, already computed.
+Skipping row 506, already computed.
+Skipping row 507, already computed.
+Skipping row 508, already computed.
+Skipping row 509, already computed.
+Skipping row 510, already computed.
+Skipping row 511, already computed.
+Skipping row 512, already computed.
+Skipping row 513, already computed.
+Skipping row 514, already computed.
+Skipping row 515, already computed.
+Skipping row 516, already computed.
+Skipping row 517, already computed.
+Skipping row 518, already computed.
+Skipping row 519, already computed.
+Skipping row 520, already computed.
+Skipping row 521, already computed.
+Skipping row 522, already computed.
+Skipping row 523, already computed.
+Skipping row 524, already computed.
+Skipping row 525, already computed.
+Skipping row 526, already computed.
+Skipping row 527, already computed.
+Skipping row 528, already computed.
+Skipping row 529, already computed.
+Skipping row 530, already computed.
+Skipping row 531, already computed.
+Skipping row 532, already computed.
+Skipping row 533, already computed.
+Skipping row 534, already computed.
+Skipping row 535, already computed.
+Skipping row 536, already computed.
+Skipping row 537, already computed.
+Skipping row 538, already computed.
+Skipping row 539, already computed.
+Skipping row 540, already computed.
+Skipping row 541, already computed.
+Skipping row 542, already computed.
+Skipping row 543, already computed.
+Skipping row 544, already computed.
+Skipping row 545, already computed.
+Skipping row 546, already computed.
+Skipping row 547, already computed.
+Skipping row 548, already computed.
+Skipping row 549, already computed.
+Skipping row 550, already computed.
+Skipping row 551, already computed.
+Skipping row 552, already computed.
+Skipping row 553, already computed.
+Skipping row 554, already computed.
+Skipping row 555, already computed.
+Skipping row 556, already computed.
+Skipping row 557, already computed.
+Skipping row 558, already computed.
+Skipping row 559, already computed.
+Skipping row 560, already computed.
+Skipping row 561, already computed.
+Skipping row 562, already computed.
+Skipping row 563, already computed.
+Skipping row 564, already computed.
+Skipping row 565, already computed.
+Skipping row 566, already computed.
+Skipping row 567, already computed.
+Skipping row 568, already computed.
+Skipping row 569, already computed.
+Skipping row 570, already computed.
+Skipping row 571, already computed.
+Skipping row 572, already computed.
+Skipping row 573, already computed.
+Skipping row 574, already computed.
+Skipping row 575, already computed.
+Skipping row 576, already computed.
+Skipping row 577, already computed.
+Skipping row 578, already computed.
+Skipping row 579, already computed.
+Skipping row 580, already computed.
+Skipping row 581, already computed.
+Skipping row 582, already computed.
+Skipping row 583, already computed.
+Skipping row 584, already computed.
+Skipping row 585, already computed.
+Skipping row 586, already computed.
+Skipping row 587, already computed.
+Skipping row 588, already computed.
+Skipping row 589, already computed.
+Skipping row 590, already computed.
+Skipping row 591, already computed.
+Skipping row 592, already computed.
+Skipping row 593, already computed.
+Skipping row 594, already computed.
+Skipping row 595, already computed.
+Skipping row 596, already computed.
+Skipping row 597, already computed.
+Skipping row 598, already computed.
+Skipping row 599, already computed.
+Skipping row 600, already computed.
+Skipping row 601, already computed.
+Skipping row 602, already computed.
+Skipping row 603, already computed.
+Skipping row 604, already computed.
+Skipping row 605, already computed.
+Skipping row 606, already computed.
+Skipping row 607, already computed.
+Skipping row 608, already computed.
+Skipping row 609, already computed.
+Skipping row 610, already computed.
+Skipping row 611, already computed.
+Skipping row 612, already computed.
+Skipping row 613, already computed.
+Skipping row 614, already computed.
+Skipping row 615, already computed.
+Skipping row 616, already computed.
+Skipping row 617, already computed.
+Skipping row 618, already computed.
+Skipping row 619, already computed.
+Skipping row 620, already computed.
+Skipping row 621, already computed.
+Skipping row 622, already computed.
+Skipping row 623, already computed.
+Skipping row 624, already computed.
+Skipping row 625, already computed.
+Skipping row 626, already computed.
+Skipping row 627, already computed.
+Skipping row 628, already computed.
+Skipping row 629, already computed.
+Skipping row 630, already computed.
+Skipping row 631, already computed.
+Skipping row 632, already computed.
+Skipping row 633, already computed.
+Skipping row 634, already computed.
+Skipping row 635, already computed.
+Skipping row 636, already computed.
+Skipping row 637, already computed.
+Skipping row 638, already computed.
+Skipping row 639, already computed.
+Skipping row 640, already computed.
+Skipping row 641, already computed.
+Skipping row 642, already computed.
+Skipping row 643, already computed.
+Skipping row 644, already computed.
+Skipping row 645, already computed.
+Skipping row 646, already computed.
+Skipping row 647, already computed.
+Skipping row 648, already computed.
+Skipping row 649, already computed.
+Skipping row 650, already computed.
+Skipping row 651, already computed.
+Skipping row 652, already computed.
+Skipping row 653, already computed.
+Skipping row 654, already computed.
+Skipping row 655, already computed.
+Skipping row 656, already computed.
+Skipping row 657, already computed.
+Skipping row 658, already computed.
+Skipping row 659, already computed.
+Skipping row 660, already computed.
+Skipping row 661, already computed.
+Skipping row 662, already computed.
+Skipping row 663, already computed.
+Skipping row 664, already computed.
+Skipping row 665, already computed.
+Skipping row 666, already computed.
+Skipping row 667, already computed.
+Skipping row 668, already computed.
+Skipping row 669, already computed.
+Skipping row 670, already computed.
+Skipping row 671, already computed.
+Skipping row 672, already computed.
+Skipping row 673, already computed.
+Skipping row 674, already computed.
+Skipping row 675, already computed.
+Skipping row 676, already computed.
+Skipping row 677, already computed.
+Skipping row 678, already computed.
+Skipping row 679, already computed.
+Skipping row 680, already computed.
+Skipping row 681, already computed.
+Skipping row 682, already computed.
+Skipping row 683, already computed.
+Skipping row 684, already computed.
+Skipping row 685, already computed.
+Skipping row 686, already computed.
+Skipping row 687, already computed.
+Skipping row 688, already computed.
+Skipping row 689, already computed.
+Skipping row 690, already computed.
+Skipping row 691, already computed.
+Skipping row 692, already computed.
+Skipping row 693, already computed.
+Skipping row 694, already computed.
+Skipping row 695, already computed.
+Skipping row 696, already computed.
+Skipping row 697, already computed.
+Skipping row 698, already computed.
+Skipping row 699, already computed.
+Skipping row 700, already computed.
+Skipping row 701, already computed.
+Skipping row 702, already computed.
+Skipping row 703, already computed.
+Skipping row 704, already computed.
+Skipping row 705, already computed.
+Skipping row 706, already computed.
+Skipping row 707, already computed.
+Skipping row 708, already computed.
+Skipping row 709, already computed.
+Skipping row 710, already computed.
+Skipping row 711, already computed.
+Skipping row 712, already computed.
+Skipping row 713, already computed.
+Skipping row 714, already computed.
+Skipping row 715, already computed.
+Skipping row 716, already computed.
+Skipping row 717, already computed.
+Skipping row 718, already computed.
+Skipping row 719, already computed.
+Skipping row 720, already computed.
+Skipping row 721, already computed.
+Skipping row 722, already computed.
+Skipping row 723, already computed.
+Skipping row 724, already computed.
+Skipping row 725, already computed.
+Skipping row 726, already computed.
+Skipping row 727, already computed.
+Skipping row 728, already computed.
+Skipping row 729, already computed.
+Skipping row 730, already computed.
+Skipping row 731, already computed.
+Skipping row 732, already computed.
+Skipping row 733, already computed.
+Skipping row 734, already computed.
+Skipping row 735, already computed.
+Skipping row 736, already computed.
+Skipping row 737, already computed.
+Skipping row 738, already computed.
+Skipping row 739, already computed.
+Skipping row 740, already computed.
+Skipping row 741, already computed.
+Skipping row 742, already computed.
+Skipping row 743, already computed.
+Skipping row 744, already computed.
+Skipping row 745, already computed.
+Skipping row 746, already computed.
+Skipping row 747, already computed.
+Skipping row 748, already computed.
+Skipping row 749, already computed.
+Skipping row 750, already computed.
+Skipping row 751, already computed.
+Skipping row 752, already computed.
+Skipping row 753, already computed.
+Skipping row 754, already computed.
+Skipping row 755, already computed.
+Skipping row 756, already computed.
+Skipping row 757, already computed.
+Skipping row 758, already computed.
+Skipping row 759, already computed.
+Skipping row 760, already computed.
+Skipping row 761, already computed.
+Skipping row 762, already computed.
+Skipping row 763, already computed.
+Skipping row 764, already computed.
+Skipping row 765, already computed.
+Skipping row 766, already computed.
+Skipping row 767, already computed.
+Skipping row 768, already computed.
+Skipping row 769, already computed.
+Skipping row 770, already computed.
+Skipping row 771, already computed.
+Skipping row 772, already computed.
+Skipping row 773, already computed.
+Skipping row 774, already computed.
+Skipping row 775, already computed.
+Skipping row 776, already computed.
+Skipping row 777, already computed.
+Skipping row 778, already computed.
+Skipping row 779, already computed.
+Skipping row 780, already computed.
+Skipping row 781, already computed.
+Skipping row 782, already computed.
+Skipping row 783, already computed.
+Skipping row 784, already computed.
+Skipping row 785, already computed.
+Skipping row 786, already computed.
+Skipping row 787, already computed.
+Skipping row 788, already computed.
+Skipping row 789, already computed.
+Skipping row 790, already computed.
+Skipping row 791, already computed.
+Skipping row 792, already computed.
+Skipping row 793, already computed.
+Skipping row 794, already computed.
+Skipping row 795, already computed.
+Skipping row 796, already computed.
+Skipping row 797, already computed.
+Skipping row 798, already computed.
+Skipping row 799, already computed.
+Skipping row 800, already computed.
+Skipping row 801, already computed.
+Skipping row 802, already computed.
+Skipping row 803, already computed.
+Skipping row 804, already computed.
+Skipping row 805, already computed.
+Skipping row 806, already computed.
+Skipping row 807, already computed.
+Skipping row 808, already computed.
+Skipping row 809, already computed.
+Skipping row 810, already computed.
+Skipping row 811, already computed.
+Skipping row 812, already computed.
+Skipping row 813, already computed.
+Skipping row 814, already computed.
+Skipping row 815, already computed.
+Skipping row 816, already computed.
+Skipping row 817, already computed.
+Skipping row 818, already computed.
+Skipping row 819, already computed.
+Skipping row 820, already computed.
+Skipping row 821, already computed.
+Skipping row 822, already computed.
+Skipping row 823, already computed.
+Skipping row 824, already computed.
+Skipping row 825, already computed.
+Skipping row 826, already computed.
+Skipping row 827, already computed.
+Skipping row 828, already computed.
+Skipping row 829, already computed.
+Skipping row 830, already computed.
+Skipping row 831, already computed.
+Skipping row 832, already computed.
+Skipping row 833, already computed.
+Skipping row 834, already computed.
+Skipping row 835, already computed.
+Skipping row 836, already computed.
+Skipping row 837, already computed.
+Skipping row 838, already computed.
+Skipping row 839, already computed.
+Skipping row 840, already computed.
+Skipping row 841, already computed.
+Skipping row 842, already computed.
+Skipping row 843, already computed.
+Skipping row 844, already computed.
+Skipping row 845, already computed.
+Skipping row 846, already computed.
+Skipping row 847, already computed.
+Skipping row 848, already computed.
+Skipping row 849, already computed.
+Skipping row 850, already computed.
+Skipping row 851, already computed.
+Skipping row 852, already computed.
+Skipping row 853, already computed.
+Skipping row 854, already computed.
+Skipping row 855, already computed.
+Skipping row 856, already computed.
+Skipping row 857, already computed.
+Skipping row 858, already computed.
+Skipping row 859, already computed.
+Skipping row 860, already computed.
+Skipping row 861, already computed.
+Skipping row 862, already computed.
+Skipping row 863, already computed.
+Skipping row 864, already computed.
+Skipping row 865, already computed.
+Skipping row 866, already computed.
+Skipping row 867, already computed.
+Skipping row 868, already computed.
+Skipping row 869, already computed.
+Skipping row 870, already computed.
+Skipping row 871, already computed.
+Skipping row 872, already computed.
+Skipping row 873, already computed.
+Skipping row 874, already computed.
+Skipping row 875, already computed.
+Skipping row 876, already computed.
+Skipping row 877, already computed.
+Skipping row 878, already computed.
+Skipping row 879, already computed.
+Skipping row 880, already computed.
+Skipping row 881, already computed.
+Skipping row 882, already computed.
+Skipping row 883, already computed.
+Skipping row 884, already computed.
+Skipping row 885, already computed.
+Skipping row 886, already computed.
+Skipping row 887, already computed.
+Skipping row 888, already computed.
+Skipping row 889, already computed.
+Skipping row 890, already computed.
+Skipping row 891, already computed.
+Skipping row 892, already computed.
+Skipping row 893, already computed.
+Skipping row 894, already computed.
+Skipping row 895, already computed.
+Skipping row 896, already computed.
+Skipping row 897, already computed.
+Skipping row 898, already computed.
+Skipping row 899, already computed.
+Skipping row 900, already computed.
+Skipping row 901, already computed.
+Skipping row 902, already computed.
+Skipping row 903, already computed.
+Skipping row 904, already computed.
+Skipping row 905, already computed.
+Skipping row 906, already computed.
+Skipping row 907, already computed.
+Skipping row 908, already computed.
+Skipping row 909, already computed.
+Skipping row 910, already computed.
+Skipping row 911, already computed.
+Skipping row 912, already computed.
+Skipping row 913, already computed.
+Skipping row 914, already computed.
+Skipping row 915, already computed.
+Skipping row 916, already computed.
+Skipping row 917, already computed.
+Skipping row 918, already computed.
+Skipping row 919, already computed.
+Skipping row 920, already computed.
+Skipping row 921, already computed.
+Skipping row 922, already computed.
+Skipping row 923, already computed.
+Skipping row 924, already computed.
+Skipping row 925, already computed.
+Skipping row 926, already computed.
+Skipping row 927, already computed.
+Skipping row 928, already computed.
+Skipping row 929, already computed.
+Skipping row 930, already computed.
+Skipping row 931, already computed.
+Skipping row 932, already computed.
+Skipping row 933, already computed.
+Skipping row 934, already computed.
+Skipping row 935, already computed.
+Skipping row 936, already computed.
+Skipping row 937, already computed.
+Skipping row 938, already computed.
+Skipping row 939, already computed.
+Skipping row 940, already computed.
+Skipping row 941, already computed.
+Skipping row 942, already computed.
+Skipping row 943, already computed.
+Skipping row 944, already computed.
+Skipping row 945, already computed.
+Skipping row 946, already computed.
+Skipping row 947, already computed.
+Skipping row 948, already computed.
+Skipping row 949, already computed.
+Skipping row 950, already computed.
+Skipping row 951, already computed.
+Skipping row 952, already computed.
+Skipping row 953, already computed.
+Skipping row 954, already computed.
+Skipping row 955, already computed.
+Skipping row 956, already computed.
+Skipping row 957, already computed.
+Skipping row 958, already computed.
+Skipping row 959, already computed.
+Skipping row 960, already computed.
+Skipping row 961, already computed.
+Skipping row 962, already computed.
+Skipping row 963, already computed.
+Skipping row 964, already computed.
+Skipping row 965, already computed.
+Skipping row 966, already computed.
+Skipping row 967, already computed.
+Skipping row 968, already computed.
+Skipping row 969, already computed.
+Skipping row 970, already computed.
+Skipping row 971, already computed.
+Skipping row 972, already computed.
+Skipping row 973, already computed.
+Skipping row 974, already computed.
+Skipping row 975, already computed.
+Skipping row 976, already computed.
+Skipping row 977, already computed.
+Skipping row 978, already computed.
+Skipping row 979, already computed.
+Skipping row 980, already computed.
+Skipping row 981, already computed.
+Skipping row 982, already computed.
+Skipping row 983, already computed.
+Skipping row 984, already computed.
+Skipping row 985, already computed.
+Skipping row 986, already computed.
+Skipping row 987, already computed.
+Skipping row 988, already computed.
+Skipping row 989, already computed.
+Skipping row 990, already computed.
+Skipping row 991, already computed.
+Skipping row 992, already computed.
+Skipping row 993, already computed.
+Skipping row 994, already computed.
+Skipping row 995, already computed.
+Skipping row 996, already computed.
+Skipping row 997, already computed.
+Skipping row 998, already computed.
+Skipping row 999, already computed.
+Skipping row 1000, already computed.
+Skipping row 1001, already computed.
+Skipping row 1002, already computed.
+Skipping row 1003, already computed.
+Skipping row 1004, already computed.
+Skipping row 1005, already computed.
+Skipping row 1006, already computed.
+Skipping row 1007, already computed.
+Skipping row 1008, already computed.
+Skipping row 1009, already computed.
+Skipping row 1010, already computed.
+Skipping row 1011, already computed.
+Skipping row 1012, already computed.
+Skipping row 1013, already computed.
+Skipping row 1014, already computed.
+Skipping row 1015, already computed.
+Skipping row 1016, already computed.
+Skipping row 1017, already computed.
+Skipping row 1018, already computed.
+Skipping row 1019, already computed.
+Skipping row 1020, already computed.
+Skipping row 1021, already computed.
+Skipping row 1022, already computed.
+Skipping row 1023, already computed.
+Skipping row 1024, already computed.
+Skipping row 1025, already computed.
+Skipping row 1026, already computed.
+Skipping row 1027, already computed.
+Skipping row 1028, already computed.
+Skipping row 1029, already computed.
+Skipping row 1030, already computed.
+Skipping row 1031, already computed.
+Skipping row 1032, already computed.
+Skipping row 1033, already computed.
+Skipping row 1034, already computed.
+Skipping row 1035, already computed.
+Skipping row 1036, already computed.
+Skipping row 1037, already computed.
+Skipping row 1038, already computed.
+Skipping row 1039, already computed.
+Skipping row 1040, already computed.
+Skipping row 1041, already computed.
+Skipping row 1042, already computed.
+Skipping row 1043, already computed.
+Skipping row 1044, already computed.
+Skipping row 1045, already computed.
+Skipping row 1046, already computed.
+Skipping row 1047, already computed.
+Skipping row 1048, already computed.
+Skipping row 1049, already computed.
+Skipping row 1050, already computed.
+Skipping row 1051, already computed.
+Skipping row 1052, already computed.
+Skipping row 1053, already computed.
+Skipping row 1054, already computed.
+Skipping row 1055, already computed.
+Skipping row 1056, already computed.
+Skipping row 1057, already computed.
+Skipping row 1058, already computed.
+Skipping row 1059, already computed.
+Skipping row 1060, already computed.
+Skipping row 1061, already computed.
+Skipping row 1062, already computed.
+Skipping row 1063, already computed.
+Skipping row 1064, already computed.
+Skipping row 1065, already computed.
+Skipping row 1066, already computed.
+Skipping row 1067, already computed.
+Skipping row 1068, already computed.
+Skipping row 1069, already computed.
+Skipping row 1070, already computed.
+Skipping row 1071, already computed.
+Skipping row 1072, already computed.
+Skipping row 1073, already computed.
+Skipping row 1074, already computed.
+Skipping row 1075, already computed.
+Skipping row 1076, already computed.
+Skipping row 1077, already computed.
+Skipping row 1078, already computed.
+Skipping row 1079, already computed.
+Skipping row 1080, already computed.
+Skipping row 1081, already computed.
+Skipping row 1082, already computed.
+Skipping row 1083, already computed.
+Skipping row 1084, already computed.
+Skipping row 1085, already computed.
+Skipping row 1086, already computed.
+Skipping row 1087, already computed.
+Skipping row 1088, already computed.
+Skipping row 1089, already computed.
+Skipping row 1090, already computed.
+Skipping row 1091, already computed.
+Skipping row 1092, already computed.
+Skipping row 1093, already computed.
+Skipping row 1094, already computed.
+Skipping row 1095, already computed.
+Skipping row 1096, already computed.
+Skipping row 1097, already computed.
+Skipping row 1098, already computed.
+Skipping row 1099, already computed.
+Skipping row 1100, already computed.
+Skipping row 1101, already computed.
+Skipping row 1102, already computed.
+Skipping row 1103, already computed.
+Skipping row 1104, already computed.
+Skipping row 1105, already computed.
+Skipping row 1106, already computed.
+Skipping row 1107, already computed.
+Skipping row 1108, already computed.
+Skipping row 1109, already computed.
+Skipping row 1110, already computed.
+Skipping row 1111, already computed.
+Skipping row 1112, already computed.
+Skipping row 1113, already computed.
+Skipping row 1114, already computed.
+Skipping row 1115, already computed.
+Skipping row 1116, already computed.
+Skipping row 1117, already computed.
+Skipping row 1118, already computed.
+Skipping row 1119, already computed.
+Skipping row 1120, already computed.
+Skipping row 1121, already computed.
+Skipping row 1122, already computed.
+Skipping row 1123, already computed.
+Skipping row 1124, already computed.
+Skipping row 1125, already computed.
+Skipping row 1126, already computed.
+Skipping row 1127, already computed.
+Skipping row 1128, already computed.
+Skipping row 1129, already computed.
+Skipping row 1130, already computed.
+Skipping row 1131, already computed.
+Skipping row 1132, already computed.
+Skipping row 1133, already computed.
+Skipping row 1134, already computed.
+Skipping row 1135, already computed.
+Skipping row 1136, already computed.
+Skipping row 1137, already computed.
+Skipping row 1138, already computed.
+Skipping row 1139, already computed.
+Skipping row 1140, already computed.
+Skipping row 1141, already computed.
+Skipping row 1142, already computed.
+Skipping row 1143, already computed.
+Skipping row 1144, already computed.
+Skipping row 1145, already computed.
+Skipping row 1146, already computed.
+Skipping row 1147, already computed.
+Skipping row 1148, already computed.
+Skipping row 1149, already computed.
+Skipping row 1150, already computed.
+Skipping row 1151, already computed.
+Skipping row 1152, already computed.
+Skipping row 1153, already computed.
+Skipping row 1154, already computed.
+Skipping row 1155, already computed.
+Skipping row 1156, already computed.
+Skipping row 1157, already computed.
+Skipping row 1158, already computed.
+Skipping row 1159, already computed.
+Skipping row 1160, already computed.
+Skipping row 1161, already computed.
+Skipping row 1162, already computed.
+Skipping row 1163, already computed.
+Skipping row 1164, already computed.
+Skipping row 1165, already computed.
+Skipping row 1166, already computed.
+Skipping row 1167, already computed.
+Skipping row 1168, already computed.
+Skipping row 1169, already computed.
+Skipping row 1170, already computed.
+Skipping row 1171, already computed.
+Skipping row 1172, already computed.
+Skipping row 1173, already computed.
+Skipping row 1174, already computed.
+Skipping row 1175, already computed.
+Skipping row 1176, already computed.
+Skipping row 1177, already computed.
+Skipping row 1178, already computed.
+Skipping row 1179, already computed.
+Skipping row 1180, already computed.
+Skipping row 1181, already computed.
+Skipping row 1182, already computed.
+Skipping row 1183, already computed.
+Skipping row 1184, already computed.
+Skipping row 1185, already computed.
+Skipping row 1186, already computed.
+Skipping row 1187, already computed.
+Skipping row 1188, already computed.
+Skipping row 1189, already computed.
+Skipping row 1190, already computed.
+Skipping row 1191, already computed.
+Skipping row 1192, already computed.
+Skipping row 1193, already computed.
+Skipping row 1194, already computed.
+Skipping row 1195, already computed.
+Skipping row 1196, already computed.
+ 56%|█████▋    | 1197/2128 [00:00<00:00, 11959.52it/s]Skipping row 1197, already computed.
+Skipping row 1198, already computed.
+Skipping row 1199, already computed.
+Skipping row 1200, already computed.
+Skipping row 1201, already computed.
+Skipping row 1202, already computed.
+Skipping row 1203, already computed.
+Skipping row 1204, already computed.
+Skipping row 1205, already computed.
+Skipping row 1206, already computed.
+Skipping row 1207, already computed.
+Skipping row 1208, already computed.
+Skipping row 1209, already computed.
+Skipping row 1210, already computed.
+Skipping row 1211, already computed.
+Skipping row 1212, already computed.
+Skipping row 1213, already computed.
+Skipping row 1214, already computed.
+Skipping row 1215, already computed.
+Skipping row 1216, already computed.
+Skipping row 1217, already computed.
+Skipping row 1218, already computed.
+Skipping row 1219, already computed.
+Skipping row 1220, already computed.
+Skipping row 1221, already computed.
+Skipping row 1222, already computed.
+Skipping row 1223, already computed.
+Skipping row 1224, already computed.
+Skipping row 1225, already computed.
+Skipping row 1226, already computed.
+Skipping row 1227, already computed.
+Skipping row 1228, already computed.
+Skipping row 1229, already computed.
+Skipping row 1230, already computed.
+Skipping row 1231, already computed.
+Skipping row 1232, already computed.
+Skipping row 1233, already computed.
+Skipping row 1234, already computed.
+Skipping row 1235, already computed.
+Skipping row 1236, already computed.
+Skipping row 1237, already computed.
+Skipping row 1238, already computed.
+Skipping row 1239, already computed.
+Skipping row 1240, already computed.
+Skipping row 1241, already computed.
+Skipping row 1242, already computed.
+Skipping row 1243, already computed.
+Skipping row 1244, already computed.
+Skipping row 1245, already computed.
+Skipping row 1246, already computed.
+Skipping row 1247, already computed.
+Skipping row 1248, already computed.
+Skipping row 1249, already computed.
+Skipping row 1250, already computed.
+Skipping row 1251, already computed.
+Skipping row 1252, already computed.
+Skipping row 1253, already computed.
+Skipping row 1254, already computed.
+Skipping row 1255, already computed.
+Skipping row 1256, already computed.
+Skipping row 1257, already computed.
+Skipping row 1258, already computed.
+Skipping row 1259, already computed.
+Skipping row 1260, already computed.
+Skipping row 1261, already computed.
+Skipping row 1262, already computed.
+Skipping row 1263, already computed.
+Skipping row 1264, already computed.
+Skipping row 1265, already computed.
+Skipping row 1266, already computed.
+Skipping row 1267, already computed.
+Skipping row 1268, already computed.
+Skipping row 1269, already computed.
+Skipping row 1270, already computed.
+Skipping row 1271, already computed.
+Skipping row 1272, already computed.
+Skipping row 1273, already computed.
+Skipping row 1274, already computed.
+Skipping row 1275, already computed.
+Skipping row 1276, already computed.
+Skipping row 1277, already computed.
+Skipping row 1278, already computed.
+Skipping row 1279, already computed.
+Skipping row 1280, already computed.
+Skipping row 1281, already computed.
+Skipping row 1282, already computed.
+Skipping row 1283, already computed.
+Skipping row 1284, already computed.
+Skipping row 1285, already computed.
+Skipping row 1286, already computed.
+Skipping row 1287, already computed.
+Skipping row 1288, already computed.
+Skipping row 1289, already computed.
+Skipping row 1290, already computed.
+Skipping row 1291, already computed.
+Skipping row 1292, already computed.
+Skipping row 1293, already computed.
+Skipping row 1294, already computed.
+Skipping row 1295, already computed.
+Skipping row 1296, already computed.
+Skipping row 1297, already computed.
+Skipping row 1298, already computed.
+Skipping row 1299, already computed.
+Skipping row 1300, already computed.
+Skipping row 1301, already computed.
+Skipping row 1302, already computed.
+Skipping row 1303, already computed.
+Skipping row 1304, already computed.
+Skipping row 1305, already computed.
+Skipping row 1306, already computed.
+Skipping row 1307, already computed.
+Skipping row 1308, already computed.
+Skipping row 1309, already computed.
+Skipping row 1310, already computed.
+Skipping row 1311, already computed.
+Skipping row 1312, already computed.
+Skipping row 1313, already computed.
+Skipping row 1314, already computed.
+Skipping row 1315, already computed.
+Skipping row 1316, already computed.
+Skipping row 1317, already computed.
+Skipping row 1318, already computed.
+Skipping row 1319, already computed.
+Skipping row 1320, already computed.
+Skipping row 1321, already computed.
+Skipping row 1322, already computed.
+Skipping row 1323, already computed.
+Skipping row 1324, already computed.
+Skipping row 1325, already computed.
+Skipping row 1326, already computed.
+Skipping row 1327, already computed.
+Skipping row 1328, already computed.
+Skipping row 1329, already computed.
+Skipping row 1330, already computed.
+Skipping row 1331, already computed.
+Skipping row 1332, already computed.
+Skipping row 1333, already computed.
+Skipping row 1334, already computed.
+Skipping row 1335, already computed.
+Skipping row 1336, already computed.
+Skipping row 1337, already computed.
+Skipping row 1338, already computed.
+Skipping row 1339, already computed.
+Skipping row 1340, already computed.
+Skipping row 1341, already computed.
+Skipping row 1342, already computed.
+Skipping row 1343, already computed.
+Skipping row 1344, already computed.
+Skipping row 1345, already computed.
+Skipping row 1346, already computed.
+Skipping row 1347, already computed.
+Skipping row 1348, already computed.
+Skipping row 1349, already computed.
+Skipping row 1350, already computed.
+Skipping row 1351, already computed.
+Skipping row 1352, already computed.
+Skipping row 1353, already computed.
+Skipping row 1354, already computed.
+Skipping row 1355, already computed.
+Skipping row 1356, already computed.
+Skipping row 1357, already computed.
+Skipping row 1358, already computed.
+Skipping row 1359, already computed.
+Skipping row 1360, already computed.
+Skipping row 1361, already computed.
+Skipping row 1362, already computed.
+Skipping row 1363, already computed.
+Skipping row 1364, already computed.
+Skipping row 1365, already computed.
+Skipping row 1366, already computed.
+Skipping row 1367, already computed.
+Skipping row 1368, already computed.
+Skipping row 1369, already computed.
+Skipping row 1370, already computed.
+Skipping row 1371, already computed.
+Skipping row 1372, already computed.
+Skipping row 1373, already computed.
+Skipping row 1374, already computed.
+Skipping row 1375, already computed.
+Skipping row 1376, already computed.
+Skipping row 1377, already computed.
+Skipping row 1378, already computed.
+Skipping row 1379, already computed.
+Skipping row 1380, already computed.
+Skipping row 1381, already computed.
+Skipping row 1382, already computed.
+Skipping row 1383, already computed.
+Skipping row 1384, already computed.
+Skipping row 1385, already computed.
+Skipping row 1386, already computed.
+Skipping row 1387, already computed.
+Skipping row 1388, already computed.
+Skipping row 1389, already computed.
+Skipping row 1390, already computed.
+Skipping row 1391, already computed.
+Skipping row 1392, already computed.
+Skipping row 1393, already computed.
+Skipping row 1394, already computed.
+Skipping row 1395, already computed.
+Skipping row 1396, already computed.
+Skipping row 1397, already computed.
+Skipping row 1398, already computed.
+Skipping row 1399, already computed.
+Skipping row 1400, already computed.
+Skipping row 1401, already computed.
+Skipping row 1402, already computed.
+Skipping row 1403, already computed.
+Skipping row 1404, already computed.
+Skipping row 1405, already computed.
+Skipping row 1406, already computed.
+Skipping row 1407, already computed.
+Skipping row 1408, already computed.
+Skipping row 1409, already computed.
+Skipping row 1410, already computed.
+Skipping row 1411, already computed.
+Skipping row 1412, already computed.
+Skipping row 1413, already computed.
+Skipping row 1414, already computed.
+Skipping row 1415, already computed.
+Skipping row 1416, already computed.
+Skipping row 1417, already computed.
+Skipping row 1418, already computed.
+Skipping row 1419, already computed.
+Skipping row 1420, already computed.
+Skipping row 1421, already computed.
+Skipping row 1422, already computed.
+Skipping row 1423, already computed.
+Skipping row 1424, already computed.
+Skipping row 1425, already computed.
+Skipping row 1426, already computed.
+Skipping row 1427, already computed.
+Skipping row 1428, already computed.
+Skipping row 1429, already computed.
+Skipping row 1430, already computed.
+Skipping row 1431, already computed.
+Skipping row 1432, already computed.
+Skipping row 1433, already computed.
+Skipping row 1434, already computed.
+Skipping row 1435, already computed.
+Skipping row 1436, already computed.
+Skipping row 1437, already computed.
+Skipping row 1438, already computed.
+Skipping row 1439, already computed.
+Skipping row 1440, already computed.
+Skipping row 1441, already computed.
+Skipping row 1442, already computed.
+Skipping row 1443, already computed.
+Skipping row 1444, already computed.
+Skipping row 1445, already computed.
+Skipping row 1446, already computed.
+Skipping row 1447, already computed.
+Skipping row 1448, already computed.
+Skipping row 1449, already computed.
+Skipping row 1450, already computed.
+Skipping row 1451, already computed.
+Skipping row 1452, already computed.
+Skipping row 1453, already computed.
+Skipping row 1454, already computed.
+Skipping row 1455, already computed.
+Skipping row 1456, already computed.
+Skipping row 1457, already computed.
+Skipping row 1458, already computed.
+Skipping row 1459, already computed.
+Skipping row 1460, already computed.
+Skipping row 1461, already computed.
+Skipping row 1462, already computed.
+Skipping row 1463, already computed.
+Skipping row 1464, already computed.
+Skipping row 1465, already computed.
+Skipping row 1466, already computed.
+Skipping row 1467, already computed.
+Skipping row 1468, already computed.
+Skipping row 1469, already computed.
+Skipping row 1470, already computed.
+Skipping row 1471, already computed.
+Skipping row 1472, already computed.
+Skipping row 1473, already computed.
+Skipping row 1474, already computed.
+Skipping row 1475, already computed.
+Skipping row 1476, already computed.
+Skipping row 1477, already computed.
+Skipping row 1478, already computed.
+Skipping row 1479, already computed.
+Skipping row 1480, already computed.
+Skipping row 1481, already computed.
+Skipping row 1482, already computed.
+Skipping row 1483, already computed.
+Skipping row 1484, already computed.
+Skipping row 1485, already computed.
+Skipping row 1486, already computed.
+Skipping row 1487, already computed.
+Skipping row 1488, already computed.
+Skipping row 1489, already computed.
+Skipping row 1490, already computed.
+Skipping row 1491, already computed.
+Skipping row 1492, already computed.
+Skipping row 1493, already computed.
+Skipping row 1494, already computed.
+Skipping row 1495, already computed.
+Skipping row 1496, already computed.
+Skipping row 1497, already computed.
+Skipping row 1498, already computed.
+Skipping row 1499, already computed.
+Skipping row 1500, already computed.
+Skipping row 1501, already computed.
+Skipping row 1502, already computed.
+Skipping row 1503, already computed.
+Skipping row 1504, already computed.
+Skipping row 1505, already computed.
+Skipping row 1506, already computed.
+Skipping row 1507, already computed.
+Skipping row 1508, already computed.
+Skipping row 1509, already computed.
+Skipping row 1510, already computed.
+Skipping row 1511, already computed.
+Skipping row 1512, already computed.
+Skipping row 1513, already computed.
+Skipping row 1514, already computed.
+Skipping row 1515, already computed.
+Skipping row 1516, already computed.
+Skipping row 1517, already computed.
+Skipping row 1518, already computed.
+Skipping row 1519, already computed.
+Skipping row 1520, already computed.
+Skipping row 1521, already computed.
+Skipping row 1522, already computed.
+Skipping row 1523, already computed.
+Skipping row 1524, already computed.
+Skipping row 1525, already computed.
+Skipping row 1526, already computed.
+Skipping row 1527, already computed.
+Skipping row 1528, already computed.
+Skipping row 1529, already computed.
+Skipping row 1530, already computed.
+Skipping row 1531, already computed.
+Skipping row 1532, already computed.
+Skipping row 1533, already computed.
+Skipping row 1534, already computed.
+Skipping row 1535, already computed.
+Skipping row 1536, already computed.
+Skipping row 1537, already computed.
+Skipping row 1538, already computed.
+Skipping row 1539, already computed.
+Skipping row 1540, already computed.
+Skipping row 1541, already computed.
+Skipping row 1542, already computed.
+Skipping row 1543, already computed.
+Skipping row 1544, already computed.
+Skipping row 1545, already computed.
+Skipping row 1546, already computed.
+Skipping row 1547, already computed.
+Skipping row 1548, already computed.
+Skipping row 1549, already computed.
+Skipping row 1550, already computed.
+Skipping row 1551, already computed.
+Skipping row 1552, already computed.
+Skipping row 1553, already computed.
+Skipping row 1554, already computed.
+Skipping row 1555, already computed.
+Skipping row 1556, already computed.
+Skipping row 1557, already computed.
+Skipping row 1558, already computed.
+Skipping row 1559, already computed.
+Skipping row 1560, already computed.
+Skipping row 1561, already computed.
+Skipping row 1562, already computed.
+Skipping row 1563, already computed.
+Skipping row 1564, already computed.
+Skipping row 1565, already computed.
+Skipping row 1566, already computed.
+Skipping row 1567, already computed.
+Skipping row 1568, already computed.
+Skipping row 1569, already computed.
+Skipping row 1570, already computed.
+Skipping row 1571, already computed.
+Skipping row 1572, already computed.
+Skipping row 1573, already computed.
+Skipping row 1574, already computed.
+Skipping row 1575, already computed.
+Skipping row 1576, already computed.
+Skipping row 1577, already computed.
+Skipping row 1578, already computed.
+Skipping row 1579, already computed.
+Skipping row 1580, already computed.
+Skipping row 1581, already computed.
+Skipping row 1582, already computed.
+Skipping row 1583, already computed.
+Skipping row 1584, already computed.
+Skipping row 1585, already computed.
+Skipping row 1586, already computed.
+Skipping row 1587, already computed.
+Skipping row 1588, already computed.
+Skipping row 1589, already computed.
+Skipping row 1590, already computed.
+Skipping row 1591, already computed.
+Skipping row 1592, already computed.
+Skipping row 1593, already computed.
+Skipping row 1594, already computed.
+Skipping row 1595, already computed.
+Skipping row 1596, already computed.
+Skipping row 1597, already computed.
+Skipping row 1598, already computed.
+Skipping row 1599, already computed.
+Skipping row 1600, already computed.
+Skipping row 1601, already computed.
+Skipping row 1602, already computed.
+Skipping row 1603, already computed.
+Skipping row 1604, already computed.
+Skipping row 1605, already computed.
+Skipping row 1606, already computed.
+Skipping row 1607, already computed.
+Skipping row 1608, already computed.
+Skipping row 1609, already computed.
+Skipping row 1610, already computed.
+Skipping row 1611, already computed.
+Skipping row 1612, already computed.
+Skipping row 1613, already computed.
+Skipping row 1614, already computed.
+Skipping row 1615, already computed.
+Skipping row 1616, already computed.
+Skipping row 1617, already computed.
+Skipping row 1618, already computed.
+Skipping row 1619, already computed.
+Skipping row 1620, already computed.
+Skipping row 1621, already computed.
+Skipping row 1622, already computed.
+Skipping row 1623, already computed.
+Skipping row 1624, already computed.
+Skipping row 1625, already computed.
+Skipping row 1626, already computed.
+Skipping row 1627, already computed.
+Skipping row 1628, already computed.
+Skipping row 1629, already computed.
+Skipping row 1630, already computed.
+Skipping row 1631, already computed.
+Skipping row 1632, already computed.
+Skipping row 1633, already computed.
+Skipping row 1634, already computed.
+Skipping row 1635, already computed.
+Skipping row 1636, already computed.
+Skipping row 1637, already computed.
+Skipping row 1638, already computed.
+Skipping row 1639, already computed.
+Skipping row 1640, already computed.
+Skipping row 1641, already computed.
+Skipping row 1642, already computed.
+Skipping row 1643, already computed.
+Skipping row 1644, already computed.
+Skipping row 1645, already computed.
+Skipping row 1646, already computed.
+Skipping row 1647, already computed.
+Skipping row 1648, already computed.
+Skipping row 1649, already computed.
+Skipping row 1650, already computed.
+Skipping row 1651, already computed.
+Skipping row 1652, already computed.
+Skipping row 1653, already computed.
+Skipping row 1654, already computed.
+Skipping row 1655, already computed.
+Skipping row 1656, already computed.
+Skipping row 1657, already computed.
+Skipping row 1658, already computed.
+Skipping row 1659, already computed.
+Skipping row 1660, already computed.
+Skipping row 1661, already computed.
+Skipping row 1662, already computed.
+Skipping row 1663, already computed.
+Skipping row 1664, already computed.
+Skipping row 1665, already computed.
+Skipping row 1666, already computed.
+Skipping row 1667, already computed.
+Skipping row 1668, already computed.
+Skipping row 1669, already computed.
+Skipping row 1670, already computed.
+Skipping row 1671, already computed.
+Skipping row 1672, already computed.
+Skipping row 1673, already computed.
+Skipping row 1674, already computed.
+Skipping row 1675, already computed.
+Skipping row 1676, already computed.
+Skipping row 1677, already computed.
+Skipping row 1678, already computed.
+Skipping row 1679, already computed.
+Skipping row 1680, already computed.
+Skipping row 1681, already computed.
+Skipping row 1682, already computed.
+Skipping row 1683, already computed.
+Skipping row 1684, already computed.
+Skipping row 1685, already computed.
+Skipping row 1686, already computed.
+Skipping row 1687, already computed.
+Skipping row 1688, already computed.
+Skipping row 1689, already computed.
+Skipping row 1690, already computed.
+Skipping row 1691, already computed.
+Skipping row 1692, already computed.
+Skipping row 1693, already computed.
+Skipping row 1694, already computed.
+Skipping row 1695, already computed.
+Skipping row 1696, already computed.
+Skipping row 1697, already computed.
+Skipping row 1698, already computed.
+Skipping row 1699, already computed.
+Skipping row 1700, already computed.
+Skipping row 1701, already computed.
+Skipping row 1702, already computed.
+Skipping row 1703, already computed.
+Skipping row 1704, already computed.
+Skipping row 1705, already computed.
+Skipping row 1706, already computed.
+Skipping row 1707, already computed.
+Skipping row 1708, already computed.
+Skipping row 1709, already computed.
+Skipping row 1710, already computed.
+Skipping row 1711, already computed.
+Skipping row 1712, already computed.
+Skipping row 1713, already computed.
+Skipping row 1714, already computed.
+Skipping row 1715, already computed.
+Skipping row 1716, already computed.
+Skipping row 1717, already computed.
+Skipping row 1718, already computed.
+Skipping row 1719, already computed.
+Skipping row 1720, already computed.
+Skipping row 1721, already computed.
+Skipping row 1722, already computed.
+Skipping row 1723, already computed.
+Skipping row 1724, already computed.
+Skipping row 1725, already computed.
+Skipping row 1726, already computed.
+Skipping row 1727, already computed.
+Skipping row 1728, already computed.
+Skipping row 1729, already computed.
+Skipping row 1730, already computed.
+Skipping row 1731, already computed.
+Skipping row 1732, already computed.
+Skipping row 1733, already computed.
+Skipping row 1734, already computed.
+Skipping row 1735, already computed.
+Skipping row 1736, already computed.
+Skipping row 1737, already computed.
+Skipping row 1738, already computed.
+Skipping row 1739, already computed.
+Skipping row 1740, already computed.
+Skipping row 1741, already computed.
+Skipping row 1742, already computed.
+Skipping row 1743, already computed.
+Skipping row 1744, already computed.
+Skipping row 1745, already computed.
+Skipping row 1746, already computed.
+Skipping row 1747, already computed.
+Skipping row 1748, already computed.
+Skipping row 1749, already computed.
+Skipping row 1750, already computed.
+Skipping row 1751, already computed.
+Skipping row 1752, already computed.
+Skipping row 1753, already computed.
+Skipping row 1754, already computed.
+Skipping row 1755, already computed.
+Skipping row 1756, already computed.
+Skipping row 1757, already computed.
+Skipping row 1758, already computed.
+Skipping row 1759, already computed.
+Skipping row 1760, already computed.
+Skipping row 1761, already computed.
+Skipping row 1762, already computed.
+Skipping row 1763, already computed.
+Skipping row 1764, already computed.
+Skipping row 1765, already computed.
+Skipping row 1766, already computed.
+Skipping row 1767, already computed.
+Skipping row 1768, already computed.
+Skipping row 1769, already computed.
+Skipping row 1770, already computed.
+Skipping row 1771, already computed.
+Skipping row 1772, already computed.
+Skipping row 1773, already computed.
+Skipping row 1774, already computed.
+Skipping row 1775, already computed.
+Skipping row 1776, already computed.
+Skipping row 1777, already computed.
+Skipping row 1778, already computed.
+Skipping row 1779, already computed.
+Skipping row 1780, already computed.
+Skipping row 1781, already computed.
+Skipping row 1782, already computed.
+Skipping row 1783, already computed.
+Skipping row 1784, already computed.
+Skipping row 1785, already computed.
+Skipping row 1786, already computed.
+Skipping row 1787, already computed.
+Skipping row 1788, already computed.
+Skipping row 1789, already computed.
+Skipping row 1790, already computed.
+Skipping row 1791, already computed.
+Skipping row 1792, already computed.
+Skipping row 1793, already computed.
+Skipping row 1794, already computed.
+Skipping row 1795, already computed.
+Skipping row 1796, already computed.
+Skipping row 1797, already computed.
+Skipping row 1798, already computed.
+Skipping row 1799, already computed.
+Skipping row 1800, already computed.
+Skipping row 1801, already computed.
+Skipping row 1802, already computed.
+Skipping row 1803, already computed.
+Skipping row 1804, already computed.
+Skipping row 1805, already computed.
+Skipping row 1806, already computed.
+Skipping row 1807, already computed.
+Skipping row 1808, already computed.
+Skipping row 1809, already computed.
+Skipping row 1810, already computed.
+Skipping row 1811, already computed.
+Skipping row 1812, already computed.
+Skipping row 1813, already computed.
+Skipping row 1814, already computed.
+Skipping row 1815, already computed.
+Skipping row 1816, already computed.
+Skipping row 1817, already computed.
+Skipping row 1818, already computed.
+Skipping row 1819, already computed.
+Skipping row 1820, already computed.
+Skipping row 1821, already computed.
+Skipping row 1822, already computed.
+Skipping row 1823, already computed.
+Skipping row 1824, already computed.
+Skipping row 1825, already computed.
+Skipping row 1826, already computed.
+Skipping row 1827, already computed.
+Skipping row 1828, already computed.
+Skipping row 1829, already computed.
+Skipping row 1830, already computed.
+Skipping row 1831, already computed.
+Skipping row 1832, already computed.
+Skipping row 1833, already computed.
+Skipping row 1834, already computed.
+Skipping row 1835, already computed.
+Skipping row 1836, already computed.
+Skipping row 1837, already computed.
+Skipping row 1838, already computed.
+Skipping row 1839, already computed.
+Skipping row 1840, already computed.
+Skipping row 1841, already computed.
+Skipping row 1842, already computed.
+Skipping row 1843, already computed.
+Skipping row 1844, already computed.
+Skipping row 1845, already computed.
+Skipping row 1846, already computed.
+Skipping row 1847, already computed.
+Skipping row 1848, already computed.
+Skipping row 1849, already computed.
+Skipping row 1850, already computed.
+Skipping row 1851, already computed.
+Skipping row 1852, already computed.
+Skipping row 1853, already computed.
+Skipping row 1854, already computed.
+Skipping row 1855, already computed.
+Skipping row 1856, already computed.
+Skipping row 1857, already computed.
+Skipping row 1858, already computed.
+Skipping row 1859, already computed.
+Skipping row 1860, already computed.
+Skipping row 1861, already computed.
+Skipping row 1862, already computed.
+Skipping row 1863, already computed.
+Skipping row 1864, already computed.
+Skipping row 1865, already computed.
+Skipping row 1866, already computed.
+Skipping row 1867, already computed.
+Skipping row 1868, already computed.
+Skipping row 1869, already computed.
+Skipping row 1870, already computed.
+Skipping row 1871, already computed.
+Skipping row 1872, already computed.
+Skipping row 1873, already computed.
+Skipping row 1874, already computed.
+Skipping row 1875, already computed.
+Skipping row 1876, already computed.
+Skipping row 1877, already computed.
+Skipping row 1878, already computed.
+Skipping row 1879, already computed.
+Skipping row 1880, already computed.
+Skipping row 1881, already computed.
+Skipping row 1882, already computed.
+Skipping row 1883, already computed.
+Skipping row 1884, already computed.
+Skipping row 1885, already computed.
+Skipping row 1886, already computed.
+Skipping row 1887, already computed.
+Skipping row 1888, already computed.
+Skipping row 1889, already computed.
+Skipping row 1890, already computed.
+Skipping row 1891, already computed.
+Skipping row 1892, already computed.
+Skipping row 1893, already computed.
+Skipping row 1894, already computed.
+Skipping row 1895, already computed.
+Skipping row 1896, already computed.
+Skipping row 1897, already computed.
+Skipping row 1898, already computed.
+Skipping row 1899, already computed.
+Skipping row 1900, already computed.
+Skipping row 1901, already computed.
+Skipping row 1902, already computed.
+Skipping row 1903, already computed.
+Skipping row 1904, already computed.
+Skipping row 1905, already computed.
+Skipping row 1906, already computed.
+Skipping row 1907, already computed.
+Skipping row 1908, already computed.
+Skipping row 1909, already computed.
+Skipping row 1910, already computed.
+Skipping row 1911, already computed.
+Skipping row 1912, already computed.
+Skipping row 1913, already computed.
+Skipping row 1914, already computed.
+Skipping row 1915, already computed.
+Skipping row 1916, already computed.
+Skipping row 1917, already computed.
+Skipping row 1918, already computed.
+Skipping row 1919, already computed.
+Skipping row 1920, already computed.
+Skipping row 1921, already computed.
+Skipping row 1922, already computed.
+Skipping row 1923, already computed.
+Skipping row 1924, already computed.
+Skipping row 1925, already computed.
+Skipping row 1926, already computed.
+Skipping row 1927, already computed.
+Skipping row 1928, already computed.
+Skipping row 1929, already computed.
+Skipping row 1930, already computed.
+Skipping row 1931, already computed.
+Skipping row 1932, already computed.
+Skipping row 1933, already computed.
+Skipping row 1934, already computed.
+Skipping row 1935, already computed.
+Skipping row 1936, already computed.
+Skipping row 1937, already computed.
+Skipping row 1938, already computed.
+Skipping row 1939, already computed.
+Skipping row 1940, already computed.
+Skipping row 1941, already computed.
+Skipping row 1942, already computed.
+Skipping row 1943, already computed.
+Skipping row 1944, already computed.
+Skipping row 1945, already computed.
+Skipping row 1946, already computed.
+Skipping row 1947, already computed.
+Skipping row 1948, already computed.
+Skipping row 1949, already computed.
+Skipping row 1950, already computed.
+Skipping row 1951, already computed.
+Skipping row 1952, already computed.
+Skipping row 1953, already computed.
+Skipping row 1954, already computed.
+Skipping row 1955, already computed.
+Skipping row 1956, already computed.
+Skipping row 1957, already computed.
+Skipping row 1958, already computed.
+Skipping row 1959, already computed.
+Skipping row 1960, already computed.
+Skipping row 1961, already computed.
+Skipping row 1962, already computed.
+Skipping row 1963, already computed.
+Skipping row 1964, already computed.
+Skipping row 1965, already computed.
+Skipping row 1966, already computed.
+Skipping row 1967, already computed.
+Skipping row 1968, already computed.
+Skipping row 1969, already computed.
+Skipping row 1970, already computed.
+Skipping row 1971, already computed.
+Skipping row 1972, already computed.
+Skipping row 1973, already computed.
+Skipping row 1974, already computed.
+Skipping row 1975, already computed.
+Skipping row 1976, already computed.
+Skipping row 1977, already computed.
+Skipping row 1978, already computed.
+Skipping row 1979, already computed.
+Skipping row 1980, already computed.
+Skipping row 1981, already computed.
+Skipping row 1982, already computed.
+Skipping row 1983, already computed.
+Skipping row 1984, already computed.
+Skipping row 1985, already computed.
+Skipping row 1986, already computed.
+Skipping row 1987, already computed.
+Skipping row 1988, already computed.
+Skipping row 1989, already computed.
+Skipping row 1990, already computed.
+Skipping row 1991, already computed.
+Skipping row 1992, already computed.
+Skipping row 1993, already computed.
+Skipping row 1994, already computed.
+Skipping row 1995, already computed.
+Skipping row 1996, already computed.
+Skipping row 1997, already computed.
+Skipping row 1998, already computed.
+Skipping row 1999, already computed.
+Skipping row 2000, already computed.
+Skipping row 2001, already computed.
+Skipping row 2002, already computed.
+Skipping row 2003, already computed.
+Skipping row 2004, already computed.
+Skipping row 2005, already computed.
+Skipping row 2006, already computed.
+Skipping row 2007, already computed.
+Skipping row 2008, already computed.
+Skipping row 2009, already computed.
+Skipping row 2010, already computed.
+Skipping row 2011, already computed.
+Skipping row 2012, already computed.
+Skipping row 2013, already computed.
+Skipping row 2014, already computed.
+Skipping row 2015, already computed.
+Skipping row 2016, already computed.
+Skipping row 2017, already computed.
+Skipping row 2018, already computed.
+Skipping row 2019, already computed.
+Skipping row 2020, already computed.
+Skipping row 2021, already computed.
+Skipping row 2022, already computed.
+Skipping row 2023, already computed.
+Skipping row 2024, already computed.
+Skipping row 2025, already computed.
+Skipping row 2026, already computed.
+Skipping row 2027, already computed.
+Skipping row 2028, already computed.
+Skipping row 2029, already computed.
+Skipping row 2030, already computed.
+Skipping row 2031, already computed.
+Skipping row 2032, already computed.
+Skipping row 2033, already computed.
+Skipping row 2034, already computed.
+Skipping row 2035, already computed.
+Skipping row 2036, already computed.
+Skipping row 2037, already computed.
+Skipping row 2038, already computed.
+Skipping row 2039, already computed.
+Skipping row 2040, already computed.
+Skipping row 2041, already computed.
+Skipping row 2042, already computed.
+Skipping row 2043, already computed.
+Skipping row 2044, already computed.
+Skipping row 2045, already computed.
+Skipping row 2046, already computed.
+Skipping row 2047, already computed.
+Skipping row 2048, already computed.
+Skipping row 2049, already computed.
+Skipping row 2050, already computed.
+Skipping row 2051, already computed.
+Skipping row 2052, already computed.
+Skipping row 2053, already computed.
+Skipping row 2054, already computed.
+Skipping row 2055, already computed.
+Skipping row 2056, already computed.
+Skipping row 2057, already computed.
+Skipping row 2058, already computed.
+Skipping row 2059, already computed.
+Skipping row 2060, already computed.
+Skipping row 2061, already computed.
+Skipping row 2062, already computed.
+Skipping row 2063, already computed.
+Skipping row 2064, already computed.
+Skipping row 2065, already computed.
+Skipping row 2066, already computed.
+Skipping row 2067, already computed.
+Skipping row 2068, already computed.
+Skipping row 2069, already computed.
+Skipping row 2070, already computed.
+Skipping row 2071, already computed.
+Skipping row 2072, already computed.
+2073 List 3 movies released in 1995.
+Schema filtering Agent: START
+Cypher Generator: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (m:Movie) WHERE m.released = "1995" RETURN m.title LIMIT 3:
+Cypher Executor: START
+Output Generator: START
+/home/ubuntu/agentic-text-2-cypher/extended_workflow/evaluate_llama_8.py:93: FutureWarning: Setting an item of incompatible dtype is deprecated and will raise an error in a future version of pandas. Value 'True' has dtype incompatible with float64, please explicitly cast to a compatible dtype first.
+  df_results.at[i, 'is_KG_Valid_correct'] = result['is_KG_Valid_correct']
+/home/ubuntu/agentic-text-2-cypher/extended_workflow/evaluate_llama_8.py:98: FutureWarning: Setting an item of incompatible dtype is deprecated and will raise an error in a future version of pandas. Value 'False' has dtype incompatible with float64, please explicitly cast to a compatible dtype first.
+  df_results.at[i, 'is_KG_Valid_correct_with_full_schema'] = False
+ 56%|█████▋    | 1197/2128 [00:10<00:00, 11959.52it/s] 97%|█████████▋| 2074/2128 [00:11<00:00, 147.15it/s]  2074 List the top 5 questions with the most downVotes.
+Schema filtering Agent: START
+Cypher Generator: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (q:Question)-[]->() WITH q ORDER BY q.downVotes DESC LIMIT 5 RETURN q:
+Cypher Executor: START
+Output Generator: START
+2075 Find the top 3 filings with the earliest begin dates and amounts over 100000.
+Schema filtering Agent: START
+ 97%|█████████▋| 2074/2128 [00:22<00:00, 147.15it/s]Cypher Generator: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (f: Filing) WHERE f.amount > 100000 RETURN f ORDER BY f.begin ASC LIMIT 3:
+Cypher Executor: START
+Output Generator: START
+ 98%|█████████▊| 2076/2128 [00:28<00:01, 47.52it/s] 2076 List the hashtags that have been used in tweets that contain links and have been posted by "Neo4j".
+Schema filtering Agent: START
+Cypher Generator: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (t:Tweet {text: "Neo4j"})-[:CONTAINS]->(l:Link) WHERE l.url!= NULL 
+MATCH (t)-[:TAGS]->(h:Hashtag)
+RETURN h.name:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Unknown operation '!=' (you probably meant to use '<>', which is the operator for inequality testing) (line 1, column 74 (offset: 73))
+
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (t:Tweet {text: "Neo4j"})-[:CONTAINS]->(l:Link) WHERE l.url<>NULL 
+MATCH (t)-[:TAGS]->(h:Hashtag)
+RETURN h.name:
+Cypher Executor: START
+Output Generator: START
+ 98%|█████████▊| 2077/2128 [00:52<00:02, 20.20it/s]2077 "where are the routers located?"
+Schema filtering Agent: START
+Cypher Generator: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (datacenter:DataCenter)-[:CONTAINS]->(router:Router) RETURN datacenter.location, router.name:
+Cypher Executor: START
+Output Generator: START
+ 98%|█████████▊| 2078/2128 [01:01<00:03, 15.44it/s]2078 List the top 5 characters with the highest `community`.
+Schema filtering Agent: START
+Cypher Generator: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (c:Character) RETURN c ORDER BY c.community DESC LIMIT 5:
+Cypher Executor: START
+Output Generator: START
+2079 List the first 5 Entities that are registered in the same jurisdiction as an entity with the name "TIANSHENG INDUSTRY AND TRADING CO., LTD.".
+Schema filtering Agent: START
+ 98%|█████████▊| 2078/2128 [01:12<00:03, 15.44it/s]Cypher Generator: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (t:Entity {name: "TIANSHENG INDUSTRY AND TRADING CO., LTD."}), 
+       (e:Entity)-[:registered_address]->(a:Address) 
+WITH t, a
+MATCH (e2:Entity)-[:registered_address]->(a:Address)-[:ADDRESS_IN{*}]->(j:Jurisdiction)
+WHERE j.name = t.jurisdiction
+RETURN DISTINCT e2 LIMIT 5:
+Received notification from DBMS server: {severity: WARNING} {code: Neo.ClientNotification.Statement.UnknownLabelWarning} {category: UNRECOGNIZED} {title: The provided label is not in the database.} {description: One of the labels in your query is not available in the database, make sure you didn't misspell it or that the label is available when you run this statement in your application (the missing label name is: Jurisdiction)} {position: line: 3, column: 33, offset: 65} for query: '\n                RETURN EXISTS {\n                    MATCH p = (:Jurisdiction) \n                } AS path_exists\n            '
+Received notification from DBMS server: {severity: WARNING} {code: Neo.ClientNotification.Statement.UnknownRelationshipTypeWarning} {category: UNRECOGNIZED} {title: The provided relationship type is not in the database.} {description: One of the relationship types in your query is not available in the database, make sure you didn't misspell it or that the label is available when you run this statement in your application (the missing relationship type is: ADDRESS_IN)} {position: line: 3, column: 36, offset: 68} for query: '\n                RETURN EXISTS {\n                    MATCH p = ()-[:ADDRESS_IN]-() \n                } AS path_exists\n            '
+Received notification from DBMS server: {severity: WARNING} {code: Neo.ClientNotification.Statement.UnknownRelationshipTypeWarning} {category: UNRECOGNIZED} {title: The provided relationship type is not in the database.} {description: One of the relationship types in your query is not available in the database, make sure you didn't misspell it or that the label is available when you run this statement in your application (the missing relationship type is: ADDRESS_IN)} {position: line: 3, column: 44, offset: 76} for query: '\n                RETURN EXISTS {\n                    MATCH p = (:Address)-[:ADDRESS_IN]->(:Jurisdiction) \n                } AS path_exists\n            '
+Received notification from DBMS server: {severity: WARNING} {code: Neo.ClientNotification.Statement.UnknownLabelWarning} {category: UNRECOGNIZED} {title: The provided label is not in the database.} {description: One of the labels in your query is not available in the database, make sure you didn't misspell it or that the label is available when you run this statement in your application (the missing label name is: Jurisdiction)} {position: line: 3, column: 59, offset: 91} for query: '\n                RETURN EXISTS {\n                    MATCH p = (:Address)-[:ADDRESS_IN]->(:Jurisdiction) \n                } AS path_exists\n            '
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Invalid input '*': expected an identifier or '}' (line 4, column 67 (offset: 208))
+"MATCH (e2:Entity)-[:registered_address]->(a:Address)-[:ADDRESS_IN{*}]->(j:Jurisdiction)"
+                                                                   ^
+
+- Neo.ClientNotification.Statement.UnknownLabelWarning: One of the labels in your query is not available in the database, make sure you didn't misspell it or that the label is available when you run this statement in your application (the missing label name is: Jurisdiction)
+
+- Neo.ClientNotification.Statement.UnknownRelationshipTypeWarning: One of the relationship types in your query is not available in the database, make sure you didn't misspell it or that the label is available when you run this statement in your application (the missing relationship type is: ADDRESS_IN)
+
+- InvalidPropertyAccessByLabelWarning: The label Jurisdiction does not have the following properties:  name.
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (t:Entity {name: "TIANSHENG INDUSTRY AND TRADING CO., LTD."}), 
+       (e:Entity)-[:registered_address]->(a:Address) 
+WITH t, a
+MATCH (e2:Entity)-[:registered_address]->(a:Address)-[:registered_address]->(j:Entity)-[:same_jurisdiction_as {}]->(e2_jurisdiction:Entity)
+WHERE e2_jurisdiction.name = t.jurisdiction
+RETURN DISTINCT e2 LIMIT 5:
+Received notification from DBMS server: {severity: WARNING} {code: Neo.ClientNotification.Statement.UnknownRelationshipTypeWarning} {category: UNRECOGNIZED} {title: The provided relationship type is not in the database.} {description: One of the relationship types in your query is not available in the database, make sure you didn't misspell it or that the label is available when you run this statement in your application (the missing relationship type is: same_jurisdiction_as)} {position: line: 4, column: 90, offset: 231} for query: 'EXPLAIN MATCH (t:Entity {name: "TIANSHENG INDUSTRY AND TRADING CO., LTD."}), \n       (e:Entity)-[:registered_address]->(a:Address) \nWITH t, a\nMATCH (e2:Entity)-[:registered_address]->(a:Address)-[:registered_address]->(j:Entity)-[:same_jurisdiction_as {}]->(e2_jurisdiction:Entity)\nWHERE e2_jurisdiction.name = t.jurisdiction\nRETURN DISTINCT e2 LIMIT 5'
+Received notification from DBMS server: {severity: WARNING} {code: Neo.ClientNotification.Statement.UnknownRelationshipTypeWarning} {category: UNRECOGNIZED} {title: The provided relationship type is not in the database.} {description: One of the relationship types in your query is not available in the database, make sure you didn't misspell it or that the label is available when you run this statement in your application (the missing relationship type is: same_jurisdiction_as)} {position: line: 3, column: 36, offset: 68} for query: '\n                RETURN EXISTS {\n                    MATCH p = ()-[:same_jurisdiction_as]-() \n                } AS path_exists\n            '
+Received notification from DBMS server: {severity: WARNING} {code: Neo.ClientNotification.Statement.UnknownRelationshipTypeWarning} {category: UNRECOGNIZED} {title: The provided relationship type is not in the database.} {description: One of the relationship types in your query is not available in the database, make sure you didn't misspell it or that the label is available when you run this statement in your application (the missing relationship type is: same_jurisdiction_as)} {position: line: 3, column: 43, offset: 75} for query: '\n                RETURN EXISTS {\n                    MATCH p = (:Entity)-[:same_jurisdiction_as]->(:Entity) \n                } AS path_exists\n            '
+CyVer Errors from generated query:
+- WrongDirectionPathWarning: The specified path (:Address)-[:registered_address]->(:Entity) has the opposite direction in the knowledge graph schema. The path (a:Address)-[:registered_address]->(j:Entity) in the Cypher statement should be changed to  (a:Address)<-[:registered_address]-(j:Entity).
+
+- Neo.ClientNotification.Statement.UnknownRelationshipTypeWarning: One of the relationship types in your query is not available in the database, make sure you didn't misspell it or that the label is available when you run this statement in your application (the missing relationship type is: same_jurisdiction_as)
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (t:Entity {name: "TIANSHENG INDUSTRY AND TRADING CO., LTD."}), 
+       (e:Entity)-[:registered_address]->(a:Address) 
+WITH t, a
+MATCH (e2:Entity)-[:registered_address]->(a:Address)<-[:registered_address]-(j:Entity)
+WHERE j.jurisdiction = t.jurisdiction
+RETURN DISTINCT e2 LIMIT 5:
+Cypher Executor: START
+Output Generator: START
+ 98%|█████████▊| 2080/2128 [02:07<00:10,  4.52it/s]2080 Display the names of businesses with at least two reviews.
+Schema filtering Agent: START
+Cypher Generator: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (b:Business)-[:REVIEWS]-(r:Review)-[:WROTE]-(u:User) WITH b, COUNT(r) AS reviewCount WHERE reviewCount >= 2 RETURN b.name:
+Cypher Executor: START
+Output Generator: START
+ 98%|█████████▊| 2081/2128 [02:17<00:12,  3.90it/s]2081 List the top 5 customers based on the number of orders placed.
+Schema filtering Agent: START
+Cypher Generator: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (c:Customer)-[:PURCHASED]->(o:Order), (o)-[r:ORDERS]->() WITH c, COUNT(r) as totalOrders ORDER BY totalOrders DESC RETURN c.customerID, c.companyName, totalOrders LIMIT 5:
+Cypher Executor: START
+Output Generator: START
+ 98%|█████████▊| 2082/2128 [02:29<00:14,  3.21it/s]2082 Who are the top 5 characters with the lowest centrality?
+Schema filtering Agent: START
+Cypher Generator: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (c1:Character)-[]->(c2) 
+WITH c1 ORDER BY c1.centrality ASC 
+LIMIT 5
+RETURN c1.name, c1.centrality:
+Cypher Executor: START
+Output Generator: START
+ 98%|█████████▊| 2083/2128 [02:40<00:17,  2.58it/s]2083 List the movies that have a plot mentioning 'kingdom'.
+Schema filtering Agent: START
+Cypher Generator: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (m:Movie)-[:ACTED_IN|DIRECTED]->() 
+MATCH (m)<-[:ACTED_IN|DIRECTED]-(p)
+MATCH (m)<-[:ACTED_IN|DIRECTED]-(d:Director {name="< Director Name >"}) 
+MATCH (d)<-[:ACTED_IN|DIRECTED]-(p)  
+MATCH (m)<-[:DIRECTED|ACTED_IN]-(p2)
+WHERE m.plot CONTAINS 'kingdom' 
+RETURN m.title:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Invalid input '=': expected ':' (line 3, column 50 (offset: 135))
+"MATCH (m)<-[:ACTED_IN|DIRECTED]-(d:Director {name="< Director Name >"})"
+                                                  ^
+
+- WrongDirectionPathWarning: The specified path (:Movie)-[:ACTED_IN|DIRECTED]->() has the opposite direction in the knowledge graph schema. The path (m:Movie)-[:ACTED_IN|DIRECTED]->() in the Cypher statement should be changed to  (m:Movie)<-[:ACTED_IN|DIRECTED]-().
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (m:Movie)<-[:ACTED_IN|DIRECTED]-()
+WHERE m.plot CONTAINS 'kingdom'
+RETURN m.title:
+Cypher Executor: START
+Output Generator: START
+ 98%|█████████▊| 2084/2128 [03:04<00:27,  1.61it/s]2084 Which 3 production companies have produced films with a runtime longer than 180 minutes?
+Schema filtering Agent: START
+Cypher Generator: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (p:ProductionCompany)-[:PRODUCED_BY]->(m:Movie)<-.STOWIDERPATH-(r:Relationship) WHERE r.runtime > 180 RETURN p.name AS ProductionCompany ORDER BY COUNT(*) DESC LIMIT 3:
+Received notification from DBMS server: {severity: WARNING} {code: Neo.ClientNotification.Statement.UnknownLabelWarning} {category: UNRECOGNIZED} {title: The provided label is not in the database.} {description: One of the labels in your query is not available in the database, make sure you didn't misspell it or that the label is available when you run this statement in your application (the missing label name is: Relationship)} {position: line: 3, column: 33, offset: 65} for query: '\n                RETURN EXISTS {\n                    MATCH p = (:Relationship) \n                } AS path_exists\n            '
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Invalid input '.': expected '-' (line 1, column 64 (offset: 63))
+
+
+- WrongDirectionPathWarning: The specified path (:ProductionCompany)-[:PRODUCED_BY]->(:Movie) has the opposite direction in the knowledge graph schema. The path (p:ProductionCompany)-[:PRODUCED_BY]->(m:Movie) in the Cypher statement should be changed to  (p:ProductionCompany)<-[:PRODUCED_BY]-(m:Movie).
+
+- Neo.ClientNotification.Statement.UnknownLabelWarning: One of the labels in your query is not available in the database, make sure you didn't misspell it or that the label is available when you run this statement in your application (the missing label name is: Relationship)
+
+- InvalidPropertyAccessByLabelWarning: The label Relationship does not have the following properties:  runtime.
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (p:ProductionCompany)<-[:PRODUCED_BY]-(m:Movie) WHERE m.runtime > 180 RETURN p.name AS ProductionCompany ORDER BY COUNT(*) DESC LIMIT 3:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Cannot use aggregation in ORDER BY if there are no aggregate expressions in the preceding RETURN (line 1, column 85 (offset: 84))
+
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (p:ProductionCompany)<-[:PRODUCED_BY]-(m:Movie) WHERE m.runtime > 180 WITH p, COUNT(m) as total_movies ORDER BY total_movies DESC RETURN p.name AS ProductionCompany LIMIT 3:
+Cypher Executor: START
+Output Generator: START
+ 98%|█████████▊| 2085/2128 [03:35<00:44,  1.03s/it]2085 Identify the products that are part of orders that were required to be shipped before '1997-01-01'.
+Schema filtering Agent: START
+Cypher Generator: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (p:Product)-[:ORDERS]->(o:Order)-[:PURCHASED]->(c:Customer) WHERE o.requiredDate < '1997-01-01' RETURN p:
+CyVer Errors from generated query:
+- WrongDirectionPathWarning: The specified path (:Product)-[:ORDERS]->(:Order) has the opposite direction in the knowledge graph schema. The path (p:Product)-[:ORDERS]->(o:Order) in the Cypher statement should be changed to  (p:Product)<-[:ORDERS]-(o:Order).
+
+- WrongDirectionPathWarning: The specified path (:Order)-[:PURCHASED]->(:Customer) has the opposite direction in the knowledge graph schema. The path (o:Order)-[:PURCHASED]->(c:Customer) in the Cypher statement should be changed to  (o:Order)<-[:PURCHASED]-(c:Customer).
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (o:Order)-[:ORDERS]->(p:Product) WHERE o.requiredDate < '1997-01-01' RETURN p:
+Cypher Executor: START
+Output Generator: START
+ 98%|█████████▊| 2086/2128 [03:52<00:56,  1.34s/it]2086 Which entities are concerned in filings with an amount greater than 750000?
+Schema filtering Agent: START
+Cypher Generator: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (f:Filing)-[:CONCERNS]->(e:Entity) WHERE f.amount > 750000 RETURN e:
+Cypher Executor: START
+Output Generator: START
+ 98%|█████████▊| 2087/2128 [04:04<01:06,  1.63s/it]2087 Which streams are part of a team created before 2015?
+Schema filtering Agent: START
+Cypher Generator: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (s:Stream)-[r:HAS_TEAM]->(t:Team) WHERE t.createdAt < "2015-01-01" RETURN s:
+Cypher Executor: START
+Output Generator: START
+ 98%|█████████▊| 2088/2128 [04:18<01:24,  2.11s/it]2088 What are the names of all DataCenters located in 'Iceland, Rekjavik'?
+Schema filtering Agent: START
+Cypher Generator: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (dc:DataCenter {location: "Iceland, Reykjavik"}) RETURN dc.name:
+Cypher Executor: START
+Output Generator: START
+ 98%|█████████▊| 2089/2128 [04:27<01:35,  2.44s/it]2089 How many machines are there in rack 10 of DataCenter DC1?
+Schema filtering Agent: START
+Cypher Generator: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (d:DataCenter {name: 'DC1'})-[:CONTAINS]->(r:Rack {zone: 10, rack: 10, name: 'Rack 10'})-[:HOLDS]->(m:Machine) RETURN count(m):
+ 98%|█████████▊| 2089/2128 [04:40<01:35,  2.44s/it]Cypher Executor: START
+Output Generator: START
+ 98%|█████████▊| 2090/2128 [04:45<02:11,  3.47s/it]2090 What are the names of the first 3 users who are both moderators and VIPs for any stream?
+Schema filtering Agent: START
+Cypher Generator: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (u:User)-[:VIP]->(:Stream)<-[:MODERATOR]-(s1:Stream), (u)-[:VIP]->(s2:Stream)<-[:MODERATOR]-(s3:Stream) WITH DISTINCT u ORDER BY u.id ASC LIMIT 3 RETURN u.name:
+Cypher Executor: START
+Output Generator: START
+ 98%|█████████▊| 2091/2128 [05:07<03:09,  5.11s/it]2091 List the characters who interact in book 1 with a weight exactly 291.
+Schema filtering Agent: START
+Cypher Generator: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (n:Character)-[r:INTERACTS1 {weight: 291, book: 1}]->(m:Character)return n.name, m.name:
+Cypher Executor: START
+Output Generator: START
+ 98%|█████████▊| 2092/2128 [05:19<03:30,  5.84s/it]2092 Find movies where the sum of the revenue and budget is more than 1 billion dollars.
+Schema filtering Agent: START
+Cypher Generator: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (m:Movie) WHERE m.revenue + m.budget > 1000000000 RETURN m:
+Cypher Executor: START
+Output Generator: START
+ 98%|█████████▊| 2093/2128 [05:30<03:49,  6.55s/it]2093 What is the minimum `weight` of the `INTERACTS3` relationship between characters with a `book1BetweennessCentrality` greater than 400?
+Schema filtering Agent: START
+Cypher Generator: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (a:Character {book1BetweennessCentrality: {gt: 400}})-[r:INTERACTS3 {weight: x}]->(b) RETURN min(x):
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Variable `x` not defined (line 1, column 92 (offset: 91))
+
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (a:Character {book1BetweennessCentrality: {gt: 400}})-[r:INTERACTS3 {weight: r.weight}]->(b) RETURN min(r.weight):
+Cypher Executor: START
+Output Generator: START
+ 98%|█████████▊| 2094/2128 [05:44<04:21,  7.70s/it]2094 Which characters have the lowest 'book1BetweennessCentrality' and are part of community 579? Provide first 3 results.
+Schema filtering Agent: START
+Cypher Generator: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (c:Character {community: 579}) WHERE c.book1BetweennessCentrality = (SELECT MIN(book1BetweennessCentrality) FROM (MATCH (c:Character {community: 579}) RETURN c.book1BetweennessCentrality) AS subquery) RETURN c.name ORDER BY c.book1BetweennessCentrality LIMIT 3:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Invalid input 'MIN': expected an expression (line 1, column 91 (offset: 90))
+
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (c:Character {community: 579}) RETURN c.name ORDER BY c.book1BetweennessCentrality LIMIT 3:
+Cypher Executor: START
+Output Generator: START
+ 98%|█████████▊| 2095/2128 [06:03<05:24,  9.84s/it]2095 What is the most recent tweet posted by "Neo4j"?
+Schema filtering Agent: START
+Cypher Generator: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (me:User {screen_name: "Neo4j"})-[:POSTS]->(tweet:Tweet) RETURN tweet ORDER BY tweet.created_at DESC LIMIT 1:
+Cypher Executor: START
+Output Generator: START
+ 98%|█████████▊| 2096/2128 [06:16<05:37, 10.53s/it]2096 List the productName of all products supplied by the supplier with supplierID equal to '1'.
+Schema filtering Agent: START
+Cypher Generator: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (s:Supplier {supplierID: '1'})-[:SUPPLIES]->(p:Product) RETURN p.productName:
+Cypher Executor: START
+Output Generator: START
+ 99%|█████████▊| 2097/2128 [06:26<05:21, 10.37s/it]2097 What is the total `amount` of filings where the `originator_bank` is located in a country with a `tld` that is present in the top 5 most frequent `tld` values?
+Schema filtering Agent: START
+Cypher Generator: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (c:Country)<-[:COUNTRY]-(e:Entity) WHERE e.location = c.location WITH collect(c.tld) as tlds ORDER BY count(*) DESC LIMIT 5 UNWIND tlds as t1 MATCH (e:Entity)-[:COUNTRY]->(c:Country) WHERE c.tld = t1 MATCH (f:Filing)-[:BENEFITS|CONCERNS|ORIGINATOR]-(e1) WHERE e1 = e WITH f, e, c WHERE c.tld = t1 MATCH (f)<-[:FILED]-(e2= e) RETURN sum(f.amount) as total_amount:
+ 99%|█████████▊| 2097/2128 [06:40<05:21, 10.37s/it]CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Invalid input '=': expected a parameter, ')', ':', 'IS', 'WHERE' or '{' (line 1, column 335 (offset: 334))
+
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (c:Country)<-[:COUNTRY]-(e:Entity) WHERE e.location = c.location WITH collect(c.tld) as tlds ORDER BY count(*) DESC LIMIT 5 UNWIND tlds as t1 MATCH (e:Entity)-[:COUNTRY]->(c:Country) WHERE c.tld = t1 MATCH (f:Filing)-[:BENEFITS|CONCERNS|ORIGINATOR]-(e1) WHERE e1.id = e.id WITH f, e, c WHERE c.tld = t1 MATCH (f)<-[:FILED]-(e2) RETURN sum(f.amount) as total_amount:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Illegal aggregation expression(s) in order by: count(*). If an aggregation expression is used in order by, it also needs to be a projection item on it's own. For example, in 'RETURN n.a, 1 + count(*) ORDER BY count(*) + 1' the aggregation expression 'count(*) + 1' is not a projection item on its own, but it could be rewritten to 'RETURN n.a, 1 + count(*) AS cnt ORDER BY 1 + count(*)'. (line 1, column 117 (offset: 116))
+
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (c:Country)<-[:COUNTRY]-(e:Entity) WHERE e.location = c.location WITH collect(c.tld) as tlds ORDER BY SIZE(tlds) DESC LIMIT 5 UNWIND tlds as t1 MATCH (e:Entity)-[:COUNTRY]->(c:Country) WHERE c.tld = t1 MATCH (f:Filing)-[:BENEFITS|CONCERNS|ORIGINATOR]-(e1) WHERE e1.id = e.id WITH f, e, c WHERE c.tld = t1 MATCH (f)<-[:FILED]-(e2) RETURN sum(f.amount) as total_amount:
+Transaction failed and will be retried in 1.0759534766643164s (The allocation of an extra 2.0 MiB would use more than the limit 3.0 GiB. Currently using 3.0 GiB. db.memory.transaction.max threshold reached)
+Transaction failed and will be retried in 2.214745816424576s (The allocation of an extra 2.0 MiB would use more than the limit 3.0 GiB. Currently using 3.0 GiB. db.memory.transaction.max threshold reached)
+Transaction failed and will be retried in 4.222164215935908s (The allocation of an extra 2.0 MiB would use more than the limit 3.0 GiB. Currently using 3.0 GiB. db.memory.transaction.max threshold reached)
+Cypher Executor: START
+Output Generator: START
+ 99%|█████████▊| 2098/2128 [08:19<18:03, 36.11s/it]2098 What are the top 5 countries where the most movies originate from based on the 'countries' property of movies?
+Schema filtering Agent: START
+Cypher Generator: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (m:Movie) WITH m, COLLECT(m.countries) as el UNWIND el AS e GROUP BY e ORDER BY SIZE(COLLECT(m)) DESC LIMIT 5:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Invalid input 'GROUP': expected 'FOREACH', 'ORDER BY', 'CALL', 'CREATE', 'LOAD CSV', 'DELETE', 'DETACH', 'FINISH', 'INSERT', 'LIMIT', 'MATCH', 'MERGE', 'NODETACH', 'OFFSET', 'OPTIONAL', 'REMOVE', 'RETURN', 'SET', 'SKIP', 'UNION', 'UNWIND', 'USE', 'WITH' or <EOF> (line 1, column 75 (offset: 74))
+
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (m:Movie) WITH m, COLLECT(m.countries) as el UNWIND el AS e RETURN e, COUNT(m) AS frequency ORDER BY frequency DESC LIMIT 5:
+Cypher Executor: START
+Output Generator: START
+ 99%|█████████▊| 2099/2128 [08:34<14:46, 30.58s/it]2099 List the top 5 actors by number of different genres they've acted in.
+Schema filtering Agent: START
+Cypher Generator: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (a:Actor)-[:ACTED_IN]->(m:Movie)-[:IN_GENRE]->(g:Genre), (a2:Actor)-[:ACTED_IN]->(m2:Movie {title:m.title})-[:IN_GENRE]->(g2:Genre WHERE g2 <> g) WHERE a.tmdbId = a2.tmdbId AND a.name < a2.name WITH a, COUNT(DISTINCT g2) AS count GROUP BY a ORDER BY count DESC LIMIT 5:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Invalid input 'GROUP': expected 'FOREACH', ',', 'ORDER BY', 'CALL', 'CREATE', 'LOAD CSV', 'DELETE', 'DETACH', 'FINISH', 'INSERT', 'LIMIT', 'MATCH', 'MERGE', 'NODETACH', 'OFFSET', 'OPTIONAL', 'REMOVE', 'RETURN', 'SET', 'SKIP', 'UNION', 'UNWIND', 'USE', 'WHERE', 'WITH' or <EOF> (line 1, column 245 (offset: 244))
+
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (a:Actor)-[:ACTED_IN]->(m:Movie)-[:IN_GENRE]->(g:Genre), (a)-[:ACTED_IN]->(m2:Movie)-[:IN_GENRE]->(g2:Genre WHERE g2 <> g) WITH a, collect(g) AS genres, collect(g2) AS otherGenres WHERE a.tmdbId = head(otherGenres).tmdbId AND head(otherGenres) <> g WITH a, size(collect(distinct otherGenres)) AS count ORDER BY count DESC LIMIT 5 RETURN a.name AS name, count AS count:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: In a WITH/RETURN with DISTINCT or an aggregation, it is not possible to access variables declared before the WITH/RETURN: g (line 1, column 262 (offset: 261))
+
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (a:Actor)-[:ACTED_IN]->(m:Movie)-[:IN_GENRE]->(g:Genre), (a)-[:ACTED_IN]->(m2:Movie)-[:IN_GENRE]->(g2:Genre) WHERE g <> g2 WITH a, collect(distinct g2) AS genres ORDER BY size(genres) DESC LIMIT 5 RETURN a.name AS name, size(genres) AS count:
+Cypher Executor: START
+Output Generator: START
+ 99%|█████████▊| 2100/2128 [09:14<15:24, 33.03s/it]2100 What are the top 5 movies with the most distinct countries of origin?
+Schema filtering Agent: START
+Cypher Generator: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (m:Movie)-[:IN_GENRE]->(g:Genre) 
+OPTIONAL MATCH (m)<-[reันท: DIRECTED|ACTED_IN]-(d:Director) WITH m, d, head(collections(COLLECT(distinct m.countries))) AS countries 
+WHERE d <> m 
+RETURN m.title, COUNT(DISTINCT countries) AS distinct_countries ORDER BY distinct_countries DESC LIMIT 5:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Unknown function 'collections' (line 2, column 77 (offset: 124))
+"OPTIONAL MATCH (m)<-[reันท: DIRECTED|ACTED_IN]-(d:Director) WITH m, d, head(collections(COLLECT(distinct m.countries))) AS countries"
+                                                                             ^
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (m:Movie)-[:IN_genre]->(g:Genre) 
+OPTIONAL MATCH (m)<-[re]*(d:Director) 
+WITH m, collect(distinct m.countries) AS countries 
+WHERE size(countries) > 1 
+RETURN m.title, size(countries) AS distinct_countries ORDER BY distinct_countries DESC LIMIT 5:
+Received notification from DBMS server: {severity: WARNING} {code: Neo.ClientNotification.Statement.UnknownRelationshipTypeWarning} {category: UNRECOGNIZED} {title: The provided relationship type is not in the database.} {description: One of the relationship types in your query is not available in the database, make sure you didn't misspell it or that the label is available when you run this statement in your application (the missing relationship type is: IN_genre)} {position: line: 3, column: 36, offset: 68} for query: '\n                RETURN EXISTS {\n                    MATCH p = ()-[:IN_genre]-() \n                } AS path_exists\n            '
+Received notification from DBMS server: {severity: WARNING} {code: Neo.ClientNotification.Statement.UnknownRelationshipTypeWarning} {category: UNRECOGNIZED} {title: The provided relationship type is not in the database.} {description: One of the relationship types in your query is not available in the database, make sure you didn't misspell it or that the label is available when you run this statement in your application (the missing relationship type is: IN_genre)} {position: line: 3, column: 42, offset: 74} for query: '\n                RETURN EXISTS {\n                    MATCH p = (:Movie)-[:IN_genre]->(:Genre) \n                } AS path_exists\n            '
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Invalid input '*': expected '-' (line 2, column 25 (offset: 72))
+"OPTIONAL MATCH (m)<-[re]*(d:Director)"
+                         ^
+
+- Neo.ClientNotification.Statement.UnknownRelationshipTypeWarning: One of the relationship types in your query is not available in the database, make sure you didn't misspell it or that the label is available when you run this statement in your application (the missing relationship type is: IN_genre)
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (m:Movie {countries: []})-[:IN_GENRE]->(g:Genre) 
+OPTIONAL MATCH (m)<-[:ACTED_IN|DIRECTED]-(d:Director) 
+WITH m, collect(distinct m.countries) AS countries 
+WHERE size(countries) > 1 
+RETURN m.title, size(countries) AS distinct_countries ORDER BY distinct_countries DESC LIMIT 5:
+Cypher Executor: START
+Output Generator: START
+ 99%|█████████▊| 2101/2128 [09:48<14:59, 33.33s/it]2101 Which products are supplied by a supplier in 'London'?
+Schema filtering Agent: START
+Cypher Generator: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (s:Supplier {region: 'London'})-[:SUPPLIES]->(p:Product) RETURN p:
+Cypher Executor: START
+Output Generator: START
+ 99%|█████████▉| 2102/2128 [09:56<11:22, 26.25s/it]2102 Which streams have the most followers but fewer than 1 million total views?
+Schema filtering Agent: START
+Cypher Generator: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (stream:Stream) WHERE stream.total_view_count < 1000000 AND stream.followers = (SELECT MAX(followers) FROM (MATCH (s:Stream) RETURN s.followers) AS scraper):
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Invalid input 'MAX': expected an expression (line 1, column 102 (offset: 101))
+
+
+ 99%|█████████▉| 2102/2128 [10:10<11:22, 26.25s/it]Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (stream:Stream) WHERE stream.total_view_count < 1000000 AND stream.followers = (SELECT MAX(followers) FROM (MATCH (s:Stream) WITH s, COLLECT(s.followers) AS ids RETURN MAX(ids)) AS scraper):
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Invalid input 'MAX': expected an expression (line 1, column 102 (offset: 101))
+
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (stream:Stream) WHERE stream.total_view_count < 1000000 AND stream.followers = (SELECT maxValue FROM (MATCH (s:Stream) RETURN max(s.followers) AS maxValue) AS scraper):
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Invalid input 'maxValue': expected an expression (line 1, column 102 (offset: 101))
+
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (stream:Stream) WHERE stream.total_view_count < 1000000 AND stream.followers= (CALL dbamax((MATCH (s:Stream) RETURN s.followers)) AS fmax):
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Invalid input 'dbamax': expected an expression (line 1, column 99 (offset: 98))
+
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (stream:Stream) WHERE stream.total_view_count < 1000000 AND stream.followers > (MATCH (s:Stream) WITH collect(s.followers) as fs RETURN max(fs)):
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Invalid input 'WITH': expected an expression or ')' (line 1, column 112 (offset: 111))
+
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (stream:Stream) WHERE stream.total_view_count < 1000000 AND stream.followers > (MATCH (s:Stream) RETURN max(s.followers)):
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Invalid input 'RETURN': expected an expression or ')' (line 1, column 112 (offset: 111))
+
+
+Schema retriever Agent: START
+Cypher Generator: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (s:Stream)-[]→() WHERE s.total_view_count < 1000000 AND s.followers > s.followers(...) ORDER BY s.followers DESC RETURN s:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Invalid input '→': expected '-' (line 1, column 28 (offset: 27))
+
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (s:Stream)-[]->() WHERE s.total_view_count < 1000000 AND s.followers > (s.followers - 1) ORDER BY s.followers DESC RETURN s:
+Cypher Executor: START
+Output Generator: START
+ 99%|█████████▉| 2103/2128 [11:12<16:56, 40.68s/it]2103 What is the average number of followers for users who follow 'Neo4j'?
+Schema filtering Agent: START
+Cypher Generator: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (n:User)-[:FOLLOWS]->(m:User {screen_name: 'Neo4j'})-[:FOLLOWS]->(p:User) RETURN avg(p.followers):
+Cypher Executor: START
+Output Generator: START
+ 99%|█████████▉| 2104/2128 [11:28<13:20, 33.37s/it]2104 Find the business with the most reviews.
+Schema filtering Agent: START
+Cypher Generator: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (b:Business)-[:REVIEWS]->(r:Review) RETURN b ORDER BY SIZE((b)-[:REVIEWS]->()) DESC LIMIT 1:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: A pattern expression should only be used in order to test the existence of a pattern. It should therefore only be used in contexts that evaluate to a boolean, e.g. inside the function exists() or in a WHERE-clause. No other uses are allowed, instead they should be replaced by a pattern comprehension. (line 1, column 74 (offset: 73))
+
+
+- WrongDirectionPathWarning: The specified path (:Business)-[:REVIEWS]->() has the opposite direction in the knowledge graph schema. The path (b)-[:REVIEWS]->() in the Cypher statement should be changed to  (b)<-[:REVIEWS]-().
+
+- WrongDirectionPathWarning: The specified path (:Business)-[:REVIEWS]->(:Review) has the opposite direction in the knowledge graph schema. The path (b:Business)-[:REVIEWS]->(r:Review) in the Cypher statement should be changed to  (b:Business)<-[:REVIEWS]-(r:Review).
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (b:Business)<-[:REVIEWS]-(r:Review) RETURN b ORDER BY SIZE((b)<-[:REVIEWS]-()) DESC LIMIT 1:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: A pattern expression should only be used in order to test the existence of a pattern. It should therefore only be used in contexts that evaluate to a boolean, e.g. inside the function exists() or in a WHERE-clause. No other uses are allowed, instead they should be replaced by a pattern comprehension. (line 1, column 74 (offset: 73))
+
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (b:Business) WITH b, SIZE((b)-[:REVIEWS]->()) AS reviewCount ORDER BY reviewCount DESC LIMIT 1 RETURN b:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: A pattern expression should only be used in order to test the existence of a pattern. It should therefore only be used in contexts that evaluate to a boolean, e.g. inside the function exists() or in a WHERE-clause. No other uses are allowed, instead they should be replaced by a pattern comprehension. (line 1, column 41 (offset: 40))
+
+
+- WrongDirectionPathWarning: The specified path (:Business)-[:REVIEWS]->() has the opposite direction in the knowledge graph schema. The path (b)-[:REVIEWS]->() in the Cypher statement should be changed to  (b)<-[:REVIEWS]-().
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (b:Business) WITH b, size((b)<-[:REVIEWS]-()) AS reviewCount ORDER BY reviewCount DESC LIMIT 1 RETURN b:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: A pattern expression should only be used in order to test the existence of a pattern. It can no longer be used inside the function size(), an alternative is to replace size() with COUNT {}. (line 1, column 41 (offset: 40))
+
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (b:Business) WITH b, count((b)<-[:REVIEWS]-()) AS reviewCount ORDER BY reviewCount DESC LIMIT 1 RETURN b:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: A pattern expression should only be used in order to test the existence of a pattern. It should therefore only be used in contexts that evaluate to a boolean, e.g. inside the function exists() or in a WHERE-clause. No other uses are allowed, instead they should be replaced by a pattern comprehension. (line 1, column 42 (offset: 41))
+
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (b:Business) WITH b, size((b)-[:REVIEWS]->()) AS reviewCount ORDER BY reviewCount DESC LIMIT 1 RETURN b:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: A pattern expression should only be used in order to test the existence of a pattern. It can no longer be used inside the function size(), an alternative is to replace size() with COUNT {}. (line 1, column 41 (offset: 40))
+
+
+- WrongDirectionPathWarning: The specified path (:Business)-[:REVIEWS]->() has the opposite direction in the knowledge graph schema. The path (b)-[:REVIEWS]->() in the Cypher statement should be changed to  (b)<-[:REVIEWS]-().
+
+Schema retriever Agent: START
+Cypher Generator: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (b:Business)-[r:REVIEWS]-(u:User)-[w:WROTE]->(review:Review) RETURN b ORDER BY size((b)-[r:REVIEWS]) DESC LIMIT 1:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Type mismatch: expected Float, Integer, Duration, Date, Time, LocalTime, LocalDateTime or DateTime but was Node (line 1, column 100 (offset: 99))
+
+
+- UnknownPathWarning: The specified path (:Business)-[:REVIEWS]-(:User) does not exist in the knowledge graph schema. The path (b:Business)-[r:REVIEWS]-(u:User) in the Cypher statement is wrong.
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (b:Business)-[r:REVIEWS]->(review:Review) RETURN b ORDER BY count(r) DESC LIMIT 1:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Cannot use aggregation in ORDER BY if there are no aggregate expressions in the preceding RETURN (line 1, column 57 (offset: 56))
+
+
+- WrongDirectionPathWarning: The specified path (:Business)-[:REVIEWS]->(:Review) has the opposite direction in the knowledge graph schema. The path (b:Business)-[r:REVIEWS]->(review:Review) in the Cypher statement should be changed to  (b:Business)<-[r:REVIEWS]-(review:Review).
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (b:Business)<-[r:REVIEWS]-(review:Review) RETURN COUNT(b) ORDER BY COUNT(r) DESC LIMIT 1:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: In a WITH/RETURN with DISTINCT or an aggregation, it is not possible to access variables declared before the WITH/RETURN: r (line 1, column 88 (offset: 87))
+
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (b:Business)-[r:REVIEWS]-(review:Review) RETURN b ORDER BY size((b)-[r:REVIEWS]-(review:Review)) DESC LIMIT 1:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: A pattern expression should only be used in order to test the existence of a pattern. It can no longer be used inside the function size(), an alternative is to replace size() with COUNT {}. (line 1, column 79 (offset: 78))
+
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (b:Business)-[r:REVIEWS]-(review:Review) 
+RETURN b ORDER BY COUNT(DISTINCT review) DESC LIMIT 1:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Cannot use aggregation in ORDER BY if there are no aggregate expressions in the preceding RETURN (line 2, column 1 (offset: 56))
+"RETURN b ORDER BY COUNT(DISTINCT review) DESC LIMIT 1"
+ ^
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (b:Business)-[r:REVIEWS]-(review:Review) 
+RETURN b ORDER BY COUNT(DISTINCT review) DESC LIMIT 1:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Cannot use aggregation in ORDER BY if there are no aggregate expressions in the preceding RETURN (line 2, column 1 (offset: 56))
+"RETURN b ORDER BY COUNT(DISTINCT review) DESC LIMIT 1"
+ ^
+
+Unvailable Output: START
+ 99%|█████████▉| 2105/2128 [12:22<15:03, 39.30s/it]2105 List the 3 most recent answers provided to questions tagged with 'neo4j'.
+Schema filtering Agent: START
+Cypher Generator: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH p=(:Tag {name: 'neo4j'})-[:TAGGED]->(q:Question)-[:ANSWERED]->(a:Answer)-[:PROVIDED]->(u:User) RETURN a ORDER BY a.creation_date DESC LIMIT 3:
+CyVer Errors from generated query:
+- WrongDirectionPathWarning: The specified path (:Tag)-[:TAGGED]->(:Question) has the opposite direction in the knowledge graph schema. The path (:Tag {name: 'neo4j'})-[:TAGGED]->(q:Question) in the Cypher statement should be changed to  (:Tag {name: 'neo4j'})<-[:TAGGED]-(q:Question).
+
+- WrongDirectionPathWarning: The specified path (:Question)-[:ANSWERED]->(:Answer) has the opposite direction in the knowledge graph schema. The path (q:Question)-[:ANSWERED]->(a:Answer) in the Cypher statement should be changed to  (q:Question)<-[:ANSWERED]-(a:Answer).
+
+- WrongDirectionPathWarning: The specified path (:Answer)-[:PROVIDED]->(:User) has the opposite direction in the knowledge graph schema. The path (a:Answer)-[:PROVIDED]->(u:User) in the Cypher statement should be changed to  (a:Answer)<-[:PROVIDED]-(u:User).
+
+- InvalidPropertyAccessByLabelWarning: The label Answer does not have the following properties:  creation_date.
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH p=(:Tag {name: 'neo4j'})<-[:TAGGED]-(q:Question)-<:ANSWERED]-(a:Answer)<-[:PROVIDED]-(u:User) RETURN a ORDER BY a.score DESC LIMIT 3:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Invalid input '<': expected '-' (line 1, column 64 (offset: 63))
+
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH p=(:Tag {name: 'neo4j'})<-[:TAGGED]-(q:Question)-[:ANSWERED]->(a:Answer)<-[:PROVIDED]-(u:User) RETURN a ORDER BY a.score DESC LIMIT 3:
+CyVer Errors from generated query:
+- WrongDirectionPathWarning: The specified path (:Question)-[:ANSWERED]->(:Answer) has the opposite direction in the knowledge graph schema. The path (q:Question)-[:ANSWERED]->(a:Answer) in the Cypher statement should be changed to  (q:Question)<-[:ANSWERED]-(a:Answer).
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH p=(:Tag {name: 'neo4j'})<-[:TAGGED]-(q:Question)<-[:ANSWERED]-(a:Answer)<-[:PROVIDED]-(u:User) RETURN a ORDER BY a.score DESC LIMIT 3:
+Cypher Executor: START
+Output Generator: START
+ 99%|█████████▉| 2106/2128 [13:06<14:58, 40.83s/it]2106 What is the average view count of questions answered by the user with display name "Nikhil Kulkarni"?
+Schema filtering Agent: START
+Cypher Generator: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (u:User {display_name: "Nikhil Kulkarni"})-[:PROVIDED]->(a:Answer)-[:ANSWERED]->(q:Question) RETURN avg(q.view_count):
+Cypher Executor: START
+Output Generator: START
+ 99%|█████████▉| 2107/2128 [13:19<11:22, 32.50s/it]2107 What are the top 3 most viewed questions without any answers?
+Schema filtering Agent: START
+Cypher Generator: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (q:Question)-[]->() WHERE q.answer_count = 0 AND q.view_count > 0 RETURN q ORDER BY q.view_count DESC LIMIT 3:
+Cypher Executor: START
+Output Generator: START
+ 99%|█████████▉| 2108/2128 [13:30<08:40, 26.02s/it]2108 What is the score of the comment with the uuid 122427099?
+Schema filtering Agent: START
+Cypher Generator: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (comment:Comment {uuid: 122427099}) RETURN comment.score:
+Cypher Executor: START
+Output Generator: START
+ 99%|█████████▉| 2109/2128 [13:37<06:30, 20.55s/it]2109 List the top 5 answers with the highest score.
+Schema filtering Agent: START
+Cypher Generator: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (a:Answer)-[]->(q:Question) WITH a ORDER BY a.score DESC RETURN a LIMIT 5:
+Cypher Executor: START
+Output Generator: START
+2110 List the tags of questions that have been answered by users with a display name that starts with "A".
+Schema filtering Agent: START
+ 99%|█████████▉| 2109/2128 [13:50<06:30, 20.55s/it]Cypher Generator: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (u:User {display_name: startsWith("A")})-[:PROVIDED]->(a:Answer)-[:ANSWERED]->(q:Question)-[:TAGGED]->(t:Tag) RETURN t.name:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Unknown function 'startsWith' (line 1, column 38 (offset: 37))
+
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (u:User {display_name: startswith("A")})-[:PROVIDED]->(a:Answer)-[:ANSWERED]->(q:Question)-[:TAGGED]->(t:Tag) RETURN t.name:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Unknown function 'startswith' (line 1, column 38 (offset: 37))
+
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (u:User {display_name: STARTS WITH 'A'})-[:ASKED|PROVIDED]->(q:Question)-[:ANSWERED|TAGGED]->(t:Tag) RETURN t.name:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Invalid input 'WITH': expected an expression, ',' or '}' (line 1, column 45 (offset: 44))
+
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (u:User {display_name: STARTS WITH 'A'})-[:ASKED|PROVIDED]->(q:Question)<-[:ANSWERED]-(a:Answer)-[:TAGGED]->(t:Tag) RETURN t.name:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Invalid input 'WITH': expected an expression, ',' or '}' (line 1, column 45 (offset: 44))
+
+
+- UnknownPathWarning: The specified path (:Answer)-[:TAGGED]->(:Tag) does not exist in the knowledge graph schema. The path (a:Answer)-[:TAGGED]->(t:Tag) in the Cypher statement is wrong.
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (u:User {display_name: STARTS WITH 'A'})-[r:ASKED|PROVIDED]->(q:Question)<-[:ANSWERED]-(a:Answer)-[:TAGGED]->(t:Tag) RETURN t.name:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Invalid input 'WITH': expected an expression, ',' or '}' (line 1, column 45 (offset: 44))
+
+
+- UnknownPathWarning: The specified path (:Answer)-[:TAGGED]->(:Tag) does not exist in the knowledge graph schema. The path (a:Answer)-[:TAGGED]->(t:Tag) in the Cypher statement is wrong.
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (u:User {display_name: STARTS WITH 'A'})-[r:ASKED|PROVIDED]->(q:Question)<-[:ANSWERED]-(q)-[:TAGGED]->(t:Tag) RETURN t.name:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Invalid input 'WITH': expected an expression, ',' or '}' (line 1, column 45 (offset: 44))
+
+
+- UnknownPathWarning: The specified path (:Question)<-[:ANSWERED]-(:Question) does not exist in the knowledge graph schema. The path (q:Question)<-[:ANSWERED]-(q) in the Cypher statement is wrong.
+
+Schema retriever Agent: START
+Cypher Generator: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (q:Question)-[:ANSWERED]->(a:Answer {uuid: "OR-results-uuid"}), (u:User {display_name: "*A*"}), (u)-[:ASKED]->(q) MATCH (q)-[:TAGGED]->(t:Tag) RETURN q.title, t.name:
+CyVer Errors from generated query:
+- WrongDirectionPathWarning: The specified path (:Question)-[:ANSWERED]->(:Answer) has the opposite direction in the knowledge graph schema. The path (q:Question)-[:ANSWERED]->(a:Answer {uuid: "OR-results-uuid"}) in the Cypher statement should be changed to  (q:Question)<-[:ANSWERED]-(a:Answer {uuid: "OR.
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (q:Question)<-[:ANSWERED]-(a:Answer), (u:User {display_name: STARTS WITH "A"})-[:ASKED]->(q) MATCH (q)-[:TAGGED]->(t:Tag) RETURN q.title, t.name:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Invalid input 'WITH': expected an expression, ',' or '}' (line 1, column 83 (offset: 82))
+
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (q:Question)-[:ANSWERED]->(a:Answer), (u:User {display_name: STARTS WITH "A"})-[:ASKED]->(q) 
+MATCH (q)-[:TAGGED]->(t:Tag) 
+RETURN q.title, t.name:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Invalid input 'WITH': expected an expression, ',' or '}' (line 1, column 83 (offset: 82))
+
+
+- WrongDirectionPathWarning: The specified path (:Question)-[:ANSWERED]->(:Answer) has the opposite direction in the knowledge graph schema. The path (q:Question)-[:ANSWERED]->(a:Answer) in the Cypher statement should be changed to  (q:Question)<-[:ANSWERED]-(a:Answer).
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (q:Question)<-[:ANSWERED]-(a:Answer), (u:User {display_name STARTS WITH "A"})-[:ASKED]->(q) 
+MATCH (q)-[:TAGGED]->(t:Tag) 
+RETURN q.title, t.name:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Invalid input 'STARTS': expected ':' (line 1, column 75 (offset: 74))
+
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (q:Question)<-[:ANSWERED]-(a:Answer), (u:User {display_name: "A*" })-[:ASKED]->(q) 
+MATCH (q)-[:TAGGED]->(t:Tag) 
+RETURN q.title, t.name:
+Cypher Executor: START
+Output Generator: START
+ 99%|█████████▉| 2111/2128 [15:33<10:39, 37.64s/it]2111 List the users who have provided answers to questions they have also asked.
+Schema filtering Agent: START
+Cypher Generator: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (u:User)-[:PROVIDED]->(a:Answer)-[:ANSWERED]->(q:Question)-[:ASKED]->(u2:User) WHERE u.uuid=u2.uuid RETURN u.display_name AS User:
+CyVer Errors from generated query:
+- WrongDirectionPathWarning: The specified path (:Question)-[:ASKED]->(:User) has the opposite direction in the knowledge graph schema. The path (q:Question)-[:ASKED]->(u2:User) in the Cypher statement should be changed to  (q:Question)<-[:ASKED]-(u2:User).
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (u:User)-[:PROVIDED]->(a:Answer)-[:ANSWERED]->(q:Question)-[du2:ASKED]-(u2:User) WHERE u.uuid=u2.uuid RETURN u.display_name AS User:
+Cypher Executor: START
+Output Generator: START
+ 99%|█████████▉| 2112/2128 [15:55<09:01, 33.84s/it]2112 Display the top 3 most active users in terms of asking questions.
+Schema filtering Agent: START
+Cypher Generator: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (u:User)-[:ASKED]->(q:Question) RETURN u.display_name, COUNT(q) AS question_count ORDER BY question_count DESC LIMIT 3:
+Cypher Executor: START
+Output Generator: START
+ 99%|█████████▉| 2113/2128 [16:05<06:55, 27.68s/it]2113 What is the average score of comments made by users who also asked questions?
+Schema filtering Agent: START
+Cypher Generator: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (user:User)-[:ASKED]->(question:Question)-[:COMMENTED_ON]->(comment:Comment) 
+WITH comment.score AS commentScore 
+MATCH (comment:Comment)-[:COMMENTED]->(user:User) 
+WITH user, COLLECT(commentScore) AS commentScores 
+MATCH (u:User)-[:ASKED]->(q:Question) 
+WITH u, COLLECT(DISTINCT q.link) AS questionLinks 
+WHERE u.uuid IN [commentScores] 
+WITH AVG(commentScore) AS averageScore 
+RETURN averageScore:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: In a WITH/RETURN with DISTINCT or an aggregation, it is not possible to access variables declared before the WITH/RETURN: commentScores (line 7, column 18 (offset: 337))
+"WHERE u.uuid IN [commentScores]"
+                  ^
+
+- WrongDirectionPathWarning: The specified path (:Comment)-[:COMMENTED]->(:User) has the opposite direction in the knowledge graph schema. The path (comment:Comment)-[:COMMENTED]->(user:User) in the Cypher statement should be changed to  (comment:Comment)<-[:COMMENTED]-(user:User).
+
+- WrongDirectionPathWarning: The specified path (:Question)-[:COMMENTED_ON]->(:Comment) has the opposite direction in the knowledge graph schema. The path (question:Question)-[:COMMENTED_ON]->(comment:Comment) in the Cypher statement should be changed to  (question:Question)<-[:COMMENTED_ON]-(comment:Comment).
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (user:User)-[:ASKED]->(question:Question)<-[:COMMENTED_ON]-(comment:Comment) 
+WITH comment.score AS commentScore 
+MATCH (comment)<-[:COMMENTED]-(user:User) 
+WITH user 
+MATCH (u:User)-[:ASKED]->(q:Question) 
+WHERE u.uuid = user.uuid 
+WITH u, COLLECT(DISTINCT q.link) AS questionLinks 
+WITH u, COLLECT(commentScore) AS commentScores 
+RETURN AVG(commentScore) AS averageScore:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Variable `commentScore` not defined (line 8, column 17 (offset: 314))
+"WITH u, COLLECT(commentScore) AS commentScores"
+                 ^
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (user:User)-[:ASKED]->(question:Question)<-[:COMMENTED_ON]-(comment:Comment) 
+WITH comment.score AS commentScore 
+MATCH (comment)<-[:COMMENTED]-(user:User) 
+WITH user 
+MATCH (u:User)-[:ASKED]->(q:Question) 
+WHERE u.uuid = user.uuid 
+WITH u, collect(DISTINCT q.link) AS questionLinks 
+WITH u, collect(commentScore) AS commentScores 
+RETURN AVG(commentScores) AS averageScore:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Variable `commentScore` not defined (line 8, column 17 (offset: 314))
+"WITH u, collect(commentScore) AS commentScores"
+                 ^
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (user:User)-[:ASKED]->(question:Question)<-[:COMMENTED_ON]-(comment:Comment) 
+WITH comment.score AS commentScore 
+MATCH (comment)<-[:COMMENTED]-(user:User) 
+WITH user, collect(comment.score) AS commentScores 
+MATCH (u:User)-[:ASKED]->(q:Question) 
+WHERE u.uuid = user.uuid 
+WITH u, collect(DISTINCT q.link) AS questionLinks 
+WITH u, commentScores 
+RETURN AVG(commentScores) AS averageScore:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Variable `commentScores` not defined (line 8, column 9 (offset: 347))
+"WITH u, commentScores"
+         ^
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (user:User)-[:ASKED]->(question:Question)<-[:COMMENTED_ON]-(comment:Comment) 
+WITH comment.score AS commentScore 
+MATCH (comment)<-[:COMMENTED]-(user:User) 
+WITH user, collect(comment.score) AS commentScores 
+MATCH (u:User)-[:ASKED]->(q:Question) 
+WHERE u.uuid = user.uuid 
+WITH u, collect(DISTINCT q.link) AS questionLinks 
+WITH user, collect(DISTINCT commentScores) AS commentScoresList 
+RETURN AVG(commentScoresList[0]) AS averageScore:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Variable `user` not defined (line 8, column 6 (offset: 344))
+"WITH user, collect(DISTINCT commentScores) AS commentScoresList"
+      ^
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (user:User)-[:ASKED]->(question:Question)<-[:COMMENTED_ON]-(comment:Comment) 
+WITH comment.score AS commentScore 
+MATCH (comment)<-[:COMMENTED]-(u:User) 
+WITH u, collect(comment.score) AS commentScores 
+MATCH (u:User)-[:ASKED]->(q:Question) 
+WHERE u.uuid = u.uuid 
+WITH u, collect(DISTINCT q.link) AS questionLinks 
+WITH u, collect(DISTINCT commentScores) AS commentScoresList 
+RETURN AVG(commentScoresList[0]) AS averageScore:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Variable `commentScores` not defined (line 8, column 26 (offset: 355))
+"WITH u, collect(DISTINCT commentScores) AS commentScoresList"
+                          ^
+
+Schema retriever Agent: START
+Cypher Generator: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (u:User)-[:ASKED]->(q:Question), (u)-[:COMMENTED]->(c:Comment) 
+WITH u, COUNT(c) as comment_count 
+RETURN avg(c.score):
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Variable `c` not defined (line 3, column 12 (offset: 124))
+"RETURN avg(c.score)"
+            ^
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (u:User)-[:ASKED]->(q:Question), (u)-[:COMMENTED]->(c:Comment) 
+WITH u, count(DISTINCT c) as comment_count 
+RETURN avg(c.score):
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Variable `c` not defined (line 3, column 12 (offset: 133))
+"RETURN avg(c.score)"
+            ^
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (u:User)-[:ASKED]->(q:Question), (u)-[:COMMENTED]->(c:Comment) 
+WITH u, count(DISTINCT c) as comment_count, avg(c.score) as average_score 
+RETURN average_score:
+Cypher Executor: START
+Output Generator: START
+ 99%|█████████▉| 2114/2128 [17:49<11:18, 48.48s/it]2114 Who provided the answer with the link 'https://stackoverflow.com/a/69272967'?
+Schema filtering Agent: START
+Cypher Generator: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (u:User)-[:PROVIDED]->(a:Answer {link: "https://stackoverflow.com/a/69272967"}) RETURN u.display_name:
+Cypher Executor: START
+Output Generator: START
+ 99%|█████████▉| 2115/2128 [18:00<08:12, 37.91s/it]2115 Which 5 questions have the oldest creation dates?
+Schema filtering Agent: START
+Cypher Generator: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (q:Question)-[]-(t:Tag) 
+OPTIONAL MATCH (u:User)-[:ASKED]->(q) 
+OPTIONAL MATCH (a:Answer)-[:ANSWERED]->(q) 
+OPTIONAL MATCH (c:Comment)-[:COMMENTED_ON]->(q) 
+WITH q, COALESCE(min(u.creation_date), min(a.creation_date), min(c.creation_date), q.creation_date) AS created_date 
+ORDER BY created_date ASC 
+RETURN q.title, q.uuid, created_date LIMIT 5:
+CyVer Errors from generated query:
+- InvalidPropertyAccessByLabelWarning: The label User does not have the following properties:  creation_date.
+
+- InvalidPropertyAccessByLabelWarning: The label Answer does not have the following properties:  creation_date.
+
+- InvalidPropertyAccessByLabelWarning: The label Comment does not have the following properties:  creation_date.
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (q:Question)-[]-(t:Tag) 
+OPTIONAL MATCH (u:User)-[:ASKED]->(q) 
+WITH u, q 
+OPTIONAL MATCH (a:Answer)-[:ANSWERED]->(q) 
+WITH a, u, q 
+OPTIONAL MATCH (c:Comment)-[:COMMENTED_ON]->(q) 
+WITH c, a, u, q 
+WITH q, COALESCE(min(u.creation_date), min(a.creation_date), q.creation_date) AS created_date 
+ORDER BY created_date ASC 
+RETURN q.title, q.uuid, created_date LIMIT 5:
+CyVer Errors from generated query:
+- InvalidPropertyAccessByLabelWarning: The label User does not have the following properties:  creation_date.
+
+- InvalidPropertyAccessByLabelWarning: The label Answer does not have the following properties:  creation_date.
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (q:Question)-[]-(t:Tag) 
+OPTIONAL MATCH (a:Answer)-[:ANSWERED]->(q) 
+OPTIONAL MATCH (c:Comment)-[:COMMENTED_ON]->(q) 
+WITH q, COALESCE(min(a.creation_date), min(c.creation_date), q.creation_date) AS created_date 
+ORDER BY created_date ASC 
+RETURN q.title, q.uuid, created_date LIMIT 5:
+CyVer Errors from generated query:
+- InvalidPropertyAccessByLabelWarning: The label Answer does not have the following properties:  creation_date.
+
+- InvalidPropertyAccessByLabelWarning: The label Comment does not have the following properties:  creation_date.
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (q:Question)-[]-(t:Tag) 
+OPTIONAL MATCH (a:Answer)-[:ANSWERED]->(q) 
+OPTIONAL MATCH (c:Comment)-[:COMMENTED_ON]->(q) 
+WITH q, COALESCE(min(a.creation_date), q.creation_date) AS created_date 
+OPTIONAL MATCH (ac:Answer {is_accepted: true}) 
+WITH q, COALESCE(created_date, ac.creation_date) AS created_date WHEN ac IS NOT NULL THEN created_date ELSE q.creation_date END 
+ORDER BY created_date ASC 
+RETURN q.title, q.uuid, created_date LIMIT 5:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Invalid input 'WHEN': expected 'FOREACH', ',', 'ORDER BY', 'CALL', 'CREATE', 'LOAD CSV', 'DELETE', 'DETACH', 'FINISH', 'INSERT', 'LIMIT', 'MATCH', 'MERGE', 'NODETACH', 'OFFSET', 'OPTIONAL', 'REMOVE', 'RETURN', 'SET', 'SKIP', 'UNION', 'UNWIND', 'USE', 'WHERE', 'WITH' or <EOF> (line 6, column 66 (offset: 318))
+"WITH q, COALESCE(created_date, ac.creation_date) AS created_date WHEN ac IS NOT NULL THEN created_date ELSE q.creation_date END"
+                                                                  ^
+
+- InvalidPropertyAccessByLabelWarning: The label Answer does not have the following properties:  creation_date.
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (q:Question)-[]-(t:Tag) 
+OPTIONAL MATCH (a:Answer)-[:ANSWERED]->(q) 
+OPTIONAL MATCH (c:Comment)-[:COMMENTED_ON]->(q) 
+WITH q, COALESCE(min(a.creation_date), q.creation_date) AS created_date 
+OPTIONAL MATCH (ac:Answer {is_accepted: true}) 
+WITH q, COALESCE(created_date, q.creation_date) AS created_date 
+ORDER BY created_date ASC 
+RETURN q.title, q.uuid, created_date LIMIT 5:
+CyVer Errors from generated query:
+- InvalidPropertyAccessByLabelWarning: The label Answer does not have the following properties:  creation_date.
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (q:Question)-[]-(t:Tag) 
+OPTIONAL MATCH (a:Answer)-[:ANSWERED]->(q) 
+OPTIONAL MATCH (c:Comment)-[:COMMENTED_ON]->(q) 
+WITH q, COALESCE(min(a.creation_date), min(c.creation_date), q.creation_date) AS created_date 
+OPTIONAL MATCH (ac:Answer {is_accepted: true}) 
+WITH q, COALESCE(created_date, q.creation_date) AS created_date 
+ORDER BY created_date ASC 
+RETURN q.title, q.uuid, created_date LIMIT 5:
+CyVer Errors from generated query:
+- InvalidPropertyAccessByLabelWarning: The label Answer does not have the following properties:  creation_date.
+
+- InvalidPropertyAccessByLabelWarning: The label Comment does not have the following properties:  creation_date.
+
+Schema retriever Agent: START
+Cypher Generator: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (q:Question)-[]-(t:Tag) WITH q ORDER BY q.creation_date ASC LIMIT 5 RETURN q:
+Cypher Executor: START
+Output Generator: START
+ 99%|█████████▉| 2116/2128 [19:49<11:36, 58.07s/it]2116 List all the answers with a negative score.
+Schema filtering Agent: START
+Cypher Generator: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (a:Answer)-[]->() WHERE a.score < 0 RETURN a:
+Cypher Executor: START
+Output Generator: START
+ 99%|█████████▉| 2117/2128 [19:58<08:02, 43.84s/it]2117 List the body_markdown of the comments associated with the question with the highest view count.
+Schema filtering Agent: START
+Cypher Generator: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (q:Question {view_count: (SELECT max(vc) FROM (MATCH (q:Question) RETURN q.view_count AS vc) AS s) }) 
+WITH q 
+MATCH (c:Comment)-[r:COMMENTED_ON]->(q) 
+RETURN c.body_markdown:
+Received notification from DBMS server: {severity: WARNING} {code: Neo.ClientNotification.Statement.UnknownPropertyKeyWarning} {category: UNRECOGNIZED} {title: The provided property key is not in the database} {description: One of the property names in your query is not available in the database, make sure you didn't misspell it or that the label is available when you run this statement in your application (the missing property name is: q)} {position: line: 1, column: 45, offset: 44} for query: 'RETURN exists { MATCH (x:Question) WHERE (x.q) IS NOT NULL} AS exists'
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Invalid input 'max': expected an expression (line 1, column 48 (offset: 47))
+
+
+- Neo.ClientNotification.Statement.UnknownPropertyKeyWarning: One of the property names in your query is not available in the database, make sure you didn't misspell it or that the label is available when you run this statement in your application (the missing property name is: q)
+
+- InvalidPropertyAccessByLabelWarning: The label Question does not have the following properties:  q.
+
+- InvalidPropertyAccessByLabelWarning: The label Comment does not have the following properties:  body_markdown.
+
+ 99%|█████████▉| 2117/2128 [20:10<08:02, 43.84s/it]Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (q:Question) WHERE q.view_count = (SELECT max(vc) FROM (MATCH (q:Question) RETURN q.view_count AS vc) AS s) 
+WITH q 
+MATCH (c:Comment)-[r:COMMENTED_ON]->(q) 
+RETURN c.link:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Invalid input 'max': expected an expression (line 1, column 57 (offset: 56))
+
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (q:Question) WITH max(q.view_count) as vc MATCH (q:Question) WHERE q.view_count = vc WITH q MATCH (c:Comment)-[r:COMMENTED_ON]->(q) RETURN c.body_markdown:
+CyVer Errors from generated query:
+- InvalidPropertyAccessByLabelWarning: The label Comment does not have the following properties:  body_markdown.
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (q:Question) WITH max(q.view_count) as vc 
+MATCH (q:Question) WHERE q.view_count = vc 
+WITH q MATCH (c)-[r:COMMENTED_ON]->(q) 
+RETURN c.body_markdown:
+CyVer Errors from generated query:
+- InvalidPropertyAccessByLabelWarning: The label Comment does not have the following properties:  body_markdown.
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (q:Question) WITH max(q.view_count) as vc 
+MATCH (q:Question) WHERE q.view_count = vc 
+WITH q MATCH (c)-[r:COMMENTED_ON]->(q) 
+RETURN c.score AS score, r AS r, c.link AS link:
+Cypher Executor: START
+Output Generator: START
+100%|█████████▉| 2118/2128 [20:44<07:26, 44.61s/it]2118 What is the average answer count for questions tagged with "graphenedb"?
+Schema filtering Agent: START
+Cypher Generator: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (q:Question)-[:TAGGED]->(t:Tag) WHERE t.name = "graphenedb" RETURN average(q.answer_count):
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Unknown function 'average' (line 1, column 82 (offset: 81))
+
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (q:Question)-[:TAGGED]->(t:Tag) WHERE t.name = "graphenedb" RETURN avg(q.answer_count):
+Cypher Executor: START
+Output Generator: START
+100%|█████████▉| 2119/2128 [21:00<05:26, 36.23s/it]2119 What are the top 3 lowest scored answers on the most viewed questions?
+Schema filtering Agent: START
+Cypher Generator: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (q:Question)-[:ANSWERED]->(a:Answer)-[r:PROVIDED]->(u:User) WHERE q.view_count = (SELECT MAX(view_count) FROM (MATCH (q:Question) RETURN q.view_count) as maxviews) WITH q, a ORDER BY a.score ASC LIMIT 3 RETURN q.view_count, a.score:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Invalid input 'MAX': expected an expression (line 1, column 104 (offset: 103))
+
+
+- WrongDirectionPathWarning: The specified path (:Question)-[:ANSWERED]->(:Answer) has the opposite direction in the knowledge graph schema. The path (q:Question)-[:ANSWERED]->(a:Answer) in the Cypher statement should be changed to  (q:Question)<-[:ANSWERED]-(a:Answer).
+
+- WrongDirectionPathWarning: The specified path (:Answer)-[:PROVIDED]->(:User) has the opposite direction in the knowledge graph schema. The path (a:Answer)-[r:PROVIDED]->(u:User) in the Cypher statement should be changed to  (a:Answer)<-[r:PROVIDED]-(u:User).
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (q:Question)-[r:ANSWERED]-(a:Answer)<-[p:PROVIDED]-(u:User) WHERE q.view_count = (SELECT q2.view_count FROM MATCH (q:Question) WITH COLLECT(q.view_count) AS views ORDER BY views WITH max(view_count) AS max_VIEW WHERE max_VIEW = views[0] RETURN q.view_count) AS maxViews WITH q, a ORDER BY a.score DESC LIMIT 3 RETURN q.view_count, a.score:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Invalid input 'q2': expected an expression (line 1, column 104 (offset: 103))
+
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (q:Question)-[r:ANSWERED]-(a:Answer)<-[p:PROVIDED]-(u:User) 
+WITH q.view_count AS viewCount, a ORDER BY a.score 
+WHERE q.view_count IN (SELECT viewCount FROM (MATCH (q:Question) RETURN viewCount) AS subquery 
+ORDER BY viewCount DESC WITH max(viewCount) AS maxView 
+RETURN viewCount WHERE viewCount = maxView LIMIT 1) 
+WITH a ORDER BY a.score DESC LIMIT 3 RETURN q.view_count, a.score:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Invalid input 'viewCount': expected an expression (line 3, column 31 (offset: 157))
+"WHERE q.view_count IN (SELECT viewCount FROM (MATCH (q:Question) RETURN viewCount) AS subquery"
+                               ^
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (q:Question)-[r:ANSWERED]-(a:Answer)<-[p:PROVIDED]-(u:User) 
+WITH q.view_count AS viewCount, a ORDER BY a.score 
+WHERE q.view_count IN (SELECT q2.viewCount FROM (MATCH (q:Question) RETURN q.viewCount) AS subquery 
+ORDER BY q2.viewCount DESC WITH max(q2.viewCount) AS maxView 
+RETURN q2.viewCount WHERE q2.viewCount = maxView LIMIT 1) 
+WITH collect(a) AS answers 
+ORDER BY answers.score ASC LIMIT 3 RETURN q.view_count, answers[0].score, answers[1].score, answers[2].score:
+Received notification from DBMS server: {severity: WARNING} {code: Neo.ClientNotification.Statement.UnknownPropertyKeyWarning} {category: UNRECOGNIZED} {title: The provided property key is not in the database} {description: One of the property names in your query is not available in the database, make sure you didn't misspell it or that the label is available when you run this statement in your application (the missing property name is: viewCount)} {position: line: 1, column: 45, offset: 44} for query: 'RETURN exists { MATCH (x:Question) WHERE (x.viewCount) IS NOT NULL} AS exists'
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Invalid input 'q2': expected an expression (line 3, column 31 (offset: 157))
+"WHERE q.view_count IN (SELECT q2.viewCount FROM (MATCH (q:Question) RETURN q.viewCount) AS subquery"
+                               ^
+
+- Neo.ClientNotification.Statement.UnknownPropertyKeyWarning: One of the property names in your query is not available in the database, make sure you didn't misspell it or that the label is available when you run this statement in your application (the missing property name is: viewCount)
+
+- InvalidPropertyAccessByLabelWarning: The label Question does not have the following properties:  viewCount.
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (q:Question)-[r:ANSWERED]-(a:Answer)<-[p:PROVIDED]-(u:User) 
+WITH q, collect(a) AS answers 
+WHERE q.view_count IN (SELECT COUNT(r) FROM (MATCH (q:Question)-[r:ANSWERED]-(a:Answer)<-[p:PROVIDED]-(u:User) RETURN COUNT(r)) AS subquery 
+ORDER BY COUNT(r) DESC WITH max(COUNT(r)) AS maxView 
+RETURN COUNT(r) WHERE COUNT(r) = maxView LIMIT 1) 
+WITH answers ORDER BY a.score ASC LIMIT 3 RETURN q.view_count, a[0].score, a[1].score, a[2].score:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Invalid input 'COUNT': expected an expression (line 3, column 31 (offset: 136))
+"WHERE q.view_count IN (SELECT COUNT(r) FROM (MATCH (q:Question)-[r:ANSWERED]-(a:Answer)<-[p:PROVIDED]-(u:User) RETURN COUNT(r)) AS subquery"
+                               ^
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (q:Question)-[r:ANSWERED]-(a:Answer)<-[p:PROVIDED]-(u:User) 
+WITH q, collect(a) AS answers 
+WHERE ALL(x IN [1000, 500, 150] WHERE x IN (q.view_count)) 
+WITH answers ORDER BY a.score ASC LIMIT 3 RETURN q.view_count, MIN(answers.score), MIN(answers[1].score), MIN(answers[2].score):
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Variable `a` not defined (line 4, column 23 (offset: 188))
+"WITH answers ORDER BY a.score ASC LIMIT 3 RETURN q.view_count, MIN(answers.score), MIN(answers[1].score), MIN(answers[2].score)"
+                       ^
+
+Schema retriever Agent: START
+Cypher Generator: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (q:Question)-[:TAGGED]->(t:Tag) WHERE q.view_count > 10000 WITH q ORDER BY q.view_count DESC LIMIT 1 MATCH (q:Question {uuid:1044D712F84B685}), (ans:Answer)-[:ANSWERED]->(q) WITH q, COLLECT({link: ans.link, score: ans.score }) AS answers ORDER BY answers[0].score ASC LIMIT 3 RETURN q.title, ans.link, ans.score:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: invalid literal number (line 1, column 140 (offset: 139))
+
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (q:Question)-[:TAGGED]->(t:Tag) WHERE TOINT(q.view_count) > 10000 
+WITH q ORDER BY q.view_count DESC LIMIT 1 
+MATCH (q:Question {uuid:'1044D712F84B685'}) 
+OPTIONAL MATCH (q)-[:ANSWERED]->(ans), (q)<-[:ANSWERED]-(ans2) WITH q, collect({link: ans.link, score: ans.score}) as answers WHERE ans.score < ans2.score 
+UNWIND answers AS answer WHERE answer.score = min([a IN answers | a.score]) 
+WITH q, answer ORDER BY answer.score ASC LIMIT 3 RETURN q.title, answer.link, answer.score:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Invalid input 'WHERE': expected 'FOREACH', 'ORDER BY', 'CALL', 'CREATE', 'LOAD CSV', 'DELETE', 'DETACH', 'FINISH', 'INSERT', 'LIMIT', 'MATCH', 'MERGE', 'NODETACH', 'OFFSET', 'OPTIONAL', 'REMOVE', 'RETURN', 'SET', 'SKIP', 'UNION', 'UNWIND', 'USE', 'WITH' or <EOF> (line 5, column 26 (offset: 350))
+"UNWIND answers AS answer WHERE answer.score = min([a IN answers | a.score])"
+                          ^
+
+- WrongDirectionPathWarning: The specified path (:Question)-[:ANSWERED]->() has the opposite direction in the knowledge graph schema. The path (q)-[:ANSWERED]->(ans) in the Cypher statement should be changed to  (q)<-[:ANSWERED]-(ans).
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (q:Question)-[:TAGGED]->(t:Tag) WHERE TOINT(q.view_count) > 10000 
+WITH q ORDER BY q.view_count DESC LIMIT 1 
+MATCH (q:Question {uuid:'1044D712F84B685'}) 
+OPTIONAL MATCH (q)<-[:ANSWERED]-(ans), (q)-[:ANSWERED]->(ans2) WITH q, collect({link: ans.link, score: ans.score}) as answers WHERE ans.score < ans2.score 
+UNWIND answers AS answer WHERE answer.score = min([a IN answers | a.score]) 
+WITH q, answer ORDER BY answer.score ASC LIMIT 3 RETURN q.title, answer.link, answer.score:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Invalid input 'WHERE': expected 'FOREACH', 'ORDER BY', 'CALL', 'CREATE', 'LOAD CSV', 'DELETE', 'DETACH', 'FINISH', 'INSERT', 'LIMIT', 'MATCH', 'MERGE', 'NODETACH', 'OFFSET', 'OPTIONAL', 'REMOVE', 'RETURN', 'SET', 'SKIP', 'UNION', 'UNWIND', 'USE', 'WITH' or <EOF> (line 5, column 26 (offset: 350))
+"UNWIND answers AS answer WHERE answer.score = min([a IN answers | a.score])"
+                          ^
+
+- WrongDirectionPathWarning: The specified path (:Question)-[:ANSWERED]->() has the opposite direction in the knowledge graph schema. The path (q)-[:ANSWERED]->(ans2) in the Cypher statement should be changed to  (q)<-[:ANSWERED]-(ans2).
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (q:Question)-[:TAGGED]->(t:Tag) WHERE TOINT(q.view_count) > 10000 
+WITH q ORDER BY q.view_count DESC LIMIT 1 
+MATCH (q:Question {uuid:'1044D712F84B685'}) 
+OPTIONAL MATCH (q)<-[:ANSWERED]-(ans), (q)<-[:ANSWERED]-(ans2) 
+WITH q, collect({link: ans.link, score: ans.score}) as answers WHERE ans.score < ans2.score 
+UNWIND answers AS answer FILTER answer.score = min([a IN answers | a.score]) 
+WITH q, answer ORDER BY answer.score ASC LIMIT 3 RETURN q.title, answer.link, answer.score:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Invalid input 'FILTER': expected 'FOREACH', 'ORDER BY', 'CALL', 'CREATE', 'LOAD CSV', 'DELETE', 'DETACH', 'FINISH', 'INSERT', 'LIMIT', 'MATCH', 'MERGE', 'NODETACH', 'OFFSET', 'OPTIONAL', 'REMOVE', 'RETURN', 'SET', 'SKIP', 'UNION', 'UNWIND', 'USE', 'WITH' or <EOF> (line 6, column 26 (offset: 351))
+"UNWIND answers AS answer FILTER answer.score = min([a IN answers | a.score])"
+                          ^
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (q:Question)-[:TAGGED]->(t:Tag) WHERE TOINT(q.view_count) > 10000 
+WITH q ORDER BY q.view_count DESC LIMIT 1 
+MATCH (q:Question {uuid:'1044D712F84B685'}) 
+OPTIONAL MATCH (q)<-[:ANSWERED]-(ans), (q)<-[:ANSWERED]-(ans2) 
+WITH q, collect({link: ans.link, score: ans.score}) as answers 
+WITH q, answers 
+UNWIND answers AS answer 
+WITH answer, (select min(a.score) from (select a.score from answers a) t) AS min_score 
+WHERE answer.score = min_score 
+WITH q, answer ORDER BY answer.score ASC LIMIT 3 RETURN q.title, answer.link, answer.score:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Invalid input 'min': expected an expression (line 8, column 22 (offset: 361))
+"WITH answer, (select min(a.score) from (select a.score from answers a) t) AS min_score"
+                      ^
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (q:Question)-[:TAGGED]->(t:Tag) WHERE TOINT(q.view_count) > 10000 
+WITH q ORDER BY q.view_count DESC LIMIT 1 
+MATCH (q:Question {uuid:'1044D712F84B685'}) 
+OPTIONAL MATCH (q)<-[:ANSWERED]-(ans), (q)<-[:ANSWERED]-(ans2) 
+WITH q, collect({link: ans.link, score: ans.score}) as answers 
+WITH q, answers 
+UNWIND answers AS answer 
+WITH answer, REDUCE(minScore = 1e9, current = answer.score | IF(current < minScore, current, minScore)) AS min_score 
+WHERE answer.score >= min_score 
+WITH q, answer ORDER BY answer.score ASC LIMIT 3 RETURN q.title, answer.link, answer.score:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Invalid input '|': expected an expression, ')' or ',' (line 8, column 60 (offset: 399))
+"WITH answer, REDUCE(minScore = 1e9, current = answer.score | IF(current < minScore, current, minScore)) AS min_score"
+                                                            ^
+
+Unvailable Output: START
+100%|█████████▉| 2120/2128 [24:12<10:58, 82.31s/it]2120 List the top 5 most recent questions with more than one answer.
+Schema filtering Agent: START
+Cypher Generator: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (q:Question)-[a:ANSWERED]->(an:Answer) WHERE a.is_accepted = FALSE AND an.uuid <> q.accepted_answer_id WITH q, count(*) as num_answers ORDER BY q.creation_date DESC RETURN q LIMIT 5:
+CyVer Errors from generated query:
+- WrongDirectionPathWarning: The specified path (:Question)-[:ANSWERED]->(:Answer) has the opposite direction in the knowledge graph schema. The path (q:Question)-[a:ANSWERED]->(an:Answer) in the Cypher statement should be changed to  (q:Question)<-[a:ANSWERED]-(an:Answer).
+
+- InvalidPropertyAccessByLabelWarning: The label ANSWERED does not have the following properties:  is_accepted.
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (q:Question)<-[a:ANSWERED]-(an:Answer) WHERE an.uuid <> q.accepted_answer_id WITH q, count(DISTINCT a) as num_answers ORDER BY q.creation_date DESC RETURN q WHERE num_answers > 1 LIMIT 5:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Invalid input 'WHERE': expected an expression, 'FOREACH', ',', 'AS', 'ORDER BY', 'CALL', 'CREATE', 'LOAD CSV', 'DELETE', 'DETACH', 'FINISH', 'INSERT', 'LIMIT', 'MATCH', 'MERGE', 'NODETACH', 'OFFSET', 'OPTIONAL', 'REMOVE', 'RETURN', 'SET', 'SKIP', 'UNION', 'UNWIND', 'USE', 'WITH' or <EOF> (line 1, column 172 (offset: 171))
+
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (q:Question)-[:ANSWERED]->(an:Answer) WHERE an.uuid <> q.accepted_answer_id WITH q, collect(an) AS answered, count(DISTINCT an) as num_answers ORDER BY q.creation_date DESC RETURN q, answered, num_answers WHERE num_answers > 1 LIMIT 5:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Invalid input 'WHERE': expected an expression, 'FOREACH', ',', 'AS', 'ORDER BY', 'CALL', 'CREATE', 'LOAD CSV', 'DELETE', 'DETACH', 'FINISH', 'INSERT', 'LIMIT', 'MATCH', 'MERGE', 'NODETACH', 'OFFSET', 'OPTIONAL', 'REMOVE', 'RETURN', 'SET', 'SKIP', 'UNION', 'UNWIND', 'USE', 'WITH' or <EOF> (line 1, column 220 (offset: 219))
+
+
+- WrongDirectionPathWarning: The specified path (:Question)-[:ANSWERED]->(:Answer) has the opposite direction in the knowledge graph schema. The path (q:Question)-[:ANSWERED]->(an:Answer) in the Cypher statement should be changed to  (q:Question)<-[:ANSWERED]-(an:Answer).
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (q:Question)<-[:ANSWERED]-(an:Answer) WHERE an.uuid <> q.accepted_answer_id WITH q, collect(an) AS answered, count(DISTINCT an) as num_answers ORDER BY q.creation_date DESC RETURN q, answered, num_answers WHERE num_answers > 1 LIMIT 5:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Invalid input 'WHERE': expected an expression, 'FOREACH', ',', 'AS', 'ORDER BY', 'CALL', 'CREATE', 'LOAD CSV', 'DELETE', 'DETACH', 'FINISH', 'INSERT', 'LIMIT', 'MATCH', 'MERGE', 'NODETACH', 'OFFSET', 'OPTIONAL', 'REMOVE', 'RETURN', 'SET', 'SKIP', 'UNION', 'UNWIND', 'USE', 'WITH' or <EOF> (line 1, column 220 (offset: 219))
+
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (q:Question)<-[:ANSWERED]-(an:Answer) WHERE an.uuid <> q.accepted_answer_id WITH q, collect(DISTINCT an) AS answered, count(DISTINCT an) as num_answers ORDER BY q.creation_date DESC RETURN q, answered, num_answers WHERE num_answers > 1 LIMIT 5:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Invalid input 'WHERE': expected an expression, 'FOREACH', ',', 'AS', 'ORDER BY', 'CALL', 'CREATE', 'LOAD CSV', 'DELETE', 'DETACH', 'FINISH', 'INSERT', 'LIMIT', 'MATCH', 'MERGE', 'NODETACH', 'OFFSET', 'OPTIONAL', 'REMOVE', 'RETURN', 'SET', 'SKIP', 'UNION', 'UNWIND', 'USE', 'WITH' or <EOF> (line 1, column 229 (offset: 228))
+
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (q:Question)<-[:ANSWERED]-(an:Answer) WHERE an.uuid <> q.accepted_answer_id WITH q, collect(DISTINCT an) AS answered, count(DISTINCT an) as num_answers ORDER BY q.creation_date DESC RETURN q, answered, num_answers WHERE num_answers > 1 LIMIT 5:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Invalid input 'WHERE': expected an expression, 'FOREACH', ',', 'AS', 'ORDER BY', 'CALL', 'CREATE', 'LOAD CSV', 'DELETE', 'DETACH', 'FINISH', 'INSERT', 'LIMIT', 'MATCH', 'MERGE', 'NODETACH', 'OFFSET', 'OPTIONAL', 'REMOVE', 'RETURN', 'SET', 'SKIP', 'UNION', 'UNWIND', 'USE', 'WITH' or <EOF> (line 1, column 229 (offset: 228))
+
+
+Schema retriever Agent: START
+Cypher Generator: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (q:Question)-[a:ANSWERED]->(an:Answer) WITH q, COUNT(*) AS answer_count WHERE q.answer_count > 1 ORDER BY q.creation_date DESC LIMIT 5 RETURN q OF Journalism(q.link, q.title, q.view_count):
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Invalid input 'OF': expected an expression, 'FOREACH', ',', 'AS', 'ORDER BY', 'CALL', 'CREATE', 'LOAD CSV', 'DELETE', 'DETACH', 'FINISH', 'INSERT', 'LIMIT', 'MATCH', 'MERGE', 'NODETACH', 'OFFSET', 'OPTIONAL', 'REMOVE', 'RETURN', 'SET', 'SKIP', 'UNION', 'UNWIND', 'USE', 'WITH' or <EOF> (line 1, column 159 (offset: 158))
+
+
+- WrongDirectionPathWarning: The specified path (:Question)-[:ANSWERED]->(:Answer) has the opposite direction in the knowledge graph schema. The path (q:Question)-[a:ANSWERED]->(an:Answer) in the Cypher statement should be changed to  (q:Question)<-[a:ANSWERED]-(an:Answer).
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (q:Question)-[a:ANSWERED]-(an:Answer) WHERE q.answer_count > 1 WITH q, COUNT(DISTINCT a) AS answer_count ORDER BY q.creation_date DESC LIMIT 5 RETURN q.created_by = "Journalism" AS linkoje, Journalism(q.link, q.title, q.view_count):
+Received notification from DBMS server: {severity: WARNING} {code: Neo.ClientNotification.Statement.UnknownPropertyKeyWarning} {category: UNRECOGNIZED} {title: The provided property key is not in the database} {description: One of the property names in your query is not available in the database, make sure you didn't misspell it or that the label is available when you run this statement in your application (the missing property name is: created_by)} {position: line: 1, column: 45, offset: 44} for query: 'RETURN exists { MATCH (x:Question) WHERE (x.created_by) IS NOT NULL} AS exists'
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Unknown function 'Journalism' (line 1, column 205 (offset: 204))
+
+
+- Neo.ClientNotification.Statement.UnknownPropertyKeyWarning: One of the property names in your query is not available in the database, make sure you didn't misspell it or that the label is available when you run this statement in your application (the missing property name is: created_by)
+
+- InvalidPropertyAccessByLabelWarning: The label Question does not have the following properties:  created_by.
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (q:Question)-[a:ANSWERED]-(an:Answer) WHERE q.answer_count > 1 AND q.user.uuid IS NOT NULL WITH q, COUNT(DISTINCT a) AS answer_count ORDER BY q.creation_date DESC LIMIT 5 RETURN q.view_count AS link, q.title, q.view_count:
+Received notification from DBMS server: {severity: WARNING} {code: Neo.ClientNotification.Statement.UnknownPropertyKeyWarning} {category: UNRECOGNIZED} {title: The provided property key is not in the database} {description: One of the property names in your query is not available in the database, make sure you didn't misspell it or that the label is available when you run this statement in your application (the missing property name is: user)} {position: line: 1, column: 84, offset: 83} for query: 'EXPLAIN MATCH (q:Question)-[a:ANSWERED]-(an:Answer) WHERE q.answer_count > 1 AND q.user.uuid IS NOT NULL WITH q, COUNT(DISTINCT a) AS answer_count ORDER BY q.creation_date DESC LIMIT 5 RETURN q.view_count AS link, q.title, q.view_count'
+Received notification from DBMS server: {severity: WARNING} {code: Neo.ClientNotification.Statement.UnknownPropertyKeyWarning} {category: UNRECOGNIZED} {title: The provided property key is not in the database} {description: One of the property names in your query is not available in the database, make sure you didn't misspell it or that the label is available when you run this statement in your application (the missing property name is: user)} {position: line: 1, column: 45, offset: 44} for query: 'RETURN exists { MATCH (x:Question) WHERE (x.user) IS NOT NULL} AS exists'
+CyVer Errors from generated query:
+- Neo.ClientNotification.Statement.UnknownPropertyKeyWarning: One of the property names in your query is not available in the database, make sure you didn't misspell it or that the label is available when you run this statement in your application (the missing property name is: user)
+
+- InvalidPropertyAccessByLabelWarning: The label Question does not have the following properties:  user.
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (u:User)-[q:ASKED]->(qst:Question)-[a:ANSWERED]->(an:Answer) WHERE qst.answer_count > 1 AND qst.uuid IS NOT NULL WITH qst, COUNT(DISTINCT a) AS answer_count ORDER BY qst.creation_date DESC LIMIT 5 RETURN qst.view_count AS link, qst.title:
+CyVer Errors from generated query:
+- WrongDirectionPathWarning: The specified path (:Question)-[:ANSWERED]->(:Answer) has the opposite direction in the knowledge graph schema. The path (qst:Question)-[a:ANSWERED]->(an:Answer) in the Cypher statement should be changed to  (qst:Question)<-[a:ANSWERED]-(an:Answer).
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (u:User)-[:ASKED]->(qst:Question)<-[a:ANSWERED]-(an:Answer) WHERE qst.answer_count > 1 AND qst.uuid IS NOT NULL WITH qst, COUNT(DISTINCT an) AS answer_count ORDER BY qst.creation_date DESC LIMIT 5 RETURN qst.view_count AS link, qst.title:
+Cypher Executor: START
+Output Generator: START
+100%|█████████▉| 2121/2128 [26:06<10:42, 91.71s/it]2121 Can you list all tags associated with questions asked by the user 'Anu'?
+Schema filtering Agent: START
+Cypher Generator: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (u:User {display_name: 'Anu'})-[:ASKED]->(q:Question)-[:TAGGED]->(t:Tag) RETURN t.name, t.link:
+Cypher Executor: START
+Output Generator: START
+100%|█████████▉| 2122/2128 [26:19<06:50, 68.39s/it]2122 Find the top 3 questions with the most comments.
+Schema filtering Agent: START
+Cypher Generator: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (q:Question)-[c:COMMENTED_ON]->(comment:Comment) RETURN q.link, count(c) as comment_count ORDER BY comment_count DESC LIMIT 3:
+CyVer Errors from generated query:
+- WrongDirectionPathWarning: The specified path (:Question)-[:COMMENTED_ON]->(:Comment) has the opposite direction in the knowledge graph schema. The path (q:Question)-[c:COMMENTED_ON]->(comment:Comment) in the Cypher statement should be changed to  (q:Question)<-[c:COMMENTED_ON]-(comment:Comment).
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (q:Question)-[c:COMMENTED_ON]-(comment:Comment) RETURN q.link, count(c) as comment_count ORDER BY comment_count DESC LIMIT 3:
+Cypher Executor: START
+Output Generator: START
+100%|█████████▉| 2123/2128 [26:34<04:22, 52.45s/it]2123 Who are the actors in "Avatar"? I want to use call subquerying syntax
+Schema filtering Agent: START
+Cypher Generator: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (m:Movie {title: 'Avatar'})-[]->(a) CALL {
+  MATCH (dir:Actor)-[:DIRECTED]->(m) RETURN dir
+  MATCH (act:Actor)-[:ACTED_IN]->(m) RETURN act
+} YIELD value
+UNWIND value AS actor
+RETURN actor:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Invalid input 'YIELD': expected 'FOREACH', 'ORDER BY', 'CALL', 'CREATE', 'LOAD CSV', 'DELETE', 'DETACH', 'FINISH', 'IN', 'INSERT', 'LIMIT', 'MATCH', 'MERGE', 'NODETACH', 'OFFSET', 'OPTIONAL', 'REMOVE', 'RETURN', 'SET', 'SKIP', 'UNION', 'UNWIND', 'USE', 'WITH' or <EOF> (line 4, column 3 (offset: 155))
+"} YIELD value"
+   ^
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (m:Movie {title: 'Avatar'})-[]->(a) 
+CALL apoc.cypher.call({
+  MATCH (dir:Actor)-[:DIRECTED]->(m) RETURN dir
+  MATCH (act:Actor)-[:ACTED_IN]->(m) RETURN act
+}  RETURN collect(distinct dir | act) AS value) 
+UNWIND value as actors 
+RETURN actors:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Invalid input '(': expected ':' (line 3, column 9 (offset: 83))
+"  MATCH (dir:Actor)-[:DIRECTED]->(m) RETURN dir"
+         ^
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (m:Movie {title: 'Avatar'})-[]->(a) 
+CALL apoc.cypher.call({
+  MATCH (dir)-[:DIRECTED]->(m:Movie) RETURN dir
+  MATCH (act)-[:ACTED_IN]->(m:Movie) RETURN act
+} 
+RETURN collect(distinct dir | act) AS value) 
+UNWIND value as actors 
+RETURN actors:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Invalid input '(': expected ':' (line 3, column 9 (offset: 83))
+"  MATCH (dir)-[:DIRECTED]->(m:Movie) RETURN dir"
+         ^
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (m:Movie {title: 'Avatar'})-[]->(a) 
+CALL apoc.cypher.call({
+  MATCH (m)<-[:DIRECTED]-(dir) RETURN dir
+  MATCH (m)<-[:ACTED_IN]-(act) RETURN act
+} 
+RETURN collect(distinct dir | act) AS value) 
+UNWIND value as actors 
+RETURN actors:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Invalid input '(': expected ':' (line 3, column 9 (offset: 83))
+"  MATCH (m)<-[:DIRECTED]-(dir) RETURN dir"
+         ^
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (m:Movie {title: 'Avatar'})-[]->(a) 
+CALL apoc.cypher.call({
+  WITH m MATCH (m)<-[:DIRECTED]-(dir) RETURN dir
+  WITH m MATCH (m)<-[:ACTED_IN]-(act) RETURN act
+} 
+RETURN collect(distinct dir | act) AS value) 
+UNWIND value as actors 
+RETURN actors:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Invalid input 'm': expected ':' (line 3, column 8 (offset: 82))
+"  WITH m MATCH (m)<-[:DIRECTED]-(dir) RETURN dir"
+        ^
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (m:Movie {title: 'Avatar'})-[]->(a) 
+CALL apoc.cypher.call({
+  WITH m MATCH (m)<-[:DIRECTED]-(dir) RETURN dir
+  WITH m MATCH (m)<-[:ACTED_IN]-(:Actor)-() RETURN collect(distinct a) AS act
+} 
+RETURN collect(distinct dir | act) AS value) 
+UNWIND value as actors 
+RETURN actors:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Invalid input 'm': expected ':' (line 3, column 8 (offset: 82))
+"  WITH m MATCH (m)<-[:DIRECTED]-(dir) RETURN dir"
+        ^
+
+Schema retriever Agent: START
+Cypher Generator: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH p=(m:Movie{title:"Avatar"})-[:ACTED_IN]-(a) RETURN a.name:
+Cypher Executor: START
+Output Generator: START
+100%|█████████▉| 2124/2128 [27:46<03:52, 58.20s/it]2124 How to create a new Movie with a Genre? I want to use best practice create patterns
+Schema filtering Agent: START
+Cypher Generator: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (g:Genre {name: "Action"}), (m:Movie) 
+WHERE m.id = "trending_movie_id" 
+CREATE (g)-[:IN_GENRE]->(m):
+CyVer Errors from generated query:
+- WrongDirectionPathWarning: The specified path (:Genre)-[:IN_GENRE]->(:Movie) has the opposite direction in the knowledge graph schema. The path (g)-[:IN_GENRE]->(m) in the Cypher statement should be changed to  (g)<-[:IN_GENRE]-(m).
+
+- InvalidPropertyAccessByLabelWarning: The label Movie does not have the following properties:  id.
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (g:Genre {name: "Action"}), (m:Movie {movieId: "trending_movie_id"}) 
+CREATE (m)-[:IN_GENRE]->(g):
+Cypher Executor: START
+Output Generator: START
+100%|█████████▉| 2125/2128 [28:06<02:20, 46.79s/it]2125 How to remove all Movies older than the year 2000? Give me the recommended way of deleting a large volume of data
+Schema filtering Agent: START
+Cypher Generator: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (m:Movie {year: {year: 2000, prop: "<"}}) DETACH DELETE m:
+Cypher Executor: START
+Output Generator: START
+100%|█████████▉| 2126/2128 [28:15<01:10, 35.29s/it]2126 How can I set imdbRating=9 for all Movies, using concurrency and batch commits? Give me the recommended approach
+Schema filtering Agent: START
+Cypher Generator: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (m:Movie) 
+WITH m, 9 AS imdbRating
+CALL apoc.periodic.iterate("
+  MATCH (n) WHERE id(n) = $batchHandle
+  SET n.imdbRating = $imdbRating
+ RETURN n
+", {batchHandle: 'handle', imdbRating: imdbRating}, {batchSize: 100, iterateList: true}, {actor: 'cypher-thread'}) 
+YIELD batches, totalTime 
+RETURN totalTime:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Procedure call provides too many arguments: got 4 expected no more than 3.
+
+Procedure apoc.periodic.iterate has signature: apoc.periodic.iterate(cypherIterate :: STRING, cypherAction :: STRING, config :: MAP) :: batches :: INTEGER, total :: INTEGER, timeTaken :: INTEGER, committedOperations :: INTEGER, failedOperations :: INTEGER, failedBatches :: INTEGER, retries :: INTEGER, errorMessages :: MAP, batch :: MAP, operations :: MAP, wasTerminated :: BOOLEAN, failedParams :: MAP, updateStatistics :: MAP
+meaning that it expects at least 3 arguments of types STRING, STRING, MAP
+Description: Runs the second statement for each item returned by the first statement.
+This procedure returns the number of batches and the total number of processed rows. (line 3, column 1 (offset: 49))
+"CALL apoc.periodic.iterate(""
+ ^
+
+100%|█████████▉| 2126/2128 [28:30<01:10, 35.29s/it]Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (m:Movie) 
+WITH m, 9 AS imdbRating
+CALL apoc.periodic.iterate("
+  MATCH (n) WHERE id(n) = $batchHandle
+  SET n.imdbRating = $imdbRating
+ RETURN n
+", {batchHandle: 'handle', imdbRating: 9}, {batchSize: 100, iterateList: true}, {actor: 'cypher-thread'}) 
+YIELD batches, totalTime 
+RETURN totalTime:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Procedure call provides too many arguments: got 4 expected no more than 3.
+
+Procedure apoc.periodic.iterate has signature: apoc.periodic.iterate(cypherIterate :: STRING, cypherAction :: STRING, config :: MAP) :: batches :: INTEGER, total :: INTEGER, timeTaken :: INTEGER, committedOperations :: INTEGER, failedOperations :: INTEGER, failedBatches :: INTEGER, retries :: INTEGER, errorMessages :: MAP, batch :: MAP, operations :: MAP, wasTerminated :: BOOLEAN, failedParams :: MAP, updateStatistics :: MAP
+meaning that it expects at least 3 arguments of types STRING, STRING, MAP
+Description: Runs the second statement for each item returned by the first statement.
+This procedure returns the number of batches and the total number of processed rows. (line 3, column 1 (offset: 49))
+"CALL apoc.periodic.iterate(""
+ ^
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (m:Movie) 
+WITH m, 9 AS imdbRating
+CALL apoc.periodic.iterate("
+  MATCH (n) WHERE id(n) = $batchHandle
+  SET n.imdbRating = $imdbRating
+  RETURN n
+", {batchHandle: 'handle', imdbRating: 9}, {batchSize: 100, iterateList: true}, {actor: 'cypher-thread'}) 
+YIELD batches, totalTime 
+RETURN totalTime:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Procedure call provides too many arguments: got 4 expected no more than 3.
+
+Procedure apoc.periodic.iterate has signature: apoc.periodic.iterate(cypherIterate :: STRING, cypherAction :: STRING, config :: MAP) :: batches :: INTEGER, total :: INTEGER, timeTaken :: INTEGER, committedOperations :: INTEGER, failedOperations :: INTEGER, failedBatches :: INTEGER, retries :: INTEGER, errorMessages :: MAP, batch :: MAP, operations :: MAP, wasTerminated :: BOOLEAN, failedParams :: MAP, updateStatistics :: MAP
+meaning that it expects at least 3 arguments of types STRING, STRING, MAP
+Description: Runs the second statement for each item returned by the first statement.
+This procedure returns the number of batches and the total number of processed rows. (line 3, column 1 (offset: 49))
+"CALL apoc.periodic.iterate(""
+ ^
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (m:Movie) 
+WITH m, 9 AS imdbRating
+CALL apoc.periodic.iterate("
+  MATCH (n) WHERE id(n) = $batchHandle
+  SET n.imdbRating = $imdbRating
+  RETURN n
+", {batchHandle: 'handle', imdbRating: 9}, {batchSize: 100, iterateList: false}, {actor: 'cypher-thread'}) 
+YIELD batches, totalTime 
+RETURN totalTime:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Procedure call provides too many arguments: got 4 expected no more than 3.
+
+Procedure apoc.periodic.iterate has signature: apoc.periodic.iterate(cypherIterate :: STRING, cypherAction :: STRING, config :: MAP) :: batches :: INTEGER, total :: INTEGER, timeTaken :: INTEGER, committedOperations :: INTEGER, failedOperations :: INTEGER, failedBatches :: INTEGER, retries :: INTEGER, errorMessages :: MAP, batch :: MAP, operations :: MAP, wasTerminated :: BOOLEAN, failedParams :: MAP, updateStatistics :: MAP
+meaning that it expects at least 3 arguments of types STRING, STRING, MAP
+Description: Runs the second statement for each item returned by the first statement.
+This procedure returns the number of batches and the total number of processed rows. (line 3, column 1 (offset: 49))
+"CALL apoc.periodic.iterate(""
+ ^
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (m:Movie) 
+WITH m, 9 AS imdbRating
+MATCH (m) SET m.imdbRating = 9 
+LIMIT 100 
+RETURN count(*):
+Cypher Executor: START
+Output Generator: START
+100%|█████████▉| 2127/2128 [29:03<00:39, 39.22s/it]2127 How can I create multiple Movie nodes from a parameter list? Show me how using UNWIND
+Schema filtering Agent: START
+Cypher Generator: START
+CyVer Evaluator: START
+CyVer Evaluation of UNWIND $movies AS movie CREATE (n:Movie {title: movie.title, tmdbId: movie.tmdbId, runtime: movie.runtime, revenue: movie.revenue, budget: movie.budget, plotEmbedding: movie.plotEmbedding, imdbRating: movie.imdbRating, released: movie.released, countries: movie.countries, languages: movie.languages, plot: movie.plot, imdbVotes: movie.imdbVotes, imdbId: movie.imdbId, year: movie.year, poster: movie.poster, posterEmbedding: movie.posterEmbedding, url: movie.url, movieId: movie.movieId}):
+Received notification from DBMS server: {severity: WARNING} {code: Neo.ClientNotification.Statement.ParameterNotProvided} {category: GENERIC} {title: The statement refers to a parameter that was not provided in the request.} {description: Did not supply query with enough parameters. The produced query plan will not be cached and is not executable without EXPLAIN. (Missing parameters: movies)} {position: None} for query: 'EXPLAIN UNWIND $movies AS movie CREATE (n:Movie {title: movie.title, tmdbId: movie.tmdbId, runtime: movie.runtime, revenue: movie.revenue, budget: movie.budget, plotEmbedding: movie.plotEmbedding, imdbRating: movie.imdbRating, released: movie.released, countries: movie.countries, languages: movie.languages, plot: movie.plot, imdbVotes: movie.imdbVotes, imdbId: movie.imdbId, year: movie.year, poster: movie.poster, posterEmbedding: movie.posterEmbedding, url: movie.url, movieId: movie.movieId})'
+CyVer Errors from generated query:
+- Neo.ClientNotification.Statement.ParameterNotProvided: Did not supply query with enough parameters. The produced query plan will not be cached and is not executable without EXPLAIN. (Missing parameters: movies)
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (n) DELETE n
+UNWIND $movies AS movie CREATE (n:Movie {title: movie.title, tmdbId: movie.tmdbId, runtime: movie.runtime, revenue: movie.revenue, budget: movie.budget, plotEmbedding: movie.plotEmbedding, imdbRating: movie.imdbRating, released: movie.released, countries: movie.countries, languages: movie.languages, plot: movie.plot, imdbVotes: movie.imdbVotes, imdbId: movie.imdbId, year: movie.year, poster: movie.poster, posterEmbedding: movie.posterEmbedding, url: movie.url, movieId: movie.movieId}):
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Variable `n` already declared (line 2, column 33 (offset: 59))
+"UNWIND $movies AS movie CREATE (n:Movie {title: movie.title, tmdbId: movie.tmdbId, runtime: movie.runtime, revenue: movie.revenue, budget: movie.budget, plotEmbedding: movie.plotEmbedding, imdbRating: movie.imdbRating, released: movie.released, countries: movie.countries, languages: movie.languages, plot: movie.plot, imdbVotes: movie.imdbVotes, imdbId: movie.imdbId, year: movie.year, poster: movie.poster, posterEmbedding: movie.posterEmbedding, url: movie.url, movieId: movie.movieId})"
+                                 ^
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (n) DELETE n
+UNWIND $movies AS movie CREATE (m:Movie {title: movie.title, tmdbId: movie.tmdbId, runtime: movie.runtime, revenue: movie.revenue, budget: movie.budget, plotEmbedding: movie.plotEmbedding, imdbRating: movie.imdbRating, released: movie.released, countries: movie.countries, languages: movie.languages, plot: movie.plot, imdbVotes: movie.imdbVotes, imdbId: movie.imdbId, year: movie.year, poster: movie.poster, posterEmbedding: movie.posterEmbedding, url: movie.url, movieId: movie.movieId}):
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: WITH is required between DELETE and UNWIND (line 2, column 1 (offset: 27))
+"UNWIND $movies AS movie CREATE (m:Movie {title: movie.title, tmdbId: movie.tmdbId, runtime: movie.runtime, revenue: movie.revenue, budget: movie.budget, plotEmbedding: movie.plotEmbedding, imdbRating: movie.imdbRating, released: movie.released, countries: movie.countries, languages: movie.languages, plot: movie.plot, imdbVotes: movie.imdbVotes, imdbId: movie.imdbId, year: movie.year, poster: movie.poster, posterEmbedding: movie.posterEmbedding, url: movie.url, movieId: movie.movieId})"
+ ^
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (n) DELETE n WITH *
+UNWIND $movies AS movie CREATE (m:Movie {title: movie.title, tmdbId: movie.tmdbId, runtime: movie.runtime, revenue: movie.revenue, budget: movie.budget, plotEmbedding: movie.plotEmbedding, imdbRating: movie.imdbRating, released: movie.released, countries: movie.countries, languages: movie.languages, plot: movie.plot, imdbVotes: movie.imdbVotes, imdbId: movie.imdbId, year: movie.year, poster: movie.poster, posterEmbedding: movie.posterEmbedding, url: movie.url, movieId: movie.movieId}):
+Received notification from DBMS server: {severity: WARNING} {code: Neo.ClientNotification.Statement.ParameterNotProvided} {category: GENERIC} {title: The statement refers to a parameter that was not provided in the request.} {description: Did not supply query with enough parameters. The produced query plan will not be cached and is not executable without EXPLAIN. (Missing parameters: movies)} {position: None} for query: 'EXPLAIN MATCH (n) DELETE n WITH *\nUNWIND $movies AS movie CREATE (m:Movie {title: movie.title, tmdbId: movie.tmdbId, runtime: movie.runtime, revenue: movie.revenue, budget: movie.budget, plotEmbedding: movie.plotEmbedding, imdbRating: movie.imdbRating, released: movie.released, countries: movie.countries, languages: movie.languages, plot: movie.plot, imdbVotes: movie.imdbVotes, imdbId: movie.imdbId, year: movie.year, poster: movie.poster, posterEmbedding: movie.posterEmbedding, url: movie.url, movieId: movie.movieId})'
+CyVer Errors from generated query:
+- Neo.ClientNotification.Statement.ParameterNotProvided: Did not supply query with enough parameters. The produced query plan will not be cached and is not executable without EXPLAIN. (Missing parameters: movies)
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (n) DELETE n WITH *
+UNWIND $movies AS movie CREATE (m:Movie {title: movie.title, tmdbId: movie.tmdbId, runtime: movie.runtime, revenue: movie.revenue, budget: movie.budget, plotEmbedding: movie.plotEmbedding, imdbRating: movie.imdbRating, released: movie.released, countries: movie.countries, languages: movie.languages, plot: movie.plot, imdbVotes: movie.imdbVotes, imdbId: movie.imdbId, year: movie.year, poster: movie.poster, posterEmbedding: movie.posterEmbedding, url: movie.url, movieId: movie.movieId}):
+Received notification from DBMS server: {severity: WARNING} {code: Neo.ClientNotification.Statement.ParameterNotProvided} {category: GENERIC} {title: The statement refers to a parameter that was not provided in the request.} {description: Did not supply query with enough parameters. The produced query plan will not be cached and is not executable without EXPLAIN. (Missing parameters: movies)} {position: None} for query: 'EXPLAIN MATCH (n) DELETE n WITH *\nUNWIND $movies AS movie CREATE (m:Movie {title: movie.title, tmdbId: movie.tmdbId, runtime: movie.runtime, revenue: movie.revenue, budget: movie.budget, plotEmbedding: movie.plotEmbedding, imdbRating: movie.imdbRating, released: movie.released, countries: movie.countries, languages: movie.languages, plot: movie.plot, imdbVotes: movie.imdbVotes, imdbId: movie.imdbId, year: movie.year, poster: movie.poster, posterEmbedding: movie.posterEmbedding, url: movie.url, movieId: movie.movieId})'
+CyVer Errors from generated query:
+- Neo.ClientNotification.Statement.ParameterNotProvided: Did not supply query with enough parameters. The produced query plan will not be cached and is not executable without EXPLAIN. (Missing parameters: movies)
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (n) DELETE n
+UNWIND $movies AS movie
+CREATE (m:Movie {title: movie.title, tmdbId: movie.tmdbId, runtime: movie.runtime, revenue: movie.revenue, budget: movie.budget, plotEmbedding: movie.plotEmbedding, imdbRating: movie.imdbRating, released: movie.released, countries: movie.countries, languages: movie.languages, plot: movie.plot, imdbVotes: movie.imdbVotes, imdbId: movie.imdbId, year: movie.year, poster: movie.poster, posterEmbedding: movie.posterEmbedding, url: movie.url, movieId: movie.movieId}):
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: WITH is required between DELETE and UNWIND (line 2, column 1 (offset: 27))
+"UNWIND $movies AS movie"
+ ^
+
+Schema retriever Agent: START
+Cypher Generator: START
+CyVer Evaluator: START
+CyVer Evaluation of UNWIND $moviesList AS movieProperties MATCH (n:Movie) WHERE n.movieId = movieProperties.movieId SET n = movieProperties:
+Received notification from DBMS server: {severity: WARNING} {code: Neo.ClientNotification.Statement.ParameterNotProvided} {category: GENERIC} {title: The statement refers to a parameter that was not provided in the request.} {description: Did not supply query with enough parameters. The produced query plan will not be cached and is not executable without EXPLAIN. (Missing parameters: moviesList)} {position: None} for query: 'EXPLAIN UNWIND $moviesList AS movieProperties MATCH (n:Movie) WHERE n.movieId = movieProperties.movieId SET n = movieProperties'
+CyVer Errors from generated query:
+- Neo.ClientNotification.Statement.ParameterNotProvided: Did not supply query with enough parameters. The produced query plan will not be cached and is not executable without EXPLAIN. (Missing parameters: moviesList)
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of UNWIND $moviesList AS movieProperties CREATE (n:Movie) SET n = movieProperties:
+Received notification from DBMS server: {severity: WARNING} {code: Neo.ClientNotification.Statement.ParameterNotProvided} {category: GENERIC} {title: The statement refers to a parameter that was not provided in the request.} {description: Did not supply query with enough parameters. The produced query plan will not be cached and is not executable without EXPLAIN. (Missing parameters: moviesList)} {position: None} for query: 'EXPLAIN UNWIND $moviesList AS movieProperties CREATE (n:Movie) SET n = movieProperties'
+CyVer Errors from generated query:
+- Neo.ClientNotification.Statement.ParameterNotProvided: Did not supply query with enough parameters. The produced query plan will not be cached and is not executable without EXPLAIN. (Missing parameters: moviesList)
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of UNWIND $moviesList AS movieProperties CREATE (m:Movie) SET m = movieProperties:
+Received notification from DBMS server: {severity: WARNING} {code: Neo.ClientNotification.Statement.ParameterNotProvided} {category: GENERIC} {title: The statement refers to a parameter that was not provided in the request.} {description: Did not supply query with enough parameters. The produced query plan will not be cached and is not executable without EXPLAIN. (Missing parameters: moviesList)} {position: None} for query: 'EXPLAIN UNWIND $moviesList AS movieProperties CREATE (m:Movie) SET m = movieProperties'
+CyVer Errors from generated query:
+- Neo.ClientNotification.Statement.ParameterNotProvided: Did not supply query with enough parameters. The produced query plan will not be cached and is not executable without EXPLAIN. (Missing parameters: moviesList)
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of UNWIND $moviesList AS movieProperties CREATE (m:Movie) SET m = movieProperties:
+Received notification from DBMS server: {severity: WARNING} {code: Neo.ClientNotification.Statement.ParameterNotProvided} {category: GENERIC} {title: The statement refers to a parameter that was not provided in the request.} {description: Did not supply query with enough parameters. The produced query plan will not be cached and is not executable without EXPLAIN. (Missing parameters: moviesList)} {position: None} for query: 'EXPLAIN UNWIND $moviesList AS movieProperties CREATE (m:Movie) SET m = movieProperties'
+CyVer Errors from generated query:
+- Neo.ClientNotification.Statement.ParameterNotProvided: Did not supply query with enough parameters. The produced query plan will not be cached and is not executable without EXPLAIN. (Missing parameters: moviesList)
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of UNWIND $moviesList AS movieProperties CREATE (m:Movie) SET m = movieProperties:
+Received notification from DBMS server: {severity: WARNING} {code: Neo.ClientNotification.Statement.ParameterNotProvided} {category: GENERIC} {title: The statement refers to a parameter that was not provided in the request.} {description: Did not supply query with enough parameters. The produced query plan will not be cached and is not executable without EXPLAIN. (Missing parameters: moviesList)} {position: None} for query: 'EXPLAIN UNWIND $moviesList AS movieProperties CREATE (m:Movie) SET m = movieProperties'
+CyVer Errors from generated query:
+- Neo.ClientNotification.Statement.ParameterNotProvided: Did not supply query with enough parameters. The produced query plan will not be cached and is not executable without EXPLAIN. (Missing parameters: moviesList)
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of UNWIND $moviesList AS movieProperties CREATE (m:Movie) SET m = movieProperties:
+Received notification from DBMS server: {severity: WARNING} {code: Neo.ClientNotification.Statement.ParameterNotProvided} {category: GENERIC} {title: The statement refers to a parameter that was not provided in the request.} {description: Did not supply query with enough parameters. The produced query plan will not be cached and is not executable without EXPLAIN. (Missing parameters: moviesList)} {position: None} for query: 'EXPLAIN UNWIND $moviesList AS movieProperties CREATE (m:Movie) SET m = movieProperties'
+CyVer Errors from generated query:
+- Neo.ClientNotification.Statement.ParameterNotProvided: Did not supply query with enough parameters. The produced query plan will not be cached and is not executable without EXPLAIN. (Missing parameters: moviesList)
+
+Unvailable Output: START
+100%|██████████| 2128/2128 [31:58<00:00, 79.78s/it]100%|██████████| 2128/2128 [31:58<00:00,  1.11it/s]

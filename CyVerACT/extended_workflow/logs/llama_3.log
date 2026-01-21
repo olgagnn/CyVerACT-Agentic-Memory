@@ -1,0 +1,758 @@
+CyVer Errors from generated query:
+- Neo.ClientNotification.Statement.UnknownRelationshipTypeWarning: One of the relationship types in your query is not available in the database, make sure you didn't misspell it or that the label is available when you run this statement in your application (the missing relationship type is: RECEIVED)
+
+- WrongDirectionPathWarning: The specified path (:Product)-[:ORDERS]->(:Order) has the opposite direction in the knowledge graph schema. The path (p:Product {productName: 'Aniseed Syrup'})-[:ORDERS]->(o:Order) in the Cypher statement should be changed to  (p:Product {productName: 'Aniseed Syrup'})<-[:ORDERS]-(o:Order).
+
+- InvalidPropertyAccessByLabelWarning: The label Order does not have the following properties:  unitPrice, quantity.
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (p:Product {productName: 'Aniseed Syrup'})<-[:ORDERS]-(o:Order)-[:SUPPLIES]->(s:Supplier)-[:SUPPLIES]->(p) RETURN sum(p.unitPrice * p.unitsInStock):
+CyVer Errors from generated query:
+- UnknownPathWarning: The specified path (:Order)-[:SUPPLIES]->(:Supplier) does not exist in the knowledge graph schema. The path (o:Order)-[:SUPPLIES]->(s:Supplier) in the Cypher statement is wrong.
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (p:Product {productName: 'Aniseed Syrup'})<-[:ORDERS]-(o:Order)-[:SUPPLIES]->(s:Supplier)-[:PART_OF]->(p) RETURN sum(p.unitPrice * p.unitsInStock):
+CyVer Errors from generated query:
+- UnknownPathWarning: The specified path (:Order)-[:SUPPLIES]->(:Supplier) does not exist in the knowledge graph schema. The path (o:Order)-[:SUPPLIES]->(s:Supplier) in the Cypher statement is wrong.
+
+- UnknownPathWarning: The specified path (:Supplier)-[:PART_OF]->(:Product) does not exist in the knowledge graph schema. The path (s:Supplier)-[:PART_OF]->(p) in the Cypher statement is wrong.
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (p:Product {productName: 'Aniseed Syrup'})<-[:ORDERS]-(o:Order)-[:SUPPLIES]->(s:Supplier)-[:PART_OF]->(pp:Product) RETURN sum(p.unitPrice * p.unitsInStock):
+CyVer Errors from generated query:
+- UnknownPathWarning: The specified path (:Order)-[:SUPPLIES]->(:Supplier) does not exist in the knowledge graph schema. The path (o:Order)-[:SUPPLIES]->(s:Supplier) in the Cypher statement is wrong.
+
+- UnknownPathWarning: The specified path (:Supplier)-[:PART_OF]->(:Product) does not exist in the knowledge graph schema. The path (s:Supplier)-[:PART_OF]->(pp:Product) in the Cypher statement is wrong.
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (p:Product {productName: 'Aniseed Syrup'})<-[:ORDERS]-(o:Order)-[:SUPPLIES]->(s:Supplier)-[:PART_OF]->(pp:Product) RETURN sum(p.unitPrice * p.unitsInStock):
+CyVer Errors from generated query:
+- UnknownPathWarning: The specified path (:Order)-[:SUPPLIES]->(:Supplier) does not exist in the knowledge graph schema. The path (o:Order)-[:SUPPLIES]->(s:Supplier) in the Cypher statement is wrong.
+
+- UnknownPathWarning: The specified path (:Supplier)-[:PART_OF]->(:Product) does not exist in the knowledge graph schema. The path (s:Supplier)-[:PART_OF]->(pp:Product) in the Cypher statement is wrong.
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (p:Product {productName: 'Aniseed Syrup'})<-[:ORDERS]-(o:Order)-[:SUPPLIES]->(s:Supplier)-[:PART_OF]->(pp:Product) RETURN sum(p.unitPrice * p.unitsInStock):
+CyVer Errors from generated query:
+- UnknownPathWarning: The specified path (:Order)-[:SUPPLIES]->(:Supplier) does not exist in the knowledge graph schema. The path (o:Order)-[:SUPPLIES]->(s:Supplier) in the Cypher statement is wrong.
+
+- UnknownPathWarning: The specified path (:Supplier)-[:PART_OF]->(:Product) does not exist in the knowledge graph schema. The path (s:Supplier)-[:PART_OF]->(pp:Product) in the Cypher statement is wrong.
+
+Schema retriever Agent: START
+Cypher Generator: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (p:Product {productName: 'Aniseed Syrup'})-[:ORDERS]->(o:Order)-[:ORDERS]->(p2:Product) RETURN sum(o.unitPrice * p2.quantity):
+CyVer Errors from generated query:
+- WrongDirectionPathWarning: The specified path (:Product)-[:ORDERS]->(:Order) has the opposite direction in the knowledge graph schema. The path (p:Product {productName: 'Aniseed Syrup'})-[:ORDERS]->(o:Order) in the Cypher statement should be changed to  (p:Product {productName: 'Aniseed Syrup'})<-[:ORDERS]-(o:Order).
+
+- InvalidPropertyAccessByLabelWarning: The label Product does not have the following properties:  quantity.
+
+- InvalidPropertyAccessByLabelWarning: The label Order does not have the following properties:  unitPrice.
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (p:Product {productName: 'Aniseed Syrup'})<-[:ORDERS]-(:Order)-[:ORDERS]->(o:Product) RETURN sum(o.unitPrice * p.unitPrice):
+Cypher Executor: START
+Output Generator: START
+360 What are the 3 most popular movies in the genre 'Comedy'?
+Schema filtering Agent: START
+Cypher Generator: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (m:Movie)-[:IN_GENRE]->(:Genre {name: 'Comedy'}) RETURN m.title, m.popularity ORDER BY m.popularity DESC LIMIT 3:
+Cypher Executor: START
+Output Generator: START
+361 List the first 3 directors born before 1950.
+Schema filtering Agent: START
+Cypher Generator: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (d:Director)-[:DIRECTED]->(m:Movie)
+WHERE d.born < 1950
+RETURN d.name, m.title LIMIT 3:
+Cypher Executor: START
+Output Generator: START
+362 List all users who have rated the same movie with different ratings.
+Schema filtering Agent: START
+Cypher Generator: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (u:User)-[:RATED]->(m:Movie)
+WITH u, m, COLLECT(DISTINCT u.userId) AS user_ids, COLLECT(DISTINCT m.title) AS movie_titles
+WHERE size(user_ids) > 1
+RETURN u.name, movie_titles:
+Cypher Executor: START
+Output Generator: START
+363 Which actors have acted in movies from at least three different countries?
+Schema filtering Agent: START
+Cypher Generator: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (m:Movie)-[:ACTED_IN]->(a:Actor)-[:ACTED_IN]->(m2:Movie)
+WHERE size((m)-[:ACTED_IN]->(a)) >= 3
+RETURN a.name:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: A pattern expression should only be used in order to test the existence of a pattern. It can no longer be used inside the function size(), an alternative is to replace size() with COUNT {}. (line 2, column 12 (offset: 82))
+"WHERE size((m)-[:ACTED_IN]->(a)) >= 3"
+            ^
+
+- WrongDirectionPathWarning: The specified path (:Movie)-[:ACTED_IN]->(:Actor) has the opposite direction in the knowledge graph schema. The path (m)-[:ACTED_IN]->(a) in the Cypher statement should be changed to  (m)<-[:ACTED_IN]-(a).
+
+- WrongDirectionPathWarning: The specified path (:Movie)-[:ACTED_IN]->(:Actor) has the opposite direction in the knowledge graph schema. The path (m:Movie)-[:ACTED_IN]->(a:Actor) in the Cypher statement should be changed to  (m:Movie)<-[:ACTED_IN]-(a:Actor).
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (m:Movie)-[:ACTED_IN]->(a:Actor)-[:ACTED_IN]->(m2:Movie)
+WHERE size((m)<-[:ACTED_IN]-(a)) >= 3
+RETURN a.name:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: A pattern expression should only be used in order to test the existence of a pattern. It can no longer be used inside the function size(), an alternative is to replace size() with COUNT {}. (line 2, column 12 (offset: 82))
+"WHERE size((m)<-[:ACTED_IN]-(a)) >= 3"
+            ^
+
+- WrongDirectionPathWarning: The specified path (:Movie)-[:ACTED_IN]->(:Actor) has the opposite direction in the knowledge graph schema. The path (m:Movie)-[:ACTED_IN]->(a:Actor) in the Cypher statement should be changed to  (m:Movie)<-[:ACTED_IN]-(a:Actor).
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (m:Movie)-[:ACTED_IN]->(a:Actor)-[:ACTED_IN]->(m2:Movie)
+WHERE size((m)<-[:ACTED_IN]-(a)) >= 3
+RETURN a.name:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: A pattern expression should only be used in order to test the existence of a pattern. It can no longer be used inside the function size(), an alternative is to replace size() with COUNT {}. (line 2, column 12 (offset: 82))
+"WHERE size((m)<-[:ACTED_IN]-(a)) >= 3"
+            ^
+
+- WrongDirectionPathWarning: The specified path (:Movie)-[:ACTED_IN]->(:Actor) has the opposite direction in the knowledge graph schema. The path (m:Movie)-[:ACTED_IN]->(a:Actor) in the Cypher statement should be changed to  (m:Movie)<-[:ACTED_IN]-(a:Actor).
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (m:Movie)-[:ACTED_IN]->(a:Actor)-[:ACTED_IN]->(m2:Movie)
+WHERE size((m)<-[:ACTED_IN]-(a)) >= 3
+RETURN a.name:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: A pattern expression should only be used in order to test the existence of a pattern. It can no longer be used inside the function size(), an alternative is to replace size() with COUNT {}. (line 2, column 12 (offset: 82))
+"WHERE size((m)<-[:ACTED_IN]-(a)) >= 3"
+            ^
+
+- WrongDirectionPathWarning: The specified path (:Movie)-[:ACTED_IN]->(:Actor) has the opposite direction in the knowledge graph schema. The path (m:Movie)-[:ACTED_IN]->(a:Actor) in the Cypher statement should be changed to  (m:Movie)<-[:ACTED_IN]-(a:Actor).
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (m:Movie)-[:ACTED_IN]->(a:Actor)-[:ACTED_IN]->(m2:Movie)
+WHERE size((m)<-[:ACTED_IN]-(a)) >= 3
+RETURN a.name:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: A pattern expression should only be used in order to test the existence of a pattern. It can no longer be used inside the function size(), an alternative is to replace size() with COUNT {}. (line 2, column 12 (offset: 82))
+"WHERE size((m)<-[:ACTED_IN]-(a)) >= 3"
+            ^
+
+- WrongDirectionPathWarning: The specified path (:Movie)-[:ACTED_IN]->(:Actor) has the opposite direction in the knowledge graph schema. The path (m:Movie)-[:ACTED_IN]->(a:Actor) in the Cypher statement should be changed to  (m:Movie)<-[:ACTED_IN]-(a:Actor).
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (m:Movie)-[:ACTED_IN]->(a:Actor)-[:ACTED_IN]->(m2:Movie)
+WHERE size((m)<-[:ACTED_IN]-(a)) >= 3
+RETURN a.name:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: A pattern expression should only be used in order to test the existence of a pattern. It can no longer be used inside the function size(), an alternative is to replace size() with COUNT {}. (line 2, column 12 (offset: 82))
+"WHERE size((m)<-[:ACTED_IN]-(a)) >= 3"
+            ^
+
+- WrongDirectionPathWarning: The specified path (:Movie)-[:ACTED_IN]->(:Actor) has the opposite direction in the knowledge graph schema. The path (m:Movie)-[:ACTED_IN]->(a:Actor) in the Cypher statement should be changed to  (m:Movie)<-[:ACTED_IN]-(a:Actor).
+
+Schema retriever Agent: START
+Cypher Generator: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (m:Movie)-[:ACTED_IN]->(a:Actor)-[:ACTED_IN]->(m2:Movie)
+WHERE size((m)-[:ACTED_IN]->(a)) >= 3
+RETURN a.name:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: A pattern expression should only be used in order to test the existence of a pattern. It can no longer be used inside the function size(), an alternative is to replace size() with COUNT {}. (line 2, column 12 (offset: 82))
+"WHERE size((m)-[:ACTED_IN]->(a)) >= 3"
+            ^
+
+- WrongDirectionPathWarning: The specified path (:Movie)-[:ACTED_IN]->(:Actor) has the opposite direction in the knowledge graph schema. The path (m)-[:ACTED_IN]->(a) in the Cypher statement should be changed to  (m)<-[:ACTED_IN]-(a).
+
+- WrongDirectionPathWarning: The specified path (:Movie)-[:ACTED_IN]->(:Actor) has the opposite direction in the knowledge graph schema. The path (m:Movie)-[:ACTED_IN]->(a:Actor) in the Cypher statement should be changed to  (m:Movie)<-[:ACTED_IN]-(a:Actor).
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (m:Movie)-[:ACTED_IN]->(a:Actor)-[:ACTED_IN]->(m2:Movie)
+WHERE size((m)<-[:ACTED_IN]-(a)) >= 3
+RETURN a.name:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: A pattern expression should only be used in order to test the existence of a pattern. It can no longer be used inside the function size(), an alternative is to replace size() with COUNT {}. (line 2, column 12 (offset: 82))
+"WHERE size((m)<-[:ACTED_IN]-(a)) >= 3"
+            ^
+
+- WrongDirectionPathWarning: The specified path (:Movie)-[:ACTED_IN]->(:Actor) has the opposite direction in the knowledge graph schema. The path (m:Movie)-[:ACTED_IN]->(a:Actor) in the Cypher statement should be changed to  (m:Movie)<-[:ACTED_IN]-(a:Actor).
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (m:Movie)-[:ACTED_IN]->(a:Actor)-[:ACTED_IN]->(m2:Movie)
+WHERE size((m)<-[:ACTED_IN]-(a)) >= 3
+RETURN a.name:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: A pattern expression should only be used in order to test the existence of a pattern. It can no longer be used inside the function size(), an alternative is to replace size() with COUNT {}. (line 2, column 12 (offset: 82))
+"WHERE size((m)<-[:ACTED_IN]-(a)) >= 3"
+            ^
+
+- WrongDirectionPathWarning: The specified path (:Movie)-[:ACTED_IN]->(:Actor) has the opposite direction in the knowledge graph schema. The path (m:Movie)-[:ACTED_IN]->(a:Actor) in the Cypher statement should be changed to  (m:Movie)<-[:ACTED_IN]-(a:Actor).
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (m:Movie)-[:ACTED_IN]->(a:Actor)-[:ACTED_IN]->(m2:Movie)
+WHERE size((m)<-[:ACTED_IN]-(a)) >= 3
+RETURN a.name:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: A pattern expression should only be used in order to test the existence of a pattern. It can no longer be used inside the function size(), an alternative is to replace size() with COUNT {}. (line 2, column 12 (offset: 82))
+"WHERE size((m)<-[:ACTED_IN]-(a)) >= 3"
+            ^
+
+- WrongDirectionPathWarning: The specified path (:Movie)-[:ACTED_IN]->(:Actor) has the opposite direction in the knowledge graph schema. The path (m:Movie)-[:ACTED_IN]->(a:Actor) in the Cypher statement should be changed to  (m:Movie)<-[:ACTED_IN]-(a:Actor).
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (m:Movie)-[:ACTED_IN]->(a:Actor)-[:ACTED_IN]->(m2:Movie)
+WHERE size((m)<-[:ACTED_IN]-(a)) >= 3
+RETURN a.name:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: A pattern expression should only be used in order to test the existence of a pattern. It can no longer be used inside the function size(), an alternative is to replace size() with COUNT {}. (line 2, column 12 (offset: 82))
+"WHERE size((m)<-[:ACTED_IN]-(a)) >= 3"
+            ^
+
+- WrongDirectionPathWarning: The specified path (:Movie)-[:ACTED_IN]->(:Actor) has the opposite direction in the knowledge graph schema. The path (m:Movie)-[:ACTED_IN]->(a:Actor) in the Cypher statement should be changed to  (m:Movie)<-[:ACTED_IN]-(a:Actor).
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (m:Movie)-[:ACTED_IN]->(a:Actor)-[:ACTED_IN]->(m2:Movie)
+WHERE size((m)<-[:ACTED_IN]-(a)) >= 3
+RETURN a.name:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: A pattern expression should only be used in order to test the existence of a pattern. It can no longer be used inside the function size(), an alternative is to replace size() with COUNT {}. (line 2, column 12 (offset: 82))
+"WHERE size((m)<-[:ACTED_IN]-(a)) >= 3"
+            ^
+
+- WrongDirectionPathWarning: The specified path (:Movie)-[:ACTED_IN]->(:Actor) has the opposite direction in the knowledge graph schema. The path (m:Movie)-[:ACTED_IN]->(a:Actor) in the Cypher statement should be changed to  (m:Movie)<-[:ACTED_IN]-(a:Actor).
+
+Unvailable Output: START
+364 Identify the first 3 questions that were asked by users with a reputation over 100000.
+Schema filtering Agent: START
+Cypher Generator: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (u:User {reputation: {reputation: {reputation: INTEGER} > 100000})-[:ASKED]->(q:Question)
+RETURN q.title, q.id, q.createdAt, q.score, q.upVotes, q.downVotes:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Invalid input ')': expected an expression, ',' or '}' (line 1, column 80 (offset: 79))
+
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (u:User {reputation: {reputation: INTEGER} > 100000})-[:ASKED]->(q:Question)
+RETURN q.title, q.id, q.createdAt, q.score, q.upVotes, q.downVotes:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Variable `INTEGER` not defined (line 1, column 49 (offset: 48))
+
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (u:User {reputation: {reputation: INTEGER} > 100000})-[:ASKED]->(q:Question)
+RETURN q.title, q.id, q.createdAt, q.score, q.upVotes, q.downVotes:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Variable `INTEGER` not defined (line 1, column 49 (offset: 48))
+
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (u:User {reputation: {reputation: INTEGER} > 100000})-[:ASKED]->(q:Question)
+RETURN q.title, q.id, q.createdAt, q.score, q.upVotes, q.downVotes:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Variable `INTEGER` not defined (line 1, column 49 (offset: 48))
+
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (u:User {reputation: {reputation: INTEGER} > 100000})-[:ASKED]->(q:Question)
+RETURN q.title, q.id, q.createdAt, q.score, q.upVotes, q.downVotes:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Variable `INTEGER` not defined (line 1, column 49 (offset: 48))
+
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (u:User {reputation: {reputation: INTEGER} > 100000})-[:ASKED]->(q:Question)
+RETURN q.title, q.id, q.createdAt, q.score, q.upVotes, q.downVotes:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Variable `INTEGER` not defined (line 1, column 49 (offset: 48))
+
+
+Schema retriever Agent: START
+Cypher Generator: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (u:User {reputation: {reputation: {value: 100000}}})-[:ASKED]->(q:Question)
+RETURN q.title, q.createdAt, q.score, q.upVotes, q.downVotes:
+Cypher Executor: START
+Output Generator: START
+365 List the first 5 entities that have the status 'Defaulted'.
+Skipping row 365, to avoid memory error in offshoreleaks
+366 What is the average budget of movies produced by 'Pixar Animation Studios'?
+Schema filtering Agent: START
+Cypher Generator: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (p:ProductionCompany {name: 'Pixar Animation Studios'})-[:PRODUCED_BY]->(m:Movie)
+RETURN avg(m.budget):
+CyVer Errors from generated query:
+- WrongDirectionPathWarning: The specified path (:ProductionCompany)-[:PRODUCED_BY]->(:Movie) has the opposite direction in the knowledge graph schema. The path (p:ProductionCompany {name: 'Pixar Animation Studios'})-[:PRODUCED_BY]->(m:Movie) in the Cypher statement should be changed to  (p:ProductionCompany {name: 'Pixar Animation Studios'})<-[:PRODUCED_BY]-(m:Movie).
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (p:ProductionCompany {name: 'Pixar Animation Studios'})<-[:PRODUCED_BY]-(m:Movie)
+RETURN avg(m.budget):
+Cypher Executor: START
+Output Generator: START
+367 List all software versions that depend on 'RHEL'.
+Schema filtering Agent: START
+Cypher Generator: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (v:Version {name: 'RHEL'})-[:PREVIOUS]->(prev:Version) 
+OPTIONAL MATCH (s:Software)-[:DEPENDS_ON]->(v) 
+RETURN s.versions:
+Cypher Executor: START
+Output Generator: START
+368 What are the top 5 languages in which the most highly rated movies were originally made?
+Schema filtering Agent: START
+Cypher Generator: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (m:Movie)-[:ORIGINAL_LANGUAGE]->(l:Language)
+WITH l, avg(rating) AS avg_rating
+ORDER BY avg_rating DESC
+LIMIT 5:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Variable `rating` not defined (line 2, column 13 (offset: 71))
+"WITH l, avg(rating) AS avg_rating"
+             ^
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (m:Movie)-[:ORIGINAL_LANGUAGE]->(l:Language)
+WITH l, avg(m.average_vote) AS avg_rating
+ORDER BY avg_rating DESC
+LIMIT 5:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Query cannot conclude with WITH (must be a RETURN clause, a FINISH clause, an update clause, a unit subquery call, or a procedure call with no YIELD). (line 2, column 1 (offset: 59))
+"WITH l, avg(m.average_vote) AS avg_rating"
+ ^
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (m:Movie)-[:ORIGINAL_LANGUAGE]->(l:Language)
+RETURN l.name, avg(m.average_vote) AS avg_rating
+ORDER BY avg_rating DESC
+LIMIT 5:
+Cypher Executor: START
+Output Generator: START
+369 List the first 5 businesses that have not been reviewed yet.
+Schema filtering Agent: START
+Cypher Generator: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (b:Business)-[:IN_CATEGORY]->(), (b)-[:REVIEWS]->()
+WHERE NOT exists((b)-[:REVIEWS]->())
+RETURN b LIMIT 5:
+CyVer Errors from generated query:
+- WrongDirectionPathWarning: The specified path (:Business)-[:REVIEWS]->() has the opposite direction in the knowledge graph schema. The path (b)-[:REVIEWS]->() in the Cypher statement should be changed to  (b)<-[:REVIEWS]-().
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (b:Business)-[:IN_CATEGORY]->(), (b)<-[:REVIEWS]-()
+RETURN b LIMIT 5:
+Cypher Executor: START
+Output Generator: START
+370 Which 3 languages are most commonly spoken in movies with an average vote below 4?
+Schema filtering Agent: START
+Cypher Generator: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (m:Movie {average_vote: {lessThan: 4}})-[:SPOKEN_IN_LANGUAGE]->(l:Language)
+WITH collect(DISTINCT l.name) as lang
+ORDER BY size(lang) DESC
+LIMIT 3:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Query cannot conclude with WITH (must be a RETURN clause, a FINISH clause, an update clause, a unit subquery call, or a procedure call with no YIELD). (line 2, column 1 (offset: 90))
+"WITH collect(DISTINCT l.name) as lang"
+ ^
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (m:Movie {average_vote: {lessThan: 4}})-[:SPOKEN_IN_LANGUAGE]->(l:Language)
+RETURN collect(DISTINCT l.name) as lang
+ORDER BY size(lang) DESC
+LIMIT 3:
+Cypher Executor: START
+Output Generator: START
+371 Show the streams with the most distinct moderators.
+Schema filtering Agent: START
+Cypher Generator: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (stream:Stream)-[:MODERATOR]->(moderator:Stream) OR (moderator:User)-[:MODERATOR]->(stream:Stream)
+RETURN stream, COUNT(DISTINCT moderator) AS num_mods
+ORDER BY COUNT(DISTINCT moderator) DESC:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Invalid input 'OR': expected a graph pattern, 'FOREACH', ',', 'ORDER BY', 'CALL', 'CREATE', 'LOAD CSV', 'DELETE', 'DETACH', 'FINISH', 'INSERT', 'LIMIT', 'MATCH', 'MERGE', 'NODETACH', 'OFFSET', 'OPTIONAL', 'REMOVE', 'RETURN', 'SET', 'SKIP', 'UNION', 'UNWIND', 'USE', 'USING', 'WHERE', 'WITH' or <EOF> (line 1, column 64 (offset: 63))
+
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (stream:Stream)-[:MODERATOR]->(moderator:User) OR (stream:Stream)-[:MODERATOR]->(moderator:Stream)
+RETURN stream, COUNT(DISTINCT moderator) AS num_mods
+ORDER BY COUNT(DISTINCT moderator) DESC:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Invalid input 'OR': expected a graph pattern, 'FOREACH', ',', 'ORDER BY', 'CALL', 'CREATE', 'LOAD CSV', 'DELETE', 'DETACH', 'FINISH', 'INSERT', 'LIMIT', 'MATCH', 'MERGE', 'NODETACH', 'OFFSET', 'OPTIONAL', 'REMOVE', 'RETURN', 'SET', 'SKIP', 'UNION', 'UNWIND', 'USE', 'USING', 'WHERE', 'WITH' or <EOF> (line 1, column 62 (offset: 61))
+
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (stream:Stream)-[:MODERATOR]->(moderator:User) OR (stream:Stream)-[:MODERATOR]->(moderator:Stream):
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Invalid input 'OR': expected a graph pattern, 'FOREACH', ',', 'ORDER BY', 'CALL', 'CREATE', 'LOAD CSV', 'DELETE', 'DETACH', 'FINISH', 'INSERT', 'LIMIT', 'MATCH', 'MERGE', 'NODETACH', 'OFFSET', 'OPTIONAL', 'REMOVE', 'RETURN', 'SET', 'SKIP', 'UNION', 'UNWIND', 'USE', 'USING', 'WHERE', 'WITH' or <EOF> (line 1, column 62 (offset: 61))
+
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (stream:Stream)-[:MODERATOR]->(moderator:User) OR (stream:Stream)-[:MODERATOR]->(moderator:Stream):
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Invalid input 'OR': expected a graph pattern, 'FOREACH', ',', 'ORDER BY', 'CALL', 'CREATE', 'LOAD CSV', 'DELETE', 'DETACH', 'FINISH', 'INSERT', 'LIMIT', 'MATCH', 'MERGE', 'NODETACH', 'OFFSET', 'OPTIONAL', 'REMOVE', 'RETURN', 'SET', 'SKIP', 'UNION', 'UNWIND', 'USE', 'USING', 'WHERE', 'WITH' or <EOF> (line 1, column 62 (offset: 61))
+
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (stream:Stream)-[:MODERATOR]->(moderator:User) OR (stream:Stream)-[:MODERATOR]->(moderator:Stream):
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Invalid input 'OR': expected a graph pattern, 'FOREACH', ',', 'ORDER BY', 'CALL', 'CREATE', 'LOAD CSV', 'DELETE', 'DETACH', 'FINISH', 'INSERT', 'LIMIT', 'MATCH', 'MERGE', 'NODETACH', 'OFFSET', 'OPTIONAL', 'REMOVE', 'RETURN', 'SET', 'SKIP', 'UNION', 'UNWIND', 'USE', 'USING', 'WHERE', 'WITH' or <EOF> (line 1, column 62 (offset: 61))
+
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (stream:Stream)-[:MODERATOR]->(moderator:User) OR (stream:Stream)-[:MODERATOR]->(moderator:Stream):
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Invalid input 'OR': expected a graph pattern, 'FOREACH', ',', 'ORDER BY', 'CALL', 'CREATE', 'LOAD CSV', 'DELETE', 'DETACH', 'FINISH', 'INSERT', 'LIMIT', 'MATCH', 'MERGE', 'NODETACH', 'OFFSET', 'OPTIONAL', 'REMOVE', 'RETURN', 'SET', 'SKIP', 'UNION', 'UNWIND', 'USE', 'USING', 'WHERE', 'WITH' or <EOF> (line 1, column 62 (offset: 61))
+
+
+Schema retriever Agent: START
+Cypher Generator: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (stream:Stream)-[:MODERATOR]->(moderator:Stream) OR (moderator:User)-[:MODERATOR]->(stream:Stream)
+RETURN stream, COUNT(DISTINCT moderator):
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Invalid input 'OR': expected a graph pattern, 'FOREACH', ',', 'ORDER BY', 'CALL', 'CREATE', 'LOAD CSV', 'DELETE', 'DETACH', 'FINISH', 'INSERT', 'LIMIT', 'MATCH', 'MERGE', 'NODETACH', 'OFFSET', 'OPTIONAL', 'REMOVE', 'RETURN', 'SET', 'SKIP', 'UNION', 'UNWIND', 'USE', 'USING', 'WHERE', 'WITH' or <EOF> (line 1, column 64 (offset: 63))
+
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (stream:Stream)-[:MODERATOR]->(moderator:Stream) OR (moderator:User)-[:MODERATOR]->(stream:Stream)
+RETURN stream, COUNT(DISTINCT moderator):
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Invalid input 'OR': expected a graph pattern, 'FOREACH', ',', 'ORDER BY', 'CALL', 'CREATE', 'LOAD CSV', 'DELETE', 'DETACH', 'FINISH', 'INSERT', 'LIMIT', 'MATCH', 'MERGE', 'NODETACH', 'OFFSET', 'OPTIONAL', 'REMOVE', 'RETURN', 'SET', 'SKIP', 'UNION', 'UNWIND', 'USE', 'USING', 'WHERE', 'WITH' or <EOF> (line 1, column 64 (offset: 63))
+
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (stream:Stream)-[:MODERATOR]->(moderator:Stream) OR (moderator:User)-[:MODERATOR]->(stream:Stream)
+RETURN stream, COUNT(DISTINCT moderator):
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Invalid input 'OR': expected a graph pattern, 'FOREACH', ',', 'ORDER BY', 'CALL', 'CREATE', 'LOAD CSV', 'DELETE', 'DETACH', 'FINISH', 'INSERT', 'LIMIT', 'MATCH', 'MERGE', 'NODETACH', 'OFFSET', 'OPTIONAL', 'REMOVE', 'RETURN', 'SET', 'SKIP', 'UNION', 'UNWIND', 'USE', 'USING', 'WHERE', 'WITH' or <EOF> (line 1, column 64 (offset: 63))
+
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (stream:Stream)-[:MODERATOR]->(moderator:Stream) OR (moderator:User)-[:MODERATOR]->(stream:Stream)
+RETURN stream, COUNT(DISTINCT moderator):
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Invalid input 'OR': expected a graph pattern, 'FOREACH', ',', 'ORDER BY', 'CALL', 'CREATE', 'LOAD CSV', 'DELETE', 'DETACH', 'FINISH', 'INSERT', 'LIMIT', 'MATCH', 'MERGE', 'NODETACH', 'OFFSET', 'OPTIONAL', 'REMOVE', 'RETURN', 'SET', 'SKIP', 'UNION', 'UNWIND', 'USE', 'USING', 'WHERE', 'WITH' or <EOF> (line 1, column 64 (offset: 63))
+
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (stream:Stream)-[:MODERATOR]->(moderator:Stream) OR (moderator:User)-[:MODERATOR]->(stream:Stream)
+RETURN stream, COUNT(DISTINCT moderator):
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Invalid input 'OR': expected a graph pattern, 'FOREACH', ',', 'ORDER BY', 'CALL', 'CREATE', 'LOAD CSV', 'DELETE', 'DETACH', 'FINISH', 'INSERT', 'LIMIT', 'MATCH', 'MERGE', 'NODETACH', 'OFFSET', 'OPTIONAL', 'REMOVE', 'RETURN', 'SET', 'SKIP', 'UNION', 'UNWIND', 'USE', 'USING', 'WHERE', 'WITH' or <EOF> (line 1, column 64 (offset: 63))
+
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (stream:Stream)-[:MODERATOR]->(moderator:Stream) OR (moderator:User)-[:MODERATOR]->(stream:Stream)
+RETURN stream, COUNT(DISTINCT moderator):
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Invalid input 'OR': expected a graph pattern, 'FOREACH', ',', 'ORDER BY', 'CALL', 'CREATE', 'LOAD CSV', 'DELETE', 'DETACH', 'FINISH', 'INSERT', 'LIMIT', 'MATCH', 'MERGE', 'NODETACH', 'OFFSET', 'OPTIONAL', 'REMOVE', 'RETURN', 'SET', 'SKIP', 'UNION', 'UNWIND', 'USE', 'USING', 'WHERE', 'WITH' or <EOF> (line 1, column 64 (offset: 63))
+
+
+Unvailable Output: START
+372 List the questions that have been tagged with 'graphql' and have a 'createdAt' date in 2018.
+Schema filtering Agent: START
+Cypher Generator: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (q:Question)-[:TAGGED]->(t:Tag {name: 'graphql'}) WHERE q.createdAt >= '2018-01-01' AND q.createdAt < '2019-01-01' RETURN q:
+Cypher Executor: START
+Output Generator: START
+373 Find the 'fastrf_embedding' of the character named 'Jaime-Lannister'.
+Schema filtering Agent: START
+Cypher Generator: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (c:Character {name: 'Jaime-Lannister'})-[:INTERACTS45|INTERACTS|INTERACTS1|INTERACTS3|INTERACTS2]->(other:Character) RETURN c.fastrf_embedding:
+Cypher Executor: START
+Output Generator: START
+374 Which 3 products have the highest average discount in orders?
+Schema filtering Agent: START
+Cypher Generator: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (p:Product)-[:ORDERS]->(o:Order)
+RETURN p.productName, AVG(o.discount) AS averageDiscount
+ORDER BY averageDiscount DESC
+LIMIT 3:
+CyVer Errors from generated query:
+- WrongDirectionPathWarning: The specified path (:Product)-[:ORDERS]->(:Order) has the opposite direction in the knowledge graph schema. The path (p:Product)-[:ORDERS]->(o:Order) in the Cypher statement should be changed to  (p:Product)<-[:ORDERS]-(o:Order).
+
+- InvalidPropertyAccessByLabelWarning: The label Order does not have the following properties:  discount.
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (p:Product)-[:ORDERS]->(o:Order)
+RETURN p.productName, AVG(o.freight) AS averageDiscount
+ORDER BY averageDiscount DESC
+LIMIT 3:
+CyVer Errors from generated query:
+- WrongDirectionPathWarning: The specified path (:Product)-[:ORDERS]->(:Order) has the opposite direction in the knowledge graph schema. The path (p:Product)-[:ORDERS]->(o:Order) in the Cypher statement should be changed to  (p:Product)<-[:ORDERS]-(o:Order).
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (p:Product)-[:ORDERS]->(o:Order)
+RETURN p.productName, AVG(o.freight) AS averageDiscount
+ORDER BY averageDiscount DESC
+LIMIT 3:
+CyVer Errors from generated query:
+- WrongDirectionPathWarning: The specified path (:Product)-[:ORDERS]->(:Order) has the opposite direction in the knowledge graph schema. The path (p:Product)-[:ORDERS]->(o:Order) in the Cypher statement should be changed to  (p:Product)<-[:ORDERS]-(o:Order).
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (p:Product)-[:ORDERS]->(o:Order)
+RETURN p.productName, AVG(o.freight) AS averageDiscount
+ORDER BY averageDiscount DESC
+LIMIT 3:
+CyVer Errors from generated query:
+- WrongDirectionPathWarning: The specified path (:Product)-[:ORDERS]->(:Order) has the opposite direction in the knowledge graph schema. The path (p:Product)-[:ORDERS]->(o:Order) in the Cypher statement should be changed to  (p:Product)<-[:ORDERS]-(o:Order).
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (p:Product)-[:ORDERS]->(o:Order)
+RETURN p.productName, AVG(o.freight) AS averageDiscount
+ORDER BY averageDiscount DESC
+LIMIT 3:
+CyVer Errors from generated query:
+- WrongDirectionPathWarning: The specified path (:Product)-[:ORDERS]->(:Order) has the opposite direction in the knowledge graph schema. The path (p:Product)-[:ORDERS]->(o:Order) in the Cypher statement should be changed to  (p:Product)<-[:ORDERS]-(o:Order).
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (p:Product)-[:ORDERS]->(o:Order)
+RETURN p.productName, AVG(o.freight) AS averageDiscount
+ORDER BY averageDiscount DESC
+LIMIT 3:
+CyVer Errors from generated query:
+- WrongDirectionPathWarning: The specified path (:Product)-[:ORDERS]->(:Order) has the opposite direction in the knowledge graph schema. The path (p:Product)-[:ORDERS]->(o:Order) in the Cypher statement should be changed to  (p:Product)<-[:ORDERS]-(o:Order).
+
+Schema retriever Agent: START
+Cypher Generator: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (p:Product)-[:ORDERS]->(o:Order)
+RETURN p.productName, AVG(o.discount) AS averageDiscount
+ORDER BY averageDiscount DESC
+LIMIT 3:
+CyVer Errors from generated query:
+- WrongDirectionPathWarning: The specified path (:Product)-[:ORDERS]->(:Order) has the opposite direction in the knowledge graph schema. The path (p:Product)-[:ORDERS]->(o:Order) in the Cypher statement should be changed to  (p:Product)<-[:ORDERS]-(o:Order).
+
+- InvalidPropertyAccessByLabelWarning: The label Order does not have the following properties:  discount.
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (p:Product)-[:ORDERS]->(o:Order)
+RETURN p.productName, AVG(o.discount) AS averageDiscount
+ORDER BY averageDiscount DESC
+LIMIT 3:
+CyVer Errors from generated query:
+- WrongDirectionPathWarning: The specified path (:Product)-[:ORDERS]->(:Order) has the opposite direction in the knowledge graph schema. The path (p:Product)-[:ORDERS]->(o:Order) in the Cypher statement should be changed to  (p:Product)<-[:ORDERS]-(o:Order).
+
+- InvalidPropertyAccessByLabelWarning: The label Order does not have the following properties:  discount.
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (p:Product)-[:ORDERS]->(o:Order)
+RETURN p.productName, AVG(o.discount) AS averageDiscount
+ORDER BY averageDiscount DESC
+LIMIT 3:
+CyVer Errors from generated query:
+- WrongDirectionPathWarning: The specified path (:Product)-[:ORDERS]->(:Order) has the opposite direction in the knowledge graph schema. The path (p:Product)-[:ORDERS]->(o:Order) in the Cypher statement should be changed to  (p:Product)<-[:ORDERS]-(o:Order).
+
+- InvalidPropertyAccessByLabelWarning: The label Order does not have the following properties:  discount.
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (p:Product)-[:ORDERS]->(o:Order)
+RETURN p.productName, AVG(o.discount) AS averageDiscount
+ORDER BY averageDiscount DESC
+LIMIT 3:
+CyVer Errors from generated query:
+- WrongDirectionPathWarning: The specified path (:Product)-[:ORDERS]->(:Order) has the opposite direction in the knowledge graph schema. The path (p:Product)-[:ORDERS]->(o:Order) in the Cypher statement should be changed to  (p:Product)<-[:ORDERS]-(o:Order).
+
+- InvalidPropertyAccessByLabelWarning: The label Order does not have the following properties:  discount.
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (p:Product)-[:ORDERS]->(o:Order)
+RETURN p.productName, AVG(o.discount) AS averageDiscount
+ORDER BY averageDiscount DESC
+LIMIT 3:
+CyVer Errors from generated query:
+- WrongDirectionPathWarning: The specified path (:Product)-[:ORDERS]->(:Order) has the opposite direction in the knowledge graph schema. The path (p:Product)-[:ORDERS]->(o:Order) in the Cypher statement should be changed to  (p:Product)<-[:ORDERS]-(o:Order).
+
+- InvalidPropertyAccessByLabelWarning: The label Order does not have the following properties:  discount.
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (p:Product)-[:ORDERS]->(o:Order)
+RETURN p.productName, AVG(o.discount) AS averageDiscount
+ORDER BY averageDiscount DESC
+LIMIT 3:
+CyVer Errors from generated query:
+- WrongDirectionPathWarning: The specified path (:Product)-[:ORDERS]->(:Order) has the opposite direction in the knowledge graph schema. The path (p:Product)-[:ORDERS]->(o:Order) in the Cypher statement should be changed to  (p:Product)<-[:ORDERS]-(o:Order).
+
+- InvalidPropertyAccessByLabelWarning: The label Order does not have the following properties:  discount.
+
+Unvailable Output: START
+375 Which streams have the most distinct games played? List the top 5.
+Schema filtering Agent: START
+Cypher Generator: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (stream:Stream)-[:PLAYS]->(game:Game)
+WITH collect(DISTINCT game.name) as games
+RETURN stream.name, count(games) as num_games ORDER BY count(games) DESC LIMIT 5:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Variable `stream` not defined (line 3, column 8 (offset: 101))
+"RETURN stream.name, count(games) as num_games ORDER BY count(games) DESC LIMIT 5"
+        ^
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (stream:Stream)-[:PLAYS]->(game:Game)
+WITH collect(DISTINCT game.name) as games
+RETURN stream.name, count(games) as num_games ORDER BY count(games) DESC LIMIT 5:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Variable `stream` not defined (line 3, column 8 (offset: 101))
+"RETURN stream.name, count(games) as num_games ORDER BY count(games) DESC LIMIT 5"
+        ^
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (stream:Stream)-[:PLAYS]->(game:Game)
+WITH collect(DISTINCT game.name) as games
+RETURN stream.name, count(games) as num_games ORDER BY count(games) DESC LIMIT 5:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Variable `stream` not defined (line 3, column 8 (offset: 101))
+"RETURN stream.name, count(games) as num_games ORDER BY count(games) DESC LIMIT 5"
+        ^
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (stream:Stream)-[:PLAYS]->(game:Game)
+WITH collect(DISTINCT game.name) as games
+RETURN stream.name, count(games) as num_games ORDER BY count(games) DESC LIMIT 5:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Variable `stream` not defined (line 3, column 8 (offset: 101))
+"RETURN stream.name, count(games) as num_games ORDER BY count(games) DESC LIMIT 5"
+        ^
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (stream:Stream)-[:PLAYS]->(game:Game)
+WITH collect(DISTINCT game.name) as games
+RETURN stream.name, count(games) as num_games ORDER BY count(games) DESC LIMIT 5:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Variable `stream` not defined (line 3, column 8 (offset: 101))
+"RETURN stream.name, count(games) as num_games ORDER BY count(games) DESC LIMIT 5"
+        ^
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (stream:Stream)-[:PLAYS]->(game:Game)
+WITH collect(DISTINCT game.name) as games
+RETURN stream.name, count(games) as num_games ORDER BY count(games) DESC LIMIT 5:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Variable `stream` not defined (line 3, column 8 (offset: 101))
+"RETURN stream.name, count(games) as num_games ORDER BY count(games) DESC LIMIT 5"
+        ^
+
+Schema retriever Agent: START
+Cypher Generator: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (stream:Stream)-[:PLAYS]->(game:Game)
+RETURN stream.name, COUNT(DISTINCT game.name) AS num_games:
+Cypher Executor: START
+Output Generator: START
+376 Which entities benefited from filings where the originator bank was 'CIMB Bank Berhad'? Limit to top 3 results.
+Schema filtering Agent: START
+Cypher Generator: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (f:Filing)-[:BENEFITS]->(e:Entity {name: 'CIMB Bank Berhad'}) RETURN e LIMIT 3:
+Cypher Executor: START
+Output Generator: START
+377 What is the average IMDB rating of movies in the "Adventure" genre?
+Schema filtering Agent: START
+Cypher Generator: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (m:Movie)-[:IN_GENRE]->(g:Genre {name: "Adventure"}) RETURN avg(m.imdbRating):
+Cypher Executor: START
+Output Generator: START
+378 Identify the top 5 tweets with text containing 'critical service'.
+Schema filtering Agent: START
+Cypher Generator: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (t:Tweet)-[:TAGS]->(:Hashtag {name: 'critical service'}) RETURN t, count(*) ORDER BY count(*) DESC LIMIT 5:
+Cypher Executor: START
+Output Generator: START
+379 Find all movies that have been produced by persons born after 1960 limited to top 5.
+Schema filtering Agent: START
+Cypher Generator: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (p:Person {born: {born: 1960..})-[:PRODUCED]->(m:Movie)
+RETURN m.title, COUNT(m) AS numMovies:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Invalid input '..': expected an expression, ',' or '}' (line 1, column 43 (offset: 42))
+
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (p:Person {born: 1960..})-[:PRODUCED]->(m:Movie)
+RETURN m.title, COUNT(m) AS numMovies:
+CyVer Errors from generated query:
+- Neo.ClientError.Statement.SyntaxError: Invalid input '..': expected an expression, ',' or '}' (line 1, column 36 (offset: 35))
+
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (p:Person {born: 1960})-[:PRODUCED]->(m:Movie)
+RETURN m.title, COUNT(m) AS numMovies:
+Cypher Executor: START
+Output Generator: START
+380 List the top 3 movies with the shortest runtime.
+Schema filtering Agent: START
+Cypher Generator: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (m:Movie)-[:IN_GENRE]->(g:Genre)-[:IN_GENRE]->(m2:Movie)
+WHERE m.runtime < m2.runtime
+RETURN m.title, m.runtime:
+CyVer Errors from generated query:
+- WrongDirectionPathWarning: The specified path (:Genre)-[:IN_GENRE]->(:Movie) has the opposite direction in the knowledge graph schema. The path (g:Genre)-[:IN_GENRE]->(m2:Movie) in the Cypher statement should be changed to  (g:Genre)<-[:IN_GENRE]-(m2:Movie).
+
+Cypher Corrector: START
+CyVer Evaluator: START
+CyVer Evaluation of MATCH (m:Movie)-[:IN_GENRE]->(g:Genre)<-[:IN_GENRE]-(m2:Movie)
+WHERE m.runtime < m2.runtime
+RETURN m.title, m.runtime:

@@ -1,0 +1,36 @@
+1. row 13
+
+2. 279 List the entities with a former name and their current name. offshoreleaks
+passed validation for generated query
+MATCH (e:Entity) WHERE e.former_name IS NOT NULL RETURN e.former_name, e.name
+
+3. 1517 List the entities associated with the 'Bahamas Leaks'. offshoreleaks
+passed validation for generated query
+passed output validation for generated query
+
+MATCH (e:Entity) WHERE e.sourceID = 'Bahamas Leaks' RETURN e
+Query executed successfully
+Result extracted successfully
+
+1697 Show the entities that have been struck off but have a different inactivation date. offshoreleaks
+passed validation for generated query
+passed output validation for generated query
+
+MATCH (e:Entity) WHERE e.struck_off_date IS NOT NULL AND e.inactivation_date IS NOT NULL AND e.struck_off_date <> e.inactivation_date RETURN e.name, e.struck_off_date, e.inactivation_date
+Query executed successfully
+Result extracted successfully
+
+4. 1728 Show entities that have a company type specified. offshoreleaks
+passed validation for generated query
+passed output validation for generated query
+MATCH (e:Entity) WHERE e.company_type IS NOT NULL RETURN e
+Query executed successfully
+Result extracted successfully
+
+2048 Which entities have a 'HKG' country code? offshoreleaks
+passed validation for generated query
+passed output validation for generated query
+
+MATCH (e:Entity {country_codes: 'HKG'}) RETURN e
+Query executed successfully
+Result extracted successfully
