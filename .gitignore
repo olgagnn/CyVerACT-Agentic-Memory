@@ -1,3 +1,16 @@
+# Security & Environment 
 venv/
+.env
+
+# Python Compiled Files 
 __pycache__/
 *.pyc
+
+# Jupyter Notebooks 
+.ipynb_checkpoints/
+
+# IDE Settings
+.vscode/
+
+# Windows System Junk
+Thumbs.db
