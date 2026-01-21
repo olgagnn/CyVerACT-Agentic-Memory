@@ -3,7 +3,7 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.runnables.config import RunnableConfig
 from Nodes.States.states import  OverallState
 from langchain_neo4j import Neo4jGraph
-from langchain.callbacks import get_openai_callback
+from langchain_community.callbacks import get_openai_callback
 
 
 system_prompt = """

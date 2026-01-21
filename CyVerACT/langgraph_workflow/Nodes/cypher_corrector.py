@@ -3,7 +3,7 @@ from langchain_core.runnables.config import RunnableConfig
 from langchain_core.output_parsers import StrOutputParser
 from huggingface_hub import InferenceClient
 from langchain_neo4j import Neo4jGraph
-from langchain.callbacks import get_openai_callback
+from langchain_community.callbacks import get_openai_callback
 
 
 
