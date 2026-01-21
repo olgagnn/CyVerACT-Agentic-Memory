@@ -1,5 +1,5 @@
 from langgraph.graph import END, START, StateGraph
-from IPython.display import Image, display
+# from IPython.display import Image, display
 from Nodes.States.states import  OverallState,InputState,OutputState
 from Configuration.configurations import ConfigSchema
 from Nodes.cypher_generator import cypher_generator
