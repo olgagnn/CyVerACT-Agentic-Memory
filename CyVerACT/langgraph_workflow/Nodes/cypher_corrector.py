@@ -10,6 +10,14 @@ from langchain_community.callbacks import get_openai_callback
 from Nodes.States.states import OverallState
 from Configuration.models import models
 
+# Importing Zep memory
+try:
+    from zep_memory import ZepMemoryWrapper
+    memory_available = True
+except ImportError:
+    print("WARNING: ZepMemoryWrapper not found. Corrector will not learn from errors.")
+    memory_available = False
+
 
 system_prompt = '''
                 You are a Cypher expert reviewing a statement written by a junior developer. 
@@ -78,15 +86,33 @@ correct_cypher_prompt_flattened = ChatPromptTemplate.from_messages(
 def cypher_corrector(state: OverallState, config:RunnableConfig) -> OverallState:
     """
     Correct the Cypher statement based on the provided errors.
+    Also store the error in Zep Memory to avoid repetition.
     """
+    print('----------------------------------------------Cypher Corrector: START ')
     model_name = config['configurable']['model_name']
     question = state.get("question")
     cypher = state.get("cypher_statement")
+    errors = state.get("cypher_errors")  # Retrieve the errors
+    
     database_url = state.get("database_url")
     database_name = state.get("database_name")
     database_user = state.get("database_user")
     database_password = state.get("database_password")
-    print('----------------------------------------------Cypher Corrector: START ')
+
+    # Store to memory and LEARN!!! 
+    # Corrector should correct current error and store info in order not to repeat it
+    if memory_available and errors:
+        try:
+            memory_store = ZepMemoryWrapper()
+            print(f"[Memory] Storing mistake in Zep...")
+            memory_store.add_error_lesson(
+                user_query=question,
+                bad_cypher=cypher,
+                error_msg=str(errors) 
+            )
+        except Exception as e:
+            print(f"[Memory] Failed to save error: {e}")
+
     enhanced_graph = Neo4jGraph(url=database_url, username = database_user,
                                 password =  database_password, database = database_name,
                                 enhanced_schema=True)
