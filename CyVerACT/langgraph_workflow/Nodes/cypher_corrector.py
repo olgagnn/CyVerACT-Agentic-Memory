@@ -10,12 +10,12 @@ from langchain_community.callbacks import get_openai_callback
 from Nodes.States.states import OverallState
 from Configuration.models import models
 
-# Importing Zep memory
+# Importing Memory Manager
 try:
-    from zep_memory import ZepMemoryWrapper
+    from memory.manager import MemoryManager
     memory_available = True
 except ImportError:
-    print("WARNING: ZepMemoryWrapper not found. Corrector will not learn from errors.")
+    print("WARNING: MemoryManager not found. Corrector will not learn from errors.")
     memory_available = False
 
 
@@ -103,8 +103,8 @@ def cypher_corrector(state: OverallState, config:RunnableConfig) -> OverallState
     # Corrector should correct current error and store info in order not to repeat it
     if memory_available and errors:
         try:
-            memory_store = ZepMemoryWrapper()
-            print(f"[Memory] Storing mistake in Zep...")
+            memory_store = MemoryManager.get_memory_provider()
+            print(f"[Memory] Storing mistake in Memory...")
             memory_store.add_error_lesson(
                 user_query=question,
                 bad_cypher=cypher,

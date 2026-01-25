@@ -5,12 +5,12 @@ from Nodes.States.states import  OverallState
 from langchain_neo4j import Neo4jGraph
 from langchain_community.callbacks import get_openai_callback
 
-# Importing Zep memory
+# Importing Memory Manager
 try:
-    from zep_memory import ZepMemoryWrapper
+    from memory.manager import MemoryManager
     memory_available = True
 except ImportError:
-    print("WARNING: ZepMemoryWrapper not found. Proceeding without memory.")
+    print("WARNING: MemoryManager not found. Proceeding without memory.")
     memory_available = False
 
 system_prompt = """
@@ -88,8 +88,8 @@ def cypher_generator(state: OverallState, config:RunnableConfig) -> OverallState
     memory_context = ""
     if memory_available:
         try:
-            # Starting zep wrapper 
-            memory_store = ZepMemoryWrapper()
+            # Getting current memory provider  
+            memory_store = MemoryManager.get_memory_provider()
             
             # Looking for stored errors/rules 
             past_rules = memory_store.get_relevant_rules(question)

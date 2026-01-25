@@ -5,13 +5,13 @@ from dotenv import load_dotenv, find_dotenv
 # Loading env for sep api key 
 load_dotenv(find_dotenv(), override=True)
 
-class ZepMemoryWrapper:
+class ZepMemoryManager:
     def __init__(self, user_id="cyver_agent_main"):
         api_key = os.getenv("ZEP_API_KEY")
         if not api_key:
             raise ValueError("ZEP_API_KEY missing from .env")
                 
-        print(f"[DEBUG] ZepWrapper initialized for User ID: '{user_id}'") # DEBUGGING :(
+        print(f"[DEBUG] ZepMamoryManager initialized for User ID: '{user_id}'") # DEBUGGING :(
             
         self.client = Zep(api_key=api_key)
         self.user_id = user_id
