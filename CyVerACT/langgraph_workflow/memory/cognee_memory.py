@@ -28,7 +28,7 @@ from cognee.modules.engine.operations.setup import setup as internal_setup
 
 class CogneeMemoryManager:
     def __init__(self, reset_db=False):
-        print(f"[Cognee] Initializing Local Memory at: {root_path}")
+        print(f"[Cognee] Initializing Memory at: {root_path}")
         
         async def _init():
             if reset_db:
@@ -44,7 +44,7 @@ class CogneeMemoryManager:
 
         try:
             asyncio.run(_init())
-            print("[Cognee] Ready (Local Mode)!")
+            print("[Cognee] Ready !")
         except Exception as e:
             print(f"[Cognee Init Error]: {e}")
 
@@ -54,18 +54,18 @@ class CogneeMemoryManager:
             f"Incorrect Cypher: '{bad_cypher}'. "
             f"Error: {error_msg}. Rule: Do not use this pattern again."
         )
-        print(f"[Cognee] Learning lesson locally...")
+        print(f"[Cognee] Learning lesson...")
         async def _process():
             await cognee.add(lesson_text, "CyVer_Error_Log")
             await cognee.cognify()
         try:
             asyncio.run(_process())
-            print("[Cognee] Local Memory Updated!")
+            print("[Cognee] Memory Updated!")
         except Exception as e:
             print(f"[Cognee Write Error]: {e}")
 
     def get_relevant_rules(self, query: str) -> str:
-        print(f"[Cognee] Searching local rules for: {query}...")
+        print(f"[Cognee] Searching rules for: {query}...")
         async def _search():
             return await cognee.search(query_text=query)
         try:

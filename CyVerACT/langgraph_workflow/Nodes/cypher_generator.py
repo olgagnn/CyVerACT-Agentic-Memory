@@ -5,12 +5,15 @@ from Nodes.States.states import  OverallState
 from langchain_neo4j import Neo4jGraph
 from langchain_community.callbacks import get_openai_callback
 
-# Importing Memory Manager
+# Importing HYBRID MEMORY
 try:
-    from memory.manager import MemoryManager
+    from Memory.hybrid_manager import HybridMemoryManager
+    # Initialize HYBRID MEMORY HERE !!!
+    hybrid_memory = HybridMemoryManager()
     memory_available = True
+    print("[Cypher Generator] Hybrid Memory Loaded")
 except ImportError:
-    print("WARNING: MemoryManager not found. Proceeding without memory.")
+    print("WARNING: HybridMemoryManager not found. Proceeding without memory.")
     memory_available = False
 
 system_prompt = """
@@ -84,26 +87,22 @@ def cypher_generator(state: OverallState, config:RunnableConfig) -> OverallState
     schema = enhanced_graph.schema
     # print('Database Schema:',schema)
 
-    # Memory Retrieval here !!! 
+    # Hybrid Memory Retrieval here !!! 
     memory_context = ""
     if memory_available:
         try:
-            # Getting current memory provider  
-            memory_store = MemoryManager.get_memory_provider()
+            print(f"[Cypher Generator] Asking Hybrid Memory for: {question}")
+            combined_info = hybrid_memory.get_relevant_context(question)
             
-            # Looking for stored errors/rules 
-            past_rules = memory_store.get_relevant_rules(question)
-            
-            if past_rules:
-                print(f"[Memory] Found relevant past errors/rules.")
-                print(f"[DEBUG CONTENT]:\n{past_rules}") # DEBUGGING :(
-                # Updating memory context for prompt 
-                memory_context = f"\n### CRITICAL PAST MISTAKES TO AVOID \n{past_rules}\n"
+            if combined_info:
+                print(f"[Memory] Context Retrieved!")
+                print(f"--> {combined_info[:150].replace(chr(10), ' ')}...") # Debugging 
+                memory_context = f"\n{combined_info}\n"
             else:
-                print("[Memory] No relevant past errors found.")
+                print("[Memory] No relevant info found.")
                 
         except Exception as e:
-            print(f"[Memory] Error retrieving from Zep: {e}")
+            print(f"[Memory] Retrieval Error: {e}")
             memory_context = ""
 
     chat_model = config['configurable']['model']
@@ -137,13 +136,12 @@ def cypher_generator(state: OverallState, config:RunnableConfig) -> OverallState
     elif model_name == 'finetuned_gemma2_9b_local':
         generated_cypher = generated_cypher.split('<start_of_turn>model\n')[1].strip()
 
-    # --- TEST MODE: SABOTAGE (START) ---
+    # TEST MODE: SABOTAGE (START) - Don't need it now with hybrid tho 
     # If question involves 'Matrix', write the wrong relationship (ACTS_IN)
     # Goal: CyVer should fail in translating, Corrector should be called and write to memory 
     #if "Matrix" in question:
         #print("\n[TEST MODE] SABOTAGING ON PURPOSE WITH RELATIONSHIP (ACTS_IN)...")
         #generated_cypher = "MATCH (m:Movie {title: 'The Matrix'})<-[:ACTS_IN]-(p:Person) RETURN p"
-    # --- TEST MODE: SABOTAGE (END) ---
     
     print(generated_cypher)
     print('-------------------------------Cypher Generator: END')

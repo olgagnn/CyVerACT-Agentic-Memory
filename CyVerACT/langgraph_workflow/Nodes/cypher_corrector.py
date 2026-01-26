@@ -10,12 +10,13 @@ from langchain_community.callbacks import get_openai_callback
 from Nodes.States.states import OverallState
 from Configuration.models import models
 
-# Importing Memory Manager
+# Importing Hybrid Memory Manager
 try:
-    from memory.manager import MemoryManager
+    from Memory.hybrid_manager import HybridMemoryManager
+    hybrid_memory = HybridMemoryManager()
     memory_available = True
 except ImportError:
-    print("WARNING: MemoryManager not found. Corrector will not learn from errors.")
+    print("WARNING: HybridMemoryManager not found.")
     memory_available = False
 
 
@@ -86,27 +87,26 @@ correct_cypher_prompt_flattened = ChatPromptTemplate.from_messages(
 def cypher_corrector(state: OverallState, config:RunnableConfig) -> OverallState:
     """
     Correct the Cypher statement based on the provided errors.
-    Also store the error in Zep Memory to avoid repetition.
+    Also store errors in Cognee Memory !!!
     """
     print('----------------------------------------------Cypher Corrector: START ')
     model_name = config['configurable']['model_name']
     question = state.get("question")
     cypher = state.get("cypher_statement")
-    errors = state.get("cypher_errors")  # Retrieve the errors
+    errors = state.get("cypher_errors")  # Retrieving the errors
     
     database_url = state.get("database_url")
     database_name = state.get("database_name")
     database_user = state.get("database_user")
     database_password = state.get("database_password")
 
-    # Store to memory and LEARN!!! 
+    # Store to memory and LEARN !!! 
     # Corrector should correct current error and store info in order not to repeat it
     if memory_available and errors:
         try:
-            memory_store = MemoryManager.get_memory_provider()
-            print(f"[Memory] Storing mistake in Memory...")
-            memory_store.add_error_lesson(
-                user_query=question,
+            print(f"[Cypher Corrector] Storing mistake in Hybrid Memory (Cognee)...")
+            hybrid_memory.add_error_lesson(
+                query=question,
                 bad_cypher=cypher,
                 error_msg=str(errors) 
             )
