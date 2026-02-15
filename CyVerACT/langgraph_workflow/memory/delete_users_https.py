@@ -19,10 +19,18 @@ headers = {
 
 def get_all_users():
     try:
-        
         response = requests.get(f"{base_url}/users?page_size=100", headers=headers)
         if response.status_code == 200:
-            users = response.json().get("users", [])
+            data = response.json()
+            
+            # Διόρθωση: Έλεγχος αν είναι ήδη λίστα
+            if isinstance(data, list):
+                users = data
+            elif isinstance(data, dict):
+                users = data.get("users", [])
+            else:
+                users = []
+                
             return users
         else:
             print(f"Could not list users: {response.text}")

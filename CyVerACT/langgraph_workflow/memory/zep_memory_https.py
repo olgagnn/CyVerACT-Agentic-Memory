@@ -107,3 +107,40 @@ class ZepMemoryHTTPS:
                 print(f"[Zep] Save failed: {resp.text}")
         except Exception as e:
             print(f"[Zep] Write Error: {e}")
+
+    # --- ADDED: Method to retrieve recent chat history ---
+    def get_chat_history(self, session_id: str, limit=10) -> str:
+        """
+        Retrieving recent chat history for context (e.g. 'that movie')
+        """
+        if not self.api_key: return ""
+        
+        url = f"{self.base_url}/sessions/{session_id}/memory"
+        
+        try:
+            response = requests.get(url, headers=self.headers, timeout=5)
+            
+            if response.status_code == 200:
+                data = response.json()
+                messages = data.get("messages", [])
+                
+                # Get the last N messages
+                recent_messages = messages[-limit:]
+                
+                history_text = ""
+                for msg in recent_messages:
+                    role = msg.get("role", "unknown")
+                    content = msg.get("content", "")
+                    # Format: User: ... \n Assistant: ...
+                    history_text += f"{role.capitalize()}: {content}\n"
+                
+                return history_text
+            else:
+                # If 404 (session not found yet), just return empty
+                if response.status_code != 404:
+                    print(f"[Zep] History Error: {response.text}")
+                return ""
+                
+        except Exception as e:
+            print(f"[Zep] Get History Error: {e}")
+            return ""

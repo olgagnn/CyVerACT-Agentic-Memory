@@ -9,8 +9,8 @@ import sys
 # This adds the parent directory (../) to the list of directories Python will search for modules.
 # The ../ refers to the directory one level up from the current working directory.
 sys.path.append('../')
-# from CyVer_custom import SyntaxValidator,PropertiesValidator,SchemaValidator
-from CyVer import SyntaxValidator,PropertiesValidator,SchemaValidator
+from CyVer_custom import SyntaxValidator,PropertiesValidator,SchemaValidator
+#from CyVer import SyntaxValidator,PropertiesValidator,SchemaValidator
 
 #Create cypher evaluator node
 def cyver_evaluator(state: OverallState, config:RunnableConfig) -> OverallState:

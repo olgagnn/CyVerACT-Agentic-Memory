@@ -37,7 +37,7 @@ class HybridMemoryManager:
             except Exception as e:
                 print(f"[Hybrid Memory Manager] Zep Init Failed: {e}")
 
-    def get_relevant_context(self, query: str) -> str:
+    def get_relevant_context(self, query: str, session_id: str = None) -> str:
         """Retrieves from both our memories!"""
         context_parts = []
         
@@ -49,10 +49,21 @@ class HybridMemoryManager:
         
         # Episodic Memory - Chat History from Zep
         if self.zep:
-            facts = self.zep.search_memory(query)
-            if facts:
-                context_parts.append(f" USER HISTORY & CONTEXT:\n{facts}")
-        
+            try:
+                # Semantic Search (Facts)
+                facts = self.zep.search_memory(query)
+                if facts:
+                    context_parts.append(f" RELEVANT FACTS:\n{facts}")
+                
+                # RECENT CHAT HISTORY 
+                if session_id:
+                    # 3 last messages from that session - can change the number later
+                    history = self.zep.get_chat_history(session_id=session_id, limit=3)
+                    if history:
+                         context_parts.append(f" RECENT CONVERSATION HISTORY:\n{history}")
+            except Exception as e:
+                print(f"[Hybrid Manager] Zep Error: {e}")
+
         return "\n\n".join(context_parts)
 
     def add_error_lesson(self, query, bad_cypher, error_msg):

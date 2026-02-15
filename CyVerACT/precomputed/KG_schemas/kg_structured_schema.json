@@ -8102,5 +8102,181 @@
       "constraint": [],
       "index": []
     }
+  },
+  "neo4j": {
+    "node_props": {
+      "Movie": [
+        {
+          "property": "title",
+          "type": "STRING"
+        },
+        {
+          "property": "released",
+          "type": "INTEGER"
+        },
+        {
+          "property": "tagline",
+          "type": "STRING"
+        }
+      ],
+      "Person": [
+        {
+          "property": "name",
+          "type": "STRING"
+        },
+        {
+          "property": "born",
+          "type": "INTEGER"
+        }
+      ]
+    },
+    "rel_props": {
+      "ACTED_IN": [
+        {
+          "property": "roles",
+          "type": "LIST"
+        }
+      ],
+      "REVIEWED": [
+        {
+          "property": "rating",
+          "type": "INTEGER"
+        },
+        {
+          "property": "summary",
+          "type": "STRING"
+        }
+      ]
+    },
+    "relationships": [
+      {
+        "end": "Movie",
+        "start": "Person",
+        "type": "ACTED_IN"
+      },
+      {
+        "end": "Movie",
+        "start": "Person",
+        "type": "DIRECTED"
+      },
+      {
+        "end": "Movie",
+        "start": "Person",
+        "type": "PRODUCED"
+      },
+      {
+        "end": "Movie",
+        "start": "Person",
+        "type": "WROTE"
+      },
+      {
+        "end": "Person",
+        "start": "Person",
+        "type": "FOLLOWS"
+      },
+      {
+        "end": "Movie",
+        "start": "Person",
+        "type": "REVIEWED"
+      }
+    ],
+    "metadata": {
+      "constraint": [
+        {
+          "id": 9,
+          "name": "constraint_d2d2cfa4",
+          "type": "UNIQUENESS",
+          "entityType": "NODE",
+          "labelsOrTypes": [
+            "__Node__"
+          ],
+          "properties": [
+            "id"
+          ],
+          "ownedIndex": "constraint_d2d2cfa4",
+          "propertyType": null
+        },
+        {
+          "id": 3,
+          "name": "movie_title",
+          "type": "UNIQUENESS",
+          "entityType": "NODE",
+          "labelsOrTypes": [
+            "Movie"
+          ],
+          "properties": [
+            "title"
+          ],
+          "ownedIndex": "movie_title",
+          "propertyType": null
+        },
+        {
+          "id": 5,
+          "name": "person_name",
+          "type": "UNIQUENESS",
+          "entityType": "NODE",
+          "labelsOrTypes": [
+            "Person"
+          ],
+          "properties": [
+            "name"
+          ],
+          "ownedIndex": "person_name",
+          "propertyType": null
+        }
+      ],
+      "index": [
+        {
+          "label": "Movie",
+          "properties": [
+            "title"
+          ],
+          "size": 38,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 38.0
+        },
+        {
+          "label": "Movie",
+          "properties": [
+            "released"
+          ],
+          "size": 38,
+          "type": "RANGE",
+          "valuesSelectivity": 0.47368421052631576,
+          "distinctValues": 18.0
+        },
+        {
+          "label": "Person",
+          "properties": [
+            "name"
+          ],
+          "size": 133,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 133.0
+        },
+        {
+          "label": "Person",
+          "properties": [
+            "born"
+          ],
+          "size": 128,
+          "type": "RANGE",
+          "valuesSelectivity": 0.3984375,
+          "distinctValues": 51.0
+        },
+        {
+          "label": "__Node__",
+          "properties": [
+            "id"
+          ],
+          "size": 0,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 0.0
+        }
+      ]
+    }
   }
 }

@@ -1,7 +1,7 @@
-from neo4j import GraphDatabase,basic_auth
+from neo4j import GraphDatabase, basic_auth
 from neo4j_graphrag.schema import get_structured_schema
 from nltk.stem import PorterStemmer
-from sentence_transformers import SentenceTransformer,util
+from sentence_transformers import SentenceTransformer, util
 import torch
 import os 
 
@@ -10,14 +10,14 @@ import sys
 # This adds the parent directory (../) to the list of directories Python will search for modules.
 # The ../ refers to the directory one level up from the current working directory.
 sys.path.append('../')
-from utils.KG_schema_formatting import format_final_schema,get_structured_schema_custom
-from utils.nlp_functions import preprocess_text,split_camel_case,split_by_underscore
+from utils.KG_schema_formatting import format_final_schema, get_structured_schema_custom
+from utils.nlp_functions import preprocess_text, split_camel_case, split_by_underscore
 from utils.access_precomputed import get_kg_schema, save_kg_schema
 
 KG_structured_schema_json_path = os.path.abspath(os.path.join("..", "precomputed", "KG_schemas", "kg_structured_schema.json"))
 
 
-#Define model for word semantic similarity
+# Define model for word semantic similarity
 model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 model = model.to(device)
@@ -30,17 +30,17 @@ def match_with_search_terms(search_terms: list[str], natural_language_question_t
     - Otherwise, it checks for exact matches.
     """
     if match_substrings:
-        #if the natural language question term is a substring of any search term ir vice versa return True
+        # if the natural language question term is a substring of any search term ir vice versa return True
         return any(natural_language_question_term in term  for term in search_terms) or \
                any(term in natural_language_question_term for term in search_terms)
     else:
-        #Check for exact match withot stemming
+        # Check for exact match withot stemming
         exact_match = any(natural_language_question_term == term  for term in search_terms)
-        if not exact_match:#Check for exact match with stemming
+        if not exact_match: # Check for exact match with stemming
             stemmer = PorterStemmer()
             stemmed_question_term = stemmer.stem(natural_language_question_term)
             stemmed_search_terms = [stemmer.stem(term) for term in search_terms]
-            exact_match =any(stemmed_question_term == term for term in stemmed_search_terms)
+            exact_match = any(stemmed_question_term == term for term in stemmed_search_terms)
             # if exact_match:
             #     print(f'Match found with stemming {natural_language_question_term} -> {stemmed_question_term} with {stemmed_search_terms}')
         return exact_match
@@ -54,7 +54,7 @@ def batch_encode_terms(model, terms: list[str], device):
     embeddings = model.encode(terms, convert_to_tensor=True, device=device)
     return dict(zip(terms, embeddings))
 
-def high_semantic_similarity(search_terms: list[str], natural_language_question_term: str, embeddings,embeddings_keys):
+def high_semantic_similarity(search_terms: list[str], natural_language_question_term: str, embeddings, embeddings_keys):
     ''' 
     Check if the question term is semantically similar to any of the search terms using cosine similarity
     Returns True if any term has a cosine similarity >= 0.7 with the question term
@@ -69,7 +69,7 @@ def high_semantic_similarity(search_terms: list[str], natural_language_question_
         for t in filtered_terms
     )
 
-def update_filtered_schema_with_nodes_rels(pruned_structure_dict,type_name, label, property_dict_list, one_hop_paths_list):
+def update_filtered_schema_with_nodes_rels(pruned_structure_dict, type_name, label, property_dict_list, one_hop_paths_list):
     ''' 
     It adds to the filtered KG schema the node label or rel type with its properties 
     and the one hop path, if any, that this node label or rel type is part of.
@@ -84,26 +84,18 @@ def update_filtered_schema_with_nodes_rels(pruned_structure_dict,type_name, labe
     It returns the updated pruned_structure_dict and the updated one_hop_paths_list.
     '''
     if label not in pruned_structure_dict[type_name]:
-        pruned_structure_dict[type_name][label] = property_dict_list #add the label or rel type to the filtered schema with their properties
-        #add the one hop paths they may be part of, and remove them form the list of one hop paths
+        pruned_structure_dict[type_name][label] = property_dict_list # add the label or rel type to the filtered schema with their properties
+        # add the one hop paths they may be part of, and remove them form the list of one hop paths
         for relationship in one_hop_paths_list[:]:    
             if relationship['start'] == label or relationship['end'] == label or relationship['type'] == label:   
-                #add the one-hop path to the filtered schema            
+                # add the one-hop path to the filtered schema            
                 pruned_structure_dict['relationships'].append({'start':relationship['start'], 'type':relationship['type'], 'end':relationship['end']})
-                #remove this onehop path so i dont double check it in a next iteration
+                # remove this onehop path so i dont double check it in a next iteration
                 one_hop_paths_list.remove(relationship)
-                # # add the nodes or rel that belog to the added one hop path
-                # for node_label in [relationship['start'],  relationship['end']]:
-                #     if (node_label not in pruned_structure_dict['node_props']) and (node_label in structured_schema['node_props']):
-                #         pruned_structure_dict['node_props'][node_label] = structured_schema['node_props'][node_label] #add the label (if it haas properties) to the filtered schema with their properties
-                # rel_type = relationship['type']
-                # if (rel_type not in pruned_structure_dict['rel_props']) and (rel_type in structured_schema['rel_props']):
-                #     pruned_structure_dict['rel_props'][rel_type] = structured_schema['rel_props'][rel_type] #add the rel type (If it has properties) to the filtered schema with their properties
-
-
+                
     return pruned_structure_dict, one_hop_paths_list
 
-def update_filtered_schema_with_one_hop_paths(pruned_structure_dict,type_name, relationship):
+def update_filtered_schema_with_one_hop_paths(pruned_structure_dict, type_name, relationship):
     ''' 
     It adds to the filtered KG schema the one hop paths that their rel type was found in the schema.
 
@@ -115,35 +107,16 @@ def update_filtered_schema_with_one_hop_paths(pruned_structure_dict,type_name, r
     '''
     
     pruned_structure_dict[type_name].append({'start':relationship['start'], 'type':relationship['type'], 'end':relationship['end']})
-    # #Check the node labels of the one hop path to be added
-    # for node_label in [relationship['start'],  relationship['end']]:
-    #     if (node_label not in pruned_structure_dict['node_props']) and (node_label in structured_schema['node_props']):
-    #         pruned_structure_dict['node_props'][node_label] = structured_schema['node_props'][node_label] #add the label (if it haas properties) to the filtered schema with their properties
     return pruned_structure_dict
 
 def get_filtered_schema_by_question(driver, database_name, natural_language_question,
-                                          match_substrings=False,
-                                          check_semantic_similarity=False,
-                                          inline_props=True):
+                                      match_substrings=False,
+                                      check_semantic_similarity=False,
+                                      inline_props=True):
     '''
     It returns a filtered schema of the KG based on the natural language question.
     The filtering is done by checking if the node labels or rel types are present in the question.
-    If a node label or rel type is found in the question, then they are added with their properties to the filtered schema.
-    Also the one hop paths the may be part of are added to the schema.
-    If a rel type of a one hop path is found in the question (that was not found by checking rel types if they had no properties), the one hop path is added to the filtered schema.
-    
-    It searches for each term in the natural language question if they match exactly or semantically with one or more node labels, rel types or one hop paths rels.
-    
-    driver: the neo4j driver of the KG database
-    database_name(str): the database name
-    natural_language_question: str the natural language question to be used for filtering
-    structured_schema: dict the structured schema of the KG
-    match_substrings: bool if True, it matches substrings in the question (default is False)
-    semantic_similarity: bool if True, it uses semantic similarity to match words in the question (default is False)
-    inline_props : bool If True, includes property types inline within one-hop path descriptions in the returned filtered schema. 
-                             If False, lists the node/rel definitions separately.
-    
-    It returns the filtered schema of the KG.
+    ...
     '''
     # Initialize an empty dictionary to store the filtered schema
     pruned_structure_dict = {
@@ -153,14 +126,22 @@ def get_filtered_schema_by_question(driver, database_name, natural_language_ques
     }
 
     # Get the full structured schema from the database
-    # Try to load the KG schema for the given database_name from  kg_structured_schema.json
-    structured_schema = get_kg_schema(database_name, KG_structured_schema_json_path)
-    if not structured_schema:
-        # structured_schema = get_structured_schema(driver, is_enhanced = False, database = database_name, sanitize = False)
-        structured_schema= get_structured_schema_custom(driver, is_enhanced = False, database = database_name, sanitize = False)
-        save_kg_schema(database_name, structured_schema, KG_structured_schema_json_path)
-       
+    # --- MODIFIED: Force refresh to ignore corrupted cache ---
+    # structured_schema = get_kg_schema(database_name, KG_structured_schema_json_path)
+    # if not structured_schema:
     
+    print("[Schema Filter] Fetching fresh schema from Database (ignoring cache)...")
+    try:
+        structured_schema = get_structured_schema_custom(driver, is_enhanced=False, database=database_name, sanitize=False)
+        save_kg_schema(database_name, structured_schema, KG_structured_schema_json_path)
+    except Exception as e:
+        print(f"[Schema Filter] Error fetching schema: {e}")
+        return ""
+       
+    if not structured_schema:
+        print("WARNING: Structured Schema is empty.")
+        return ""
+
     one_hop_paths_list = structured_schema['relationships'].copy()
 
      # The question is preprocessed to remove special characters, 
@@ -175,7 +156,7 @@ def get_filtered_schema_by_question(driver, database_name, natural_language_ques
     for type_name in ['node_props', 'rel_props']:
         for label in structured_schema[type_name].keys():
             splits = split_camel_case(label)
-             #add the original label in search terms if it was split
+             # add the original label in search terms if it was split
             if len(splits) > 1:
                 all_kg_terms.update(s.lower() for s in (splits + [label]))
             else:
@@ -184,7 +165,7 @@ def get_filtered_schema_by_question(driver, database_name, natural_language_ques
     # One Hop Paths
     for rel in one_hop_paths_list:
         splits = split_by_underscore(rel['type'])
-         #add the original label in search terms if it was split
+         # add the original label in search terms if it was split
         if len(splits) > 1:
             all_kg_terms.update(s.lower() for s in (splits + [rel['type']]))
         else:
@@ -265,11 +246,17 @@ def schema_filtering(state: InputState) -> OverallState:
     database_user = state.get("database_user")
     database_password = state.get("database_password")
 
-    #Connect to the database
+    # Connect to the database
     driver = GraphDatabase.driver(database_url, auth=basic_auth(database_user, database_password) )
     print('Schema filtering Agent: START')
-    #Get filtered schema based on question
-    filtered_schema = get_filtered_schema_by_question(driver, database_name, question, match_substrings = False, check_semantic_similarity = True, inline_props= True)
+    
+    # Get filtered schema based on question
+    # Added try/except for safety
+    try:
+        filtered_schema = get_filtered_schema_by_question(driver, database_name, question, match_substrings = False, check_semantic_similarity = True, inline_props= True)
+    except Exception as e:
+        print(f"Error in schema filtering: {e}")
+        filtered_schema = ""
 
     # print('Schema filtering Agent: END ')
     # print()

@@ -2,7 +2,7 @@ from langchain_openai import  ChatOpenAI
 from langchain_huggingface import ChatHuggingFace, HuggingFaceEndpoint 
 from langchain_huggingface.llms import HuggingFacePipeline
 from huggingface_hub import InferenceClient
-from langchain_runpod import RunPod, ChatRunPod
+#from langchain_runpod import RunPod, ChatRunPod
 from langchain_huggingface.llms import HuggingFacePipeline
 from transformers import AutoTokenizer, pipeline
 import torch

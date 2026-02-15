@@ -20,7 +20,12 @@ os.environ["LLM_PROVIDER"] = "openai"
 os.environ["ENABLE_BACKEND_ACCESS_CONTROL"] = "false"
 
 # I'll use kuzu for cognee's graph storage cause it's easier and more practical 
-os.environ["GRAPH_DATABASE_PROVIDER"] = "kuzu"
+#os.environ["GRAPH_DATABASE_PROVIDER"] = "kuzu"
+
+os.environ["GRAPH_DATABASE_PROVIDER"] = "neo4j"
+os.environ["GRAPH_DATABASE_URL"] = os.getenv("NEO4J_URI")
+os.environ["GRAPH_DATABASE_USERNAME"] = os.getenv("NEO4J_USERNAME")
+os.environ["GRAPH_DATABASE_PASSWORD"] = os.getenv("NEO4J_PASSWORD")
 
 # Importing cognee AFTER setting env vars
 import cognee
