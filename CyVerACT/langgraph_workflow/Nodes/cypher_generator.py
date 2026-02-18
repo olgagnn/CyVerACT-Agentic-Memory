@@ -91,11 +91,11 @@ def cypher_generator(state: OverallState, config:RunnableConfig) -> OverallState
     memory_context = ""
     if memory_available:
         try:
-            # Adding session id 
-            current_session = state.get("session_id", "demo1") 
+            # Adding thread id 
+            current_thread = state.get("thread_id", "demo1") 
 
-            print(f"[Cypher Generator] Asking Hybrid Memory for: {question} (Session: {current_session})")
-            combined_info = hybrid_memory.get_relevant_context(question, session_id=current_session)
+            print(f"[Cypher Generator] Asking Hybrid Memory for: {question} (Session: {current_thread})")
+            combined_info = hybrid_memory.get_relevant_context(question, thread_id=current_thread)
             
             if combined_info:
                 print(f"[Memory] Context Retrieved!")
