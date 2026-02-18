@@ -30,7 +30,11 @@ system_prompt = """
 # Adding memory context here :)
 human_prompt =  """
                 Generate Cypher statement to query a graph database, as plain text without any code block formatting or backticks.
-                Use only the provided relationship types and properties in the schema.
+                Use only the provided relationship types and properties in the schema. 
+                Instructions:
+                If memory_context contains previous mistakes for this question, avoid making the same mistake again.
+                Do not repeat previously known invalid Cypher statements.
+                Respond with the corrected or new Cypher statement only.
                 \nSchema: {schema}
                 \n{memory_context}
                 \nQuestion: {question}
@@ -87,25 +91,23 @@ def cypher_generator(state: OverallState, config:RunnableConfig) -> OverallState
     memory_context = ""
     if memory_available:
         try:
-            # GET SESSION ID 
-            # default 'demo1'
-            session_id = state.get("session_id", "demo1")
+            # GET THREAD ID 
+            thread_id = state.get("thread_id", "demo1")
             
-            print(f"[Cypher Generator] Asking Hybrid Memory for: {question} (Session: {session_id})")
+            print(f"[Cypher Generator] Searching Hybrid Memory for past lessons: {question} (Thread: {thread_id})")
             
-            # UPDATE FOR SESSION ID 
-            combined_info = hybrid_memory.get_relevant_context(question, session_id=session_id)
+            # ONLY SEARCH PAST MISTAKES, NO ADD/LEARN
+            past_lessons = hybrid_memory.get_procedural_lessons(question)
             
-            if combined_info:
-                print(f"[Memory] Context Retrieved!")
-                # Debug print 
-                print(f"--> {combined_info[:100].replace(chr(10), ' ')}...") 
-                memory_context = f"\nRelevant Memory & Rules:\n{combined_info}\n"
+            if past_lessons:
+                print(f"[Memory] Found past mistakes for similar queries!" + past_lessons)
+                memory_context = f"\nPrevious Mistakes & Lessons:\n{past_lessons}\n"
             else:
-                print("[Memory] No relevant info found.")
+                print("[Memory] No relevant past mistakes found.")
                 
         except Exception as e:
             print(f"[Memory] Retrieval Error: {e}")
+
 
     if model_name == 'gemma2_9b' or model_name == 'finetuned_gemma2_9b' or model_name =='finetuned_gemma2_9b_local':
         text2cypher_chain = text2cypher_prompt_flattened | chat_model | StrOutputParser()
@@ -133,8 +135,11 @@ def cypher_generator(state: OverallState, config:RunnableConfig) -> OverallState
     # print('Generated Cypher statement: \n {}'.format(generated_cypher))
     # print('Cypher Generator: END')
     # print()
+
+    # !!!! TESTING WRONG QUERIES TO CHECK COGNEE PROCEDURAL
+    fake_cypher = "MATCH (p:Person)-[:ACTED_IN]->(f:Film) RETURN p.name, f.title"
     
-    return {"cypher_statement": generated_cypher, 
+    return {"cypher_statement": fake_cypher, 
             "path": ["cypher_generator"],
             "total_tokens": [total_tokens],
             "prompt_tokens": [prompt_tokens],

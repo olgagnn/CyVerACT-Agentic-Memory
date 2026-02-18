@@ -12,6 +12,17 @@ sys.path.append('../')
 from CyVer_custom import SyntaxValidator,PropertiesValidator,SchemaValidator
 #from CyVer import SyntaxValidator,PropertiesValidator,SchemaValidator
 
+# Importing memory here!
+try:
+    from Memory.hybrid_manager import HybridMemoryManager
+    # Initialize HYBRID MEMORY
+    hybrid_memory = HybridMemoryManager()
+    memory_available = True
+    print("[CyVer Evaluator] Hybrid Memory Loaded")
+except ImportError:
+    print("[CyVer Evaluator] WARNING: HybridMemoryManager not found.")
+    memory_available = False
+
 #Create cypher evaluator node
 def cyver_evaluator(state: OverallState, config:RunnableConfig) -> OverallState:
     
@@ -26,6 +37,7 @@ def cyver_evaluator(state: OverallState, config:RunnableConfig) -> OverallState:
     # Connect to the database
     driver = state.get("neo4j_driver")
     # driver = GraphDatabase.driver(database_url, auth=basic_auth(database_user, database_password) )
+    question = state.get("question") # Need that to learn
 
     #---------------CyVer evaluation------------------
     print('CyVer Evaluator: START')
@@ -63,6 +75,22 @@ def cyver_evaluator(state: OverallState, config:RunnableConfig) -> OverallState:
 
     if cypher_errors:
         # print('CyVer Evaluation of {}'.format(cypher_statement))
+        print(f"[CyVer Evaluator] Errors detected: {len(cypher_errors)}")
+        
+        # STORING ERROR TO MEMORY HERE !!!
+        if memory_available:
+            try:
+                error_msg = "; ".join(cypher_errors)
+                print(f"[CyVer Evaluator] Storing mistake in Hybrid Memory...")
+                hybrid_memory.add_error_lesson(
+                    query=question,
+                    bad_cypher=cypher_statement,
+                    error_msg=error_msg
+                )
+                print("[CyVer Evaluator] Lesson Saved!")
+            except Exception as e:
+                print(f"[CyVer Evaluator] Failed to save lesson: {e}")
+
         print('CyVer Errors from generated query:')
         for error in cypher_errors:
             print('-', error)

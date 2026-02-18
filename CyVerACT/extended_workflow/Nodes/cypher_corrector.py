@@ -8,15 +8,14 @@ from langchain_community.callbacks import get_openai_callback
 from Nodes.States.states import OverallState
 # from Configuration.models import models
 
-# Importing Hybrid Memory Manager
+# Importing HYBRID MEMORY
 try:
     from Memory.hybrid_manager import HybridMemoryManager
-    # Initialize HYBRID MEMORY
     hybrid_memory = HybridMemoryManager()
     memory_available = True
     print("[Cypher Corrector] Hybrid Memory Loaded")
 except ImportError:
-    print("WARNING: HybridMemoryManager not found.")
+    print("[Cypher Corrector] WARNING: HybridMemoryManager not found.")
     memory_available = False
 
 system_prompt = '''
@@ -45,6 +44,9 @@ human_prompt = '''
 
                 The errors for the Cypher statement are:
                 {errors}
+
+                Previous Similar Mistakes & Lessons: 
+                {memory_context}
 
                 Corrected Cypher statement:
         
@@ -92,22 +94,35 @@ def cypher_corrector(state: OverallState, config:RunnableConfig) -> OverallState
     cypher = state.get("cypher_statement")
     schema = state.get("schema")
     cypher_errors_list = state.get("cypher_errors")
+    
+    memory_context = ""
+
+    if memory_available and cypher_errors_list:
+        try:
+            error_signature = " | ".join(cypher_errors_list)
+
+            search_query = f"""
+            Cypher mistake case.
+            Errors: {error_signature}
+            Faulty query: {cypher}
+            """
+
+            print("[Cypher Corrector] Searching procedural memory...")
+            past_lessons = hybrid_memory.get_procedural_lessons(search_query)
+            print(f"[Memory] Found past mistakes for similar queries!" + past_lessons) # for debugging 
+            if past_lessons:
+                memory_context = f"\nPrevious Similar Mistakes & Lessons:\n{past_lessons}\n"
+                print("[Cypher Corrector] Found past lessons!")
+            else:
+                print("[Cypher Corrector] No similar lessons found.")
+
+        except Exception as e:
+            print(f"[Cypher Corrector] Memory retrieval error: {e}")
+
+    
     cypher_errors = "\n".join(
         f"{i + 1}. {error}" for i, error in enumerate(cypher_errors_list)
     )
-
-    # Store to memory and LEARN !!! 
-    # Corrector should correct current error and store info in order not to repeat it
-    if memory_available and cypher_errors_list:
-        try:
-            print(f"[Cypher Corrector] Storing mistake in Hybrid Memory (Cognee)...")
-            hybrid_memory.add_error_lesson(
-                query=question,
-                bad_cypher=cypher,
-                error_msg=cypher_errors 
-            )
-        except Exception as e:
-            print(f"[Memory] Failed to save error: {e}")
 
     chat_model = config['configurable']['model']
     
@@ -123,7 +138,9 @@ def cypher_corrector(state: OverallState, config:RunnableConfig) -> OverallState
                 "question": question,
                 "schema": schema,
                 "cypher": cypher,
-                "errors": cypher_errors
+                "errors": cypher_errors,
+                "memory_context": memory_context
+                
             }
         )
     
