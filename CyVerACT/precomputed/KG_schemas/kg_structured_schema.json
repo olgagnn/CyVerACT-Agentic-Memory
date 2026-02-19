@@ -8183,20 +8183,6 @@
     "metadata": {
       "constraint": [
         {
-          "id": 9,
-          "name": "constraint_d2d2cfa4",
-          "type": "UNIQUENESS",
-          "entityType": "NODE",
-          "labelsOrTypes": [
-            "__Node__"
-          ],
-          "properties": [
-            "id"
-          ],
-          "ownedIndex": "constraint_d2d2cfa4",
-          "propertyType": null
-        },
-        {
           "id": 3,
           "name": "movie_title",
           "type": "UNIQUENESS",
@@ -8226,6 +8212,106 @@
         }
       ],
       "index": [
+        {
+          "label": "Community",
+          "properties": [
+            "group_id"
+          ],
+          "size": 0,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 0.0
+        },
+        {
+          "label": "Community",
+          "properties": [
+            "uuid"
+          ],
+          "size": 0,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 0.0
+        },
+        {
+          "label": "Entity",
+          "properties": [
+            "uuid"
+          ],
+          "size": 0,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 0.0
+        },
+        {
+          "label": "Entity",
+          "properties": [
+            "created_at"
+          ],
+          "size": 0,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 0.0
+        },
+        {
+          "label": "Entity",
+          "properties": [
+            "name"
+          ],
+          "size": 0,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 0.0
+        },
+        {
+          "label": "Entity",
+          "properties": [
+            "group_id"
+          ],
+          "size": 0,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 0.0
+        },
+        {
+          "label": "Episodic",
+          "properties": [
+            "uuid"
+          ],
+          "size": 0,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 0.0
+        },
+        {
+          "label": "Episodic",
+          "properties": [
+            "group_id"
+          ],
+          "size": 0,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 0.0
+        },
+        {
+          "label": "Episodic",
+          "properties": [
+            "created_at"
+          ],
+          "size": 0,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 0.0
+        },
+        {
+          "label": "Episodic",
+          "properties": [
+            "valid_at"
+          ],
+          "size": 0,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 0.0
+        },
         {
           "label": "Movie",
           "properties": [
@@ -8267,9 +8353,29 @@
           "distinctValues": 51.0
         },
         {
-          "label": "__Node__",
+          "label": "Saga",
           "properties": [
-            "id"
+            "name"
+          ],
+          "size": 0,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 0.0
+        },
+        {
+          "label": "Saga",
+          "properties": [
+            "group_id"
+          ],
+          "size": 0,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 0.0
+        },
+        {
+          "label": "Saga",
+          "properties": [
+            "uuid"
           ],
           "size": 0,
           "type": "RANGE",

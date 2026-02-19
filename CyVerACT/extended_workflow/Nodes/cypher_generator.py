@@ -91,10 +91,6 @@ def cypher_generator(state: OverallState, config:RunnableConfig) -> OverallState
     memory_context = ""
     if memory_available:
         try:
-            # GET THREAD ID 
-            thread_id = state.get("thread_id", "demo1")
-            
-            print(f"[Cypher Generator] Searching Hybrid Memory for past lessons: {question} (Thread: {thread_id})")
             
             # ONLY SEARCH PAST MISTAKES, NO ADD/LEARN
             past_lessons = hybrid_memory.get_procedural_lessons(question)

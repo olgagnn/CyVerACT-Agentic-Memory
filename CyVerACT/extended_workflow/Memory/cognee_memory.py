@@ -23,9 +23,9 @@ os.environ["ENABLE_BACKEND_ACCESS_CONTROL"] = "false"
 # os.environ["GRAPH_DATABASE_PROVIDER"] = "kuzu"
 
 os.environ["GRAPH_DATABASE_PROVIDER"] = "neo4j"
-os.environ["GRAPH_DATABASE_URL"] = os.getenv("AGENT_MEMORY_URI")
-os.environ["GRAPH_DATABASE_USERNAME"] = os.getenv("AGENT_MEMORY_USERNAME")
-os.environ["GRAPH_DATABASE_PASSWORD"] = os.getenv("AGENT_MEMORY_PASSWORD")
+os.environ["GRAPH_DATABASE_URL"] = os.getenv("NEO4J_URI")
+os.environ["GRAPH_DATABASE_USERNAME"] = os.getenv("NEO4J_USERNAME")
+os.environ["GRAPH_DATABASE_PASSWORD"] = os.getenv("NEO4J_PASSWORD")
 
 # Using our procedural db for cognee 
 os.environ["GRAPH_DATABASE_NAME"] = "procedural"

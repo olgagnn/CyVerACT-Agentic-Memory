@@ -27,6 +27,7 @@ def cypher_executor(state: OverallState) -> OverallState:
         }
 
     driver = None
+    query_error = None
     try:
         # Driver connection 
         if database_url and database_user and database_password:
@@ -46,14 +47,13 @@ def cypher_executor(state: OverallState) -> OverallState:
             
     except Exception as e:
         print(f"Error executing Cypher: {e}")
+        query_error = str(e)
         database_records = []
         
     finally:
         # Ending connection
         if driver:
             driver.close()
-
-    print('Cypher Executor: END')
 
     #Connect to the database
     # driver = state.get("neo4j_driver")
@@ -73,7 +73,9 @@ def cypher_executor(state: OverallState) -> OverallState:
         # print('Records:\n', records)
         # print('Cypher Executor: END')
         # print()
-    
+
+    print('Cypher Executor: END')
+
     return {
         "database_records": database_records,
         "next_action": "output_generator",
