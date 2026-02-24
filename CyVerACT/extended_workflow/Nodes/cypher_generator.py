@@ -36,7 +36,8 @@ human_prompt =  """
                 Do not repeat previously known invalid Cypher statements.
                 Respond with the corrected or new Cypher statement only.
                 \nSchema: {schema}
-                \n{memory_context}
+                \n{procedural_context}
+                \n{episodic_context}
                 \nQuestion: {question}
                 \nCypher statement:
                 
@@ -75,7 +76,7 @@ text2cypher_prompt_flattened = ChatPromptTemplate.from_messages(
     ]
 )
 
-## Create the node for the Cypher generator
+# Creating the node for the Cypher generator
 def cypher_generator(state: OverallState, config:RunnableConfig) -> OverallState:
     """
     Generates a cypher statement based on the provided schema and user input
@@ -88,19 +89,21 @@ def cypher_generator(state: OverallState, config:RunnableConfig) -> OverallState
     chat_model = config['configurable']['model']
 
     # Hybrid Memory Retrieval here !!! 
-    memory_context = ""
+    procedural_context = ""
+    episodic_context = "" 
+
     if memory_available:
         try:
-            
-            # ONLY SEARCH PAST MISTAKES, NO ADD/LEARN
+            # Getting procedural lessons (Cognee)
             past_lessons = hybrid_memory.get_procedural_lessons(question)
-            
             if past_lessons:
-                print(f"[Memory] Found past mistakes for similar queries!" + past_lessons)
-                memory_context = f"\nPrevious Mistakes & Lessons:\n{past_lessons}\n"
-            else:
-                print("[Memory] No relevant past mistakes found.")
-                
+                procedural_context = f"\nPrevious Mistakes & Lessons:\n{past_lessons}\n"
+            
+            # Getting recent chat history (Graphiti) or searching for past connections (recent episodes)
+            past_episodes = hybrid_memory.search_episodic_memory(query=question)
+            if past_episodes:
+                episodic_context = f"\nRecent Conversation History:\n{past_episodes}\n"
+
         except Exception as e:
             print(f"[Memory] Retrieval Error: {e}")
 
@@ -114,7 +117,8 @@ def cypher_generator(state: OverallState, config:RunnableConfig) -> OverallState
         generated_cypher = text2cypher_chain.invoke({
             "question": question,
             "schema": schema,
-            "memory_context": memory_context # for the prompt above
+            "procedural_context": procedural_context, # for the prompt above
+            "episodic_context": episodic_context
         })
 
     total_tokens = cb.total_tokens
@@ -133,9 +137,9 @@ def cypher_generator(state: OverallState, config:RunnableConfig) -> OverallState
     # print()
 
     # !!!! TESTING WRONG QUERIES TO CHECK COGNEE PROCEDURAL
-    fake_cypher = "MATCH (p:Person)-[:ACTED_IN]->(f:Film) RETURN p.name, f.title"
+    #fake_cypher = "MATCH (p:Person)-[:ACTED_IN]->(f:Film) RETURN p.name, f.title"
     
-    return {"cypher_statement": fake_cypher, 
+    return {"cypher_statement": generated_cypher, 
             "path": ["cypher_generator"],
             "total_tokens": [total_tokens],
             "prompt_tokens": [prompt_tokens],

@@ -2,11 +2,10 @@ import os
 import asyncio
 import nest_asyncio
 
-# Apply nest_asyncio to allow asyncio.run() within an already running event loop 
-# (useful if you are running this in Jupyter, FastAPI, or similar environments).
+# I used nest_asyncio to allow asyncio.run() within an already running event loop with Jupyter env
 nest_asyncio.apply()
 
-# Import Cognee 
+# Importing Cognee 
 try:
     from Memory.cognee_memory import CogneeMemoryManager
     COGNEE_AVAILABLE = True
@@ -14,7 +13,7 @@ except ImportError:
     COGNEE_AVAILABLE = False
     print("[Hybrid Memory Manager] Cognee not found.")
 
-# Import Graphiti 
+# Importing Graphiti 
 try:
     from Memory.graphiti_memory import GraphitiMemoryManager
     GRAPHITI_AVAILABLE = True
@@ -42,12 +41,11 @@ class HybridMemoryManager:
             except Exception as e:
                 print(f"[Hybrid Memory Manager] Graphiti Init Failed: {e}")
 
-    # -----------------------------
     # PROCEDURAL MEMORY - COGNEE
-    # -----------------------------
+    
     def get_procedural_lessons(self, query: str) -> str:
         """
-        Retrieve past procedural lessons / mistakes from Cognee
+        Retrieving past procedural lessons/mistakes from Cognee
         """
         if self.cognee:
             return self.cognee.get_relevant_rules(query)
@@ -55,14 +53,13 @@ class HybridMemoryManager:
 
     def add_error_lesson(self, query: str, bad_cypher: str, error_msg: str):
         """
-        Store a procedural mistake in Cognee
+        Storing a procedural mistake in Cognee
         """
         if self.cognee:
             self.cognee.add_error_lesson(query, bad_cypher, error_msg)
 
-    # -----------------------------
     # EPISODIC MEMORY - GRAPHITI
-    # -----------------------------
+
     def add_episodic_interaction(
         self,
         question: str,
@@ -72,9 +69,9 @@ class HybridMemoryManager:
         attempts: int = None,
     ):
         """
-        Store a full interaction as ONE episode in Graphiti.
-        Call this only at the end of execution (success or final failure).
-        This wraps the async Graphiti call in a sync interface.
+        Storing a full interaction as ONE episode in Graphiti
+        Should call this only at the end of execution so output_generator.py
+        Wraps the async Graphiti call in a sync interface 
         """
         if not self.graphiti:
             return
@@ -89,23 +86,21 @@ class HybridMemoryManager:
             )
 
         try:
-            print("[HybridMemoryManager] Sending episodic interaction to Graphiti...")
+            print("[HybridMemoryManager] Sending Episode to Graphiti...")
             asyncio.run(_run_graphiti())
         except Exception as e:
-            print(f"[HybridMemoryManager] Failed to store episodic interaction: {e}")
+            print(f"[HybridMemoryManager] Failed to store Episode: {e}")
 
     def search_episodic_memory(self, query: str) -> str:
         """
-        Search past episodes in Graphiti using a synchronous wrapper.
+        Searching past episodes in Graphiti 
         """
         if not self.graphiti:
             return ""
         
         async def _search():
-            return await self.graphiti.search_memory(
-                query=query, 
-                group_id="cypher_agent_global"
-            )
+            # We search based on user query for past relative context 
+            return await self.graphiti.search_memory(query=query)
             
         try:
             return asyncio.run(_search())
