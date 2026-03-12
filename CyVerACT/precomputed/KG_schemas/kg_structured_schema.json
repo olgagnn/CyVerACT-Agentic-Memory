@@ -8384,5 +8384,368 @@
         }
       ]
     }
+  },
+  "companies": {
+    "node_props": {
+      "Person": [
+        {
+          "property": "name",
+          "type": "STRING"
+        },
+        {
+          "property": "id",
+          "type": "STRING"
+        },
+        {
+          "property": "summary",
+          "type": "STRING"
+        }
+      ],
+      "Organization": [
+        {
+          "property": "isDissolved",
+          "type": "BOOLEAN"
+        },
+        {
+          "property": "nbrEmployees",
+          "type": "INTEGER"
+        },
+        {
+          "property": "revenue",
+          "type": "FLOAT"
+        },
+        {
+          "property": "name",
+          "type": "STRING"
+        },
+        {
+          "property": "id",
+          "type": "STRING"
+        },
+        {
+          "property": "motto",
+          "type": "STRING"
+        },
+        {
+          "property": "summary",
+          "type": "STRING"
+        },
+        {
+          "property": "isPublic",
+          "type": "BOOLEAN"
+        },
+        {
+          "property": "diffbotId",
+          "type": "STRING"
+        }
+      ],
+      "IndustryCategory": [
+        {
+          "property": "name",
+          "type": "STRING"
+        },
+        {
+          "property": "id",
+          "type": "STRING"
+        }
+      ],
+      "City": [
+        {
+          "property": "name",
+          "type": "STRING"
+        },
+        {
+          "property": "summary",
+          "type": "STRING"
+        },
+        {
+          "property": "id",
+          "type": "STRING"
+        }
+      ],
+      "Country": [
+        {
+          "property": "name",
+          "type": "STRING"
+        },
+        {
+          "property": "id",
+          "type": "STRING"
+        },
+        {
+          "property": "summary",
+          "type": "STRING"
+        }
+      ],
+      "Article": [
+        {
+          "property": "id",
+          "type": "STRING"
+        },
+        {
+          "property": "sentiment",
+          "type": "FLOAT"
+        },
+        {
+          "property": "siteName",
+          "type": "STRING"
+        },
+        {
+          "property": "summary",
+          "type": "STRING"
+        },
+        {
+          "property": "date",
+          "type": "DATE_TIME"
+        },
+        {
+          "property": "title",
+          "type": "STRING"
+        },
+        {
+          "property": "author",
+          "type": "STRING"
+        }
+      ],
+      "Chunk": [
+        {
+          "property": "id",
+          "type": "STRING"
+        },
+        {
+          "property": "text",
+          "type": "STRING"
+        },
+        {
+          "property": "embedding",
+          "type": "LIST"
+        },
+        {
+          "property": "embedding_google",
+          "type": "LIST"
+        },
+        {
+          "property": "embedding_google_004",
+          "type": "LIST"
+        }
+      ],
+      "Fewshot": [
+        {
+          "property": "Question",
+          "type": "STRING"
+        },
+        {
+          "property": "Cypher",
+          "type": "STRING"
+        },
+        {
+          "property": "id",
+          "type": "INTEGER"
+        },
+        {
+          "property": "embedding",
+          "type": "LIST"
+        }
+      ]
+    },
+    "rel_props": {},
+    "relationships": [
+      {
+        "end": "Person",
+        "start": "Person",
+        "type": "HAS_PARENT"
+      },
+      {
+        "end": "Person",
+        "start": "Person",
+        "type": "HAS_CHILD"
+      },
+      {
+        "end": "City",
+        "start": "Organization",
+        "type": "IN_CITY"
+      },
+      {
+        "end": "IndustryCategory",
+        "start": "Organization",
+        "type": "HAS_CATEGORY"
+      },
+      {
+        "end": "Organization",
+        "start": "Organization",
+        "type": "HAS_SUPPLIER"
+      },
+      {
+        "end": "Organization",
+        "start": "Organization",
+        "type": "HAS_SUBSIDIARY"
+      },
+      {
+        "end": "Person",
+        "start": "Organization",
+        "type": "HAS_BOARD_MEMBER"
+      },
+      {
+        "end": "Person",
+        "start": "Organization",
+        "type": "HAS_CEO"
+      },
+      {
+        "end": "Organization",
+        "start": "Organization",
+        "type": "HAS_COMPETITOR"
+      },
+      {
+        "end": "Person",
+        "start": "Organization",
+        "type": "HAS_INVESTOR"
+      },
+      {
+        "end": "Organization",
+        "start": "Organization",
+        "type": "HAS_INVESTOR"
+      },
+      {
+        "end": "Country",
+        "start": "City",
+        "type": "IN_COUNTRY"
+      },
+      {
+        "end": "Chunk",
+        "start": "Article",
+        "type": "HAS_CHUNK"
+      },
+      {
+        "end": "Organization",
+        "start": "Article",
+        "type": "MENTIONS"
+      }
+    ],
+    "metadata": {
+      "constraint": [
+        {
+          "id": 10,
+          "name": "constraint_ecc04354",
+          "type": "UNIQUENESS",
+          "entityType": "NODE",
+          "labelsOrTypes": [
+            "Article"
+          ],
+          "properties": [
+            "id"
+          ],
+          "ownedIndex": "constraint_ecc04354",
+          "propertyType": null
+        },
+        {
+          "id": 15,
+          "name": "constraint_f7832722",
+          "type": "UNIQUENESS",
+          "entityType": "NODE",
+          "labelsOrTypes": [
+            "_Bloom_Perspective_"
+          ],
+          "properties": [
+            "id"
+          ],
+          "ownedIndex": "constraint_f7832722",
+          "propertyType": null
+        },
+        {
+          "id": 8,
+          "name": "industry_category_id",
+          "type": "UNIQUENESS",
+          "entityType": "NODE",
+          "labelsOrTypes": [
+            "IndustryCategory"
+          ],
+          "properties": [
+            "id"
+          ],
+          "ownedIndex": "industry_category_id",
+          "propertyType": null
+        },
+        {
+          "id": 6,
+          "name": "organization_id",
+          "type": "UNIQUENESS",
+          "entityType": "NODE",
+          "labelsOrTypes": [
+            "Organization"
+          ],
+          "properties": [
+            "id"
+          ],
+          "ownedIndex": "organization_id",
+          "propertyType": null
+        },
+        {
+          "id": 4,
+          "name": "person_id",
+          "type": "UNIQUENESS",
+          "entityType": "NODE",
+          "labelsOrTypes": [
+            "Person"
+          ],
+          "properties": [
+            "id"
+          ],
+          "ownedIndex": "person_id",
+          "propertyType": null
+        }
+      ],
+      "index": [
+        {
+          "label": "Article",
+          "properties": [
+            "id"
+          ],
+          "size": 64191,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 64191.0
+        },
+        {
+          "label": "IndustryCategory",
+          "properties": [
+            "id"
+          ],
+          "size": 253,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 253.0
+        },
+        {
+          "label": "Organization",
+          "properties": [
+            "id"
+          ],
+          "size": 45156,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 45156.0
+        },
+        {
+          "label": "Person",
+          "properties": [
+            "id"
+          ],
+          "size": 7909,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 7909.0
+        },
+        {
+          "label": "_Bloom_Perspective_",
+          "properties": [
+            "id"
+          ],
+          "size": 1,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 1.0
+        }
+      ]
+    }
   }
 }

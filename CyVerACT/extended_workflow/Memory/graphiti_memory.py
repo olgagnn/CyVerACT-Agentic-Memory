@@ -14,8 +14,8 @@ class GraphitiMemoryManager:
         driver = Neo4jDriver(
             uri=os.getenv("NEO4J_URI", "neo4j://127.0.0.1:7687"),
             user=os.getenv("NEO4J_USER", "neo4j"),
-            password=os.getenv("NEO4J_PASSWORD", "agentmemory"),
-            database="episodic"  
+            password=os.getenv("NEO4J_PASSWORD", "agentmemory")
+            #database="episodic"  
         )
         
         self.graphiti = Graphiti(graph_driver=driver)
@@ -29,8 +29,8 @@ class GraphitiMemoryManager:
         try:
             # Using await here to get the right results + database name to be sure
             records, summary, keys = await self.graphiti.driver.execute_query(
-                "MATCH (e:Episodic) RETURN e.content AS content ORDER BY e.created_at DESC LIMIT 1",
-                database_="episodic"
+                "MATCH (e:Episodic) RETURN e.content AS content ORDER BY e.created_at DESC LIMIT 1"
+                #database_="episodic"
             )
             
             if not records:

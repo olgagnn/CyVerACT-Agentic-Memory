@@ -76,6 +76,11 @@ def cyver_evaluator(state: OverallState, config:RunnableConfig) -> OverallState:
     if cypher_errors:
         # print('CyVer Evaluation of {}'.format(cypher_statement))
         print(f"[CyVer Evaluator] Errors detected: {len(cypher_errors)}")
+
+        print('CyVer Errors from generated query:')
+        for error in cypher_errors:
+            print('-', error)
+            print()
         
         # STORING ERROR TO MEMORY HERE !!!
         if memory_available:
@@ -91,10 +96,6 @@ def cyver_evaluator(state: OverallState, config:RunnableConfig) -> OverallState:
             except Exception as e:
                 print(f"[CyVer Evaluator] Failed to save lesson: {e}")
 
-        print('CyVer Errors from generated query:')
-        for error in cypher_errors:
-            print('-', error)
-            print()
         # If Cypher Corrector exists in the path more than n times then:
         if frequency['cypher_corrector'] == attempts_w_filtered:
             # If the second to last elemet is schema retriever (it means that the schema filtering has failed and
