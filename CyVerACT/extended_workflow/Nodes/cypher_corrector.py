@@ -9,14 +9,16 @@ from Nodes.States.states import OverallState
 # from Configuration.models import models
 
 # Importing HYBRID MEMORY
-try:
-    from Memory.hybrid_manager import HybridMemoryManager
-    hybrid_memory = HybridMemoryManager()
-    memory_available = True
-    print("[Cypher Corrector] Hybrid Memory Loaded")
-except ImportError:
-    print("[Cypher Corrector] WARNING: HybridMemoryManager not found.")
-    memory_available = False
+# try:
+#     from Memory.hybrid_manager import HybridMemoryManager
+#     hybrid_memory = HybridMemoryManager()
+#     memory_available = True
+#     print("[Cypher Corrector] Hybrid Memory Loaded")
+# except ImportError:
+#     print("[Cypher Corrector] WARNING: HybridMemoryManager not found.")
+#     memory_available = False
+
+# Removed Previous Similar Mistakes & Lessons: {memory_context}
 
 system_prompt = '''
                 You are a Cypher expert reviewing a statement. 
@@ -44,9 +46,6 @@ human_prompt = '''
 
                 The errors for the Cypher statement are:
                 {errors}
-
-                Previous Similar Mistakes & Lessons: 
-                {memory_context}
 
                 Corrected Cypher statement:
         
@@ -94,30 +93,36 @@ def cypher_corrector(state: OverallState, config:RunnableConfig) -> OverallState
     cypher = state.get("cypher_statement")
     schema = state.get("schema")
     cypher_errors_list = state.get("cypher_errors")
+
+    # --- ADDED FOR SCSR METRIC ---
+    attempts = state.get("attempts", 0)
+    # memory_hit = False
     
-    memory_context = ""
+    # memory_context = ""
 
-    if memory_available and cypher_errors_list:
-        try:
-            error_signature = " | ".join(cypher_errors_list)
+    # if memory_available and cypher_errors_list:
+    #     try:
+    #         error_signature = " | ".join(cypher_errors_list)
 
-            search_query = f"""
-            Cypher mistake case.
-            Errors: {error_signature}
-            Faulty query: {cypher}
-            """
+    #         search_query = f"""
+    #         Cypher mistake case.
+    #         Errors: {error_signature}
+    #         Faulty query: {cypher}
+    #         """
 
-            print("[Cypher Corrector] Searching procedural memory...")
-            past_lessons = hybrid_memory.get_procedural_lessons(search_query)
-            print(f"[Memory] Found past mistakes for similar queries!" + past_lessons) # for debugging 
-            if past_lessons:
-                memory_context = f"\nPrevious Similar Mistakes & Lessons:\n{past_lessons}\n"
-                print("[Cypher Corrector] Found past lessons!")
-            else:
-                print("[Cypher Corrector] No similar lessons found.")
+    #         print("[Cypher Corrector] Searching procedural memory...")
+    #         past_lessons = hybrid_memory.get_procedural_lessons(search_query)
+    #         print(f"[Memory] Found past mistakes for similar queries!" + past_lessons) # for debugging 
+    #         if past_lessons:
+    #             memory_context = f"\nPrevious Similar Mistakes & Lessons:\n{past_lessons}\n"
+    #             print("[Cypher Corrector] Found past lessons!")
+    #             # --- ADDED FOR SCSR METRIC ---
+    #             memory_hit = True
+    #         else:
+    #             print("[Cypher Corrector] No similar lessons found.")
 
-        except Exception as e:
-            print(f"[Cypher Corrector] Memory retrieval error: {e}")
+    #     except Exception as e:
+    #         print(f"[Cypher Corrector] Memory retrieval error: {e}")
 
     
     cypher_errors = "\n".join(
@@ -139,7 +144,7 @@ def cypher_corrector(state: OverallState, config:RunnableConfig) -> OverallState
                 "schema": schema,
                 "cypher": cypher,
                 "errors": cypher_errors,
-                "memory_context": memory_context
+                #"memory_context": memory_context
                 
             }
         )
@@ -165,7 +170,10 @@ def cypher_corrector(state: OverallState, config:RunnableConfig) -> OverallState
         'path': ['cypher_corrector'],
         "total_tokens": [total_tokens],
         "prompt_tokens": [prompt_tokens],
-        "completion_tokens": [completion_tokens]
+        "completion_tokens": [completion_tokens],
+        # --- ADDED FOR SCSR METRIC ---
+        "attempts": attempts + 1
+        # "memory_hit": memory_hit
     }
 
     

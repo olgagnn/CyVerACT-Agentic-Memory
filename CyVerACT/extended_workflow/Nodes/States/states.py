@@ -33,6 +33,13 @@ class OverallState(TypedDict):
     completion_tokens: Annotated[List[int], add]
     prompt_tokens: Annotated[List[int], add]
 
+    # --- ADDING THESE NEW FIELDS FOR TESTING ---
+    procedural_context: str   # Stores the lesson retrieved from Cognee
+    is_valid_cypher: bool     # VCR metric
+    memory_hit: bool          # Did we find a lesson?
+    #fixed_by_memory: bool     # SCSR metric
+    attempts: int             # Tracks how many tries it took
+
 
 class OutputState(TypedDict):
     answer: str
@@ -45,6 +52,12 @@ class OutputState(TypedDict):
     total_tokens: List[int]
     completion_tokens: List[int]
     prompt_tokens: List[int]
+
+    # --- ADDING THESE NEW FIELDS FOR TESTING ---
+    is_valid_cypher: bool
+    memory_hit: bool
+    #fixed_by_memory: bool
+    attempts: int
 
 
 # class UnavailableOutputState(TypedDict):

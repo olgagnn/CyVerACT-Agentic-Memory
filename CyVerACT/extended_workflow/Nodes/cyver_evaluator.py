@@ -13,15 +13,15 @@ from CyVer_custom import SyntaxValidator,PropertiesValidator,SchemaValidator
 #from CyVer import SyntaxValidator,PropertiesValidator,SchemaValidator
 
 # Importing memory here!
-try:
-    from Memory.hybrid_manager import HybridMemoryManager
-    # Initialize HYBRID MEMORY
-    hybrid_memory = HybridMemoryManager()
-    memory_available = True
-    print("[CyVer Evaluator] Hybrid Memory Loaded")
-except ImportError:
-    print("[CyVer Evaluator] WARNING: HybridMemoryManager not found.")
-    memory_available = False
+# try:
+#     from Memory.hybrid_manager import HybridMemoryManager
+#     # Initialize HYBRID MEMORY
+#     hybrid_memory = HybridMemoryManager()
+#     memory_available = True
+#     print("[CyVer Evaluator] Hybrid Memory Loaded")
+# except ImportError:
+#     print("[CyVer Evaluator] WARNING: HybridMemoryManager not found.")
+#     memory_available = False
 
 #Create cypher evaluator node
 def cyver_evaluator(state: OverallState, config:RunnableConfig) -> OverallState:
@@ -83,18 +83,18 @@ def cyver_evaluator(state: OverallState, config:RunnableConfig) -> OverallState:
             print()
         
         # STORING ERROR TO MEMORY HERE !!!
-        if memory_available:
-            try:
-                error_msg = "; ".join(cypher_errors)
-                print(f"[CyVer Evaluator] Storing mistake in Hybrid Memory...")
-                hybrid_memory.add_error_lesson(
-                    query=question,
-                    bad_cypher=cypher_statement,
-                    error_msg=error_msg
-                )
-                print("[CyVer Evaluator] Lesson Saved!")
-            except Exception as e:
-                print(f"[CyVer Evaluator] Failed to save lesson: {e}")
+        # if memory_available:
+        #     try:
+        #         error_msg = "; ".join(cypher_errors)
+        #         print(f"[CyVer Evaluator] Storing mistake in Hybrid Memory...")
+        #         hybrid_memory.add_error_lesson(
+        #             query=question,
+        #             bad_cypher=cypher_statement,
+        #             error_msg=error_msg
+        #         )
+        #         print("[CyVer Evaluator] Lesson Saved!")
+        #     except Exception as e:
+        #         print(f"[CyVer Evaluator] Failed to save lesson: {e}")
 
         # If Cypher Corrector exists in the path more than n times then:
         if frequency['cypher_corrector'] == attempts_w_filtered:
@@ -125,11 +125,31 @@ def cyver_evaluator(state: OverallState, config:RunnableConfig) -> OverallState:
     
     # print('CyVer Evaluator: END')
     # print()
+
+    # --- METRIC CALCULATIONS FOR TESTING ---
+    # 1. Is the Cypher valid right now?
+    is_valid_cypher = (len(cypher_errors) == 0)
+    
+    # 2. How many attempts have we made? 
+    # If cypher_corrector hasn't run, it's Attempt 1. Otherwise, Attempt 2+.
+    current_attempt = frequency.get('cypher_corrector', 0) + 1
+    
+    # 3. Was this fixed by memory? (SCSR Metric)
+    # It must be valid NOW, it must have failed previously (attempts > 1), AND Cognee must have given a rule.
+    memory_hit = state.get("memory_hit", False)
+    fixed_by_memory = bool(is_valid_cypher and current_attempt > 1 and memory_hit)
+    
+    if fixed_by_memory:
+        print(f"[METRIC LOG]: 8B Agent successfully corrected using 70B Cognee Memory (Attempt {current_attempt})!")
+
     return{
         'next_action': next_action,
         'cypher_errors': cypher_errors,
         'path':['cyver_evaluator'],
         'internal_cypher_errors_history':[cypher_errors],
+        'is_valid_cypher': is_valid_cypher,     # 1st metric to state
+        #'fixed_by_memory': fixed_by_memory,     # 2nd metric to state
+        'attempts': current_attempt,            # 3rd metric to state
         "total_tokens": [-1],
         "prompt_tokens": [-1],
         "completion_tokens": [-1]

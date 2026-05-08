@@ -3,7 +3,7 @@ import asyncio
 import nest_asyncio
 from dotenv import load_dotenv, find_dotenv
 from cognee.api.v1.search import SearchType
-from Memory.cognee_graph import CypherKnowledgeGraph
+from Cognee_Graphiti_Memory.cognee_graph import CypherKnowledgeGraph
 
 # Imports & Sync
 nest_asyncio.apply()

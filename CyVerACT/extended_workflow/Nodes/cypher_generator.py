@@ -9,15 +9,15 @@ from Nodes.States.states import  OverallState
 # from Configuration.models import models
 
 # Importing HYBRID MEMORY
-try:
-    from Memory.hybrid_manager import HybridMemoryManager
-    # Initialize HYBRID MEMORY HERE !!!
-    hybrid_memory = HybridMemoryManager()
-    memory_available = True
-    print("[Cypher Generator] Hybrid Memory Loaded")
-except ImportError:
-    print("WARNING: HybridMemoryManager not found. Proceeding without memory.")
-    memory_available = False
+# try:
+#     from Memory.hybrid_manager import HybridMemoryManager
+#     # Initialize HYBRID MEMORY HERE !!!
+#     hybrid_memory = HybridMemoryManager()
+#     memory_available = True
+#     print("[Cypher Generator] Hybrid Memory Loaded")
+# except ImportError:
+#     print("WARNING: HybridMemoryManager not found. Proceeding without memory.")
+#     memory_available = False
 
 system_prompt = """
                 Task: Generate Cypher statement to query a graph database. 
@@ -27,17 +27,18 @@ system_prompt = """
                 Do not respond to any questions that might ask anything else than for you to construct a Cypher statement.
                 Do not include any text except the generated Cypher statement.
                 """
-# Adding memory context here :)
+# Adding memory context here :) - removed   \n{episodic_context} 21/03/2025 
+# Removed If memory_context contains previous mistakes for this question, avoid making the same mistake again. 
+# Removed \n{procedural_context}
 human_prompt =  """
                 Generate Cypher statement to query a graph database, as plain text without any code block formatting or backticks.
                 Use only the provided relationship types and properties in the schema. 
                 Instructions:
-                If memory_context contains previous mistakes for this question, avoid making the same mistake again.
+                
                 Do not repeat previously known invalid Cypher statements.
                 Respond with the corrected or new Cypher statement only.
                 \nSchema: {schema}
-                \n{procedural_context}
-                \n{episodic_context}
+                
                 \nQuestion: {question}
                 \nCypher statement:
                 
@@ -89,23 +90,23 @@ def cypher_generator(state: OverallState, config:RunnableConfig) -> OverallState
     chat_model = config['configurable']['model']
 
     # Hybrid Memory Retrieval here !!! 
-    procedural_context = ""
-    episodic_context = "" 
+    # procedural_context = ""
+    # #episodic_context = "" 
 
-    if memory_available:
-        try:
-            # Getting procedural lessons (Cognee)
-            past_lessons = hybrid_memory.get_procedural_lessons(question)
-            if past_lessons:
-                procedural_context = f"\nPrevious Mistakes & Lessons:\n{past_lessons}\n"
+    # if memory_available:
+    #     try:
+    #         # Getting procedural lessons (Cognee)
+    #         past_lessons = hybrid_memory.get_procedural_lessons(question)
+    #         if past_lessons:
+    #             procedural_context = f"\nPrevious Mistakes & Lessons:\n{past_lessons}\n"
             
-            # Getting recent chat history (Graphiti) or searching for past connections (recent episodes)
-            past_episodes = hybrid_memory.search_episodic_memory(query=question)
-            if past_episodes:
-                episodic_context = f"\nRecent Conversation History:\n{past_episodes}\n"
+    #         # Getting recent chat history (Graphiti) or searching for past connections (recent episodes)
+    #         # past_episodes = hybrid_memory.search_episodic_memory(query=question)
+    #         # if past_episodes:
+    #         #     episodic_context = f"\nRecent Conversation History:\n{past_episodes}\n"
 
-        except Exception as e:
-            print(f"[Memory] Retrieval Error: {e}")
+    #     except Exception as e:
+    #         print(f"[Memory] Retrieval Error: {e}")
 
 
     if model_name == 'gemma2_9b' or model_name == 'finetuned_gemma2_9b' or model_name =='finetuned_gemma2_9b_local':
@@ -117,8 +118,8 @@ def cypher_generator(state: OverallState, config:RunnableConfig) -> OverallState
         generated_cypher = text2cypher_chain.invoke({
             "question": question,
             "schema": schema,
-            "procedural_context": procedural_context, # for the prompt above
-            "episodic_context": episodic_context
+            #"procedural_context": procedural_context, # for the prompt above
+            #"episodic_context": episodic_context
         })
 
     total_tokens = cb.total_tokens
