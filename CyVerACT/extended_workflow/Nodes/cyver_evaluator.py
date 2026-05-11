@@ -12,16 +12,22 @@ sys.path.append('../')
 from CyVer_custom import SyntaxValidator,PropertiesValidator,SchemaValidator
 #from CyVer import SyntaxValidator,PropertiesValidator,SchemaValidator
 
-# Importing memory here!
-# try:
-#     from Memory.hybrid_manager import HybridMemoryManager
-#     # Initialize HYBRID MEMORY
-#     hybrid_memory = HybridMemoryManager()
-#     memory_available = True
-#     print("[CyVer Evaluator] Hybrid Memory Loaded")
-# except ImportError:
-#     print("[CyVer Evaluator] WARNING: HybridMemoryManager not found.")
-#     memory_available = False
+# Init Custom Memory
+import os 
+from Agent_Memory.custom_cyver_memory import CyVerMemory
+
+# Init Custom Memory
+URI = os.getenv("NEO4J_URI")
+USER = os.getenv("NEO4J_USERNAME")
+PASSWORD = os.getenv("NEO4J_PASSWORD")
+DB_NAME = os.getenv("MEMORY_DATABASE")
+
+memory = CyVerMemory(
+    URI,
+    USER,
+    PASSWORD,
+    database=DB_NAME
+)
 
 #Create cypher evaluator node
 def cyver_evaluator(state: OverallState, config:RunnableConfig) -> OverallState:
@@ -38,6 +44,7 @@ def cyver_evaluator(state: OverallState, config:RunnableConfig) -> OverallState:
     driver = state.get("neo4j_driver")
     # driver = GraphDatabase.driver(database_url, auth=basic_auth(database_user, database_password) )
     question = state.get("question") # Need that to learn
+    session_id = state.get("session_id", "default_session") # session ID for memory
 
     #---------------CyVer evaluation------------------
     print('CyVer Evaluator: START')
@@ -81,21 +88,44 @@ def cyver_evaluator(state: OverallState, config:RunnableConfig) -> OverallState:
         for error in cypher_errors:
             print('-', error)
             print()
-        
-        # STORING ERROR TO MEMORY HERE !!!
-        # if memory_available:
-        #     try:
-        #         error_msg = "; ".join(cypher_errors)
-        #         print(f"[CyVer Evaluator] Storing mistake in Hybrid Memory...")
-        #         hybrid_memory.add_error_lesson(
-        #             query=question,
-        #             bad_cypher=cypher_statement,
-        #             error_msg=error_msg
-        #         )
-        #         print("[CyVer Evaluator] Lesson Saved!")
-        #     except Exception as e:
-        #         print(f"[CyVer Evaluator] Failed to save lesson: {e}")
 
+        # CONTEXT GRAPH MEMORY 
+        from langchain_core.prompts import ChatPromptTemplate
+
+        current_attempt = frequency.get('cypher_corrector', 0) + 1
+
+        try:
+            # Ask the active model to write a generic lesson
+            chat_model = config['configurable']['model']
+            teacher_prompt = ChatPromptTemplate.from_template(
+                "You are a Neo4j Cypher expert. The user asked: '{question}'.\n"
+                "We generated the query: '{query}'.\n"
+                "Neo4j returned these errors: {errors}.\n"
+                "Write a 1-sentence general rule to prevent this specific schema error in the future. "
+                "Focus strictly on schema rules, labels, and relationship directions. Do NOT mention specific node properties like movie titles or actor names."
+            )
+            rule_chain = teacher_prompt | chat_model | StrOutputParser()
+            fix_rule_text = rule_chain.invoke({
+                "question": question,
+                "query": cypher_statement,
+                "errors": " | ".join(cypher_errors)
+            })
+            
+            # Save the error, query, and rule to the Context Graph
+            error_category = cypher_errors[0].split(':')[0] if cypher_errors else "ExecutionError"
+            memory.add_procedural_error(
+                session_id=session_id,
+                wrong_cypher=cypher_statement,
+                error_type=error_category,
+                error_msg=" | ".join(cypher_errors),
+                fix_rule=fix_rule_text,
+                attempt_num=current_attempt
+            )
+            print(f"[Memory] Learned new rule: {fix_rule_text}")
+            
+        except Exception as e:
+            print(f"[Memory] Failed to save procedural rule: {e}")
+        
         # If Cypher Corrector exists in the path more than n times then:
         if frequency['cypher_corrector'] == attempts_w_filtered:
             # If the second to last elemet is schema retriever (it means that the schema filtering has failed and
@@ -126,30 +156,11 @@ def cyver_evaluator(state: OverallState, config:RunnableConfig) -> OverallState:
     # print('CyVer Evaluator: END')
     # print()
 
-    # --- METRIC CALCULATIONS FOR TESTING ---
-    # 1. Is the Cypher valid right now?
-    is_valid_cypher = (len(cypher_errors) == 0)
-    
-    # 2. How many attempts have we made? 
-    # If cypher_corrector hasn't run, it's Attempt 1. Otherwise, Attempt 2+.
-    current_attempt = frequency.get('cypher_corrector', 0) + 1
-    
-    # 3. Was this fixed by memory? (SCSR Metric)
-    # It must be valid NOW, it must have failed previously (attempts > 1), AND Cognee must have given a rule.
-    memory_hit = state.get("memory_hit", False)
-    fixed_by_memory = bool(is_valid_cypher and current_attempt > 1 and memory_hit)
-    
-    if fixed_by_memory:
-        print(f"[METRIC LOG]: 8B Agent successfully corrected using 70B Cognee Memory (Attempt {current_attempt})!")
-
     return{
         'next_action': next_action,
         'cypher_errors': cypher_errors,
         'path':['cyver_evaluator'],
         'internal_cypher_errors_history':[cypher_errors],
-        'is_valid_cypher': is_valid_cypher,     # 1st metric to state
-        #'fixed_by_memory': fixed_by_memory,     # 2nd metric to state
-        'attempts': current_attempt,            # 3rd metric to state
         "total_tokens": [-1],
         "prompt_tokens": [-1],
         "completion_tokens": [-1]
