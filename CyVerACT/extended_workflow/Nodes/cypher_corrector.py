@@ -4,21 +4,11 @@ from langchain_core.output_parsers import StrOutputParser
 from huggingface_hub import InferenceClient
 from langchain_community.callbacks import get_openai_callback
 
-
 from Nodes.States.states import OverallState
 # from Configuration.models import models
 
-# Importing HYBRID MEMORY
-# try:
-#     from Memory.hybrid_manager import HybridMemoryManager
-#     hybrid_memory = HybridMemoryManager()
-#     memory_available = True
-#     print("[Cypher Corrector] Hybrid Memory Loaded")
-# except ImportError:
-#     print("[Cypher Corrector] WARNING: HybridMemoryManager not found.")
-#     memory_available = False
-
-# Removed Previous Similar Mistakes & Lessons: {memory_context}
+# IMPORT MEMORY MANAGER
+from Agent_Memory.memory_manager import MemoryManager
 
 system_prompt = '''
                 You are a Cypher expert reviewing a statement. 
@@ -41,11 +31,17 @@ human_prompt = '''
                 The question is:
                 {question}
 
+                === PREVIOUS FAILED ATTEMPTS (DO NOT REPEAT THESE CYpher STATEMENTS) ===
+                {history}
+                ========================================================================
+
                 The Cypher statement is:
                 {cypher}
 
                 The errors for the Cypher statement are:
                 {errors}
+
+                {dynamic_rules_section}
 
                 Corrected Cypher statement:
         
@@ -86,49 +82,62 @@ fix_cypher_prompt_flattened = ChatPromptTemplate.from_messages(
 def cypher_corrector(state: OverallState, config:RunnableConfig) -> OverallState:
     """
     Correct the Cypher statement based on the provided errors.
-    Also store the error in Hybrid Memory (Cognee) for future learning.
     """
     model_name = config['configurable']['model_name']
     question = state.get("question")
     cypher = state.get("cypher_statement")
     schema = state.get("schema")
     cypher_errors_list = state.get("cypher_errors")
-
-    # --- ADDED FOR SCSR METRIC ---
-    attempts = state.get("attempts", 0)
-    # memory_hit = False
-    
-    # memory_context = ""
-
-    # if memory_available and cypher_errors_list:
-    #     try:
-    #         error_signature = " | ".join(cypher_errors_list)
-
-    #         search_query = f"""
-    #         Cypher mistake case.
-    #         Errors: {error_signature}
-    #         Faulty query: {cypher}
-    #         """
-
-    #         print("[Cypher Corrector] Searching procedural memory...")
-    #         past_lessons = hybrid_memory.get_procedural_lessons(search_query)
-    #         print(f"[Memory] Found past mistakes for similar queries!" + past_lessons) # for debugging 
-    #         if past_lessons:
-    #             memory_context = f"\nPrevious Similar Mistakes & Lessons:\n{past_lessons}\n"
-    #             print("[Cypher Corrector] Found past lessons!")
-    #             # --- ADDED FOR SCSR METRIC ---
-    #             memory_hit = True
-    #         else:
-    #             print("[Cypher Corrector] No similar lessons found.")
-
-    #     except Exception as e:
-    #         print(f"[Cypher Corrector] Memory retrieval error: {e}")
-
-    
     cypher_errors = "\n".join(
         f"{i + 1}. {error}" for i, error in enumerate(cypher_errors_list)
     )
 
+    # ========================================================
+    # SHORT-TERM MEMORY: Trajectory History 
+    # ========================================================
+    cypher_history = state.get("cypher_history", [])
+    errors_history = state.get("internal_cypher_errors_history", [])
+    
+    history_str = ""
+    # We iterate up to len-1 because the very last item in the history 
+    # is the 'current' failed attempt being evaluated below!
+    for i in range(len(cypher_history) - 1):
+        history_str += f"Attempt {i+1}:\n"
+        history_str += f"Cypher: {cypher_history[i]}\n"
+        
+        # Guard against index out of bounds just in case the arrays get misaligned
+        if i < len(errors_history):
+            past_errors = "\n".join([f"  - {err}" for err in errors_history[i]])
+            history_str += f"Errors:\n{past_errors}\n"
+        history_str += "-" * 40 + "\n"
+
+    if not history_str.strip():
+        history_str = "No previous failed attempts."
+
+    # ========================================================
+    # LONG-TERM MEMORY RETRIEVAL: Fetch generic + specific instructions 
+    # ========================================================
+    # DB driver connection from state
+    driver = state.get("neo4j_driver")
+    
+    # Instantiating the MemoryManager object with the driver
+    memory_manager = MemoryManager(driver)
+    
+    # Calling the function on the instantiated object
+    fix_rules = memory_manager.get_fix_rules_for_errors(cypher_errors_list)
+    
+    if fix_rules:
+        print("\n[MEMORY MANAGER] Triggered! Retrieved the following FixRules:")
+        for rule in fix_rules:
+            print(f"   -> {rule}")
+        print() # readability
+        
+        rules_str = "\n".join(f"- {rule}" for rule in fix_rules)
+        dynamic_rules_section = f"Crucial Rules to follow for this specific fix:\n{rules_str}\n"
+    else:
+        print("\n[MEMORY MANAGER] No matching FixRules found in database for these errors.\n")
+        dynamic_rules_section = ""
+    
     chat_model = config['configurable']['model']
     
     if model_name == 'gemma2_9b' or model_name == 'finetuned_gemma2_9b' or model_name == 'finetuned_gemma2_9b_local':
@@ -136,6 +145,11 @@ def cypher_corrector(state: OverallState, config:RunnableConfig) -> OverallState
     else:    
         fix_cypher_chain = fix_cypher_prompt | chat_model | StrOutputParser()
 
+    # Prints for memory 
+    print("\n" + "="*50)
+    print("[MEMORY MANAGER] Error History:")
+    print(history_str)
+    print("="*50 + "\n")
     
     with get_openai_callback() as cb:
         corrected_cypher = fix_cypher_chain.invoke(
@@ -144,8 +158,8 @@ def cypher_corrector(state: OverallState, config:RunnableConfig) -> OverallState
                 "schema": schema,
                 "cypher": cypher,
                 "errors": cypher_errors,
-                #"memory_context": memory_context
-                
+                "dynamic_rules_section": dynamic_rules_section,  # MEMORY
+                "history": history_str # MEMORY
             }
         )
     
@@ -171,9 +185,6 @@ def cypher_corrector(state: OverallState, config:RunnableConfig) -> OverallState
         "total_tokens": [total_tokens],
         "prompt_tokens": [prompt_tokens],
         "completion_tokens": [completion_tokens],
-        # --- ADDED FOR SCSR METRIC ---
-        "attempts": attempts + 1
-        # "memory_hit": memory_hit
+        'cypher_history': [corrected_cypher], # MEMORY
+        "history": history_str  # MEMORY TRAJECTORY HERE
     }
-
-    

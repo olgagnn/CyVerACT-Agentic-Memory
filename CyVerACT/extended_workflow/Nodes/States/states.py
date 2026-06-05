@@ -32,6 +32,7 @@ class OverallState(TypedDict):
     total_tokens: Annotated[List[int], add]
     completion_tokens: Annotated[List[int], add]
     prompt_tokens: Annotated[List[int], add]
+    cypher_history: Annotated[List[str], add] # MEMORY
 
 class OutputState(TypedDict):
     answer: str

@@ -11,23 +11,8 @@ import sys
 sys.path.append('../')
 from CyVer_custom import SyntaxValidator,PropertiesValidator,SchemaValidator
 #from CyVer import SyntaxValidator,PropertiesValidator,SchemaValidator
-
-# Init Custom Memory
-import os 
-from Agent_Memory.custom_cyver_memory import CyVerMemory
-
-# Init Custom Memory
-URI = os.getenv("NEO4J_URI")
-USER = os.getenv("NEO4J_USERNAME")
-PASSWORD = os.getenv("NEO4J_PASSWORD")
-DB_NAME = os.getenv("MEMORY_DATABASE")
-
-memory = CyVerMemory(
-    URI,
-    USER,
-    PASSWORD,
-    database=DB_NAME
-)
+# IMPORT MEMORY MANAGER
+from Agent_Memory.memory_manager import MemoryManager
 
 #Create cypher evaluator node
 def cyver_evaluator(state: OverallState, config:RunnableConfig) -> OverallState:
@@ -40,17 +25,23 @@ def cyver_evaluator(state: OverallState, config:RunnableConfig) -> OverallState:
     total_attempts = config['configurable']['total_attempts']
     attempts_w_filtered = config['configurable']['attempts_w_filtered']
 
+    # GET QUESTION FROM STATE
+    question = state.get("question")
+
     # Connect to the database
     driver = state.get("neo4j_driver")
     # driver = GraphDatabase.driver(database_url, auth=basic_auth(database_user, database_password) )
-    question = state.get("question") # Need that to learn
-    session_id = state.get("session_id", "default_session") # session ID for memory
+
+    # INSTANTIATE MEMORY MANAGER
+    memory_manager = MemoryManager(driver)  
 
     #---------------CyVer evaluation------------------
     print('CyVer Evaluator: START')
     print('CyVer Evaluation of {}:'.format(cypher_statement))
 
     cypher_errors = []
+    # COLLECT RAW METADATA FOR MEMORY WRITING
+    raw_metadata_collection = []  
    
     #SyntaxValidator
     syntax_validator =  SyntaxValidator(driver)
@@ -68,64 +59,40 @@ def cyver_evaluator(state: OverallState, config:RunnableConfig) -> OverallState:
     if syntax_validation_metadata:
         for error in syntax_validation_metadata:
             cypher_errors.append(error['code']+': '+ error['description'])
+            raw_metadata_collection.append(error) # MEMORY
 
     if schema_validation_metadata:
         for error in schema_validation_metadata:
             cypher_errors.append(error['code'] +': '+ error['description'])
+            raw_metadata_collection.append(error) # MEMORY
 
     if properties_validation_metadata:
         for error in properties_validation_metadata:
             cypher_errors.append(error['code']+': '+  error['description'])
+            raw_metadata_collection.append(error) # MEMORY
+
+    # MEMORY - Calculate sequential attempt number based on the execution history
+    current_attempt_num = len(state.get("cypher_history", [])) + 1
+    
+    # ========================================================
+    # LONG-TERM MEMORY STORAGE: Writing execution record to Neo4j
+    # ========================================================
+    memory_manager.store_attempt(
+        question=question,
+        cypher=cypher_statement,
+        raw_errors=raw_metadata_collection,
+        attempt_num=current_attempt_num
+    )
     
     current_path = state.get("path", [])
     frequency = Counter(current_path)
 
     if cypher_errors:
         # print('CyVer Evaluation of {}'.format(cypher_statement))
-        print(f"[CyVer Evaluator] Errors detected: {len(cypher_errors)}")
-
         print('CyVer Errors from generated query:')
         for error in cypher_errors:
             print('-', error)
             print()
-
-        # CONTEXT GRAPH MEMORY 
-        from langchain_core.prompts import ChatPromptTemplate
-
-        current_attempt = frequency.get('cypher_corrector', 0) + 1
-
-        try:
-            # Ask the active model to write a generic lesson
-            chat_model = config['configurable']['model']
-            teacher_prompt = ChatPromptTemplate.from_template(
-                "You are a Neo4j Cypher expert. The user asked: '{question}'.\n"
-                "We generated the query: '{query}'.\n"
-                "Neo4j returned these errors: {errors}.\n"
-                "Write a 1-sentence general rule to prevent this specific schema error in the future. "
-                "Focus strictly on schema rules, labels, and relationship directions. Do NOT mention specific node properties like movie titles or actor names."
-            )
-            rule_chain = teacher_prompt | chat_model | StrOutputParser()
-            fix_rule_text = rule_chain.invoke({
-                "question": question,
-                "query": cypher_statement,
-                "errors": " | ".join(cypher_errors)
-            })
-            
-            # Save the error, query, and rule to the Context Graph
-            error_category = cypher_errors[0].split(':')[0] if cypher_errors else "ExecutionError"
-            memory.add_procedural_error(
-                session_id=session_id,
-                wrong_cypher=cypher_statement,
-                error_type=error_category,
-                error_msg=" | ".join(cypher_errors),
-                fix_rule=fix_rule_text,
-                attempt_num=current_attempt
-            )
-            print(f"[Memory] Learned new rule: {fix_rule_text}")
-            
-        except Exception as e:
-            print(f"[Memory] Failed to save procedural rule: {e}")
-        
         # If Cypher Corrector exists in the path more than n times then:
         if frequency['cypher_corrector'] == attempts_w_filtered:
             # If the second to last elemet is schema retriever (it means that the schema filtering has failed and
@@ -156,14 +123,15 @@ def cyver_evaluator(state: OverallState, config:RunnableConfig) -> OverallState:
     # print('CyVer Evaluator: END')
     # print()
 
+    # MEMORY 
+    current_error = cypher_errors[0] if cypher_errors else ""
     return{
         'next_action': next_action,
         'cypher_errors': cypher_errors,
+        'current_error': current_error,   # MEMORY
         'path':['cyver_evaluator'],
         'internal_cypher_errors_history':[cypher_errors],
         "total_tokens": [-1],
         "prompt_tokens": [-1],
         "completion_tokens": [-1]
         }    
-
-    

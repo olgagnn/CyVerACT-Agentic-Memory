@@ -1,6 +1,9 @@
 from neo4j import GraphDatabase, basic_auth
 from Nodes.States.states import OverallState
 
+# IMPORT MEMORY MANAGER
+from Agent_Memory.memory_manager import MemoryManager
+
 # no_results = "I couldn't find any relevant information in the database"
 
 def cypher_executor(state: OverallState) -> OverallState:
@@ -14,6 +17,9 @@ def cypher_executor(state: OverallState) -> OverallState:
     database_name = state.get("database_name")
     database_user = state.get("database_user")
     database_password = state.get("database_password")
+
+    # MEMORY 
+    question = state.get("question")
 
     database_records = []
 
@@ -42,6 +48,17 @@ def cypher_executor(state: OverallState) -> OverallState:
             
             print(f"Executing Cypher: {cypher_statement}")
             print(f"Records found: {len(database_records)}")
+
+            # ============================
+            # MEMORY WRITE: Store Answer
+            # ============================
+            memory_manager = MemoryManager(driver)
+            memory_manager.store_successful_answer(
+                question=question,
+                final_cypher=cypher_statement,
+                records_found=len(database_records)
+            )
+
         else:
             print("ERROR: Database credentials missing in State inputs.")
             
@@ -75,7 +92,7 @@ def cypher_executor(state: OverallState) -> OverallState:
         # print()
 
     print('Cypher Executor: END')
-
+   
     return {
         "database_records": database_records,
         "next_action": "output_generator",

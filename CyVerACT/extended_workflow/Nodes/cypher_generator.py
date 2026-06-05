@@ -4,25 +4,11 @@ from langchain_core.runnables.config import RunnableConfig
 from huggingface_hub import InferenceClient
 from langchain_community.callbacks import get_openai_callback
 
-
 from Nodes.States.states import  OverallState
 # from Configuration.models import models
 
-import os 
-from Agent_Memory.custom_cyver_memory import CyVerMemory
-
-# Init Custom Memory
-URI = os.getenv("NEO4J_URI")
-USER = os.getenv("NEO4J_USERNAME")
-PASSWORD = os.getenv("NEO4J_PASSWORD")
-DB_NAME = os.getenv("MEMORY_DATABASE")
-
-memory = CyVerMemory(
-    URI,
-    USER,
-    PASSWORD,
-    database=DB_NAME
-)
+# Add this import at the top
+from Agent_Memory.memory_manager import MemoryManager
 
 system_prompt = """
                 Task: Generate Cypher statement to query a graph database. 
@@ -33,22 +19,9 @@ system_prompt = """
                 Do not include any text except the generated Cypher statement.
                 """
 human_prompt =  """
-                Generate Cypher statement to query a graph database, as plain text without any code block formatting or backticks.
-                Use only the provided relationship types and properties in the schema. 
-                Instructions:
-                
-                Do not repeat previously known invalid Cypher statements.
-                Respond with the corrected or new Cypher statement only.
+                Generate Cypher statement to query a graph database,as plain text without any code block formatting or backticks.
+                Use only the provided relationship types and properties in the schema.
                 \nSchema: {schema}
-
-                \n--- CHAT HISTORY ---
-                (Use this to understand context like "he", "it", or "that movie")
-                {chat_history}
-                
-                \n--- RULES ---
-                (Lessons learned from past errors. DO NOT violate these)
-                {procedural_rules}
-                
                 \nQuestion: {question}
                 \nCypher statement:
                 
@@ -87,49 +60,34 @@ text2cypher_prompt_flattened = ChatPromptTemplate.from_messages(
     ]
 )
 
-# Creating the node for the Cypher generator
+## Create the node for the Cypher generator
 def cypher_generator(state: OverallState, config:RunnableConfig) -> OverallState:
     """
     Generates a cypher statement based on the provided schema and user input
-    Added Hybrid Memory!
     """
     model_name = config['configurable']['model_name']
     schema = state.get("schema")
     question = state.get("question")
 
-    session_id = state.get("session_id", "default_session") # session ID from state
+    # ============================
+    # MEMORY INIT: Create Question
+    # ============================
+    driver = state.get("neo4j_driver")
+    if driver:
+        memory_manager = MemoryManager(driver)
+        memory_manager.init_question(question)
 
     chat_model = config['configurable']['model']
 
-    # MEMORY RETRIEVAL 
-    context = memory.retrieve_context(session_id=session_id, current_question=question)
-    
-    # Episodic History
-    chat_history_list = context.get("chat_history", [])
-    if chat_history_list:
-        history_text = "\n".join([f"User: {turn['question']}\nAgent: {turn['answer']}" for turn in chat_history_list])
-    else:
-        history_text = "No previous conversation."
-
-    # Procedural Rules
-    rules_list = context.get("procedural_rules", [])
-    if rules_list:
-        rules_text = "\n".join([f"- {rule['rule']} (Relevance: {rule['relevance_score']:.2f})" for rule in rules_list])
-    else:
-        rules_text = "No applicable rules found for this query."
-    
     if model_name == 'gemma2_9b' or model_name == 'finetuned_gemma2_9b' or model_name =='finetuned_gemma2_9b_local':
         text2cypher_chain = text2cypher_prompt_flattened | chat_model | StrOutputParser()
     else:    
         text2cypher_chain = text2cypher_prompt | chat_model | StrOutputParser()
 
     with get_openai_callback() as cb:
-        # Pass the memory variables to the prompt
         generated_cypher = text2cypher_chain.invoke({
             "question": question,
             "schema": schema,
-            "chat_history": history_text,
-            "procedural_rules": rules_text
         })
 
     total_tokens = cb.total_tokens
@@ -146,10 +104,11 @@ def cypher_generator(state: OverallState, config:RunnableConfig) -> OverallState
     # print('Generated Cypher statement: \n {}'.format(generated_cypher))
     # print('Cypher Generator: END')
     # print()
-
+    
     return {"cypher_statement": generated_cypher, 
             "path": ["cypher_generator"],
             "total_tokens": [total_tokens],
             "prompt_tokens": [prompt_tokens],
-            "completion_tokens": [completion_tokens]
+            "completion_tokens": [completion_tokens],
+            "cypher_history": [generated_cypher], # MEMORY
             }

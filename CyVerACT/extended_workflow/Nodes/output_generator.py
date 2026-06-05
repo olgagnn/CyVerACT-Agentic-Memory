@@ -2,21 +2,6 @@
 from Nodes.States.states import  OverallState, OutputState
 import os
 
-# Init Custom Memory
-from Agent_Memory.custom_cyver_memory import CyVerMemory
-
-URI = os.getenv("NEO4J_URI")
-USER = os.getenv("NEO4J_USERNAME")
-PASSWORD = os.getenv("NEO4J_PASSWORD")
-DB_NAME = os.getenv("MEMORY_DATABASE")
-
-memory = CyVerMemory(
-    URI,
-    USER,
-    PASSWORD,
-    database=DB_NAME
-)
-
 def output_generator(state: OverallState) -> OutputState:
     """
     Returns the final query based on the user question and the retieved results.
@@ -26,8 +11,6 @@ def output_generator(state: OverallState) -> OutputState:
     # Getting state results
     database_records = state.get("database_records")
     cypher_statement = state.get("cypher_statement")
-    question = state.get("question") # Needed for memory
-    session_id = state.get("session_id", "default_session") # Needed for memory
 
     if database_records and len(database_records) > 0:
         # Results to string 
@@ -44,18 +27,6 @@ def output_generator(state: OverallState) -> OutputState:
         path_step = "unavailable_output"
 
     print(f"Agent Answer: {answer}")
-
-    # CONTEXT GRAPH MEMORY (EPISODIC)
-    try:
-        memory.add_episodic_memory(
-            user_id=state.get("user_id", "default_user"),
-            session_id=session_id,
-            user_question=question,
-            agent_answer=answer
-        )
-        print("[Memory] Episodic memory stored successfully.")
-    except Exception as e:
-        print(f"[Memory] Failed to save episodic memory: {e}")
 
     print('Output Generator: END')
     
