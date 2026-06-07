@@ -4,6 +4,13 @@ from Nodes.States.states import OverallState
 # IMPORT MEMORY MANAGER
 from Agent_Memory.memory_manager import MemoryManager
 
+from Agent_Memory.memory_driver import get_memory_driver
+
+from langchain_huggingface import HuggingFaceEmbeddings
+
+# Initialize the embedder locally for memory lookups
+embedder = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
+
 # no_results = "I couldn't find any relevant information in the database"
 
 def cypher_executor(state: OverallState) -> OverallState:
@@ -52,12 +59,17 @@ def cypher_executor(state: OverallState) -> OverallState:
             # ============================
             # MEMORY WRITE: Store Answer
             # ============================
-            memory_manager = MemoryManager(driver)
-            memory_manager.store_successful_answer(
-                question=question,
-                final_cypher=cypher_statement,
-                records_found=len(database_records)
-            )
+            memory_driver = get_memory_driver()
+            try:
+                memory_manager = MemoryManager(memory_driver)
+                memory_manager.store_successful_answer(
+                    question=question,
+                    final_cypher=cypher_statement,
+                    records_found=len(database_records),
+                    embedder=embedder
+                )
+            finally:
+                memory_driver.close()
 
         else:
             print("ERROR: Database credentials missing in State inputs.")

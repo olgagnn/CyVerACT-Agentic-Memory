@@ -14,6 +14,13 @@ from CyVer_custom import SyntaxValidator,PropertiesValidator,SchemaValidator
 # IMPORT MEMORY MANAGER
 from Agent_Memory.memory_manager import MemoryManager
 
+from Agent_Memory.memory_driver import get_memory_driver
+
+from langchain_huggingface import HuggingFaceEmbeddings
+
+# Initialize the embedder locally
+embedder = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
+
 #Create cypher evaluator node
 def cyver_evaluator(state: OverallState, config:RunnableConfig) -> OverallState:
     
@@ -33,7 +40,14 @@ def cyver_evaluator(state: OverallState, config:RunnableConfig) -> OverallState:
     # driver = GraphDatabase.driver(database_url, auth=basic_auth(database_user, database_password) )
 
     # INSTANTIATE MEMORY MANAGER
-    memory_manager = MemoryManager(driver)  
+    # ========================================================
+    # INSTANTIATE MEMORY MANAGER (Using Dedicated Local Memory Driver)
+    # ========================================================
+    memory_driver = state.get("memory_driver")
+    if memory_driver:
+        memory_manager = MemoryManager(memory_driver)  
+    else:
+        memory_manager = None
 
     #---------------CyVer evaluation------------------
     print('CyVer Evaluator: START')
@@ -72,17 +86,23 @@ def cyver_evaluator(state: OverallState, config:RunnableConfig) -> OverallState:
             raw_metadata_collection.append(error) # MEMORY
 
     # MEMORY - Calculate sequential attempt number based on the execution history
-    current_attempt_num = len(state.get("cypher_history", [])) + 1
+    current_attempt_num = len(state.get("cypher_history", [])) 
     
     # ========================================================
     # LONG-TERM MEMORY STORAGE: Writing execution record to Neo4j
     # ========================================================
-    memory_manager.store_attempt(
-        question=question,
-        cypher=cypher_statement,
-        raw_errors=raw_metadata_collection,
-        attempt_num=current_attempt_num
-    )
+    memory_driver = get_memory_driver()
+    try:
+        memory_manager = MemoryManager(memory_driver)
+        memory_manager.store_attempt(
+            question=question,
+            cypher=cypher_statement,
+            raw_errors=raw_metadata_collection,
+            attempt_num=current_attempt_num,
+            embedder=embedder
+        )
+    finally:
+        memory_driver.close()
     
     current_path = state.get("path", [])
     frequency = Counter(current_path)

@@ -10,6 +10,14 @@ from Nodes.States.states import OverallState
 # IMPORT MEMORY MANAGER
 from Agent_Memory.memory_manager import MemoryManager
 
+from Agent_Memory.memory_driver import get_memory_driver
+
+# MEMORY EMBEDDINGS
+from langchain_huggingface import HuggingFaceEmbeddings
+
+# INITIALIZE HERE (Outside the function so it doesn't reload on every single retry loop)
+embedder = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
+
 system_prompt = '''
                 You are a Cypher expert reviewing a statement. 
                 Given an input Cypher statement and the errors it has, correct the Cypher statement.  No pre-amble.
@@ -117,14 +125,12 @@ def cypher_corrector(state: OverallState, config:RunnableConfig) -> OverallState
     # ========================================================
     # LONG-TERM MEMORY RETRIEVAL: Fetch generic + specific instructions 
     # ========================================================
-    # DB driver connection from state
-    driver = state.get("neo4j_driver")
-    
-    # Instantiating the MemoryManager object with the driver
-    memory_manager = MemoryManager(driver)
-    
-    # Calling the function on the instantiated object
-    fix_rules = memory_manager.get_fix_rules_for_errors(cypher_errors_list)
+    memory_driver = get_memory_driver()
+    try:
+        memory_manager = MemoryManager(memory_driver)
+        fix_rules = memory_manager.get_fix_rules_vector_search(cypher_errors_list, embedder)
+    finally:
+        memory_driver.close()
     
     if fix_rules:
         print("\n[MEMORY MANAGER] Triggered! Retrieved the following FixRules:")
