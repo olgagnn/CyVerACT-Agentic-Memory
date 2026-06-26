@@ -15,7 +15,7 @@ class MemoryManager:
     def store_successful_answer(self, question: str, final_cypher: str, records_found: int, embedder):
         """Links the Question to the successful Answer and saves the Question vector embedding."""
         question_vector = embedder.embed_query(question)
-
+        
         query = """
         MERGE (q:Question {text: $question})
         SET q.embedding = $vector
@@ -31,34 +31,61 @@ class MemoryManager:
                 "vector": question_vector
             })
 
-    def check_episodic_memory(self, question: str, embedder) -> str:
+    def check_episodic_memory(self, question: str, embedder) -> dict:
         """
-        Looks up if an identical or highly similar question was already solved.
-        Returns the correct Cypher query string if found, otherwise returns None.
+        Retrieves a structurally similar previously solved question using a Two-Tier system.
+        Returns a dictionary with the tier, cypher, and score, or None if below threshold.
         """
         question_vector = embedder.embed_query(question)
-
+        
         query = """
         CALL db.index.vector.queryNodes('question_embeddings', 1, $question_vector)
         YIELD node AS closest_question, score
         MATCH (closest_question)-[:RESOLVED_WITH]->(a:Answer)
-        RETURN a.cypher AS cypher, score
+        RETURN closest_question.text AS previous_question,
+               a.cypher AS cypher,
+               score
+        ORDER BY score DESC
+        LIMIT 1
         """
-
         with self.driver.session() as session:
             result = session.run(query, {"question_vector": question_vector})
-            records = list(result)
+            record = result.single()
 
-            if records:
-                match = records[0]
-                if match["score"] > 0.99:
-                    return match["cypher"]
+            if record:
+                score = record["score"]
+                
+                print("\n=== Pre-Generation Episodic Check ===")
+                print(f"Matched Question: {record['previous_question']}")
+                print(f"Similarity Score: {score:.4f}")
+                
+                # Tier 1: Near-Exact Match
+                if score >= 0.95:
+                    print("Classification: TIER 1 (Near-Exact Match)\n")
+                    print(f"Retrieved Cypher: {record['cypher']}\n")
+                    return {
+                        "tier": "exact",
+                        "cypher": record["cypher"],
+                        "score": score
+                    }
+                
+                # Tier 2: Structural Reference (Threshold lowered to 0.80 to capture entity swaps)
+                elif score >= 0.80:
+                    print("Classification: TIER 2 (Structural Reference)\n")
+                    print(f"Retrieved Cypher: {record['cypher']}\n") 
+                    return {
+                        "tier": "structural",
+                        "cypher": record["cypher"],
+                        "score": score
+                    }
+                
+                else:
+                    print("Classification: BELOW THRESHOLD (No memory injected)\n")
 
         return None
 
     def store_attempt(self, question: str, cypher: str, raw_errors: list, attempt_num: int, embedder):
-        """Stores evaluation attempts into the graph trajectory."""
-
+        """Stores evaluation attempts with SPLIT embeddings for better retrieval."""
         success = len(raw_errors) == 0
         errors_data = []
 
@@ -67,37 +94,36 @@ class MemoryManager:
             exact_error_type = raw_code.split('.')[-1]
             exact_message = err.get('description', '')
 
-            # -----------------------------
-            # CypherError embedding
-            # -----------------------------
-            semantic_error = f"{exact_error_type}: {exact_message}"
-            error_vector = embedder.embed_query(semantic_error)
+            # 1. Error Vector (Strictly captures the database failure)
+            error_semantic = f"{exact_error_type}: {exact_message}"
+            error_vector = embedder.embed_query(error_semantic)
+
+            # 2. Trajectory Vector (Strictly captures the structural intent)
+            trajectory_semantic = f"Goal: {question} | Cypher: {cypher} | Error: {exact_message}"
+            trajectory_vector = embedder.embed_query(trajectory_semantic)
 
             errors_data.append({
                 "raw_message": exact_message,
                 "error_type": exact_error_type,
-                "vector": error_vector   
+                "error_vector": error_vector,
+                "trajectory_vector": trajectory_vector
             })
 
         query = """
         MERGE (q:Question {text: $question})
-        CREATE (a:Attempt {
-            attempt_num: $attempt_num,
-            cypher: $cypher,
-            success: $success
-        })
+        CREATE (a:Attempt {attempt_num: $attempt_num, cypher: $cypher, success: $success})
         CREATE (q)-[:HAS_ATTEMPT]->(a)
-
+        
         WITH a, $errors_data AS errors
         UNWIND errors AS err
-
+        
         CREATE (e:CypherError {
             message: err.raw_message,
-            embedding: err.vector
+            error_embedding: err.error_vector,
+            trajectory_embedding: err.trajectory_vector
         })
-
         CREATE (a)-[:CAUSED_ERROR]->(e)
-
+        
         WITH e, err
         MATCH (et:ErrorType {name: err.error_type})
         CREATE (e)-[:HAS_ERROR_TYPE]->(et)
@@ -112,94 +138,109 @@ class MemoryManager:
                 "errors_data": errors_data
             })
 
-    def get_fix_rules_vector_search(self, string_errors: list, embedder) -> list:
+    def get_trajectory_fix_context(self, current_question: str, failed_cypher: str, raw_error_message: str, embedder, limit: int = 3) -> str:
+        """Retrieves trajectories using a weighted combination of Error Similarity (70%) and Trajectory Similarity (30%)."""
+        
+        error_semantic = raw_error_message 
+        trajectory_semantic = f"Goal: {current_question} | Cypher: {failed_cypher} | Error: {raw_error_message}"
+        
+        error_target_vector = embedder.embed_query(error_semantic)
+        trajectory_target_vector = embedder.embed_query(trajectory_semantic)
+
+        # Native Neo4j weighted vector retrieval
+        query = """
+        CALL db.index.vector.queryNodes('error_vector_embeddings', $search_limit, $error_target_vector)
+        YIELD node AS error_node, score AS err_score
+        
+        MATCH (a:Attempt)-[:CAUSED_ERROR]->(error_node)
+        MATCH (q:Question)-[:HAS_ATTEMPT]->(a)
+        MATCH (q)-[:RESOLVED_WITH]->(ans:Answer)
+        
+        // Calculate the trajectory similarity using native cosine similarity function
+        WITH q, a, error_node, ans, err_score,
+             vector.similarity.cosine(error_node.trajectory_embedding, $trajectory_target_vector) AS traj_score
+             
+        // Apply your 70/30 weighting
+        WITH q, a, error_node, ans, err_score, traj_score,
+             (0.7 * err_score) + (0.3 * traj_score) AS combined_score
+        ORDER BY combined_score DESC
+        
+        RETURN 
+            q.text AS past_question, 
+            a.cypher AS failed_cypher, 
+            error_node.message AS error_message, 
+            ans.cypher AS fixed_cypher, 
+            combined_score
         """
-        Retrieves rules using Hybrid Search (WRRF):
-        Combines Semantic Vector Search with BM25 Keyword Search.
-        Merges results using Weighted Reciprocal Rank Fusion.
+
+        context_blocks = []
+        seen_errors = set()
+
+        with self.driver.session() as session:
+            result = session.run(query, {
+                "error_target_vector": error_target_vector, 
+                "trajectory_target_vector": trajectory_target_vector,
+                "search_limit": limit * 3 
+            })
+
+            for record in result:
+                combined_score = record['combined_score']
+                
+                # 1. GARBAGE FILTER THRESHOLD
+                if combined_score < 0.80:
+                    continue
+                
+                # 2. STRONG DEDUPLICATION (Groups similar syntax errors regardless of line numbers)
+                error_signature = record['error_message'].split(":")[0].strip()
+                if error_signature in seen_errors:
+                    continue 
+                
+                seen_errors.add(error_signature)
+
+                # 3. COGNITIVE FORCE PROMPT
+                block = (
+                    f"--- Trajectory Strategy (Relevance: {combined_score:.2f}) ---\n"
+                    f"Past Intent: {record['past_question']}\n"
+                    f"Past Failure: {record['failed_cypher']}\n"
+                    f"Resulting Engine Error: {record['error_message']}\n"
+                    f"Successful Structural Fix: {record['fixed_cypher']}\n"
+                    f"CRITICAL INSTRUCTION: Analyze how the 'Successful Structural Fix' altered the syntax of the 'Past Failure' to resolve the engine error. Apply this exact same structural transformation to your current failing query.\n"
+                )
+                context_blocks.append(block)
+                
+                if len(context_blocks) >= limit:
+                    break
+
+        return "\n".join(context_blocks)
+
+    def get_fix_rules(self, string_errors: list) -> list:
         """
-        import re
+        Retrieve generic repair rules using exact ErrorType matching.
+        """
         if not string_errors:
             return []
 
-        combined_feedback = []
+        rules = []
 
         with self.driver.session() as session:
-            for err_string in string_errors:
+            for err in string_errors:
+                # Isolate the exact Neo4j Error code (e.g., 'SyntaxError')
+                raw_code = err.split(":")[0].strip()
+                error_type = raw_code.split(".")[-1]
 
-                parts = err_string.split(':', 1)
-                raw_code = parts[0].strip()
-                exact_error_type = raw_code.split('.')[-1] if '.' in raw_code else raw_code
-                raw_message = parts[1].strip() if len(parts) > 1 else err_string
-
-                error_vector = embedder.embed_query(raw_message)
-
-                vector_query = """
-                CALL db.index.vector.queryNodes('error_embeddings', 10, $error_vector)
-                YIELD node AS error_type_node, score
-                WHERE error_type_node.name = $exact_error_type
-                MATCH (error_type_node)-[:FIXED_WITH]->(fr:FixRule)
-                RETURN DISTINCT fr.rule AS instruction
-                LIMIT 10
+                query = """
+                MATCH (et:ErrorType {name:$error_type})-[:FIXED_WITH]->(fr:FixRule)
+                RETURN fr.rule AS rule
                 """
 
-                vec_result = session.run(vector_query, {
-                    "error_vector": error_vector,
-                    "exact_error_type": exact_error_type
-                })
+                result = session.run(
+                    query,
+                    {"error_type": error_type}
+                )
 
-                vector_hits = [record["instruction"] for record in vec_result]
+                rules.extend(
+                    [record["rule"] for record in result]
+                )
 
-                safe_keywords = re.sub(r'[^\w\s]', ' ', raw_message).split()
-                ft_query_string = " OR ".join([word for word in safe_keywords if len(word) > 2])
-
-                kw_hits = []
-
-                if ft_query_string:
-                    keyword_query = """
-                    CALL db.index.fulltext.queryNodes('fixrule_text', $ft_query_string)
-                    YIELD node AS fr, score
-                    RETURN DISTINCT fr.rule AS instruction
-                    LIMIT 10
-                    """
-
-                    try:
-                        kw_result = session.run(keyword_query, {
-                            "ft_query_string": ft_query_string
-                        })
-                        kw_hits = [record["instruction"] for record in kw_result]
-                    except Exception as e:
-                        print(f"Keyword search bypassed: {e}")
-
-                rrf_scores = {}
-                k_constant = 60
-
-                for rank, instruction in enumerate(vector_hits):
-                    rrf_scores[instruction] = rrf_scores.get(instruction, 0.0) + (1.0 / (k_constant + rank))
-
-                for rank, instruction in enumerate(kw_hits):
-                    rrf_scores[instruction] = rrf_scores.get(instruction, 0.0) + (1.5 / (k_constant + rank))
-
-                sorted_rules = sorted(rrf_scores.items(), key=lambda x: x[1], reverse=True)
-                top_1_rules = sorted_rules[:1]
-
-                if top_1_rules:
-                    feedback_str_parts = []
-                    for i, (instruction, _) in enumerate(top_1_rules):
-                        feedback_str_parts.append(f"   - Rule {i+1}: {instruction}")
-
-                    combined_rules = "\n".join(feedback_str_parts)
-
-                    feedback_str = (
-                        f"General Rules to Consider:\n{combined_rules}\n"
-                        f"Specific Fix Required: Address this engine feedback -> '{raw_message}'"
-                    )
-
-                    combined_feedback.append(feedback_str)
-
-                else:
-                    combined_feedback.append(
-                        f"Specific Fix Required: Address this engine feedback -> '{raw_message}'"
-                    )
-
-        return combined_feedback
+        # Return list with duplicates removed
+        return list(dict.fromkeys(rules))

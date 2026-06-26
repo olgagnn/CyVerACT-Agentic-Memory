@@ -90,11 +90,9 @@ def cypher_generator(state: OverallState, config:RunnableConfig) -> OverallState
         if cached_cypher:
             print(f"\n[EPISODIC MEMORY] Found a highly relevant past solution!")
             episodic_memory_str = (
-                "\n=== PAST SUCCESSFUL EXPERIENCE ===\n"
-                "You have solved a highly similar question before. "
-                "Use the syntax and structure from this past successful Cypher query as a template:\n"
-                f"{cached_cypher}\n"
-                "==================================\n"
+                "Successful historical query patterns are provided below. "
+                "Reuse their structural patterns and aggregation logic whenever relevant:\n"
+                f"{cached_cypher}"
             )
     finally:
         memory_driver.close()

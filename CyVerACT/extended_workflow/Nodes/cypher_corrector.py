@@ -9,20 +9,20 @@ from Nodes.States.states import OverallState
 
 # IMPORT MEMORY MANAGER
 from Agent_Memory.memory_manager import MemoryManager
-
 from Agent_Memory.memory_driver import get_memory_driver
 
 # MEMORY EMBEDDINGS
 from langchain_huggingface import HuggingFaceEmbeddings
 
-# INITIALIZE HERE (Outside the function so it doesn't reload on every single retry loop)
+# INITIALIZE HERE (Outside the function so it doesn't reload on every single retry loop) 
 embedder = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
-
+                
 system_prompt = '''
                 You are a Cypher expert reviewing a statement. 
                 Given an input Cypher statement and the errors it has, correct the Cypher statement.  No pre-amble.
                 Do not wrap the response in any backticks or anything else. Respond with a Cypher statement only!
             '''
+
 human_prompt = '''
                 Fix the Cypher statememnt based on the given errors.
                 The Cypher statement should valid for the given knowledge graph schema. 
@@ -39,9 +39,9 @@ human_prompt = '''
                 The question is:
                 {question}
 
-                === PREVIOUS FAILED ATTEMPTS (DO NOT REPEAT THESE CYpher STATEMENTS) ===
+                === Previous Attempts and Their Outcomes ===
                 {history}
-                ========================================================================
+                ============================================
 
                 The Cypher statement is:
                 {cypher}
@@ -49,7 +49,9 @@ human_prompt = '''
                 The errors for the Cypher statement are:
                 {errors}
 
-                {dynamic_rules_section}
+                {rules_context}
+
+                {trajectory_context}
 
                 Corrected Cypher statement:
         
@@ -73,11 +75,6 @@ fix_cypher_prompt = ChatPromptTemplate.from_messages(
 
 fix_cypher_prompt_flattened = ChatPromptTemplate.from_messages(
     [
-        # (
-        #     "system",
-        #     (system_prompt
-        #     ),
-        # ),
         (
             "human",
             (
@@ -107,13 +104,10 @@ def cypher_corrector(state: OverallState, config:RunnableConfig) -> OverallState
     errors_history = state.get("internal_cypher_errors_history", [])
     
     history_str = ""
-    # We iterate up to len-1 because the very last item in the history 
-    # is the 'current' failed attempt being evaluated below!
     for i in range(len(cypher_history) - 1):
         history_str += f"Attempt {i+1}:\n"
         history_str += f"Cypher: {cypher_history[i]}\n"
         
-        # Guard against index out of bounds just in case the arrays get misaligned
         if i < len(errors_history):
             past_errors = "\n".join([f"  - {err}" for err in errors_history[i]])
             history_str += f"Errors:\n{past_errors}\n"
@@ -128,21 +122,57 @@ def cypher_corrector(state: OverallState, config:RunnableConfig) -> OverallState
     memory_driver = get_memory_driver()
     try:
         memory_manager = MemoryManager(memory_driver)
-        fix_rules = memory_manager.get_fix_rules_vector_search(cypher_errors_list, embedder)
+        
+        # 1. Fix Rules
+        fix_rules = memory_manager.get_fix_rules(cypher_errors_list)
+        
+        # 2. Episodic Trajectory Injection
+        primary_error = cypher_errors_list[0] if cypher_errors_list else ""
+        
+        # Pass the current question and the failed cypher along with the error
+        trajectory_data = memory_manager.get_trajectory_fix_context(question, cypher, primary_error, embedder, limit=1) if primary_error else ""
+        
     finally:
         memory_driver.close()
     
+    # # Process Generic Rules
+    # if fix_rules:
+    #     print("\n[MEMORY MANAGER] Triggered! Retrieved the following FixRules:")
+    #     for rule in fix_rules:
+    #         print(f"   -> {rule}")
+    #     print() 
+        
+    #     rules_str = "\n".join(f"- {rule}" for rule in fix_rules)
+    #     dynamic_rules_section = f"Crucial Rules to follow for this specific fix:\n{rules_str}\n"
+    # else:
+    #     print("\n[MEMORY MANAGER] No matching FixRules found in database for these errors.\n")
+    #     dynamic_rules_section = ""
+    
+    # Process Generic Rules
     if fix_rules:
         print("\n[MEMORY MANAGER] Triggered! Retrieved the following FixRules:")
         for rule in fix_rules:
             print(f"   -> {rule}")
-        print() # readability
+        print() 
         
-        rules_str = "\n".join(f"- {rule}" for rule in fix_rules)
-        dynamic_rules_section = f"Crucial Rules to follow for this specific fix:\n{rules_str}\n"
+        rules_context = (
+            "Generic Repair Principles:\n"
+            + "\n".join([f"- {rule}" for rule in fix_rules])
+            + "\n"
+        )
     else:
         print("\n[MEMORY MANAGER] No matching FixRules found in database for these errors.\n")
-        dynamic_rules_section = ""
+        rules_context = ""
+
+    # Process Episodic Trajectory
+    if trajectory_data:
+        print("\n[MEMORY MANAGER] Triggered! Retrieved Episodic Trajectory Data:")
+        print("-" * 40)
+        print(trajectory_data)  # <-- This prints the actual retrieved data to your console
+        print("-" * 40 + "\n")
+        trajectory_context = f"Review this historical episodic trajectory where a similar error was resolved:\n{trajectory_data}\n"
+    else:
+        trajectory_context = ""
     
     chat_model = config['configurable']['model']
     
@@ -151,7 +181,6 @@ def cypher_corrector(state: OverallState, config:RunnableConfig) -> OverallState
     else:    
         fix_cypher_chain = fix_cypher_prompt | chat_model | StrOutputParser()
 
-    # Prints for memory 
     print("\n" + "="*50)
     print("[MEMORY MANAGER] Error History:")
     print(history_str)
@@ -164,8 +193,9 @@ def cypher_corrector(state: OverallState, config:RunnableConfig) -> OverallState
                 "schema": schema,
                 "cypher": cypher,
                 "errors": cypher_errors,
-                "dynamic_rules_section": dynamic_rules_section,  # MEMORY
-                "history": history_str # MEMORY
+                "rules_context": rules_context, 
+                "trajectory_context": trajectory_context, 
+                "history": history_str 
             }
         )
     
@@ -179,11 +209,6 @@ def cypher_corrector(state: OverallState, config:RunnableConfig) -> OverallState
         corrected_cypher = corrected_cypher.split('<start_of_turn>model\n')[1].strip()
 
     print('Cypher Corrector: START')
-    # print('The selected model is ', model_name)
-    # print('Corrected Cypher statement: \n {}'.format(corrected_cypher))
-    # # print(corrected_cypher)
-    # print('Cypher Corrector: END')
-    # print()
     return {
         'next_action': 'cypher_evaluator',
         'cypher_statement': corrected_cypher,
@@ -191,6 +216,6 @@ def cypher_corrector(state: OverallState, config:RunnableConfig) -> OverallState
         "total_tokens": [total_tokens],
         "prompt_tokens": [prompt_tokens],
         "completion_tokens": [completion_tokens],
-        'cypher_history': [corrected_cypher], # MEMORY
-        "history": history_str  # MEMORY TRAJECTORY HERE
+        'cypher_history': [corrected_cypher], 
+        "history": history_str  
     }
