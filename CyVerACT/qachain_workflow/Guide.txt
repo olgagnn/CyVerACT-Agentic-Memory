@@ -1,0 +1,39 @@
+1. Model parameters
+max_new_tokens=512,
+top_k=20,
+top_p=0.9,
+do_sample=True,
+temperature=0.01
+
+2. Run each model for Sustain dataset and neo4j dataset 2025 version
+
+3. Save df results in seperate folder for each dataset and seperate subfolder for each model
+
+4. Calculate metrics in the df results and update the saved excel
+
+SustaiDataset models:
+llama3_2_3b 
+qwen2_5_7b
+qwen2_5_Coder_32b
+qwen2_5_Coder_72b
+gpt4o
+
+Neo4jBenchamrk models:
+llama3_2_3b
+tomasinjo  finetuned_tomasonjo_llama3_1_8b
+finetuned_azzedde_llama3_1_8b
+gemma2_9b_it
+neo4j finetuned_gemma2_9b_it
+gpt4o
+gemini-1.5-pro-001 <-------------------------------------------
+
+----Finetuned in 2025 neo4j dataset-----
+neo4j/text-to-cypher-Gemma-3-27B-Instruct-2025.04.0
+google/gemma-3-27b-it
+neo4j/text-to-cypher-Gemma-3-4B-Instruct-2025.04.0
+google/gemma-3-4b-it
+
+
+---Tomaz dataset (may contain some sate data with the test set of neo4j)
+https://huggingface.co/datasets/tomasonjo/text2cypher-gpt4o-clean 
+

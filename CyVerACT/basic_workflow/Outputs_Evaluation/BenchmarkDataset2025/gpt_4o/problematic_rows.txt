@@ -1,0 +1,40 @@
+1. row 13
+
+2. 279 List the entities with a former name and their current name. offshoreleaks
+passed validation for generated query
+MATCH (e:Entity) WHERE e.former_name IS NOT NULL RETURN e.former_name, e.name
+
+3. 585 "provide all possible paths (Node Tags -Relationship Names->Node Tags) connecting IP adresses to exposed ports " network
+passed validation for generated query
+passed output validation for generated query
+MATCH path = (i:Interface)-[:EXPOSES]->(:Port)
+RETURN path
+UNION
+MATCH path = (i:Interface)-[:CONNECTS]->(:Interface)-[:EXPOSES]->(:Port)
+RETURN path
+UNION
+MATCH path = (i:Interface)-[:CONNECTS]->(:Network)-[:ROUTES]->(:Interface)-[:EXPOSES]->(:Port)
+RETURN path
+UNION
+MATCH path = (i:Interface)-[:CONNECTS]->(:Zone)-[:ROUTES]->(:Interface)-[:EXPOSES]->(:Port)
+RETURN path
+
+1697 Show the entities that have been struck off but have a different inactivation date. offshoreleaks
+passed validation for generated query
+passed output validation for generated query
+MATCH (e:Entity) WHERE e.struck_off_date IS NOT NULL AND e.inactivation_date IS NOT NULL AND e.struck_off_date <> e.inactivation_date RETURN e
+Query executed successfully
+Result extracted successfull
+
+1728 Show entities that have a company type specified. offshoreleaks
+passed validation for generated query
+passed output validation for generated query
+MATCH (e:Entity) WHERE e.company_type IS NOT NULL RETURN e
+
+2048 Which entities have a 'HKG' country code? offshoreleaks
+passed validation for generated query
+passed output validation for generated query
+MATCH (e:Entity {country_codes: 'HKG'}) RETURN e.name, e.country_codes
+Query executed successfully
+Result extracted successfully
+

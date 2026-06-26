@@ -1,0 +1,26 @@
+# Environments ZEP + COGNEE 
+venv/
+venv_cognee/ 
+env/
+.env
+
+# Python Compiled Files 
+__pycache__/
+*.pyc
+
+# Jupyter Notebooks 
+.ipynb_checkpoints/
+
+# IDE Settings
+.vscode/
+
+# Windows System Junk
+Thumbs.db
+
+# Cognee & LanceDB Data (Semantic Memory)
+.cognee_data/
+cognee_data/
+.lancedb/
+lancedb/
+*.lance/
+*.lance-wal

@@ -1,0 +1,21 @@
+590 628
+
+1516
+1433 Which users are followed by 'neo4j' and have more than 10000 followers? twitter
+passed validation for generated query
+passed output validation for generated query
+MATCH (u1:User {screen_name: 'neo4j'})-[:FOLLOWS]->(u2)-[:FOLLOWS*2..]->(u3:User) WHERE u3.followers > 10000 RETURN u3
+
+1828
+1727 List all users who follow 'neo4j'. twitter
+passed validation for generated query
+passed output validation for generated query
+MATCH (user:User)-[:FOLLOWS]->(follower:User) WHERE follower.screen_name = 'neo4j' RETURN user
+Query executed successfully
+Result extracted successfully
+
+1860
+1756 What is the average 'degree' of characters in community 579? gameofthrones
+passed validation for generated query
+passed output validation for generated query
+MATCH (c1:Character {community: 579})-[:INTERACTS*]->(c2:Character) RETURN avg(c1.degree) + avg(c2.degree)

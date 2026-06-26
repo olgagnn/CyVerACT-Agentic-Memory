@@ -1,0 +1,9 @@
+# extended_workflow/Results/BenchmarkDataset2025/finetuned_azzedde_llama3_1_8b/finetuned_azzedde_llama3_1_8b.pkl filter=lfs diff=lfs merge=lfs -text
+# extended_workflow/Results/BenchmarkDataset2025/finetuned_azzedde_llama3_1_8b/finetuned_azzedde_llama3_1_8b.xlsx filter=lfs diff=lfs merge=lfs -text
+# extended_workflow/Results/BenchmarkDataset2025/llama3_1_8b/llama3_1_8b.pkl filter=lfs diff=lfs merge=lfs -text
+# extended_workflow/Results/BenchmarkDataset2025/llama3_1_8b/llama3_1_8b.xlsx filter=lfs diff=lfs merge=lfs -text
+# extended_workflow/Results/BenchmarkDataset2025/gemma2_9b/gemma2_9b.pkl filter=lfs diff=lfs merge=lfs -text
+# extended_workflow/Results/BenchmarkDataset2025/gemma2_9b/gemma2_9b.xlsx filter=lfs diff=lfs merge=lfs -text
+extended_workflow/Results/**/*.pkl filter=lfs diff=lfs merge=lfs -text
+extended_workflow/Results/**/*.xlsx filter=lfs diff=lfs merge=lfs -text
+extended_workflow/Outputs_Evaluation/**/*.xlsx filter=lfs diff=lfs merge=lfs -text

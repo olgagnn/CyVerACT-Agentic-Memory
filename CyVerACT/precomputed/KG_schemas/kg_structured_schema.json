@@ -1,0 +1,8751 @@
+{
+  "offshoreleaks": {
+    "node_props": {
+      "Entity": [
+        {
+          "property": "countries",
+          "type": "STRING"
+        },
+        {
+          "property": "lastEditTimestamp",
+          "type": "STRING"
+        },
+        {
+          "property": "ibcRUC",
+          "type": "STRING"
+        },
+        {
+          "property": "valid_until",
+          "type": "STRING"
+        },
+        {
+          "property": "country_codes",
+          "type": "STRING"
+        },
+        {
+          "property": "service_provider",
+          "type": "STRING"
+        },
+        {
+          "property": "address",
+          "type": "STRING"
+        },
+        {
+          "property": "struck_off_date",
+          "type": "STRING"
+        },
+        {
+          "property": "status",
+          "type": "STRING"
+        },
+        {
+          "property": "incorporation_date",
+          "type": "STRING"
+        },
+        {
+          "property": "inactivation_date",
+          "type": "STRING"
+        },
+        {
+          "property": "jurisdiction",
+          "type": "STRING"
+        },
+        {
+          "property": "jurisdiction_description",
+          "type": "STRING"
+        },
+        {
+          "property": "internal_id",
+          "type": "STRING"
+        },
+        {
+          "property": "name",
+          "type": "STRING"
+        },
+        {
+          "property": "original_name",
+          "type": "STRING"
+        },
+        {
+          "property": "node_id",
+          "type": "INTEGER"
+        },
+        {
+          "property": "sourceID",
+          "type": "STRING"
+        },
+        {
+          "property": "former_name",
+          "type": "STRING"
+        },
+        {
+          "property": "note",
+          "type": "STRING"
+        },
+        {
+          "property": "company_type",
+          "type": "STRING"
+        },
+        {
+          "property": "tax_stat_description",
+          "type": "STRING"
+        },
+        {
+          "property": "dorm_date",
+          "type": "STRING"
+        },
+        {
+          "property": "closed_date",
+          "type": "STRING"
+        },
+        {
+          "property": "type",
+          "type": "STRING"
+        },
+        {
+          "property": "company_number",
+          "type": "STRING"
+        },
+        {
+          "property": "comments",
+          "type": "STRING"
+        },
+        {
+          "property": "entity_number",
+          "type": "STRING"
+        },
+        {
+          "property": "registration_date",
+          "type": "STRING"
+        }
+      ],
+      "Intermediary": [
+        {
+          "property": "lastEditTimestamp",
+          "type": "STRING"
+        },
+        {
+          "property": "country_codes",
+          "type": "STRING"
+        },
+        {
+          "property": "countries",
+          "type": "STRING"
+        },
+        {
+          "property": "status",
+          "type": "STRING"
+        },
+        {
+          "property": "address",
+          "type": "STRING"
+        },
+        {
+          "property": "valid_until",
+          "type": "STRING"
+        },
+        {
+          "property": "name",
+          "type": "STRING"
+        },
+        {
+          "property": "node_id",
+          "type": "INTEGER"
+        },
+        {
+          "property": "sourceID",
+          "type": "STRING"
+        },
+        {
+          "property": "internal_id",
+          "type": "STRING"
+        },
+        {
+          "property": "note",
+          "type": "STRING"
+        },
+        {
+          "property": "registered_office",
+          "type": "STRING"
+        }
+      ],
+      "Officer": [
+        {
+          "property": "countries",
+          "type": "STRING"
+        },
+        {
+          "property": "valid_until",
+          "type": "STRING"
+        },
+        {
+          "property": "country_codes",
+          "type": "STRING"
+        },
+        {
+          "property": "sourceID",
+          "type": "STRING"
+        },
+        {
+          "property": "name",
+          "type": "STRING"
+        },
+        {
+          "property": "icij_id",
+          "type": "STRING"
+        },
+        {
+          "property": "node_id",
+          "type": "INTEGER"
+        },
+        {
+          "property": "lastEditTimestamp",
+          "type": "STRING"
+        },
+        {
+          "property": "note",
+          "type": "STRING"
+        },
+        {
+          "property": "end_date",
+          "type": "STRING"
+        },
+        {
+          "property": "status",
+          "type": "STRING"
+        }
+      ],
+      "Address": [
+        {
+          "property": "original_address",
+          "type": "STRING"
+        },
+        {
+          "property": "lastEditTimestamp",
+          "type": "STRING"
+        },
+        {
+          "property": "countries",
+          "type": "STRING"
+        },
+        {
+          "property": "address",
+          "type": "STRING"
+        },
+        {
+          "property": "valid_until",
+          "type": "STRING"
+        },
+        {
+          "property": "icij_id",
+          "type": "STRING"
+        },
+        {
+          "property": "node_id",
+          "type": "INTEGER"
+        },
+        {
+          "property": "sourceID",
+          "type": "STRING"
+        },
+        {
+          "property": "country_codes",
+          "type": "STRING"
+        },
+        {
+          "property": "name",
+          "type": "STRING"
+        },
+        {
+          "property": "note",
+          "type": "STRING"
+        },
+        {
+          "property": "addressID",
+          "type": "STRING"
+        },
+        {
+          "property": "country_code",
+          "type": "STRING"
+        },
+        {
+          "property": "country",
+          "type": "STRING"
+        },
+        {
+          "property": "status",
+          "type": "STRING"
+        }
+      ],
+      "Other": [
+        {
+          "property": "incorporation_date",
+          "type": "STRING"
+        },
+        {
+          "property": "valid_until",
+          "type": "STRING"
+        },
+        {
+          "property": "name",
+          "type": "STRING"
+        },
+        {
+          "property": "jurisdiction",
+          "type": "STRING"
+        },
+        {
+          "property": "closed_date",
+          "type": "STRING"
+        },
+        {
+          "property": "jurisdiction_description",
+          "type": "STRING"
+        },
+        {
+          "property": "node_id",
+          "type": "INTEGER"
+        },
+        {
+          "property": "sourceID",
+          "type": "STRING"
+        },
+        {
+          "property": "lastEditTimestamp",
+          "type": "STRING"
+        },
+        {
+          "property": "type",
+          "type": "STRING"
+        },
+        {
+          "property": "note",
+          "type": "STRING"
+        },
+        {
+          "property": "struck_off_date",
+          "type": "STRING"
+        },
+        {
+          "property": "countries",
+          "type": "STRING"
+        },
+        {
+          "property": "country_codes",
+          "type": "STRING"
+        }
+      ]
+    },
+    "rel_props": {
+      "registered_address": [
+        {
+          "property": "link",
+          "type": "STRING"
+        },
+        {
+          "property": "sourceID",
+          "type": "STRING"
+        },
+        {
+          "property": "valid_until",
+          "type": "STRING"
+        }
+      ],
+      "intermediary_of": [
+        {
+          "property": "valid_until",
+          "type": "STRING"
+        },
+        {
+          "property": "sourceID",
+          "type": "STRING"
+        },
+        {
+          "property": "link",
+          "type": "STRING"
+        },
+        {
+          "property": "end_date",
+          "type": "STRING"
+        },
+        {
+          "property": "start_date",
+          "type": "STRING"
+        },
+        {
+          "property": "lastEditTimestamp",
+          "type": "STRING"
+        }
+      ],
+      "officer_of": [
+        {
+          "property": "sourceID",
+          "type": "STRING"
+        },
+        {
+          "property": "link",
+          "type": "STRING"
+        },
+        {
+          "property": "valid_until",
+          "type": "STRING"
+        },
+        {
+          "property": "start_date",
+          "type": "STRING"
+        },
+        {
+          "property": "end_date",
+          "type": "STRING"
+        },
+        {
+          "property": "status",
+          "type": "STRING"
+        },
+        {
+          "property": "lastEditTimestamp",
+          "type": "STRING"
+        }
+      ],
+      "underlying": [
+        {
+          "property": "link",
+          "type": "STRING"
+        },
+        {
+          "property": "valid_until",
+          "type": "STRING"
+        },
+        {
+          "property": "sourceID",
+          "type": "STRING"
+        }
+      ],
+      "similar": [
+        {
+          "property": "link",
+          "type": "STRING"
+        }
+      ],
+      "same_as": [
+        {
+          "property": "link",
+          "type": "STRING"
+        }
+      ],
+      "same_name_as": [
+        {
+          "property": "sourceID",
+          "type": "STRING"
+        },
+        {
+          "property": "link",
+          "type": "STRING"
+        },
+        {
+          "property": "valid_until",
+          "type": "STRING"
+        }
+      ],
+      "same_address_as": [
+        {
+          "property": "valid_until",
+          "type": "STRING"
+        },
+        {
+          "property": "sourceID",
+          "type": "STRING"
+        },
+        {
+          "property": "link",
+          "type": "STRING"
+        }
+      ],
+      "same_company_as": [
+        {
+          "property": "valid_until",
+          "type": "STRING"
+        },
+        {
+          "property": "sourceID",
+          "type": "STRING"
+        },
+        {
+          "property": "link",
+          "type": "STRING"
+        }
+      ],
+      "same_intermediary_as": [
+        {
+          "property": "link",
+          "type": "STRING"
+        },
+        {
+          "property": "valid_until",
+          "type": "STRING"
+        },
+        {
+          "property": "sourceID",
+          "type": "STRING"
+        }
+      ],
+      "similar_company_as": [
+        {
+          "property": "valid_until",
+          "type": "STRING"
+        },
+        {
+          "property": "sourceID",
+          "type": "STRING"
+        },
+        {
+          "property": "link",
+          "type": "STRING"
+        }
+      ],
+      "probably_same_officer_as": [
+        {
+          "property": "link",
+          "type": "STRING"
+        },
+        {
+          "property": "valid_until",
+          "type": "STRING"
+        },
+        {
+          "property": "sourceID",
+          "type": "STRING"
+        }
+      ],
+      "same_id_as": [
+        {
+          "property": "sourceID",
+          "type": "STRING"
+        },
+        {
+          "property": "link",
+          "type": "STRING"
+        },
+        {
+          "property": "valid_until",
+          "type": "STRING"
+        }
+      ],
+      "connected_to": [
+        {
+          "property": "valid_until",
+          "type": "STRING"
+        },
+        {
+          "property": "link",
+          "type": "STRING"
+        },
+        {
+          "property": "sourceID",
+          "type": "STRING"
+        }
+      ]
+    },
+    "relationships": [
+      {
+        "start": "Entity",
+        "type": "registered_address",
+        "end": "Address"
+      },
+      {
+        "start": "Entity",
+        "type": "registered_address",
+        "end": "Entity"
+      },
+      {
+        "start": "Entity",
+        "type": "same_as",
+        "end": "Entity"
+      },
+      {
+        "start": "Entity",
+        "type": "same_company_as",
+        "end": "Entity"
+      },
+      {
+        "start": "Entity",
+        "type": "similar_company_as",
+        "end": "Entity"
+      },
+      {
+        "start": "Entity",
+        "type": "same_name_as",
+        "end": "Officer"
+      },
+      {
+        "start": "Entity",
+        "type": "same_name_as",
+        "end": "Entity"
+      },
+      {
+        "start": "Entity",
+        "type": "same_name_as",
+        "end": "Other"
+      },
+      {
+        "start": "Entity",
+        "type": "same_name_as",
+        "end": "Intermediary"
+      },
+      {
+        "start": "Entity",
+        "type": "officer_of",
+        "end": "Entity"
+      },
+      {
+        "start": "Intermediary",
+        "type": "intermediary_of",
+        "end": "Entity"
+      },
+      {
+        "start": "Intermediary",
+        "type": "similar",
+        "end": "Intermediary"
+      },
+      {
+        "start": "Intermediary",
+        "type": "similar",
+        "end": "Officer"
+      },
+      {
+        "start": "Intermediary",
+        "type": "registered_address",
+        "end": "Address"
+      },
+      {
+        "start": "Intermediary",
+        "type": "officer_of",
+        "end": "Entity"
+      },
+      {
+        "start": "Intermediary",
+        "type": "underlying",
+        "end": "Officer"
+      },
+      {
+        "start": "Intermediary",
+        "type": "same_intermediary_as",
+        "end": "Intermediary"
+      },
+      {
+        "start": "Intermediary",
+        "type": "same_name_as",
+        "end": "Intermediary"
+      },
+      {
+        "start": "Intermediary",
+        "type": "same_name_as",
+        "end": "Entity"
+      },
+      {
+        "start": "Intermediary",
+        "type": "same_name_as",
+        "end": "Officer"
+      },
+      {
+        "start": "Intermediary",
+        "type": "connected_to",
+        "end": "Entity"
+      },
+      {
+        "start": "Intermediary",
+        "type": "same_as",
+        "end": "Officer"
+      },
+      {
+        "start": "Officer",
+        "type": "officer_of",
+        "end": "Entity"
+      },
+      {
+        "start": "Officer",
+        "type": "officer_of",
+        "end": "Intermediary"
+      },
+      {
+        "start": "Officer",
+        "type": "officer_of",
+        "end": "Officer"
+      },
+      {
+        "start": "Officer",
+        "type": "officer_of",
+        "end": "Other"
+      },
+      {
+        "start": "Officer",
+        "type": "registered_address",
+        "end": "Address"
+      },
+      {
+        "start": "Officer",
+        "type": "similar",
+        "end": "Officer"
+      },
+      {
+        "start": "Officer",
+        "type": "similar",
+        "end": "Intermediary"
+      },
+      {
+        "start": "Officer",
+        "type": "intermediary_of",
+        "end": "Entity"
+      },
+      {
+        "start": "Officer",
+        "type": "underlying",
+        "end": "Officer"
+      },
+      {
+        "start": "Officer",
+        "type": "underlying",
+        "end": "Intermediary"
+      },
+      {
+        "start": "Officer",
+        "type": "same_name_as",
+        "end": "Officer"
+      },
+      {
+        "start": "Officer",
+        "type": "same_name_as",
+        "end": "Intermediary"
+      },
+      {
+        "start": "Officer",
+        "type": "same_name_as",
+        "end": "Entity"
+      },
+      {
+        "start": "Officer",
+        "type": "probably_same_officer_as",
+        "end": "Officer"
+      },
+      {
+        "start": "Officer",
+        "type": "same_id_as",
+        "end": "Officer"
+      },
+      {
+        "start": "Officer",
+        "type": "connected_to",
+        "end": "Entity"
+      },
+      {
+        "start": "Address",
+        "type": "same_address_as",
+        "end": "Address"
+      },
+      {
+        "start": "Address",
+        "type": "same_as",
+        "end": "Address"
+      },
+      {
+        "start": "Other",
+        "type": "registered_address",
+        "end": "Address"
+      },
+      {
+        "start": "Other",
+        "type": "connected_to",
+        "end": "Entity"
+      },
+      {
+        "start": "Other",
+        "type": "same_name_as",
+        "end": "Entity"
+      },
+      {
+        "start": "Other",
+        "type": "same_name_as",
+        "end": "Officer"
+      },
+      {
+        "start": "Other",
+        "type": "same_name_as",
+        "end": "Other"
+      }
+    ],
+    "metadata": {
+      "constraint": [
+        {
+          "id": 91,
+          "name": "Address_node_id",
+          "type": "UNIQUENESS",
+          "entityType": "NODE",
+          "labelsOrTypes": [
+            "Address"
+          ],
+          "properties": [
+            "node_id"
+          ],
+          "ownedIndex": "Address_node_id",
+          "propertyType": null
+        },
+        {
+          "id": 99,
+          "name": "Entity_node_id",
+          "type": "UNIQUENESS",
+          "entityType": "NODE",
+          "labelsOrTypes": [
+            "Entity"
+          ],
+          "properties": [
+            "node_id"
+          ],
+          "ownedIndex": "Entity_node_id",
+          "propertyType": null
+        },
+        {
+          "id": 97,
+          "name": "Intermediary_node_id",
+          "type": "UNIQUENESS",
+          "entityType": "NODE",
+          "labelsOrTypes": [
+            "Intermediary"
+          ],
+          "properties": [
+            "node_id"
+          ],
+          "ownedIndex": "Intermediary_node_id",
+          "propertyType": null
+        },
+        {
+          "id": 93,
+          "name": "Officer_node_id",
+          "type": "UNIQUENESS",
+          "entityType": "NODE",
+          "labelsOrTypes": [
+            "Officer"
+          ],
+          "properties": [
+            "node_id"
+          ],
+          "ownedIndex": "Officer_node_id",
+          "propertyType": null
+        },
+        {
+          "id": 95,
+          "name": "Other_node_id",
+          "type": "UNIQUENESS",
+          "entityType": "NODE",
+          "labelsOrTypes": [
+            "Other"
+          ],
+          "properties": [
+            "node_id"
+          ],
+          "ownedIndex": "Other_node_id",
+          "propertyType": null
+        }
+      ],
+      "index": [
+        {
+          "label": "Address",
+          "properties": [
+            "countries"
+          ],
+          "size": 265805,
+          "type": "RANGE",
+          "valuesSelectivity": 0.0008916310829367393,
+          "distinctValues": 237.0
+        },
+        {
+          "label": "Address",
+          "properties": [
+            "country_codes"
+          ],
+          "size": 265805,
+          "type": "RANGE",
+          "valuesSelectivity": 0.0008276744229792517,
+          "distinctValues": 220.0
+        },
+        {
+          "label": "Address",
+          "properties": [
+            "sourceID"
+          ],
+          "size": 390995,
+          "type": "RANGE",
+          "valuesSelectivity": 3.0690929551528794e-05,
+          "distinctValues": 12.0
+        },
+        {
+          "label": "Address",
+          "properties": [
+            "lastEditTimestamp"
+          ],
+          "size": 390995,
+          "type": "RANGE",
+          "valuesSelectivity": 9.207278865458637e-05,
+          "distinctValues": 36.0
+        },
+        {
+          "label": "Address",
+          "properties": [
+            "node_id"
+          ],
+          "size": 390995,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 390995.0
+        },
+        {
+          "label": "Entity",
+          "properties": [
+            "struck_off_date"
+          ],
+          "size": 461101,
+          "type": "RANGE",
+          "valuesSelectivity": 0.01968332317648411,
+          "distinctValues": 9076.0
+        },
+        {
+          "label": "Entity",
+          "properties": [
+            "status"
+          ],
+          "size": 355454,
+          "type": "RANGE",
+          "valuesSelectivity": 0.00015191839169062665,
+          "distinctValues": 54.00000000000001
+        },
+        {
+          "label": "Entity",
+          "properties": [
+            "incorporation_date"
+          ],
+          "size": 785244,
+          "type": "RANGE",
+          "valuesSelectivity": 0.02362195699680609,
+          "distinctValues": 18549.0
+        },
+        {
+          "label": "Entity",
+          "properties": [
+            "inactivation_date"
+          ],
+          "size": 213647,
+          "type": "RANGE",
+          "valuesSelectivity": 0.03227754192663599,
+          "distinctValues": 6895.999999999999
+        },
+        {
+          "label": "Entity",
+          "properties": [
+            "service_provider"
+          ],
+          "size": 344086,
+          "type": "RANGE",
+          "valuesSelectivity": 1.1625000726562546e-05,
+          "distinctValues": 4.0
+        },
+        {
+          "label": "Entity",
+          "properties": [
+            "sourceID"
+          ],
+          "size": 802817,
+          "type": "RANGE",
+          "valuesSelectivity": 1.7438594349646306e-05,
+          "distinctValues": 13.999999999999998
+        },
+        {
+          "label": "Entity",
+          "properties": [
+            "jurisdiction"
+          ],
+          "size": 798965,
+          "type": "RANGE",
+          "valuesSelectivity": 0.00010012954259573323,
+          "distinctValues": 80.0
+        },
+        {
+          "label": "Entity",
+          "properties": [
+            "name"
+          ],
+          "size": 802792,
+          "type": "RANGE",
+          "valuesSelectivity": 0.959800296963597,
+          "distinctValues": 770520.0
+        },
+        {
+          "label": "Entity",
+          "properties": [
+            "lastEditTimestamp"
+          ],
+          "size": 802817,
+          "type": "RANGE",
+          "valuesSelectivity": 6.850876351646764e-05,
+          "distinctValues": 55.0
+        },
+        {
+          "label": "Entity",
+          "properties": [
+            "country_codes"
+          ],
+          "size": 501943,
+          "type": "RANGE",
+          "valuesSelectivity": 0.001924521310188607,
+          "distinctValues": 966.0
+        },
+        {
+          "label": "Entity",
+          "properties": [
+            "countries"
+          ],
+          "size": 501943,
+          "type": "RANGE",
+          "valuesSelectivity": 0.0019285058263587699,
+          "distinctValues": 968.0
+        },
+        {
+          "label": "Entity",
+          "properties": [
+            "node_id"
+          ],
+          "size": 802817,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 802817.0
+        },
+        {
+          "label": "Intermediary",
+          "properties": [
+            "lastEditTimestamp"
+          ],
+          "size": 26768,
+          "type": "RANGE",
+          "valuesSelectivity": 0.0007845188284518828,
+          "distinctValues": 21.0
+        },
+        {
+          "label": "Intermediary",
+          "properties": [
+            "countries"
+          ],
+          "size": 23154,
+          "type": "RANGE",
+          "valuesSelectivity": 0.012352077394834586,
+          "distinctValues": 286.0
+        },
+        {
+          "label": "Intermediary",
+          "properties": [
+            "country_codes"
+          ],
+          "size": 23154,
+          "type": "RANGE",
+          "valuesSelectivity": 0.012352077394834586,
+          "distinctValues": 286.0
+        },
+        {
+          "label": "Intermediary",
+          "properties": [
+            "status"
+          ],
+          "size": 12621,
+          "type": "RANGE",
+          "valuesSelectivity": 0.0007130972189208462,
+          "distinctValues": 9.0
+        },
+        {
+          "label": "Intermediary",
+          "properties": [
+            "name"
+          ],
+          "size": 26767,
+          "type": "RANGE",
+          "valuesSelectivity": 0.9559905854223484,
+          "distinctValues": 25589.0
+        },
+        {
+          "label": "Intermediary",
+          "properties": [
+            "sourceID"
+          ],
+          "size": 26768,
+          "type": "RANGE",
+          "valuesSelectivity": 0.00033622235505080696,
+          "distinctValues": 9.0
+        },
+        {
+          "label": "Intermediary",
+          "properties": [
+            "node_id"
+          ],
+          "size": 26768,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 26768.0
+        },
+        {
+          "label": "Officer",
+          "properties": [
+            "lastEditTimestamp"
+          ],
+          "size": 746949,
+          "type": "RANGE",
+          "valuesSelectivity": 7.497165134433543e-05,
+          "distinctValues": 56.0
+        },
+        {
+          "label": "Officer",
+          "properties": [
+            "country_codes"
+          ],
+          "size": 449598,
+          "type": "RANGE",
+          "valuesSelectivity": 0.009815435122042358,
+          "distinctValues": 4413.0
+        },
+        {
+          "label": "Officer",
+          "properties": [
+            "countries"
+          ],
+          "size": 449579,
+          "type": "RANGE",
+          "valuesSelectivity": 0.008423436148040723,
+          "distinctValues": 3787.0000000000005
+        },
+        {
+          "label": "Officer",
+          "properties": [
+            "name"
+          ],
+          "size": 746890,
+          "type": "RANGE",
+          "valuesSelectivity": 0.7020136834071952,
+          "distinctValues": 524327.0
+        },
+        {
+          "label": "Officer",
+          "properties": [
+            "sourceID"
+          ],
+          "size": 746949,
+          "type": "RANGE",
+          "valuesSelectivity": 1.8742912836083856e-05,
+          "distinctValues": 14.0
+        },
+        {
+          "label": "Officer",
+          "properties": [
+            "node_id"
+          ],
+          "size": 746949,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 746949.0
+        },
+        {
+          "label": "Other",
+          "properties": [
+            "lastEditTimestamp"
+          ],
+          "size": 2919,
+          "type": "RANGE",
+          "valuesSelectivity": 0.0017129153819801302,
+          "distinctValues": 5.0
+        },
+        {
+          "label": "Other",
+          "properties": [
+            "node_id"
+          ],
+          "size": 2919,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 2919.0
+        }
+      ]
+    }
+  },
+  "northwind": {
+    "node_props": {
+      "Product": [
+        {
+          "property": "productName",
+          "type": "STRING"
+        },
+        {
+          "property": "quantityPerUnit",
+          "type": "STRING"
+        },
+        {
+          "property": "unitsOnOrder",
+          "type": "INTEGER"
+        },
+        {
+          "property": "supplierID",
+          "type": "STRING"
+        },
+        {
+          "property": "productID",
+          "type": "STRING"
+        },
+        {
+          "property": "discontinued",
+          "type": "BOOLEAN"
+        },
+        {
+          "property": "categoryID",
+          "type": "STRING"
+        },
+        {
+          "property": "reorderLevel",
+          "type": "INTEGER"
+        },
+        {
+          "property": "unitsInStock",
+          "type": "INTEGER"
+        },
+        {
+          "property": "unitPrice",
+          "type": "FLOAT"
+        }
+      ],
+      "Category": [
+        {
+          "property": "picture",
+          "type": "STRING"
+        },
+        {
+          "property": "categoryID",
+          "type": "STRING"
+        },
+        {
+          "property": "description",
+          "type": "STRING"
+        },
+        {
+          "property": "categoryName",
+          "type": "STRING"
+        }
+      ],
+      "Supplier": [
+        {
+          "property": "companyName",
+          "type": "STRING"
+        },
+        {
+          "property": "contactName",
+          "type": "STRING"
+        },
+        {
+          "property": "homePage",
+          "type": "STRING"
+        },
+        {
+          "property": "phone",
+          "type": "STRING"
+        },
+        {
+          "property": "postalCode",
+          "type": "STRING"
+        },
+        {
+          "property": "contactTitle",
+          "type": "STRING"
+        },
+        {
+          "property": "region",
+          "type": "STRING"
+        },
+        {
+          "property": "address",
+          "type": "STRING"
+        },
+        {
+          "property": "fax",
+          "type": "STRING"
+        },
+        {
+          "property": "supplierID",
+          "type": "STRING"
+        },
+        {
+          "property": "country",
+          "type": "STRING"
+        },
+        {
+          "property": "city",
+          "type": "STRING"
+        }
+      ],
+      "Customer": [
+        {
+          "property": "fax",
+          "type": "STRING"
+        },
+        {
+          "property": "companyName",
+          "type": "STRING"
+        },
+        {
+          "property": "customerID",
+          "type": "STRING"
+        },
+        {
+          "property": "phone",
+          "type": "STRING"
+        },
+        {
+          "property": "contactName",
+          "type": "STRING"
+        },
+        {
+          "property": "contactTitle",
+          "type": "STRING"
+        },
+        {
+          "property": "region",
+          "type": "STRING"
+        },
+        {
+          "property": "address",
+          "type": "STRING"
+        },
+        {
+          "property": "postalCode",
+          "type": "STRING"
+        },
+        {
+          "property": "country",
+          "type": "STRING"
+        },
+        {
+          "property": "city",
+          "type": "STRING"
+        }
+      ],
+      "Order": [
+        {
+          "property": "shipName",
+          "type": "STRING"
+        },
+        {
+          "property": "requiredDate",
+          "type": "STRING"
+        },
+        {
+          "property": "shipCity",
+          "type": "STRING"
+        },
+        {
+          "property": "employeeID",
+          "type": "STRING"
+        },
+        {
+          "property": "shipPostalCode",
+          "type": "STRING"
+        },
+        {
+          "property": "shippedDate",
+          "type": "STRING"
+        },
+        {
+          "property": "freight",
+          "type": "STRING"
+        },
+        {
+          "property": "orderDate",
+          "type": "STRING"
+        },
+        {
+          "property": "orderID",
+          "type": "STRING"
+        },
+        {
+          "property": "shipAddress",
+          "type": "STRING"
+        },
+        {
+          "property": "customerID",
+          "type": "STRING"
+        },
+        {
+          "property": "shipCountry",
+          "type": "STRING"
+        },
+        {
+          "property": "shipVia",
+          "type": "STRING"
+        },
+        {
+          "property": "shipRegion",
+          "type": "STRING"
+        }
+      ]
+    },
+    "rel_props": {
+      "ORDERS": [
+        {
+          "property": "orderID",
+          "type": "STRING"
+        },
+        {
+          "property": "unitPrice",
+          "type": "STRING"
+        },
+        {
+          "property": "productID",
+          "type": "STRING"
+        },
+        {
+          "property": "quantity",
+          "type": "INTEGER"
+        },
+        {
+          "property": "discount",
+          "type": "STRING"
+        }
+      ]
+    },
+    "relationships": [
+      {
+        "start": "Product",
+        "type": "PART_OF",
+        "end": "Category"
+      },
+      {
+        "start": "Supplier",
+        "type": "SUPPLIES",
+        "end": "Product"
+      },
+      {
+        "start": "Customer",
+        "type": "PURCHASED",
+        "end": "Order"
+      },
+      {
+        "start": "Order",
+        "type": "ORDERS",
+        "end": "Product"
+      }
+    ],
+    "metadata": {
+      "constraint": [],
+      "index": [
+        {
+          "label": "Category",
+          "properties": [
+            "categoryID"
+          ],
+          "size": 8,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 8.0
+        },
+        {
+          "label": "Customer",
+          "properties": [
+            "customerID"
+          ],
+          "size": 91,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 91.0
+        },
+        {
+          "label": "Order",
+          "properties": [
+            "orderID"
+          ],
+          "size": 830,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 830.0
+        },
+        {
+          "label": "Product",
+          "properties": [
+            "productID"
+          ],
+          "size": 77,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 77.0
+        },
+        {
+          "label": "Supplier",
+          "properties": [
+            "supplierID"
+          ],
+          "size": 29,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 29.0
+        }
+      ]
+    }
+  },
+  "neoflix": {
+    "node_props": {
+      "Movie": [
+        {
+          "property": "average_vote",
+          "type": "FLOAT"
+        },
+        {
+          "property": "overview",
+          "type": "STRING"
+        },
+        {
+          "property": "revenue",
+          "type": "FLOAT"
+        },
+        {
+          "property": "poster_path",
+          "type": "STRING"
+        },
+        {
+          "property": "vote_count",
+          "type": "INTEGER"
+        },
+        {
+          "property": "status",
+          "type": "STRING"
+        },
+        {
+          "property": "title",
+          "type": "STRING"
+        },
+        {
+          "property": "imdb_id",
+          "type": "STRING"
+        },
+        {
+          "property": "release_date",
+          "type": "DATE"
+        },
+        {
+          "property": "budget",
+          "type": "INTEGER"
+        },
+        {
+          "property": "runtime",
+          "type": "FLOAT"
+        },
+        {
+          "property": "popularity",
+          "type": "FLOAT"
+        },
+        {
+          "property": "homepage",
+          "type": "STRING"
+        },
+        {
+          "property": "id",
+          "type": "INTEGER"
+        },
+        {
+          "property": "original_title",
+          "type": "STRING"
+        },
+        {
+          "property": "original_language",
+          "type": "STRING"
+        },
+        {
+          "property": "tagline",
+          "type": "STRING"
+        }
+      ],
+      "Language": [
+        {
+          "property": "id",
+          "type": "STRING"
+        },
+        {
+          "property": "name",
+          "type": "STRING"
+        }
+      ],
+      "Country": [
+        {
+          "property": "id",
+          "type": "STRING"
+        },
+        {
+          "property": "name",
+          "type": "STRING"
+        }
+      ],
+      "Genre": [
+        {
+          "property": "id",
+          "type": "INTEGER"
+        },
+        {
+          "property": "name",
+          "type": "STRING"
+        }
+      ],
+      "ProductionCompany": [
+        {
+          "property": "id",
+          "type": "INTEGER"
+        },
+        {
+          "property": "name",
+          "type": "STRING"
+        }
+      ],
+      "Collection": [
+        {
+          "property": "name",
+          "type": "STRING"
+        },
+        {
+          "property": "id",
+          "type": "INTEGER"
+        },
+        {
+          "property": "backdrop_path",
+          "type": "STRING"
+        },
+        {
+          "property": "poster_path",
+          "type": "STRING"
+        }
+      ],
+      "Person": [
+        {
+          "property": "profile_path",
+          "type": "STRING"
+        },
+        {
+          "property": "id",
+          "type": "INTEGER"
+        },
+        {
+          "property": "name",
+          "type": "STRING"
+        },
+        {
+          "property": "gender",
+          "type": "INTEGER"
+        }
+      ],
+      "User": [
+        {
+          "property": "id",
+          "type": "INTEGER"
+        },
+        {
+          "property": "dateOfBirth",
+          "type": "DATE"
+        },
+        {
+          "property": "firstName",
+          "type": "STRING"
+        },
+        {
+          "property": "lastName",
+          "type": "STRING"
+        },
+        {
+          "property": "password",
+          "type": "STRING"
+        },
+        {
+          "property": "email",
+          "type": "STRING"
+        }
+      ],
+      "Keyword": [
+        {
+          "property": "id",
+          "type": "INTEGER"
+        },
+        {
+          "property": "name",
+          "type": "STRING"
+        }
+      ],
+      "Video": [
+        {
+          "property": "tagline",
+          "type": "STRING"
+        },
+        {
+          "property": "average_vote",
+          "type": "FLOAT"
+        },
+        {
+          "property": "overview",
+          "type": "STRING"
+        },
+        {
+          "property": "revenue",
+          "type": "FLOAT"
+        },
+        {
+          "property": "poster_path",
+          "type": "STRING"
+        },
+        {
+          "property": "vote_count",
+          "type": "INTEGER"
+        },
+        {
+          "property": "title",
+          "type": "STRING"
+        },
+        {
+          "property": "release_date",
+          "type": "DATE"
+        },
+        {
+          "property": "status",
+          "type": "STRING"
+        },
+        {
+          "property": "budget",
+          "type": "INTEGER"
+        },
+        {
+          "property": "popularity",
+          "type": "FLOAT"
+        },
+        {
+          "property": "imdb_id",
+          "type": "STRING"
+        },
+        {
+          "property": "original_title",
+          "type": "STRING"
+        },
+        {
+          "property": "id",
+          "type": "INTEGER"
+        },
+        {
+          "property": "runtime",
+          "type": "FLOAT"
+        },
+        {
+          "property": "original_language",
+          "type": "STRING"
+        },
+        {
+          "property": "homepage",
+          "type": "STRING"
+        }
+      ],
+      "Adult": [
+        {
+          "property": "average_vote",
+          "type": "FLOAT"
+        },
+        {
+          "property": "overview",
+          "type": "STRING"
+        },
+        {
+          "property": "revenue",
+          "type": "FLOAT"
+        },
+        {
+          "property": "poster_path",
+          "type": "STRING"
+        },
+        {
+          "property": "vote_count",
+          "type": "INTEGER"
+        },
+        {
+          "property": "title",
+          "type": "STRING"
+        },
+        {
+          "property": "release_date",
+          "type": "DATE"
+        },
+        {
+          "property": "status",
+          "type": "STRING"
+        },
+        {
+          "property": "budget",
+          "type": "INTEGER"
+        },
+        {
+          "property": "popularity",
+          "type": "FLOAT"
+        },
+        {
+          "property": "imdb_id",
+          "type": "STRING"
+        },
+        {
+          "property": "original_title",
+          "type": "STRING"
+        },
+        {
+          "property": "id",
+          "type": "INTEGER"
+        },
+        {
+          "property": "runtime",
+          "type": "FLOAT"
+        },
+        {
+          "property": "original_language",
+          "type": "STRING"
+        },
+        {
+          "property": "tagline",
+          "type": "STRING"
+        },
+        {
+          "property": "homepage",
+          "type": "STRING"
+        }
+      ],
+      "Package": [
+        {
+          "property": "price",
+          "type": "FLOAT"
+        },
+        {
+          "property": "duration",
+          "type": "DURATION"
+        },
+        {
+          "property": "id",
+          "type": "INTEGER"
+        },
+        {
+          "property": "name",
+          "type": "STRING"
+        }
+      ],
+      "Subscription": [
+        {
+          "property": "expiresAt",
+          "type": "DATE_TIME"
+        },
+        {
+          "property": "id",
+          "type": "STRING"
+        }
+      ]
+    },
+    "rel_props": {
+      "CAST_FOR": [
+        {
+          "property": "credit_id",
+          "type": "STRING"
+        },
+        {
+          "property": "order",
+          "type": "INTEGER"
+        },
+        {
+          "property": "character",
+          "type": "STRING"
+        },
+        {
+          "property": "cast_id",
+          "type": "INTEGER"
+        }
+      ],
+      "CREW_FOR": [
+        {
+          "property": "credit_id",
+          "type": "STRING"
+        },
+        {
+          "property": "job",
+          "type": "STRING"
+        },
+        {
+          "property": "department",
+          "type": "STRING"
+        }
+      ],
+      "RATED": [
+        {
+          "property": "timestamp",
+          "type": "DATE_TIME"
+        },
+        {
+          "property": "rating",
+          "type": "FLOAT"
+        }
+      ]
+    },
+    "relationships": [
+      {
+        "start": "Movie",
+        "type": "ORIGINAL_LANGUAGE",
+        "end": "Language"
+      },
+      {
+        "start": "Movie",
+        "type": "SPOKEN_IN_LANGUAGE",
+        "end": "Language"
+      },
+      {
+        "start": "Movie",
+        "type": "PRODUCED_IN_COUNTRY",
+        "end": "Country"
+      },
+      {
+        "start": "Movie",
+        "type": "IN_GENRE",
+        "end": "Genre"
+      },
+      {
+        "start": "Movie",
+        "type": "PRODUCED_BY",
+        "end": "ProductionCompany"
+      },
+      {
+        "start": "Movie",
+        "type": "IN_COLLECTION",
+        "end": "Collection"
+      },
+      {
+        "start": "Movie",
+        "type": "HAS_KEYWORD",
+        "end": "Keyword"
+      },
+      {
+        "start": "Person",
+        "type": "CAST_FOR",
+        "end": "Movie"
+      },
+      {
+        "start": "Person",
+        "type": "CAST_FOR",
+        "end": "Adult"
+      },
+      {
+        "start": "Person",
+        "type": "CAST_FOR",
+        "end": "Video"
+      },
+      {
+        "start": "Person",
+        "type": "CREW_FOR",
+        "end": "Movie"
+      },
+      {
+        "start": "Person",
+        "type": "CREW_FOR",
+        "end": "Video"
+      },
+      {
+        "start": "Person",
+        "type": "CREW_FOR",
+        "end": "Adult"
+      },
+      {
+        "start": "User",
+        "type": "RATED",
+        "end": "Movie"
+      },
+      {
+        "start": "User",
+        "type": "RATED",
+        "end": "Video"
+      },
+      {
+        "start": "User",
+        "type": "RATED",
+        "end": "Adult"
+      },
+      {
+        "start": "User",
+        "type": "PURCHASED",
+        "end": "Subscription"
+      },
+      {
+        "start": "Video",
+        "type": "ORIGINAL_LANGUAGE",
+        "end": "Language"
+      },
+      {
+        "start": "Video",
+        "type": "SPOKEN_IN_LANGUAGE",
+        "end": "Language"
+      },
+      {
+        "start": "Video",
+        "type": "PRODUCED_IN_COUNTRY",
+        "end": "Country"
+      },
+      {
+        "start": "Video",
+        "type": "IN_GENRE",
+        "end": "Genre"
+      },
+      {
+        "start": "Video",
+        "type": "PRODUCED_BY",
+        "end": "ProductionCompany"
+      },
+      {
+        "start": "Video",
+        "type": "HAS_KEYWORD",
+        "end": "Keyword"
+      },
+      {
+        "start": "Video",
+        "type": "IN_COLLECTION",
+        "end": "Collection"
+      },
+      {
+        "start": "Adult",
+        "type": "ORIGINAL_LANGUAGE",
+        "end": "Language"
+      },
+      {
+        "start": "Adult",
+        "type": "SPOKEN_IN_LANGUAGE",
+        "end": "Language"
+      },
+      {
+        "start": "Adult",
+        "type": "PRODUCED_IN_COUNTRY",
+        "end": "Country"
+      },
+      {
+        "start": "Adult",
+        "type": "IN_GENRE",
+        "end": "Genre"
+      },
+      {
+        "start": "Adult",
+        "type": "PRODUCED_BY",
+        "end": "ProductionCompany"
+      },
+      {
+        "start": "Adult",
+        "type": "HAS_KEYWORD",
+        "end": "Keyword"
+      },
+      {
+        "start": "Package",
+        "type": "PROVIDES_ACCESS_TO",
+        "end": "Genre"
+      },
+      {
+        "start": "Subscription",
+        "type": "FOR_PACKAGE",
+        "end": "Package"
+      }
+    ],
+    "metadata": {
+      "constraint": [
+        {
+          "id": 41,
+          "name": "constraint_3a764435",
+          "type": "UNIQUENESS",
+          "entityType": "NODE",
+          "labelsOrTypes": [
+            "Movie"
+          ],
+          "properties": [
+            "id"
+          ],
+          "ownedIndex": "constraint_3a764435",
+          "propertyType": null
+        },
+        {
+          "id": 39,
+          "name": "constraint_3a8336b6",
+          "type": "UNIQUENESS",
+          "entityType": "NODE",
+          "labelsOrTypes": [
+            "User"
+          ],
+          "properties": [
+            "email"
+          ],
+          "ownedIndex": "constraint_3a8336b6",
+          "propertyType": null
+        },
+        {
+          "id": 49,
+          "name": "constraint_47e7f15d",
+          "type": "UNIQUENESS",
+          "entityType": "NODE",
+          "labelsOrTypes": [
+            "User"
+          ],
+          "properties": [
+            "id"
+          ],
+          "ownedIndex": "constraint_47e7f15d",
+          "propertyType": null
+        },
+        {
+          "id": 27,
+          "name": "constraint_50656458",
+          "type": "UNIQUENESS",
+          "entityType": "NODE",
+          "labelsOrTypes": [
+            "Person"
+          ],
+          "properties": [
+            "id"
+          ],
+          "ownedIndex": "constraint_50656458",
+          "propertyType": null
+        },
+        {
+          "id": 43,
+          "name": "constraint_56e99879",
+          "type": "UNIQUENESS",
+          "entityType": "NODE",
+          "labelsOrTypes": [
+            "Subscription"
+          ],
+          "properties": [
+            "id"
+          ],
+          "ownedIndex": "constraint_56e99879",
+          "propertyType": null
+        },
+        {
+          "id": 35,
+          "name": "constraint_5ad5c639",
+          "type": "UNIQUENESS",
+          "entityType": "NODE",
+          "labelsOrTypes": [
+            "Country"
+          ],
+          "properties": [
+            "id"
+          ],
+          "ownedIndex": "constraint_5ad5c639",
+          "propertyType": null
+        },
+        {
+          "id": 45,
+          "name": "constraint_5cf79cea",
+          "type": "UNIQUENESS",
+          "entityType": "NODE",
+          "labelsOrTypes": [
+            "Package"
+          ],
+          "properties": [
+            "id"
+          ],
+          "ownedIndex": "constraint_5cf79cea",
+          "propertyType": null
+        },
+        {
+          "id": 33,
+          "name": "constraint_860aead3",
+          "type": "UNIQUENESS",
+          "entityType": "NODE",
+          "labelsOrTypes": [
+            "Genre"
+          ],
+          "properties": [
+            "id"
+          ],
+          "ownedIndex": "constraint_860aead3",
+          "propertyType": null
+        },
+        {
+          "id": 31,
+          "name": "constraint_9a791beb",
+          "type": "UNIQUENESS",
+          "entityType": "NODE",
+          "labelsOrTypes": [
+            "ProductionCompany"
+          ],
+          "properties": [
+            "id"
+          ],
+          "ownedIndex": "constraint_9a791beb",
+          "propertyType": null
+        },
+        {
+          "id": 37,
+          "name": "constraint_c2951f31",
+          "type": "UNIQUENESS",
+          "entityType": "NODE",
+          "labelsOrTypes": [
+            "Language"
+          ],
+          "properties": [
+            "id"
+          ],
+          "ownedIndex": "constraint_c2951f31",
+          "propertyType": null
+        },
+        {
+          "id": 29,
+          "name": "constraint_cf4b0437",
+          "type": "UNIQUENESS",
+          "entityType": "NODE",
+          "labelsOrTypes": [
+            "Collection"
+          ],
+          "properties": [
+            "id"
+          ],
+          "ownedIndex": "constraint_cf4b0437",
+          "propertyType": null
+        },
+        {
+          "id": 47,
+          "name": "constraint_db0e1c22",
+          "type": "UNIQUENESS",
+          "entityType": "NODE",
+          "labelsOrTypes": [
+            "Keyword"
+          ],
+          "properties": [
+            "id"
+          ],
+          "ownedIndex": "constraint_db0e1c22",
+          "propertyType": null
+        }
+      ],
+      "index": [
+        {
+          "label": "Collection",
+          "properties": [
+            "id"
+          ],
+          "size": 1695,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 1695.0
+        },
+        {
+          "label": "Country",
+          "properties": [
+            "id"
+          ],
+          "size": 161,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 161.0
+        },
+        {
+          "label": "Genre",
+          "properties": [
+            "id"
+          ],
+          "size": 20,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 20.0
+        },
+        {
+          "label": "Keyword",
+          "properties": [
+            "id"
+          ],
+          "size": 19956,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 19956.0
+        },
+        {
+          "label": "Language",
+          "properties": [
+            "id"
+          ],
+          "size": 133,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 133.0
+        },
+        {
+          "label": "Movie",
+          "properties": [
+            "id"
+          ],
+          "size": 45433,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 45433.0
+        },
+        {
+          "label": "Package",
+          "properties": [
+            "id"
+          ],
+          "size": 7,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 7.0
+        },
+        {
+          "label": "Person",
+          "properties": [
+            "id"
+          ],
+          "size": 353343,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 353343.0
+        },
+        {
+          "label": "ProductionCompany",
+          "properties": [
+            "id"
+          ],
+          "size": 23693,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 23693.0
+        },
+        {
+          "label": "Subscription",
+          "properties": [
+            "id"
+          ],
+          "size": 1,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 1.0
+        },
+        {
+          "label": "User",
+          "properties": [
+            "email"
+          ],
+          "size": 1,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 1.0
+        },
+        {
+          "label": "User",
+          "properties": [
+            "id"
+          ],
+          "size": 265918,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 265918.0
+        }
+      ]
+    }
+  },
+  "twitch": {
+    "node_props": {
+      "Stream": [
+        {
+          "property": "createdAt",
+          "type": "DATE_TIME"
+        },
+        {
+          "property": "id",
+          "type": "STRING"
+        },
+        {
+          "property": "description",
+          "type": "STRING"
+        },
+        {
+          "property": "url",
+          "type": "STRING"
+        },
+        {
+          "property": "name",
+          "type": "STRING"
+        },
+        {
+          "property": "followers",
+          "type": "INTEGER"
+        },
+        {
+          "property": "total_view_count",
+          "type": "INTEGER"
+        }
+      ],
+      "Game": [
+        {
+          "property": "name",
+          "type": "STRING"
+        }
+      ],
+      "Language": [
+        {
+          "property": "name",
+          "type": "STRING"
+        }
+      ],
+      "User": [
+        {
+          "property": "createdAt",
+          "type": "DATE_TIME"
+        },
+        {
+          "property": "id",
+          "type": "STRING"
+        },
+        {
+          "property": "description",
+          "type": "STRING"
+        },
+        {
+          "property": "url",
+          "type": "STRING"
+        },
+        {
+          "property": "name",
+          "type": "STRING"
+        },
+        {
+          "property": "followers",
+          "type": "INTEGER"
+        },
+        {
+          "property": "total_view_count",
+          "type": "INTEGER"
+        }
+      ],
+      "Team": [
+        {
+          "property": "createdAt",
+          "type": "DATE_TIME"
+        },
+        {
+          "property": "name",
+          "type": "STRING"
+        },
+        {
+          "property": "id",
+          "type": "STRING"
+        }
+      ]
+    },
+    "rel_props": {},
+    "relationships": [
+      {
+        "start": "Stream",
+        "type": "PLAYS",
+        "end": "Game"
+      },
+      {
+        "start": "Stream",
+        "type": "HAS_LANGUAGE",
+        "end": "Language"
+      },
+      {
+        "start": "Stream",
+        "type": "CHATTER",
+        "end": "Stream"
+      },
+      {
+        "start": "Stream",
+        "type": "CHATTER",
+        "end": "User"
+      },
+      {
+        "start": "Stream",
+        "type": "HAS_TEAM",
+        "end": "Team"
+      },
+      {
+        "start": "Stream",
+        "type": "MODERATOR",
+        "end": "Stream"
+      },
+      {
+        "start": "Stream",
+        "type": "MODERATOR",
+        "end": "User"
+      },
+      {
+        "start": "Stream",
+        "type": "VIP",
+        "end": "Stream"
+      },
+      {
+        "start": "Stream",
+        "type": "VIP",
+        "end": "User"
+      },
+      {
+        "start": "User",
+        "type": "PLAYS",
+        "end": "Game"
+      },
+      {
+        "start": "User",
+        "type": "HAS_LANGUAGE",
+        "end": "Language"
+      },
+      {
+        "start": "User",
+        "type": "CHATTER",
+        "end": "Stream"
+      },
+      {
+        "start": "User",
+        "type": "CHATTER",
+        "end": "User"
+      },
+      {
+        "start": "User",
+        "type": "HAS_TEAM",
+        "end": "Team"
+      },
+      {
+        "start": "User",
+        "type": "MODERATOR",
+        "end": "Stream"
+      },
+      {
+        "start": "User",
+        "type": "MODERATOR",
+        "end": "User"
+      },
+      {
+        "start": "User",
+        "type": "VIP",
+        "end": "Stream"
+      },
+      {
+        "start": "User",
+        "type": "VIP",
+        "end": "User"
+      }
+    ],
+    "metadata": {
+      "constraint": [
+        {
+          "id": 15,
+          "name": "constraint_2b4f13ce",
+          "type": "UNIQUENESS",
+          "entityType": "NODE",
+          "labelsOrTypes": [
+            "Stream"
+          ],
+          "properties": [
+            "name"
+          ],
+          "ownedIndex": "constraint_2b4f13ce",
+          "propertyType": null
+        },
+        {
+          "id": 19,
+          "name": "constraint_5018efe5",
+          "type": "UNIQUENESS",
+          "entityType": "NODE",
+          "labelsOrTypes": [
+            "Language"
+          ],
+          "properties": [
+            "name"
+          ],
+          "ownedIndex": "constraint_5018efe5",
+          "propertyType": null
+        },
+        {
+          "id": 13,
+          "name": "constraint_5101b27d",
+          "type": "UNIQUENESS",
+          "entityType": "NODE",
+          "labelsOrTypes": [
+            "Team"
+          ],
+          "properties": [
+            "id"
+          ],
+          "ownedIndex": "constraint_5101b27d",
+          "propertyType": null
+        },
+        {
+          "id": 21,
+          "name": "constraint_952bbd70",
+          "type": "UNIQUENESS",
+          "entityType": "NODE",
+          "labelsOrTypes": [
+            "User"
+          ],
+          "properties": [
+            "name"
+          ],
+          "ownedIndex": "constraint_952bbd70",
+          "propertyType": null
+        },
+        {
+          "id": 17,
+          "name": "constraint_d7191a75",
+          "type": "UNIQUENESS",
+          "entityType": "NODE",
+          "labelsOrTypes": [
+            "Game"
+          ],
+          "properties": [
+            "name"
+          ],
+          "ownedIndex": "constraint_d7191a75",
+          "propertyType": null
+        }
+      ],
+      "index": [
+        {
+          "label": "Game",
+          "properties": [
+            "name"
+          ],
+          "size": 594,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 594.0
+        },
+        {
+          "label": "Language",
+          "properties": [
+            "name"
+          ],
+          "size": 29,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 29.0
+        },
+        {
+          "label": "Stream",
+          "properties": [
+            "name"
+          ],
+          "size": 5787,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 5787.0
+        },
+        {
+          "label": "Team",
+          "properties": [
+            "id"
+          ],
+          "size": 1468,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 1468.0
+        },
+        {
+          "label": "User",
+          "properties": [
+            "name"
+          ],
+          "size": 10514229,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 10514229.0
+        }
+      ]
+    }
+  },
+  "twitter": {
+    "node_props": {
+      "User": [
+        {
+          "property": "profile_image_url",
+          "type": "STRING"
+        },
+        {
+          "property": "betweenness",
+          "type": "FLOAT"
+        },
+        {
+          "property": "following",
+          "type": "INTEGER"
+        },
+        {
+          "property": "url",
+          "type": "STRING"
+        },
+        {
+          "property": "location",
+          "type": "STRING"
+        },
+        {
+          "property": "followers",
+          "type": "INTEGER"
+        },
+        {
+          "property": "screen_name",
+          "type": "STRING"
+        },
+        {
+          "property": "name",
+          "type": "STRING"
+        },
+        {
+          "property": "statuses",
+          "type": "INTEGER"
+        }
+      ],
+      "Me": [
+        {
+          "property": "profile_image_url",
+          "type": "STRING"
+        },
+        {
+          "property": "betweenness",
+          "type": "FLOAT"
+        },
+        {
+          "property": "following",
+          "type": "INTEGER"
+        },
+        {
+          "property": "url",
+          "type": "STRING"
+        },
+        {
+          "property": "location",
+          "type": "STRING"
+        },
+        {
+          "property": "followers",
+          "type": "INTEGER"
+        },
+        {
+          "property": "screen_name",
+          "type": "STRING"
+        },
+        {
+          "property": "name",
+          "type": "STRING"
+        }
+      ],
+      "Tweet": [
+        {
+          "property": "created_at",
+          "type": "DATE_TIME"
+        },
+        {
+          "property": "id",
+          "type": "INTEGER"
+        },
+        {
+          "property": "id_str",
+          "type": "STRING"
+        },
+        {
+          "property": "text",
+          "type": "STRING"
+        },
+        {
+          "property": "favorites",
+          "type": "INTEGER"
+        },
+        {
+          "property": "import_method",
+          "type": "STRING"
+        }
+      ],
+      "Hashtag": [
+        {
+          "property": "name",
+          "type": "STRING"
+        }
+      ],
+      "Link": [
+        {
+          "property": "url",
+          "type": "STRING"
+        }
+      ],
+      "Source": [
+        {
+          "property": "name",
+          "type": "STRING"
+        }
+      ]
+    },
+    "rel_props": {
+      "SIMILAR_TO": [
+        {
+          "property": "score",
+          "type": "FLOAT"
+        }
+      ]
+    },
+    "relationships": [
+      {
+        "start": "User",
+        "type": "FOLLOWS",
+        "end": "User"
+      },
+      {
+        "start": "User",
+        "type": "FOLLOWS",
+        "end": "Me"
+      },
+      {
+        "start": "User",
+        "type": "POSTS",
+        "end": "Tweet"
+      },
+      {
+        "start": "User",
+        "type": "INTERACTS_WITH",
+        "end": "User"
+      },
+      {
+        "start": "User",
+        "type": "RT_MENTIONS",
+        "end": "User"
+      },
+      {
+        "start": "User",
+        "type": "AMPLIFIES",
+        "end": "User"
+      },
+      {
+        "start": "User",
+        "type": "SIMILAR_TO",
+        "end": "User"
+      },
+      {
+        "start": "User",
+        "type": "SIMILAR_TO",
+        "end": "Me"
+      },
+      {
+        "start": "Me",
+        "type": "FOLLOWS",
+        "end": "User"
+      },
+      {
+        "start": "Me",
+        "type": "POSTS",
+        "end": "Tweet"
+      },
+      {
+        "start": "Me",
+        "type": "INTERACTS_WITH",
+        "end": "User"
+      },
+      {
+        "start": "Me",
+        "type": "RT_MENTIONS",
+        "end": "User"
+      },
+      {
+        "start": "Me",
+        "type": "AMPLIFIES",
+        "end": "User"
+      },
+      {
+        "start": "Tweet",
+        "type": "MENTIONS",
+        "end": "User"
+      },
+      {
+        "start": "Tweet",
+        "type": "MENTIONS",
+        "end": "Me"
+      },
+      {
+        "start": "Tweet",
+        "type": "USING",
+        "end": "Source"
+      },
+      {
+        "start": "Tweet",
+        "type": "TAGS",
+        "end": "Hashtag"
+      },
+      {
+        "start": "Tweet",
+        "type": "CONTAINS",
+        "end": "Link"
+      },
+      {
+        "start": "Tweet",
+        "type": "RETWEETS",
+        "end": "Tweet"
+      },
+      {
+        "start": "Tweet",
+        "type": "REPLY_TO",
+        "end": "Tweet"
+      }
+    ],
+    "metadata": {
+      "constraint": [
+        {
+          "id": 19,
+          "name": "constraint_189951f0",
+          "type": "UNIQUENESS",
+          "entityType": "NODE",
+          "labelsOrTypes": [
+            "Source"
+          ],
+          "properties": [
+            "name"
+          ],
+          "ownedIndex": "constraint_189951f0",
+          "propertyType": null
+        },
+        {
+          "id": 21,
+          "name": "constraint_5f75e2f6",
+          "type": "UNIQUENESS",
+          "entityType": "NODE",
+          "labelsOrTypes": [
+            "Tweet"
+          ],
+          "properties": [
+            "id"
+          ],
+          "ownedIndex": "constraint_5f75e2f6",
+          "propertyType": null
+        },
+        {
+          "id": 17,
+          "name": "constraint_71a506e6",
+          "type": "UNIQUENESS",
+          "entityType": "NODE",
+          "labelsOrTypes": [
+            "Hashtag"
+          ],
+          "properties": [
+            "name"
+          ],
+          "ownedIndex": "constraint_71a506e6",
+          "propertyType": null
+        },
+        {
+          "id": 15,
+          "name": "constraint_9191d2a4",
+          "type": "UNIQUENESS",
+          "entityType": "NODE",
+          "labelsOrTypes": [
+            "User"
+          ],
+          "properties": [
+            "screen_name"
+          ],
+          "ownedIndex": "constraint_9191d2a4",
+          "propertyType": null
+        },
+        {
+          "id": 23,
+          "name": "constraint_d198d4ee",
+          "type": "UNIQUENESS",
+          "entityType": "NODE",
+          "labelsOrTypes": [
+            "Link"
+          ],
+          "properties": [
+            "url"
+          ],
+          "ownedIndex": "constraint_d198d4ee",
+          "propertyType": null
+        }
+      ],
+      "index": [
+        {
+          "label": "Hashtag",
+          "properties": [
+            "name"
+          ],
+          "size": 344,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 344.0
+        },
+        {
+          "label": "Link",
+          "properties": [
+            "url"
+          ],
+          "size": 1561,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 1561.0
+        },
+        {
+          "label": "Source",
+          "properties": [
+            "name"
+          ],
+          "size": 27,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 27.0
+        },
+        {
+          "label": "Tweet",
+          "properties": [
+            "id"
+          ],
+          "size": 2407,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 2407.0
+        },
+        {
+          "label": "Tweet",
+          "properties": [
+            "created_at"
+          ],
+          "size": 2146,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 2146.0
+        },
+        {
+          "label": "User",
+          "properties": [
+            "screen_name"
+          ],
+          "size": 38986,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 38986.0
+        }
+      ]
+    }
+  },
+  "buzzoverflow": {
+    "node_props": {
+      "Question": [
+        {
+          "property": "text",
+          "type": "STRING"
+        },
+        {
+          "property": "createdAt",
+          "type": "DATE_TIME"
+        },
+        {
+          "property": "answered",
+          "type": "BOOLEAN"
+        },
+        {
+          "property": "score",
+          "type": "INTEGER"
+        },
+        {
+          "property": "link",
+          "type": "STRING"
+        },
+        {
+          "property": "favorites",
+          "type": "INTEGER"
+        },
+        {
+          "property": "id",
+          "type": "INTEGER"
+        },
+        {
+          "property": "title",
+          "type": "STRING"
+        },
+        {
+          "property": "upVotes",
+          "type": "INTEGER"
+        },
+        {
+          "property": "downVotes",
+          "type": "INTEGER"
+        }
+      ],
+      "Tag": [
+        {
+          "property": "name",
+          "type": "STRING"
+        }
+      ],
+      "User": [
+        {
+          "property": "image",
+          "type": "STRING"
+        },
+        {
+          "property": "link",
+          "type": "STRING"
+        },
+        {
+          "property": "id",
+          "type": "INTEGER"
+        },
+        {
+          "property": "reputation",
+          "type": "INTEGER"
+        },
+        {
+          "property": "display_name",
+          "type": "STRING"
+        }
+      ]
+    },
+    "rel_props": {},
+    "relationships": [
+      {
+        "start": "Question",
+        "type": "TAGGED",
+        "end": "Tag"
+      },
+      {
+        "start": "User",
+        "type": "ASKED",
+        "end": "Question"
+      }
+    ],
+    "metadata": {
+      "constraint": [
+        {
+          "id": 61,
+          "name": "constraint_47e7f15d",
+          "type": "UNIQUENESS",
+          "entityType": "NODE",
+          "labelsOrTypes": [
+            "User"
+          ],
+          "properties": [
+            "id"
+          ],
+          "ownedIndex": "constraint_47e7f15d",
+          "propertyType": null
+        },
+        {
+          "id": 59,
+          "name": "constraint_64b1b1cf",
+          "type": "UNIQUENESS",
+          "entityType": "NODE",
+          "labelsOrTypes": [
+            "Tag"
+          ],
+          "properties": [
+            "name"
+          ],
+          "ownedIndex": "constraint_64b1b1cf",
+          "propertyType": null
+        },
+        {
+          "id": 65,
+          "name": "constraint_939b067a",
+          "type": "UNIQUENESS",
+          "entityType": "NODE",
+          "labelsOrTypes": [
+            "Answer"
+          ],
+          "properties": [
+            "id"
+          ],
+          "ownedIndex": "constraint_939b067a",
+          "propertyType": null
+        },
+        {
+          "id": 63,
+          "name": "constraint_f06c84a5",
+          "type": "UNIQUENESS",
+          "entityType": "NODE",
+          "labelsOrTypes": [
+            "Question"
+          ],
+          "properties": [
+            "id"
+          ],
+          "ownedIndex": "constraint_f06c84a5",
+          "propertyType": null
+        }
+      ],
+      "index": [
+        {
+          "label": "Answer",
+          "properties": [
+            "id"
+          ],
+          "size": 0,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 0.0
+        },
+        {
+          "label": "Answer",
+          "properties": [
+            "createdAt"
+          ],
+          "size": 0,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 0.0
+        },
+        {
+          "label": "Question",
+          "properties": [
+            "createdAt"
+          ],
+          "size": 10000,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 10000.0
+        },
+        {
+          "label": "Question",
+          "properties": [
+            "text"
+          ],
+          "size": 0,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 0.0
+        },
+        {
+          "label": "Question",
+          "properties": [
+            "title"
+          ],
+          "size": 10000,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 10000.0
+        },
+        {
+          "label": "Question",
+          "properties": [
+            "id"
+          ],
+          "size": 10000,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 10000.0
+        },
+        {
+          "label": "Tag",
+          "properties": [
+            "name"
+          ],
+          "size": 1554,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 1554.0
+        },
+        {
+          "label": "User",
+          "properties": [
+            "display_name"
+          ],
+          "size": 6947,
+          "type": "RANGE",
+          "valuesSelectivity": 0.9671800777313948,
+          "distinctValues": 6719.0
+        },
+        {
+          "label": "User",
+          "properties": [
+            "name"
+          ],
+          "size": 0,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 0.0
+        },
+        {
+          "label": "User",
+          "properties": [
+            "id"
+          ],
+          "size": 6947,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 6947.0
+        }
+      ]
+    }
+  },
+  "bluesky": {
+    "node_props": {
+      "User": [
+        {
+          "property": "label",
+          "type": "STRING"
+        },
+        {
+          "property": "key",
+          "type": "STRING"
+        },
+        {
+          "property": "y",
+          "type": "FLOAT"
+        },
+        {
+          "property": "color",
+          "type": "STRING"
+        },
+        {
+          "property": "x",
+          "type": "FLOAT"
+        },
+        {
+          "property": "area",
+          "type": "FLOAT"
+        },
+        {
+          "property": "size",
+          "type": "FLOAT"
+        }
+      ]
+    },
+    "rel_props": {
+      "INTERACTED": [
+        {
+          "property": "weight",
+          "type": "INTEGER"
+        },
+        {
+          "property": "ogWeight",
+          "type": "INTEGER"
+        },
+        {
+          "property": "size",
+          "type": "FLOAT"
+        },
+        {
+          "property": "key",
+          "type": "STRING"
+        }
+      ]
+    },
+    "relationships": [
+      {
+        "start": "User",
+        "type": "INTERACTED",
+        "end": "User"
+      }
+    ],
+    "metadata": {
+      "constraint": [
+        {
+          "id": 8,
+          "name": "user_key",
+          "type": "UNIQUENESS",
+          "entityType": "NODE",
+          "labelsOrTypes": [
+            "User"
+          ],
+          "properties": [
+            "key"
+          ],
+          "ownedIndex": "user_key",
+          "propertyType": null
+        }
+      ],
+      "index": [
+        {
+          "label": "User",
+          "properties": [
+            "label"
+          ],
+          "size": 20405,
+          "type": "RANGE",
+          "valuesSelectivity": 0.924234256309728,
+          "distinctValues": 18859.0
+        },
+        {
+          "label": "User",
+          "properties": [
+            "key"
+          ],
+          "size": 20405,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 20405.0
+        }
+      ]
+    }
+  },
+  "movies": {
+    "node_props": {
+      "Movie": [
+        {
+          "property": "title",
+          "type": "STRING"
+        },
+        {
+          "property": "votes",
+          "type": "INTEGER"
+        },
+        {
+          "property": "tagline",
+          "type": "STRING"
+        },
+        {
+          "property": "released",
+          "type": "INTEGER"
+        }
+      ],
+      "Person": [
+        {
+          "property": "born",
+          "type": "INTEGER"
+        },
+        {
+          "property": "name",
+          "type": "STRING"
+        }
+      ]
+    },
+    "rel_props": {
+      "ACTED_IN": [
+        {
+          "property": "roles",
+          "type": "LIST"
+        }
+      ],
+      "REVIEWED": [
+        {
+          "property": "summary",
+          "type": "STRING"
+        },
+        {
+          "property": "rating",
+          "type": "INTEGER"
+        }
+      ]
+    },
+    "relationships": [
+      {
+        "start": "Person",
+        "type": "ACTED_IN",
+        "end": "Movie"
+      },
+      {
+        "start": "Person",
+        "type": "DIRECTED",
+        "end": "Movie"
+      },
+      {
+        "start": "Person",
+        "type": "PRODUCED",
+        "end": "Movie"
+      },
+      {
+        "start": "Person",
+        "type": "WROTE",
+        "end": "Movie"
+      },
+      {
+        "start": "Person",
+        "type": "FOLLOWS",
+        "end": "Person"
+      },
+      {
+        "start": "Person",
+        "type": "REVIEWED",
+        "end": "Movie"
+      }
+    ],
+    "metadata": {
+      "constraint": [
+        {
+          "id": 13,
+          "name": "constraint_3044d997",
+          "type": "UNIQUENESS",
+          "entityType": "NODE",
+          "labelsOrTypes": [
+            "Movie"
+          ],
+          "properties": [
+            "title"
+          ],
+          "ownedIndex": "constraint_3044d997",
+          "propertyType": null
+        },
+        {
+          "id": 11,
+          "name": "constraint_e26b1a8b",
+          "type": "UNIQUENESS",
+          "entityType": "NODE",
+          "labelsOrTypes": [
+            "Person"
+          ],
+          "properties": [
+            "name"
+          ],
+          "ownedIndex": "constraint_e26b1a8b",
+          "propertyType": null
+        }
+      ],
+      "index": [
+        {
+          "label": "Movie",
+          "properties": [
+            "title"
+          ],
+          "size": 38,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 38.0
+        },
+        {
+          "label": "Person",
+          "properties": [
+            "born"
+          ],
+          "size": 128,
+          "type": "RANGE",
+          "valuesSelectivity": 0.3984375,
+          "distinctValues": 51.0
+        },
+        {
+          "label": "Person",
+          "properties": [
+            "released"
+          ],
+          "size": 0,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 0.0
+        },
+        {
+          "label": "Person",
+          "properties": [
+            "name"
+          ],
+          "size": 133,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 133.0
+        }
+      ]
+    }
+  },
+  "grandstack": {
+    "node_props": {
+      "Business": [
+        {
+          "property": "address",
+          "type": "STRING"
+        },
+        {
+          "property": "location",
+          "type": "POINT"
+        },
+        {
+          "property": "city",
+          "type": "STRING"
+        },
+        {
+          "property": "state",
+          "type": "STRING"
+        },
+        {
+          "property": "businessId",
+          "type": "STRING"
+        },
+        {
+          "property": "name",
+          "type": "STRING"
+        }
+      ],
+      "User": [
+        {
+          "property": "name",
+          "type": "STRING"
+        },
+        {
+          "property": "userId",
+          "type": "STRING"
+        }
+      ],
+      "Review": [
+        {
+          "property": "date",
+          "type": "DATE"
+        },
+        {
+          "property": "text",
+          "type": "STRING"
+        },
+        {
+          "property": "stars",
+          "type": "FLOAT"
+        },
+        {
+          "property": "reviewId",
+          "type": "STRING"
+        }
+      ],
+      "Category": [
+        {
+          "property": "name",
+          "type": "STRING"
+        }
+      ]
+    },
+    "rel_props": {},
+    "relationships": [
+      {
+        "start": "Business",
+        "type": "IN_CATEGORY",
+        "end": "Category"
+      },
+      {
+        "start": "User",
+        "type": "WROTE",
+        "end": "Review"
+      },
+      {
+        "start": "Review",
+        "type": "REVIEWS",
+        "end": "Business"
+      }
+    ],
+    "metadata": {
+      "constraint": [],
+      "index": []
+    }
+  },
+  "fincen": {
+    "node_props": {
+      "Country": [
+        {
+          "property": "location",
+          "type": "POINT"
+        },
+        {
+          "property": "code",
+          "type": "STRING"
+        },
+        {
+          "property": "name",
+          "type": "STRING"
+        },
+        {
+          "property": "tld",
+          "type": "STRING"
+        }
+      ],
+      "Filing": [
+        {
+          "property": "begin",
+          "type": "DATE_TIME"
+        },
+        {
+          "property": "sar_id",
+          "type": "STRING"
+        },
+        {
+          "property": "end",
+          "type": "DATE_TIME"
+        },
+        {
+          "property": "beneficiary_bank_country",
+          "type": "STRING"
+        },
+        {
+          "property": "originator_bank_id",
+          "type": "STRING"
+        },
+        {
+          "property": "beneficiary_bank",
+          "type": "STRING"
+        },
+        {
+          "property": "origin_lng",
+          "type": "STRING"
+        },
+        {
+          "property": "filer_org_name_id",
+          "type": "STRING"
+        },
+        {
+          "property": "filer_org_name",
+          "type": "STRING"
+        },
+        {
+          "property": "origin_lat",
+          "type": "STRING"
+        },
+        {
+          "property": "number",
+          "type": "INTEGER"
+        },
+        {
+          "property": "originator_bank_country",
+          "type": "STRING"
+        },
+        {
+          "property": "beneficiary_bank_id",
+          "type": "STRING"
+        },
+        {
+          "property": "end_date_format",
+          "type": "STRING"
+        },
+        {
+          "property": "begin_date_format",
+          "type": "STRING"
+        },
+        {
+          "property": "originator_bank",
+          "type": "STRING"
+        },
+        {
+          "property": "originator_iso",
+          "type": "STRING"
+        },
+        {
+          "property": "begin_date",
+          "type": "STRING"
+        },
+        {
+          "property": "beneficiary_lat",
+          "type": "STRING"
+        },
+        {
+          "property": "amount",
+          "type": "FLOAT"
+        },
+        {
+          "property": "beneficiary_iso",
+          "type": "STRING"
+        },
+        {
+          "property": "beneficiary_lng",
+          "type": "STRING"
+        },
+        {
+          "property": "id",
+          "type": "STRING"
+        },
+        {
+          "property": "end_date",
+          "type": "STRING"
+        }
+      ],
+      "Entity": [
+        {
+          "property": "id",
+          "type": "STRING"
+        },
+        {
+          "property": "location",
+          "type": "POINT"
+        },
+        {
+          "property": "name",
+          "type": "STRING"
+        },
+        {
+          "property": "country",
+          "type": "STRING"
+        }
+      ]
+    },
+    "rel_props": {},
+    "relationships": [
+      {
+        "start": "Filing",
+        "type": "BENEFITS",
+        "end": "Entity"
+      },
+      {
+        "start": "Filing",
+        "type": "CONCERNS",
+        "end": "Entity"
+      },
+      {
+        "start": "Filing",
+        "type": "ORIGINATOR",
+        "end": "Entity"
+      },
+      {
+        "start": "Entity",
+        "type": "FILED",
+        "end": "Filing"
+      },
+      {
+        "start": "Entity",
+        "type": "COUNTRY",
+        "end": "Country"
+      }
+    ],
+    "metadata": {
+      "constraint": [
+        {
+          "id": 21,
+          "name": "constraint_7c28e5f7",
+          "type": "UNIQUENESS",
+          "entityType": "NODE",
+          "labelsOrTypes": [
+            "Filing"
+          ],
+          "properties": [
+            "id"
+          ],
+          "ownedIndex": "constraint_7c28e5f7",
+          "propertyType": null
+        },
+        {
+          "id": 25,
+          "name": "constraint_96870fc7",
+          "type": "UNIQUENESS",
+          "entityType": "NODE",
+          "labelsOrTypes": [
+            "Country"
+          ],
+          "properties": [
+            "code"
+          ],
+          "ownedIndex": "constraint_96870fc7",
+          "propertyType": null
+        },
+        {
+          "id": 23,
+          "name": "constraint_ea922423",
+          "type": "UNIQUENESS",
+          "entityType": "NODE",
+          "labelsOrTypes": [
+            "Entity"
+          ],
+          "properties": [
+            "id"
+          ],
+          "ownedIndex": "constraint_ea922423",
+          "propertyType": null
+        }
+      ],
+      "index": [
+        {
+          "label": "Country",
+          "properties": [
+            "name"
+          ],
+          "size": 254,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 254.0
+        },
+        {
+          "label": "Country",
+          "properties": [
+            "code"
+          ],
+          "size": 254,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 254.0
+        },
+        {
+          "label": "Entity",
+          "properties": [
+            "name"
+          ],
+          "size": 2763,
+          "type": "RANGE",
+          "valuesSelectivity": 0.6539992761491132,
+          "distinctValues": 1806.9999999999998
+        },
+        {
+          "label": "Entity",
+          "properties": [
+            "id"
+          ],
+          "size": 2763,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 2763.0
+        },
+        {
+          "label": "Filing",
+          "properties": [
+            "amount"
+          ],
+          "size": 4507,
+          "type": "RANGE",
+          "valuesSelectivity": 0.7940980696694031,
+          "distinctValues": 3579.0
+        },
+        {
+          "label": "Filing",
+          "properties": [
+            "end"
+          ],
+          "size": 4501,
+          "type": "RANGE",
+          "valuesSelectivity": 0.389024661186403,
+          "distinctValues": 1751.0
+        },
+        {
+          "label": "Filing",
+          "properties": [
+            "begin"
+          ],
+          "size": 4501,
+          "type": "RANGE",
+          "valuesSelectivity": 0.3914685625416574,
+          "distinctValues": 1762.0
+        },
+        {
+          "label": "Filing",
+          "properties": [
+            "sar_id"
+          ],
+          "size": 4507,
+          "type": "RANGE",
+          "valuesSelectivity": 0.11848236077213224,
+          "distinctValues": 534.0
+        },
+        {
+          "label": "Filing",
+          "properties": [
+            "id"
+          ],
+          "size": 4507,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 4507.0
+        }
+      ]
+    }
+  },
+  "recommendations": {
+    "node_props": {
+      "Movie": [
+        {
+          "property": "posterEmbedding",
+          "type": "LIST"
+        },
+        {
+          "property": "url",
+          "type": "STRING"
+        },
+        {
+          "property": "runtime",
+          "type": "INTEGER"
+        },
+        {
+          "property": "revenue",
+          "type": "INTEGER"
+        },
+        {
+          "property": "budget",
+          "type": "INTEGER"
+        },
+        {
+          "property": "plotEmbedding",
+          "type": "LIST"
+        },
+        {
+          "property": "imdbRating",
+          "type": "FLOAT"
+        },
+        {
+          "property": "released",
+          "type": "STRING"
+        },
+        {
+          "property": "countries",
+          "type": "LIST"
+        },
+        {
+          "property": "languages",
+          "type": "LIST"
+        },
+        {
+          "property": "plot",
+          "type": "STRING"
+        },
+        {
+          "property": "imdbVotes",
+          "type": "INTEGER"
+        },
+        {
+          "property": "imdbId",
+          "type": "STRING"
+        },
+        {
+          "property": "year",
+          "type": "INTEGER"
+        },
+        {
+          "property": "poster",
+          "type": "STRING"
+        },
+        {
+          "property": "movieId",
+          "type": "STRING"
+        },
+        {
+          "property": "tmdbId",
+          "type": "STRING"
+        },
+        {
+          "property": "title",
+          "type": "STRING"
+        }
+      ],
+      "Genre": [
+        {
+          "property": "name",
+          "type": "STRING"
+        }
+      ],
+      "User": [
+        {
+          "property": "userId",
+          "type": "STRING"
+        },
+        {
+          "property": "name",
+          "type": "STRING"
+        }
+      ],
+      "Actor": [
+        {
+          "property": "bornIn",
+          "type": "STRING"
+        },
+        {
+          "property": "born",
+          "type": "DATE"
+        },
+        {
+          "property": "died",
+          "type": "DATE"
+        },
+        {
+          "property": "tmdbId",
+          "type": "STRING"
+        },
+        {
+          "property": "imdbId",
+          "type": "STRING"
+        },
+        {
+          "property": "name",
+          "type": "STRING"
+        },
+        {
+          "property": "url",
+          "type": "STRING"
+        },
+        {
+          "property": "bio",
+          "type": "STRING"
+        },
+        {
+          "property": "poster",
+          "type": "STRING"
+        }
+      ],
+      "Director": [
+        {
+          "property": "url",
+          "type": "STRING"
+        },
+        {
+          "property": "bornIn",
+          "type": "STRING"
+        },
+        {
+          "property": "bio",
+          "type": "STRING"
+        },
+        {
+          "property": "died",
+          "type": "DATE"
+        },
+        {
+          "property": "born",
+          "type": "DATE"
+        },
+        {
+          "property": "imdbId",
+          "type": "STRING"
+        },
+        {
+          "property": "name",
+          "type": "STRING"
+        },
+        {
+          "property": "poster",
+          "type": "STRING"
+        },
+        {
+          "property": "tmdbId",
+          "type": "STRING"
+        }
+      ],
+      "Person": [
+        {
+          "property": "bornIn",
+          "type": "STRING"
+        },
+        {
+          "property": "born",
+          "type": "DATE"
+        },
+        {
+          "property": "died",
+          "type": "DATE"
+        },
+        {
+          "property": "tmdbId",
+          "type": "STRING"
+        },
+        {
+          "property": "imdbId",
+          "type": "STRING"
+        },
+        {
+          "property": "name",
+          "type": "STRING"
+        },
+        {
+          "property": "url",
+          "type": "STRING"
+        },
+        {
+          "property": "bio",
+          "type": "STRING"
+        },
+        {
+          "property": "poster",
+          "type": "STRING"
+        }
+      ]
+    },
+    "rel_props": {
+      "RATED": [
+        {
+          "property": "rating",
+          "type": "FLOAT"
+        },
+        {
+          "property": "timestamp",
+          "type": "INTEGER"
+        }
+      ],
+      "ACTED_IN": [
+        {
+          "property": "role",
+          "type": "STRING"
+        }
+      ],
+      "DIRECTED": [
+        {
+          "property": "role",
+          "type": "STRING"
+        }
+      ]
+    },
+    "relationships": [
+      {
+        "start": "Movie",
+        "type": "IN_GENRE",
+        "end": "Genre"
+      },
+      {
+        "start": "User",
+        "type": "RATED",
+        "end": "Movie"
+      },
+      {
+        "start": "Actor",
+        "type": "ACTED_IN",
+        "end": "Movie"
+      },
+      {
+        "start": "Actor",
+        "type": "DIRECTED",
+        "end": "Movie"
+      },
+      {
+        "start": "Director",
+        "type": "DIRECTED",
+        "end": "Movie"
+      },
+      {
+        "start": "Director",
+        "type": "ACTED_IN",
+        "end": "Movie"
+      },
+      {
+        "start": "Person",
+        "type": "ACTED_IN",
+        "end": "Movie"
+      },
+      {
+        "start": "Person",
+        "type": "DIRECTED",
+        "end": "Movie"
+      }
+    ],
+    "metadata": {
+      "constraint": [
+        {
+          "id": 76,
+          "name": "constraint_3b27b0",
+          "type": "UNIQUENESS",
+          "entityType": "NODE",
+          "labelsOrTypes": [
+            "User"
+          ],
+          "properties": [
+            "userId"
+          ],
+          "ownedIndex": "constraint_3b27b0",
+          "propertyType": null
+        },
+        {
+          "id": 75,
+          "name": "constraint_3d5fcb7f",
+          "type": "UNIQUENESS",
+          "entityType": "NODE",
+          "labelsOrTypes": [
+            "Movie"
+          ],
+          "properties": [
+            "movieId"
+          ],
+          "ownedIndex": "constraint_3d5fcb7f",
+          "propertyType": null
+        },
+        {
+          "id": 73,
+          "name": "constraint_4499eae9",
+          "type": "UNIQUENESS",
+          "entityType": "NODE",
+          "labelsOrTypes": [
+            "Person"
+          ],
+          "properties": [
+            "tmdbId"
+          ],
+          "ownedIndex": "constraint_4499eae9",
+          "propertyType": null
+        },
+        {
+          "id": 77,
+          "name": "constraint_737d9c1d",
+          "type": "UNIQUENESS",
+          "entityType": "NODE",
+          "labelsOrTypes": [
+            "Movie"
+          ],
+          "properties": [
+            "tmdbId"
+          ],
+          "ownedIndex": "constraint_737d9c1d",
+          "propertyType": null
+        },
+        {
+          "id": 3,
+          "name": "constraint_f7832722",
+          "type": "UNIQUENESS",
+          "entityType": "NODE",
+          "labelsOrTypes": [
+            "_Bloom_Perspective_"
+          ],
+          "properties": [
+            "id"
+          ],
+          "ownedIndex": "constraint_f7832722",
+          "propertyType": null
+        },
+        {
+          "id": 74,
+          "name": "constraint_f8689281",
+          "type": "UNIQUENESS",
+          "entityType": "NODE",
+          "labelsOrTypes": [
+            "Genre"
+          ],
+          "properties": [
+            "name"
+          ],
+          "ownedIndex": "constraint_f8689281",
+          "propertyType": null
+        }
+      ],
+      "index": [
+        {
+          "label": "Genre",
+          "properties": [
+            "name"
+          ],
+          "size": 20,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 20.0
+        },
+        {
+          "label": "Movie",
+          "properties": [
+            "title"
+          ],
+          "size": 9125,
+          "type": "RANGE",
+          "valuesSelectivity": 0.9745753424657534,
+          "distinctValues": 8893.0
+        },
+        {
+          "label": "Movie",
+          "properties": [
+            "tagline"
+          ],
+          "size": 0,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 0.0
+        },
+        {
+          "label": "Movie",
+          "properties": [
+            "year"
+          ],
+          "size": 9096,
+          "type": "RANGE",
+          "valuesSelectivity": 0.011323658751099384,
+          "distinctValues": 103.0
+        },
+        {
+          "label": "Movie",
+          "properties": [
+            "imdbRating"
+          ],
+          "size": 9058,
+          "type": "RANGE",
+          "valuesSelectivity": 0.008500772797527048,
+          "distinctValues": 77.0
+        },
+        {
+          "label": "Movie",
+          "properties": [
+            "released"
+          ],
+          "size": 9041,
+          "type": "RANGE",
+          "valuesSelectivity": 0.5335692954319212,
+          "distinctValues": 4824.0
+        },
+        {
+          "label": "Movie",
+          "properties": [
+            "imdbId"
+          ],
+          "size": 9125,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 9125.0
+        },
+        {
+          "label": "Movie",
+          "properties": [
+            "movieId"
+          ],
+          "size": 9125,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 9125.0
+        },
+        {
+          "label": "Movie",
+          "properties": [
+            "tmdbId"
+          ],
+          "size": 9121,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 9121.0
+        },
+        {
+          "label": "Person",
+          "properties": [
+            "name"
+          ],
+          "size": 19047,
+          "type": "RANGE",
+          "valuesSelectivity": 0.99826744369192,
+          "distinctValues": 19014.0
+        },
+        {
+          "label": "Person",
+          "properties": [
+            "tmdbId"
+          ],
+          "size": 19047,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 19047.0
+        },
+        {
+          "label": "User",
+          "properties": [
+            "userId"
+          ],
+          "size": 671,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 671.0
+        },
+        {
+          "label": "User",
+          "properties": [
+            "name"
+          ],
+          "size": 671,
+          "type": "RANGE",
+          "valuesSelectivity": 0.9970193740685543,
+          "distinctValues": 669.0
+        },
+        {
+          "label": "_Bloom_Perspective_",
+          "properties": [
+            "id"
+          ],
+          "size": 1,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 1.0
+        }
+      ]
+    }
+  },
+  "gameofthrones": {
+    "node_props": {
+      "Character": [
+        {
+          "property": "centrality",
+          "type": "FLOAT"
+        },
+        {
+          "property": "book45PageRank",
+          "type": "FLOAT"
+        },
+        {
+          "property": "fastrf_embedding",
+          "type": "LIST"
+        },
+        {
+          "property": "book1BetweennessCentrality",
+          "type": "FLOAT"
+        },
+        {
+          "property": "book1PageRank",
+          "type": "FLOAT"
+        },
+        {
+          "property": "louvain",
+          "type": "INTEGER"
+        },
+        {
+          "property": "community",
+          "type": "INTEGER"
+        },
+        {
+          "property": "degree",
+          "type": "FLOAT"
+        },
+        {
+          "property": "name",
+          "type": "STRING"
+        },
+        {
+          "property": "pagerank",
+          "type": "FLOAT"
+        }
+      ]
+    },
+    "rel_props": {
+      "INTERACTS": [
+        {
+          "property": "weight",
+          "type": "INTEGER"
+        }
+      ],
+      "INTERACTS1": [
+        {
+          "property": "weight",
+          "type": "INTEGER"
+        },
+        {
+          "property": "book",
+          "type": "INTEGER"
+        }
+      ],
+      "INTERACTS2": [
+        {
+          "property": "weight",
+          "type": "INTEGER"
+        },
+        {
+          "property": "book",
+          "type": "INTEGER"
+        }
+      ],
+      "INTERACTS3": [
+        {
+          "property": "weight",
+          "type": "INTEGER"
+        },
+        {
+          "property": "book",
+          "type": "INTEGER"
+        }
+      ],
+      "INTERACTS45": [
+        {
+          "property": "weight",
+          "type": "INTEGER"
+        },
+        {
+          "property": "book",
+          "type": "INTEGER"
+        }
+      ]
+    },
+    "relationships": [
+      {
+        "start": "Character",
+        "type": "INTERACTS45",
+        "end": "Character"
+      },
+      {
+        "start": "Character",
+        "type": "INTERACTS",
+        "end": "Character"
+      },
+      {
+        "start": "Character",
+        "type": "INTERACTS1",
+        "end": "Character"
+      },
+      {
+        "start": "Character",
+        "type": "INTERACTS3",
+        "end": "Character"
+      },
+      {
+        "start": "Character",
+        "type": "INTERACTS2",
+        "end": "Character"
+      }
+    ],
+    "metadata": {
+      "constraint": [
+        {
+          "id": 7,
+          "name": "constraint_36fbcdfc",
+          "type": "UNIQUENESS",
+          "entityType": "NODE",
+          "labelsOrTypes": [
+            "Character"
+          ],
+          "properties": [
+            "name"
+          ],
+          "ownedIndex": "constraint_36fbcdfc",
+          "propertyType": null
+        }
+      ],
+      "index": [
+        {
+          "label": "Character",
+          "properties": [
+            "name"
+          ],
+          "size": 796,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 796.0
+        }
+      ]
+    }
+  },
+  "network": {
+    "node_props": {
+      "DataCenter": [
+        {
+          "property": "name",
+          "type": "STRING"
+        },
+        {
+          "property": "location",
+          "type": "STRING"
+        }
+      ],
+      "Router": [
+        {
+          "property": "name",
+          "type": "STRING"
+        },
+        {
+          "property": "zone",
+          "type": "INTEGER"
+        }
+      ],
+      "Egress": [
+        {
+          "property": "name",
+          "type": "STRING"
+        }
+      ],
+      "Interface": [
+        {
+          "property": "ip",
+          "type": "STRING"
+        }
+      ],
+      "Network": [
+        {
+          "property": "ip",
+          "type": "STRING"
+        },
+        {
+          "property": "size",
+          "type": "INTEGER"
+        },
+        {
+          "property": "zone",
+          "type": "INTEGER"
+        }
+      ],
+      "Zone": [
+        {
+          "property": "ip",
+          "type": "STRING"
+        },
+        {
+          "property": "size",
+          "type": "INTEGER"
+        },
+        {
+          "property": "zone",
+          "type": "INTEGER"
+        }
+      ],
+      "Rack": [
+        {
+          "property": "name",
+          "type": "STRING"
+        },
+        {
+          "property": "zone",
+          "type": "INTEGER"
+        },
+        {
+          "property": "rack",
+          "type": "INTEGER"
+        }
+      ],
+      "Switch": [
+        {
+          "property": "ip",
+          "type": "STRING"
+        },
+        {
+          "property": "rack",
+          "type": "INTEGER"
+        }
+      ],
+      "Type": [
+        {
+          "property": "id",
+          "type": "INTEGER"
+        },
+        {
+          "property": "type",
+          "type": "STRING"
+        },
+        {
+          "property": "ram",
+          "type": "INTEGER"
+        },
+        {
+          "property": "name",
+          "type": "STRING"
+        },
+        {
+          "property": "disk",
+          "type": "INTEGER"
+        },
+        {
+          "property": "cpu",
+          "type": "INTEGER"
+        }
+      ],
+      "Machine": [
+        {
+          "property": "name",
+          "type": "STRING"
+        }
+      ],
+      "Software": [
+        {
+          "property": "name",
+          "type": "STRING"
+        },
+        {
+          "property": "versions",
+          "type": "LIST"
+        },
+        {
+          "property": "ports",
+          "type": "LIST"
+        },
+        {
+          "property": "dependencies",
+          "type": "LIST"
+        }
+      ],
+      "OS": [
+        {
+          "property": "name",
+          "type": "STRING"
+        },
+        {
+          "property": "versions",
+          "type": "LIST"
+        },
+        {
+          "property": "startTime",
+          "type": "INTEGER"
+        }
+      ],
+      "Service": [
+        {
+          "property": "name",
+          "type": "STRING"
+        },
+        {
+          "property": "versions",
+          "type": "LIST"
+        },
+        {
+          "property": "ports",
+          "type": "LIST"
+        },
+        {
+          "property": "dependencies",
+          "type": "LIST"
+        },
+        {
+          "property": "startTime",
+          "type": "INTEGER"
+        },
+        {
+          "property": "pid",
+          "type": "INTEGER"
+        }
+      ],
+      "Application": [
+        {
+          "property": "name",
+          "type": "STRING"
+        },
+        {
+          "property": "ports",
+          "type": "LIST"
+        },
+        {
+          "property": "dependencies",
+          "type": "LIST"
+        },
+        {
+          "property": "pid",
+          "type": "INTEGER"
+        },
+        {
+          "property": "startTime",
+          "type": "INTEGER"
+        }
+      ],
+      "Version": [
+        {
+          "property": "name",
+          "type": "STRING"
+        }
+      ],
+      "Process": [
+        {
+          "property": "name",
+          "type": "STRING"
+        },
+        {
+          "property": "startTime",
+          "type": "INTEGER"
+        },
+        {
+          "property": "pid",
+          "type": "INTEGER"
+        }
+      ],
+      "Port": [
+        {
+          "property": "port",
+          "type": "INTEGER"
+        }
+      ]
+    },
+    "rel_props": {},
+    "relationships": [
+      {
+        "start": "DataCenter",
+        "type": "CONTAINS",
+        "end": "Rack"
+      },
+      {
+        "start": "DataCenter",
+        "type": "CONTAINS",
+        "end": "Router"
+      },
+      {
+        "start": "DataCenter",
+        "type": "CONTAINS",
+        "end": "Egress"
+      },
+      {
+        "start": "Router",
+        "type": "ROUTES",
+        "end": "Interface"
+      },
+      {
+        "start": "Egress",
+        "type": "ROUTES",
+        "end": "Interface"
+      },
+      {
+        "start": "Interface",
+        "type": "CONNECTS",
+        "end": "Network"
+      },
+      {
+        "start": "Interface",
+        "type": "CONNECTS",
+        "end": "Zone"
+      },
+      {
+        "start": "Interface",
+        "type": "CONNECTS",
+        "end": "Interface"
+      },
+      {
+        "start": "Interface",
+        "type": "EXPOSES",
+        "end": "Port"
+      },
+      {
+        "start": "Network",
+        "type": "ROUTES",
+        "end": "Interface"
+      },
+      {
+        "start": "Zone",
+        "type": "ROUTES",
+        "end": "Interface"
+      },
+      {
+        "start": "Rack",
+        "type": "HOLDS",
+        "end": "Machine"
+      },
+      {
+        "start": "Rack",
+        "type": "HOLDS",
+        "end": "Switch"
+      },
+      {
+        "start": "Switch",
+        "type": "ROUTES",
+        "end": "Interface"
+      },
+      {
+        "start": "Machine",
+        "type": "RUNS",
+        "end": "OS"
+      },
+      {
+        "start": "Machine",
+        "type": "RUNS",
+        "end": "Process"
+      },
+      {
+        "start": "Machine",
+        "type": "RUNS",
+        "end": "Service"
+      },
+      {
+        "start": "Machine",
+        "type": "RUNS",
+        "end": "Application"
+      },
+      {
+        "start": "Machine",
+        "type": "ROUTES",
+        "end": "Interface"
+      },
+      {
+        "start": "Machine",
+        "type": "TYPE",
+        "end": "Type"
+      },
+      {
+        "start": "Software",
+        "type": "VERSION",
+        "end": "Version"
+      },
+      {
+        "start": "Software",
+        "type": "DEPENDS_ON",
+        "end": "Version"
+      },
+      {
+        "start": "Software",
+        "type": "DEPENDS_ON",
+        "end": "Software"
+      },
+      {
+        "start": "Software",
+        "type": "DEPENDS_ON",
+        "end": "Application"
+      },
+      {
+        "start": "Software",
+        "type": "DEPENDS_ON",
+        "end": "Service"
+      },
+      {
+        "start": "OS",
+        "type": "VERSION",
+        "end": "Version"
+      },
+      {
+        "start": "OS",
+        "type": "INSTANCE",
+        "end": "Version"
+      },
+      {
+        "start": "Service",
+        "type": "VERSION",
+        "end": "Version"
+      },
+      {
+        "start": "Service",
+        "type": "DEPENDS_ON",
+        "end": "Version"
+      },
+      {
+        "start": "Service",
+        "type": "INSTANCE",
+        "end": "Version"
+      },
+      {
+        "start": "Service",
+        "type": "INSTANCE",
+        "end": "Software"
+      },
+      {
+        "start": "Service",
+        "type": "INSTANCE",
+        "end": "Service"
+      },
+      {
+        "start": "Service",
+        "type": "INSTANCE",
+        "end": "Application"
+      },
+      {
+        "start": "Service",
+        "type": "LISTENS",
+        "end": "Port"
+      },
+      {
+        "start": "Application",
+        "type": "DEPENDS_ON",
+        "end": "Version"
+      },
+      {
+        "start": "Application",
+        "type": "DEPENDS_ON",
+        "end": "Software"
+      },
+      {
+        "start": "Application",
+        "type": "DEPENDS_ON",
+        "end": "Application"
+      },
+      {
+        "start": "Application",
+        "type": "DEPENDS_ON",
+        "end": "Service"
+      },
+      {
+        "start": "Application",
+        "type": "DEPENDS_ON",
+        "end": "Process"
+      },
+      {
+        "start": "Application",
+        "type": "LISTENS",
+        "end": "Port"
+      },
+      {
+        "start": "Application",
+        "type": "INSTANCE",
+        "end": "Software"
+      },
+      {
+        "start": "Application",
+        "type": "INSTANCE",
+        "end": "Application"
+      },
+      {
+        "start": "Version",
+        "type": "PREVIOUS",
+        "end": "Version"
+      },
+      {
+        "start": "Process",
+        "type": "INSTANCE",
+        "end": "Version"
+      },
+      {
+        "start": "Process",
+        "type": "INSTANCE",
+        "end": "Software"
+      },
+      {
+        "start": "Process",
+        "type": "INSTANCE",
+        "end": "Application"
+      },
+      {
+        "start": "Process",
+        "type": "INSTANCE",
+        "end": "Service"
+      },
+      {
+        "start": "Process",
+        "type": "LISTENS",
+        "end": "Port"
+      },
+      {
+        "start": "Process",
+        "type": "DEPENDS_ON",
+        "end": "Service"
+      },
+      {
+        "start": "Process",
+        "type": "DEPENDS_ON",
+        "end": "Process"
+      }
+    ],
+    "metadata": {
+      "constraint": [],
+      "index": [
+        {
+          "label": "Software",
+          "properties": [
+            "name"
+          ],
+          "size": 14,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 14.0
+        }
+      ]
+    }
+  },
+  "neo4jcopy": {
+    "node_props": {
+      "GeoArea": [
+        {
+          "property": "M49",
+          "type": "STRING"
+        },
+        {
+          "property": "name",
+          "type": "STRING"
+        },
+        {
+          "property": "M49code",
+          "type": "STRING"
+        },
+        {
+          "property": "ISOalpha2code",
+          "type": "STRING"
+        },
+        {
+          "property": "ISOalpha3code",
+          "type": "STRING"
+        },
+        {
+          "property": "EUcode",
+          "type": "STRING"
+        }
+      ],
+      "LAU": [
+        {
+          "property": "EUcode",
+          "type": "STRING"
+        },
+        {
+          "property": "name",
+          "type": "STRING"
+        }
+      ],
+      "Region": [
+        {
+          "property": "M49code",
+          "type": "STRING"
+        },
+        {
+          "property": "name",
+          "type": "STRING"
+        }
+      ],
+      "SubRegion": [
+        {
+          "property": "M49code",
+          "type": "STRING"
+        },
+        {
+          "property": "name",
+          "type": "STRING"
+        }
+      ],
+      "Area": [
+        {
+          "property": "name",
+          "type": "STRING"
+        },
+        {
+          "property": "M49code",
+          "type": "STRING"
+        },
+        {
+          "property": "ISOalpha2code",
+          "type": "STRING"
+        },
+        {
+          "property": "ISOalpha3code",
+          "type": "STRING"
+        },
+        {
+          "property": "EUcode",
+          "type": "STRING"
+        }
+      ],
+      "City": [
+        {
+          "property": "name",
+          "type": "STRING"
+        },
+        {
+          "property": "EUcode",
+          "type": "STRING"
+        }
+      ],
+      "FUA": [
+        {
+          "property": "name",
+          "type": "STRING"
+        },
+        {
+          "property": "EUcode",
+          "type": "STRING"
+        }
+      ],
+      "Goal": [
+        {
+          "property": "title",
+          "type": "STRING"
+        },
+        {
+          "property": "description",
+          "type": "STRING"
+        },
+        {
+          "property": "code",
+          "type": "STRING"
+        }
+      ],
+      "Target": [
+        {
+          "property": "title",
+          "type": "STRING"
+        },
+        {
+          "property": "description",
+          "type": "STRING"
+        },
+        {
+          "property": "code",
+          "type": "STRING"
+        }
+      ],
+      "Indicator": [
+        {
+          "property": "description",
+          "type": "STRING"
+        },
+        {
+          "property": "code",
+          "type": "STRING"
+        }
+      ],
+      "Source": [
+        {
+          "property": "name",
+          "type": "STRING"
+        }
+      ],
+      "Series": [
+        {
+          "property": "dataProviderURL",
+          "type": "STRING"
+        },
+        {
+          "property": "description",
+          "type": "STRING"
+        },
+        {
+          "property": "code",
+          "type": "STRING"
+        }
+      ],
+      "Observation": [
+        {
+          "property": "time",
+          "type": "DATE"
+        },
+        {
+          "property": "value",
+          "type": "FLOAT"
+        }
+      ],
+      "EuropeanUnion": [
+        {
+          "property": "description",
+          "type": "STRING"
+        }
+      ],
+      "NUTS1": [
+        {
+          "property": "EUcode",
+          "type": "STRING"
+        },
+        {
+          "property": "name",
+          "type": "STRING"
+        }
+      ],
+      "NUTS2": [
+        {
+          "property": "EUcode",
+          "type": "STRING"
+        },
+        {
+          "property": "name",
+          "type": "STRING"
+        }
+      ],
+      "NUTS3": [
+        {
+          "property": "EUcode",
+          "type": "STRING"
+        },
+        {
+          "property": "name",
+          "type": "STRING"
+        }
+      ],
+      "UrbanRural": [
+        {
+          "property": "categoryLabel",
+          "type": "STRING"
+        },
+        {
+          "property": "categoryCode",
+          "type": "STRING"
+        }
+      ],
+      "Typology": [
+        {
+          "property": "categoryLabel",
+          "type": "STRING"
+        },
+        {
+          "property": "categoryCode",
+          "type": "STRING"
+        }
+      ],
+      "Metropolitan": [
+        {
+          "property": "categoryLabel",
+          "type": "STRING"
+        },
+        {
+          "property": "categoryCode",
+          "type": "STRING"
+        }
+      ],
+      "Coastal": [
+        {
+          "property": "categoryLabel",
+          "type": "STRING"
+        },
+        {
+          "property": "categoryCode",
+          "type": "STRING"
+        }
+      ],
+      "Mountain": [
+        {
+          "property": "categoryLabel",
+          "type": "STRING"
+        },
+        {
+          "property": "categoryCode",
+          "type": "STRING"
+        }
+      ],
+      "Border": [
+        {
+          "property": "categoryLabel",
+          "type": "STRING"
+        },
+        {
+          "property": "categoryCode",
+          "type": "STRING"
+        }
+      ],
+      "Island": [
+        {
+          "property": "categoryLabel",
+          "type": "STRING"
+        },
+        {
+          "property": "categoryCode",
+          "type": "STRING"
+        }
+      ],
+      "UrbanRuralRemoteness": [
+        {
+          "property": "categoryLabel",
+          "type": "STRING"
+        },
+        {
+          "property": "categoryCode",
+          "type": "STRING"
+        }
+      ],
+      "UrbanizationDegree": [
+        {
+          "property": "categoryLabel",
+          "type": "STRING"
+        },
+        {
+          "property": "categoryCode",
+          "type": "STRING"
+        }
+      ],
+      "SeriesMetadata": [
+        {
+          "property": "dimensionsCode",
+          "type": "STRING"
+        },
+        {
+          "property": "seriesCode",
+          "type": "STRING"
+        },
+        {
+          "property": "dimensionsDescription",
+          "type": "STRING"
+        },
+        {
+          "property": "attributesDescription",
+          "type": "STRING"
+        },
+        {
+          "property": "attributesCode",
+          "type": "STRING"
+        }
+      ],
+      "EUPolicyTarget": [
+        {
+          "property": "unit",
+          "type": "STRING"
+        },
+        {
+          "property": "value",
+          "type": "FLOAT"
+        },
+        {
+          "property": "operator",
+          "type": "STRING"
+        },
+        {
+          "property": "dateOfReport",
+          "type": "DATE"
+        },
+        {
+          "property": "byYear",
+          "type": "INTEGER"
+        },
+        {
+          "property": "comment",
+          "type": "STRING"
+        },
+        {
+          "property": "reference",
+          "type": "STRING"
+        }
+      ],
+      "PostalCode": [
+        {
+          "property": "EUcode",
+          "type": "STRING"
+        }
+      ],
+      "NDC": [
+        {
+          "property": "documentType",
+          "type": "STRING"
+        },
+        {
+          "property": "sector",
+          "type": "LIST"
+        },
+        {
+          "property": "status",
+          "type": "LIST"
+        },
+        {
+          "property": "text",
+          "type": "STRING"
+        },
+        {
+          "property": "typeOfInformation",
+          "type": "STRING"
+        }
+      ],
+      "Transformation": [
+        {
+          "property": "title",
+          "type": "STRING"
+        },
+        {
+          "property": "number",
+          "type": "INTEGER"
+        }
+      ],
+      "Intervention": [
+        {
+          "property": "title",
+          "type": "STRING"
+        }
+      ],
+      "IntermediateOutput": [
+        {
+          "property": "title",
+          "type": "STRING"
+        }
+      ],
+      "Ministry": [
+        {
+          "property": "title",
+          "type": "STRING"
+        }
+      ],
+      "Hazard": [
+        {
+          "property": "name",
+          "type": "STRING"
+        },
+        {
+          "property": "cluster",
+          "type": "STRING"
+        },
+        {
+          "property": "type",
+          "type": "STRING"
+        }
+      ],
+      "EGD": [
+        {
+          "property": "name",
+          "type": "STRING"
+        },
+        {
+          "property": "type",
+          "type": "STRING"
+        },
+        {
+          "property": "policyArea",
+          "type": "LIST"
+        },
+        {
+          "property": "dateOfReport",
+          "type": "DATE"
+        }
+      ],
+      "CaseStudy": [
+        {
+          "property": "title",
+          "type": "STRING"
+        },
+        {
+          "property": "description",
+          "type": "STRING"
+        },
+        {
+          "property": "code",
+          "type": "STRING"
+        }
+      ],
+      "CSR": [
+        {
+          "property": "policyArea",
+          "type": "LIST"
+        },
+        {
+          "property": "text",
+          "type": "STRING"
+        }
+      ],
+      "Innovation": [
+        {
+          "property": "name",
+          "type": "STRING"
+        },
+        {
+          "property": "trlDescription",
+          "type": "STRING"
+        },
+        {
+          "property": "applicationDomain",
+          "type": "LIST"
+        },
+        {
+          "property": "typeOfSolution",
+          "type": "LIST"
+        },
+        {
+          "property": "permalink",
+          "type": "STRING"
+        },
+        {
+          "property": "description",
+          "type": "STRING"
+        },
+        {
+          "property": "trl",
+          "type": "INTEGER"
+        }
+      ]
+    },
+    "rel_props": {
+      "REFERS_TO_AREA": [
+        {
+          "property": "point",
+          "type": "POINT"
+        },
+        {
+          "property": "csrNumber",
+          "type": "INTEGER"
+        },
+        {
+          "property": "ear",
+          "type": "LIST"
+        },
+        {
+          "property": "versionOfReport",
+          "type": "STRING"
+        },
+        {
+          "property": "mip",
+          "type": "BOOLEAN"
+        },
+        {
+          "property": "dateOfReport",
+          "type": "DATE"
+        },
+        {
+          "property": "assessment",
+          "type": "STRING"
+        }
+      ],
+      "HAS_OBSERVATION": [
+        {
+          "property": "seriesCode",
+          "type": "STRING"
+        },
+        {
+          "property": "geoCode",
+          "type": "STRING"
+        },
+        {
+          "property": "attributesCode",
+          "type": "STRING"
+        },
+        {
+          "property": "dimensionsCode",
+          "type": "STRING"
+        },
+        {
+          "property": "time",
+          "type": "DATE"
+        }
+      ],
+      "IS_MPI_TO": [
+        {
+          "property": "dateOfReport",
+          "type": "DATE"
+        }
+      ],
+      "ASSOCIATED_WITH": [
+        {
+          "property": "dateOfReport",
+          "type": "DATE"
+        },
+        {
+          "property": "relevance",
+          "type": "STRING"
+        },
+        {
+          "property": "climateResponse",
+          "type": "STRING"
+        },
+        {
+          "property": "weight",
+          "type": "INTEGER"
+        },
+        {
+          "property": "description",
+          "type": "STRING"
+        }
+      ],
+      "HAS_SYNERGY": [
+        {
+          "property": "lowIndicatorsPairs",
+          "type": "INTEGER"
+        },
+        {
+          "property": "highIndicatorsPairs",
+          "type": "INTEGER"
+        },
+        {
+          "property": "mediumIndicatorsPairs",
+          "type": "INTEGER"
+        },
+        {
+          "property": "indicatorsSource",
+          "type": "STRING"
+        },
+        {
+          "property": "levelOfAnalysis",
+          "type": "STRING"
+        },
+        {
+          "property": "veryHighIndicatorsPairs",
+          "type": "INTEGER"
+        }
+      ],
+      "HAS_TRADE_OFF": [
+        {
+          "property": "lowIndicatorsPairs",
+          "type": "INTEGER"
+        },
+        {
+          "property": "indicatorsSource",
+          "type": "STRING"
+        },
+        {
+          "property": "levelOfAnalysis",
+          "type": "STRING"
+        },
+        {
+          "property": "highIndicatorsPairs",
+          "type": "INTEGER"
+        },
+        {
+          "property": "mediumIndicatorsPairs",
+          "type": "INTEGER"
+        },
+        {
+          "property": "veryHighIndicatorsPairs",
+          "type": "INTEGER"
+        }
+      ]
+    },
+    "relationships": [
+      {
+        "start": "GeoArea",
+        "type": "HAS_REGION",
+        "end": "GeoArea"
+      },
+      {
+        "start": "GeoArea",
+        "type": "HAS_REGION",
+        "end": "Region"
+      },
+      {
+        "start": "GeoArea",
+        "type": "HAS_SUBREGION",
+        "end": "GeoArea"
+      },
+      {
+        "start": "GeoArea",
+        "type": "HAS_SUBREGION",
+        "end": "SubRegion"
+      },
+      {
+        "start": "GeoArea",
+        "type": "HAS_AREA",
+        "end": "GeoArea"
+      },
+      {
+        "start": "GeoArea",
+        "type": "HAS_AREA",
+        "end": "Area"
+      },
+      {
+        "start": "GeoArea",
+        "type": "HAS_FUA",
+        "end": "GeoArea"
+      },
+      {
+        "start": "GeoArea",
+        "type": "HAS_FUA",
+        "end": "FUA"
+      },
+      {
+        "start": "GeoArea",
+        "type": "BELONGS_TO",
+        "end": "EuropeanUnion"
+      },
+      {
+        "start": "GeoArea",
+        "type": "HAS_NUTS1",
+        "end": "GeoArea"
+      },
+      {
+        "start": "GeoArea",
+        "type": "HAS_NUTS1",
+        "end": "NUTS1"
+      },
+      {
+        "start": "GeoArea",
+        "type": "HAS_POSTAL_CODE",
+        "end": "GeoArea"
+      },
+      {
+        "start": "GeoArea",
+        "type": "HAS_POSTAL_CODE",
+        "end": "PostalCode"
+      },
+      {
+        "start": "GeoArea",
+        "type": "HAS_NUTS2",
+        "end": "GeoArea"
+      },
+      {
+        "start": "GeoArea",
+        "type": "HAS_NUTS2",
+        "end": "NUTS2"
+      },
+      {
+        "start": "GeoArea",
+        "type": "HAS_NUTS3",
+        "end": "GeoArea"
+      },
+      {
+        "start": "GeoArea",
+        "type": "HAS_NUTS3",
+        "end": "NUTS3"
+      },
+      {
+        "start": "GeoArea",
+        "type": "HAS_TYPOLOGY",
+        "end": "Typology"
+      },
+      {
+        "start": "GeoArea",
+        "type": "HAS_TYPOLOGY",
+        "end": "Coastal"
+      },
+      {
+        "start": "GeoArea",
+        "type": "HAS_TYPOLOGY",
+        "end": "UrbanRuralRemoteness"
+      },
+      {
+        "start": "GeoArea",
+        "type": "HAS_TYPOLOGY",
+        "end": "UrbanRural"
+      },
+      {
+        "start": "GeoArea",
+        "type": "HAS_TYPOLOGY",
+        "end": "Mountain"
+      },
+      {
+        "start": "GeoArea",
+        "type": "HAS_TYPOLOGY",
+        "end": "Metropolitan"
+      },
+      {
+        "start": "GeoArea",
+        "type": "HAS_TYPOLOGY",
+        "end": "Border"
+      },
+      {
+        "start": "GeoArea",
+        "type": "HAS_TYPOLOGY",
+        "end": "Island"
+      },
+      {
+        "start": "GeoArea",
+        "type": "HAS_LAU",
+        "end": "GeoArea"
+      },
+      {
+        "start": "GeoArea",
+        "type": "HAS_LAU",
+        "end": "LAU"
+      },
+      {
+        "start": "GeoArea",
+        "type": "HAS_DEGURBA",
+        "end": "Typology"
+      },
+      {
+        "start": "GeoArea",
+        "type": "HAS_DEGURBA",
+        "end": "UrbanizationDegree"
+      },
+      {
+        "start": "GeoArea",
+        "type": "CONSISTS_OF",
+        "end": "GeoArea"
+      },
+      {
+        "start": "GeoArea",
+        "type": "CONSISTS_OF",
+        "end": "LAU"
+      },
+      {
+        "start": "GeoArea",
+        "type": "CONSISTS_OF",
+        "end": "City"
+      },
+      {
+        "start": "LAU",
+        "type": "HAS_DEGURBA",
+        "end": "Typology"
+      },
+      {
+        "start": "LAU",
+        "type": "HAS_DEGURBA",
+        "end": "UrbanizationDegree"
+      },
+      {
+        "start": "Region",
+        "type": "HAS_SUBREGION",
+        "end": "GeoArea"
+      },
+      {
+        "start": "Region",
+        "type": "HAS_SUBREGION",
+        "end": "SubRegion"
+      },
+      {
+        "start": "SubRegion",
+        "type": "HAS_AREA",
+        "end": "GeoArea"
+      },
+      {
+        "start": "SubRegion",
+        "type": "HAS_AREA",
+        "end": "Area"
+      },
+      {
+        "start": "Area",
+        "type": "HAS_FUA",
+        "end": "GeoArea"
+      },
+      {
+        "start": "Area",
+        "type": "HAS_FUA",
+        "end": "FUA"
+      },
+      {
+        "start": "Area",
+        "type": "BELONGS_TO",
+        "end": "EuropeanUnion"
+      },
+      {
+        "start": "Area",
+        "type": "HAS_NUTS1",
+        "end": "GeoArea"
+      },
+      {
+        "start": "Area",
+        "type": "HAS_NUTS1",
+        "end": "NUTS1"
+      },
+      {
+        "start": "Area",
+        "type": "HAS_POSTAL_CODE",
+        "end": "GeoArea"
+      },
+      {
+        "start": "Area",
+        "type": "HAS_POSTAL_CODE",
+        "end": "PostalCode"
+      },
+      {
+        "start": "City",
+        "type": "CONSISTS_OF",
+        "end": "GeoArea"
+      },
+      {
+        "start": "City",
+        "type": "CONSISTS_OF",
+        "end": "LAU"
+      },
+      {
+        "start": "FUA",
+        "type": "CONSISTS_OF",
+        "end": "GeoArea"
+      },
+      {
+        "start": "FUA",
+        "type": "CONSISTS_OF",
+        "end": "City"
+      },
+      {
+        "start": "FUA",
+        "type": "CONSISTS_OF",
+        "end": "LAU"
+      },
+      {
+        "start": "Goal",
+        "type": "HAS_TARGET",
+        "end": "Target"
+      },
+      {
+        "start": "Goal",
+        "type": "HAS_INDICATOR",
+        "end": "Indicator"
+      },
+      {
+        "start": "Goal",
+        "type": "HAS_SYNERGY",
+        "end": "Goal"
+      },
+      {
+        "start": "Goal",
+        "type": "HAS_TRADE_OFF",
+        "end": "Goal"
+      },
+      {
+        "start": "Target",
+        "type": "HAS_INDICATOR",
+        "end": "Indicator"
+      },
+      {
+        "start": "Indicator",
+        "type": "HAS_OBSERVATIONS",
+        "end": "GeoArea"
+      },
+      {
+        "start": "Indicator",
+        "type": "HAS_OBSERVATIONS",
+        "end": "Area"
+      },
+      {
+        "start": "Indicator",
+        "type": "HAS_OBSERVATIONS",
+        "end": "NUTS2"
+      },
+      {
+        "start": "Indicator",
+        "type": "HAS_OBSERVATIONS",
+        "end": "NUTS1"
+      },
+      {
+        "start": "Indicator",
+        "type": "HAS_OBSERVATIONS",
+        "end": "NUTS3"
+      },
+      {
+        "start": "Indicator",
+        "type": "HAS_OBSERVATIONS",
+        "end": "City"
+      },
+      {
+        "start": "Indicator",
+        "type": "HAS_OBSERVATIONS",
+        "end": "FUA"
+      },
+      {
+        "start": "Indicator",
+        "type": "HAS_OBSERVATIONS",
+        "end": "PostalCode"
+      },
+      {
+        "start": "Indicator",
+        "type": "COMES_FROM",
+        "end": "Source"
+      },
+      {
+        "start": "Indicator",
+        "type": "HAS_SERIES",
+        "end": "Series"
+      },
+      {
+        "start": "Indicator",
+        "type": "HAS_POLICY_TARGET",
+        "end": "EUPolicyTarget"
+      },
+      {
+        "start": "Indicator",
+        "type": "ASSOCIATED_WITH",
+        "end": "Indicator"
+      },
+      {
+        "start": "Indicator",
+        "type": "IS_MPI_TO",
+        "end": "Goal"
+      },
+      {
+        "start": "Series",
+        "type": "HAS_METADATA",
+        "end": "SeriesMetadata"
+      },
+      {
+        "start": "Observation",
+        "type": "REFERS_TO_AREA",
+        "end": "GeoArea"
+      },
+      {
+        "start": "Observation",
+        "type": "REFERS_TO_AREA",
+        "end": "Area"
+      },
+      {
+        "start": "Observation",
+        "type": "REFERS_TO_AREA",
+        "end": "NUTS1"
+      },
+      {
+        "start": "Observation",
+        "type": "REFERS_TO_AREA",
+        "end": "NUTS2"
+      },
+      {
+        "start": "Observation",
+        "type": "REFERS_TO_AREA",
+        "end": "NUTS3"
+      },
+      {
+        "start": "Observation",
+        "type": "REFERS_TO_AREA",
+        "end": "City"
+      },
+      {
+        "start": "Observation",
+        "type": "REFERS_TO_AREA",
+        "end": "PostalCode"
+      },
+      {
+        "start": "Observation",
+        "type": "REFERS_TO_AREA",
+        "end": "FUA"
+      },
+      {
+        "start": "NUTS1",
+        "type": "HAS_NUTS2",
+        "end": "GeoArea"
+      },
+      {
+        "start": "NUTS1",
+        "type": "HAS_NUTS2",
+        "end": "NUTS2"
+      },
+      {
+        "start": "NUTS2",
+        "type": "HAS_NUTS3",
+        "end": "GeoArea"
+      },
+      {
+        "start": "NUTS2",
+        "type": "HAS_NUTS3",
+        "end": "NUTS3"
+      },
+      {
+        "start": "NUTS3",
+        "type": "HAS_TYPOLOGY",
+        "end": "Typology"
+      },
+      {
+        "start": "NUTS3",
+        "type": "HAS_TYPOLOGY",
+        "end": "Coastal"
+      },
+      {
+        "start": "NUTS3",
+        "type": "HAS_TYPOLOGY",
+        "end": "UrbanRuralRemoteness"
+      },
+      {
+        "start": "NUTS3",
+        "type": "HAS_TYPOLOGY",
+        "end": "UrbanRural"
+      },
+      {
+        "start": "NUTS3",
+        "type": "HAS_TYPOLOGY",
+        "end": "Mountain"
+      },
+      {
+        "start": "NUTS3",
+        "type": "HAS_TYPOLOGY",
+        "end": "Metropolitan"
+      },
+      {
+        "start": "NUTS3",
+        "type": "HAS_TYPOLOGY",
+        "end": "Border"
+      },
+      {
+        "start": "NUTS3",
+        "type": "HAS_TYPOLOGY",
+        "end": "Island"
+      },
+      {
+        "start": "NUTS3",
+        "type": "HAS_LAU",
+        "end": "GeoArea"
+      },
+      {
+        "start": "NUTS3",
+        "type": "HAS_LAU",
+        "end": "LAU"
+      },
+      {
+        "start": "NUTS3",
+        "type": "HAS_POSTAL_CODE",
+        "end": "GeoArea"
+      },
+      {
+        "start": "NUTS3",
+        "type": "HAS_POSTAL_CODE",
+        "end": "PostalCode"
+      },
+      {
+        "start": "SeriesMetadata",
+        "type": "HAS_OBSERVATION",
+        "end": "Observation"
+      },
+      {
+        "start": "NDC",
+        "type": "ASSOCIATED_WITH",
+        "end": "Target"
+      },
+      {
+        "start": "NDC",
+        "type": "REFERS_TO_AREA",
+        "end": "GeoArea"
+      },
+      {
+        "start": "NDC",
+        "type": "REFERS_TO_AREA",
+        "end": "Area"
+      },
+      {
+        "start": "Transformation",
+        "type": "COMPRISES",
+        "end": "Intervention"
+      },
+      {
+        "start": "Intervention",
+        "type": "CONTRIBUTES_TO",
+        "end": "IntermediateOutput"
+      },
+      {
+        "start": "IntermediateOutput",
+        "type": "ASSOCIATED_WITH",
+        "end": "Goal"
+      },
+      {
+        "start": "Ministry",
+        "type": "OVERSEE_THE_IMPLEMENTATION_OF",
+        "end": "Transformation"
+      },
+      {
+        "start": "EGD",
+        "type": "ASSOCIATED_WITH",
+        "end": "Goal"
+      },
+      {
+        "start": "CaseStudy",
+        "type": "ASSOCIATED_WITH",
+        "end": "Hazard"
+      },
+      {
+        "start": "CaseStudy",
+        "type": "ASSOCIATED_WITH",
+        "end": "Indicator"
+      },
+      {
+        "start": "CaseStudy",
+        "type": "REFERS_TO_AREA",
+        "end": "GeoArea"
+      },
+      {
+        "start": "CaseStudy",
+        "type": "REFERS_TO_AREA",
+        "end": "NUTS3"
+      },
+      {
+        "start": "CSR",
+        "type": "REFERS_TO_AREA",
+        "end": "GeoArea"
+      },
+      {
+        "start": "CSR",
+        "type": "REFERS_TO_AREA",
+        "end": "Area"
+      },
+      {
+        "start": "CSR",
+        "type": "ASSOCIATED_WITH",
+        "end": "Goal"
+      },
+      {
+        "start": "Innovation",
+        "type": "TARGETED_TO",
+        "end": "Hazard"
+      }
+    ],
+    "metadata": {
+      "constraint": [],
+      "index": []
+    }
+  },
+  "stackoverflow2": {
+    "node_props": {
+      "Question": [
+        {
+          "property": "link",
+          "type": "STRING"
+        },
+        {
+          "property": "accepted_answer_id",
+          "type": "INTEGER"
+        },
+        {
+          "property": "creation_date",
+          "type": "INTEGER"
+        },
+        {
+          "property": "view_count",
+          "type": "INTEGER"
+        },
+        {
+          "property": "answer_count",
+          "type": "INTEGER"
+        },
+        {
+          "property": "body_markdown",
+          "type": "STRING"
+        },
+        {
+          "property": "uuid",
+          "type": "INTEGER"
+        },
+        {
+          "property": "title",
+          "type": "STRING"
+        }
+      ],
+      "User": [
+        {
+          "property": "uuid",
+          "type": "INTEGER"
+        },
+        {
+          "property": "display_name",
+          "type": "STRING"
+        }
+      ],
+      "Tag": [
+        {
+          "property": "name",
+          "type": "STRING"
+        },
+        {
+          "property": "link",
+          "type": "STRING"
+        }
+      ],
+      "Answer": [
+        {
+          "property": "link",
+          "type": "STRING"
+        },
+        {
+          "property": "title",
+          "type": "STRING"
+        },
+        {
+          "property": "is_accepted",
+          "type": "BOOLEAN"
+        },
+        {
+          "property": "body_markdown",
+          "type": "STRING"
+        },
+        {
+          "property": "score",
+          "type": "INTEGER"
+        },
+        {
+          "property": "uuid",
+          "type": "INTEGER"
+        }
+      ],
+      "Comment": [
+        {
+          "property": "score",
+          "type": "INTEGER"
+        },
+        {
+          "property": "uuid",
+          "type": "INTEGER"
+        },
+        {
+          "property": "link",
+          "type": "STRING"
+        }
+      ]
+    },
+    "rel_props": {},
+    "relationships": [
+      {
+        "start": "Question",
+        "type": "TAGGED",
+        "end": "Tag"
+      },
+      {
+        "start": "User",
+        "type": "ASKED",
+        "end": "Question"
+      },
+      {
+        "start": "User",
+        "type": "COMMENTED",
+        "end": "Comment"
+      },
+      {
+        "start": "User",
+        "type": "PROVIDED",
+        "end": "Answer"
+      },
+      {
+        "start": "Answer",
+        "type": "ANSWERED",
+        "end": "Question"
+      },
+      {
+        "start": "Comment",
+        "type": "COMMENTED_ON",
+        "end": "Question"
+      }
+    ],
+    "metadata": {
+      "constraint": [
+        {
+          "id": 20,
+          "name": "constraint_32ea8862",
+          "type": "UNIQUENESS",
+          "entityType": "NODE",
+          "labelsOrTypes": [
+            "Comment"
+          ],
+          "properties": [
+            "uuid"
+          ],
+          "ownedIndex": "constraint_32ea8862",
+          "propertyType": null
+        },
+        {
+          "id": 18,
+          "name": "constraint_401df8db",
+          "type": "UNIQUENESS",
+          "entityType": "NODE",
+          "labelsOrTypes": [
+            "Question"
+          ],
+          "properties": [
+            "uuid"
+          ],
+          "ownedIndex": "constraint_401df8db",
+          "propertyType": null
+        },
+        {
+          "id": 14,
+          "name": "constraint_64b1b1cf",
+          "type": "UNIQUENESS",
+          "entityType": "NODE",
+          "labelsOrTypes": [
+            "Tag"
+          ],
+          "properties": [
+            "name"
+          ],
+          "ownedIndex": "constraint_64b1b1cf",
+          "propertyType": null
+        },
+        {
+          "id": 22,
+          "name": "constraint_7e29bbac",
+          "type": "UNIQUENESS",
+          "entityType": "NODE",
+          "labelsOrTypes": [
+            "Answer"
+          ],
+          "properties": [
+            "uuid"
+          ],
+          "ownedIndex": "constraint_7e29bbac",
+          "propertyType": null
+        },
+        {
+          "id": 16,
+          "name": "constraint_b13a3b7d",
+          "type": "UNIQUENESS",
+          "entityType": "NODE",
+          "labelsOrTypes": [
+            "User"
+          ],
+          "properties": [
+            "uuid"
+          ],
+          "ownedIndex": "constraint_b13a3b7d",
+          "propertyType": null
+        }
+      ],
+      "index": [
+        {
+          "label": "Answer",
+          "properties": [
+            "uuid"
+          ],
+          "size": 1367,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 1367.0
+        },
+        {
+          "label": "Comment",
+          "properties": [
+            "uuid"
+          ],
+          "size": 1396,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 1396.0
+        },
+        {
+          "label": "Question",
+          "properties": [
+            "uuid"
+          ],
+          "size": 1589,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 1589.0
+        },
+        {
+          "label": "Tag",
+          "properties": [
+            "name"
+          ],
+          "size": 476,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 476.0
+        },
+        {
+          "label": "User",
+          "properties": [
+            "uuid"
+          ],
+          "size": 1365,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 1365.0
+        }
+      ]
+    }
+  },
+  "openstreetmap": {
+    "node_props": {
+      "OSM": [
+        {
+          "property": "version",
+          "type": "STRING"
+        },
+        {
+          "property": "generator",
+          "type": "STRING"
+        },
+        {
+          "property": "name",
+          "type": "STRING"
+        }
+      ],
+      "Bounds": [
+        {
+          "property": "minlon",
+          "type": "STRING"
+        },
+        {
+          "property": "minlat",
+          "type": "STRING"
+        },
+        {
+          "property": "maxlon",
+          "type": "STRING"
+        },
+        {
+          "property": "maxlat",
+          "type": "STRING"
+        },
+        {
+          "property": "origin",
+          "type": "STRING"
+        }
+      ],
+      "OSMNode": [
+        {
+          "property": "node_osm_id",
+          "type": "INTEGER"
+        },
+        {
+          "property": "version",
+          "type": "INTEGER"
+        },
+        {
+          "property": "timestamp",
+          "type": "LOCAL_DATE_TIME"
+        },
+        {
+          "property": "lat",
+          "type": "FLOAT"
+        },
+        {
+          "property": "lon",
+          "type": "FLOAT"
+        },
+        {
+          "property": "location",
+          "type": "POINT"
+        },
+        {
+          "property": "name",
+          "type": "STRING"
+        },
+        {
+          "property": "type",
+          "type": "STRING"
+        }
+      ],
+      "OSMTags": [
+        {
+          "property": "highway",
+          "type": "STRING"
+        },
+        {
+          "property": "crossing",
+          "type": "STRING"
+        },
+        {
+          "property": "crossing_ref",
+          "type": "STRING"
+        },
+        {
+          "property": "amenity",
+          "type": "STRING"
+        },
+        {
+          "property": "created_by",
+          "type": "STRING"
+        },
+        {
+          "property": "fee",
+          "type": "STRING"
+        },
+        {
+          "property": "toilets:handwashing",
+          "type": "STRING"
+        },
+        {
+          "property": "wheelchair",
+          "type": "STRING"
+        },
+        {
+          "property": "name",
+          "type": "STRING"
+        },
+        {
+          "property": "ele",
+          "type": "STRING"
+        },
+        {
+          "property": "natural",
+          "type": "STRING"
+        },
+        {
+          "property": "website",
+          "type": "STRING"
+        },
+        {
+          "property": "gnis:created",
+          "type": "STRING"
+        },
+        {
+          "property": "gnis:state_id",
+          "type": "STRING"
+        },
+        {
+          "property": "gnis:county_id",
+          "type": "STRING"
+        },
+        {
+          "property": "gnis:feature_id",
+          "type": "STRING"
+        },
+        {
+          "property": "historic",
+          "type": "STRING"
+        },
+        {
+          "property": "alt_name:ru",
+          "type": "STRING"
+        },
+        {
+          "property": "gnis:edited",
+          "type": "STRING"
+        },
+        {
+          "property": "int_name",
+          "type": "STRING"
+        },
+        {
+          "property": "name:he",
+          "type": "STRING"
+        },
+        {
+          "property": "name:lt",
+          "type": "STRING"
+        },
+        {
+          "property": "name:ru",
+          "type": "STRING"
+        },
+        {
+          "property": "name:uk",
+          "type": "STRING"
+        },
+        {
+          "property": "place",
+          "type": "STRING"
+        },
+        {
+          "property": "wikidata",
+          "type": "STRING"
+        },
+        {
+          "property": "wikipedia",
+          "type": "STRING"
+        },
+        {
+          "property": "operator",
+          "type": "STRING"
+        },
+        {
+          "property": "addr:city",
+          "type": "STRING"
+        },
+        {
+          "property": "addr:state",
+          "type": "STRING"
+        },
+        {
+          "property": "addr:street",
+          "type": "STRING"
+        },
+        {
+          "property": "addr:country",
+          "type": "STRING"
+        },
+        {
+          "property": "addr:postcode",
+          "type": "STRING"
+        },
+        {
+          "property": "gnis:reviewed",
+          "type": "STRING"
+        },
+        {
+          "property": "addr:housenumber",
+          "type": "STRING"
+        },
+        {
+          "property": "gnis:county_name",
+          "type": "STRING"
+        },
+        {
+          "property": "gnis:import_uuid",
+          "type": "STRING"
+        },
+        {
+          "property": "artist_name",
+          "type": "STRING"
+        },
+        {
+          "property": "artwork_type",
+          "type": "STRING"
+        },
+        {
+          "property": "start_date",
+          "type": "STRING"
+        },
+        {
+          "property": "tourism",
+          "type": "STRING"
+        },
+        {
+          "property": "foot",
+          "type": "STRING"
+        },
+        {
+          "property": "barrier",
+          "type": "STRING"
+        },
+        {
+          "property": "bicycle",
+          "type": "STRING"
+        },
+        {
+          "property": "motorcar",
+          "type": "STRING"
+        },
+        {
+          "property": "level",
+          "type": "STRING"
+        },
+        {
+          "property": "network",
+          "type": "STRING"
+        },
+        {
+          "property": "opening_hours",
+          "type": "STRING"
+        },
+        {
+          "property": "public_transport",
+          "type": "STRING"
+        },
+        {
+          "property": "railway",
+          "type": "STRING"
+        },
+        {
+          "property": "railway:ref",
+          "type": "STRING"
+        },
+        {
+          "property": "short_name",
+          "type": "STRING"
+        },
+        {
+          "property": "station",
+          "type": "STRING"
+        },
+        {
+          "property": "subway",
+          "type": "STRING"
+        },
+        {
+          "property": "official_name",
+          "type": "STRING"
+        },
+        {
+          "property": "leisure",
+          "type": "STRING"
+        },
+        {
+          "property": "attraction",
+          "type": "STRING"
+        },
+        {
+          "property": "species:wikidata",
+          "type": "STRING"
+        },
+        {
+          "property": "species:wikipedia",
+          "type": "STRING"
+        },
+        {
+          "property": "access",
+          "type": "STRING"
+        },
+        {
+          "property": "unisex",
+          "type": "STRING"
+        },
+        {
+          "property": "shop",
+          "type": "STRING"
+        },
+        {
+          "property": "traffic_signals",
+          "type": "STRING"
+        },
+        {
+          "property": "description",
+          "type": "STRING"
+        },
+        {
+          "property": "image",
+          "type": "STRING"
+        },
+        {
+          "property": "maintenance",
+          "type": "STRING"
+        },
+        {
+          "property": "source",
+          "type": "STRING"
+        },
+        {
+          "property": "source:pkey",
+          "type": "STRING"
+        },
+        {
+          "property": "restriction",
+          "type": "STRING"
+        },
+        {
+          "property": "designation",
+          "type": "STRING"
+        },
+        {
+          "property": "information",
+          "type": "STRING"
+        },
+        {
+          "property": "colour",
+          "type": "STRING"
+        },
+        {
+          "property": "backrest",
+          "type": "STRING"
+        },
+        {
+          "property": "material",
+          "type": "STRING"
+        },
+        {
+          "property": "bench",
+          "type": "STRING"
+        },
+        {
+          "property": "bus",
+          "type": "STRING"
+        },
+        {
+          "property": "location",
+          "type": "STRING"
+        },
+        {
+          "property": "route_ref",
+          "type": "STRING"
+        },
+        {
+          "property": "shelter",
+          "type": "STRING"
+        },
+        {
+          "property": "wetap:photo",
+          "type": "STRING"
+        },
+        {
+          "property": "wetap:status",
+          "type": "STRING"
+        },
+        {
+          "property": "wetap:statusnote",
+          "type": "STRING"
+        },
+        {
+          "property": "stateofrepair",
+          "type": "STRING"
+        },
+        {
+          "property": "craft",
+          "type": "STRING"
+        },
+        {
+          "property": "memorial:dog",
+          "type": "STRING"
+        },
+        {
+          "property": "brand",
+          "type": "STRING"
+        },
+        {
+          "property": "brand:wikidata",
+          "type": "STRING"
+        },
+        {
+          "property": "brand:wikipedia",
+          "type": "STRING"
+        },
+        {
+          "property": "cuisine",
+          "type": "STRING"
+        },
+        {
+          "property": "outdoor_seating",
+          "type": "STRING"
+        },
+        {
+          "property": "takeaway",
+          "type": "STRING"
+        },
+        {
+          "property": "toilets:disposal",
+          "type": "STRING"
+        },
+        {
+          "property": "artist:wikidata",
+          "type": "STRING"
+        },
+        {
+          "property": "artist:wikipedia",
+          "type": "STRING"
+        },
+        {
+          "property": "artwork_subject",
+          "type": "STRING"
+        },
+        {
+          "property": "subject:wikidata",
+          "type": "STRING"
+        },
+        {
+          "property": "subject:wikipedia",
+          "type": "STRING"
+        },
+        {
+          "property": "man_made",
+          "type": "STRING"
+        },
+        {
+          "property": "inscription_1",
+          "type": "STRING"
+        },
+        {
+          "property": "inscription_2",
+          "type": "STRING"
+        },
+        {
+          "property": "note",
+          "type": "STRING"
+        },
+        {
+          "property": "drinking_water",
+          "type": "STRING"
+        },
+        {
+          "property": "access:conditional",
+          "type": "STRING"
+        },
+        {
+          "property": "direction",
+          "type": "STRING"
+        },
+        {
+          "property": "local_ref",
+          "type": "STRING"
+        },
+        {
+          "property": "capacity",
+          "type": "STRING"
+        },
+        {
+          "property": "name:en",
+          "type": "STRING"
+        },
+        {
+          "property": "name:fr",
+          "type": "STRING"
+        },
+        {
+          "property": "toilets:wheelchair",
+          "type": "STRING"
+        },
+        {
+          "property": "male",
+          "type": "STRING"
+        },
+        {
+          "property": "female",
+          "type": "STRING"
+        },
+        {
+          "property": "wikimedia_commons",
+          "type": "STRING"
+        },
+        {
+          "property": "seasonal",
+          "type": "STRING"
+        },
+        {
+          "property": "sport",
+          "type": "STRING"
+        },
+        {
+          "property": "inscription",
+          "type": "STRING"
+        },
+        {
+          "property": "memorial",
+          "type": "STRING"
+        },
+        {
+          "property": "bicycle_parking",
+          "type": "STRING"
+        },
+        {
+          "property": "ref",
+          "type": "STRING"
+        },
+        {
+          "property": "baby",
+          "type": "STRING"
+        },
+        {
+          "property": "playground",
+          "type": "STRING"
+        },
+        {
+          "property": "entrance",
+          "type": "STRING"
+        },
+        {
+          "property": "contact:facebook",
+          "type": "STRING"
+        },
+        {
+          "property": "contact:flickr",
+          "type": "STRING"
+        },
+        {
+          "property": "contact:instagram",
+          "type": "STRING"
+        },
+        {
+          "property": "contact:twitter",
+          "type": "STRING"
+        },
+        {
+          "property": "fixme",
+          "type": "STRING"
+        },
+        {
+          "property": "phone",
+          "type": "STRING"
+        },
+        {
+          "property": "platforms",
+          "type": "STRING"
+        },
+        {
+          "property": "emergency",
+          "type": "STRING"
+        },
+        {
+          "property": "waterway",
+          "type": "STRING"
+        },
+        {
+          "property": "internet_access",
+          "type": "STRING"
+        },
+        {
+          "property": "internet_access:fee",
+          "type": "STRING"
+        },
+        {
+          "property": "name:de",
+          "type": "STRING"
+        },
+        {
+          "property": "layer",
+          "type": "STRING"
+        },
+        {
+          "property": "parking",
+          "type": "STRING"
+        },
+        {
+          "property": "description:en",
+          "type": "STRING"
+        },
+        {
+          "property": "payment:cash",
+          "type": "STRING"
+        },
+        {
+          "property": "passenger_information_display",
+          "type": "STRING"
+        },
+        {
+          "property": "country",
+          "type": "STRING"
+        },
+        {
+          "property": "flag:type",
+          "type": "STRING"
+        },
+        {
+          "property": "lit",
+          "type": "STRING"
+        },
+        {
+          "property": "bin",
+          "type": "STRING"
+        },
+        {
+          "property": "covered",
+          "type": "STRING"
+        },
+        {
+          "property": "departures_board",
+          "type": "STRING"
+        },
+        {
+          "property": "ref:MTA",
+          "type": "STRING"
+        },
+        {
+          "property": "tactile_paving",
+          "type": "STRING"
+        },
+        {
+          "property": "climbing",
+          "type": "STRING"
+        },
+        {
+          "property": "hiking",
+          "type": "STRING"
+        },
+        {
+          "property": "recycling_type",
+          "type": "STRING"
+        },
+        {
+          "property": "kerb",
+          "type": "STRING"
+        },
+        {
+          "property": "fire_hydrant:type",
+          "type": "STRING"
+        },
+        {
+          "property": "payment:credit_cards",
+          "type": "STRING"
+        },
+        {
+          "property": "artist_name:wikipedia",
+          "type": "STRING"
+        },
+        {
+          "property": "seats",
+          "type": "STRING"
+        },
+        {
+          "property": "water_source",
+          "type": "STRING"
+        },
+        {
+          "property": "denotation",
+          "type": "STRING"
+        },
+        {
+          "property": "leaf_cycle",
+          "type": "STRING"
+        },
+        {
+          "property": "leaf_type",
+          "type": "STRING"
+        },
+        {
+          "property": "alt_name",
+          "type": "STRING"
+        },
+        {
+          "property": "hgv",
+          "type": "STRING"
+        },
+        {
+          "property": "oneway",
+          "type": "STRING"
+        },
+        {
+          "property": "tiger:cfcc",
+          "type": "STRING"
+        },
+        {
+          "property": "tiger:county",
+          "type": "STRING"
+        },
+        {
+          "property": "tiger:name_base",
+          "type": "STRING"
+        },
+        {
+          "property": "cycleway",
+          "type": "STRING"
+        },
+        {
+          "property": "motor_vehicle",
+          "type": "STRING"
+        },
+        {
+          "property": "surface",
+          "type": "STRING"
+        },
+        {
+          "property": "route",
+          "type": "STRING"
+        },
+        {
+          "property": "destination:lanes:backward",
+          "type": "STRING"
+        },
+        {
+          "property": "lanes",
+          "type": "STRING"
+        },
+        {
+          "property": "lanes:backward",
+          "type": "STRING"
+        },
+        {
+          "property": "lanes:forward",
+          "type": "STRING"
+        },
+        {
+          "property": "maxheight:backward",
+          "type": "STRING"
+        },
+        {
+          "property": "maxheight:forward",
+          "type": "STRING"
+        },
+        {
+          "property": "maxspeed",
+          "type": "STRING"
+        },
+        {
+          "property": "maxspeed:advisory:backward",
+          "type": "STRING"
+        },
+        {
+          "property": "tiger:name_direction_prefix",
+          "type": "STRING"
+        },
+        {
+          "property": "tiger:name_type",
+          "type": "STRING"
+        },
+        {
+          "property": "tiger:zip_left",
+          "type": "STRING"
+        },
+        {
+          "property": "turn:lanes:forward",
+          "type": "STRING"
+        },
+        {
+          "property": "cycleway:right",
+          "type": "STRING"
+        },
+        {
+          "property": "old_name",
+          "type": "STRING"
+        },
+        {
+          "property": "parking:lane:right",
+          "type": "STRING"
+        },
+        {
+          "property": "name_1",
+          "type": "STRING"
+        },
+        {
+          "property": "tiger:name_base_1",
+          "type": "STRING"
+        },
+        {
+          "property": "tiger:name_direction_prefix_1",
+          "type": "STRING"
+        },
+        {
+          "property": "tiger:name_direction_suffix",
+          "type": "STRING"
+        },
+        {
+          "property": "tiger:name_type_1",
+          "type": "STRING"
+        },
+        {
+          "property": "tiger:zip_right",
+          "type": "STRING"
+        },
+        {
+          "property": "tiger:zip_right_1",
+          "type": "STRING"
+        },
+        {
+          "property": "cycleway:left",
+          "type": "STRING"
+        },
+        {
+          "property": "tiger:reviewed",
+          "type": "STRING"
+        },
+        {
+          "property": "destination",
+          "type": "STRING"
+        },
+        {
+          "property": "maxheight",
+          "type": "STRING"
+        },
+        {
+          "property": "turn:lanes",
+          "type": "STRING"
+        },
+        {
+          "property": "tiger:name_base_3",
+          "type": "STRING"
+        },
+        {
+          "property": "tiger:name_base_4",
+          "type": "STRING"
+        },
+        {
+          "property": "horse",
+          "type": "STRING"
+        },
+        {
+          "property": "water",
+          "type": "STRING"
+        },
+        {
+          "property": "lcn",
+          "type": "STRING"
+        },
+        {
+          "property": "motor_vehicle:conditional",
+          "type": "STRING"
+        },
+        {
+          "property": "bridge",
+          "type": "STRING"
+        },
+        {
+          "property": "incline",
+          "type": "STRING"
+        },
+        {
+          "property": "landuse",
+          "type": "STRING"
+        },
+        {
+          "property": "building",
+          "type": "STRING"
+        },
+        {
+          "property": "ski",
+          "type": "STRING"
+        },
+        {
+          "property": "snowmobile",
+          "type": "STRING"
+        },
+        {
+          "property": "tunnel",
+          "type": "STRING"
+        },
+        {
+          "property": "electrified",
+          "type": "STRING"
+        },
+        {
+          "property": "frequency",
+          "type": "STRING"
+        },
+        {
+          "property": "gauge",
+          "type": "STRING"
+        },
+        {
+          "property": "railway:preferred_direction",
+          "type": "STRING"
+        },
+        {
+          "property": "railway:track_ref",
+          "type": "STRING"
+        },
+        {
+          "property": "voltage",
+          "type": "STRING"
+        },
+        {
+          "property": "area",
+          "type": "STRING"
+        },
+        {
+          "property": "sidewalk",
+          "type": "STRING"
+        },
+        {
+          "property": "footway",
+          "type": "STRING"
+        },
+        {
+          "property": "building:part",
+          "type": "STRING"
+        },
+        {
+          "property": "name:ja",
+          "type": "STRING"
+        },
+        {
+          "property": "name:ko",
+          "type": "STRING"
+        },
+        {
+          "property": "height",
+          "type": "STRING"
+        },
+        {
+          "property": "nycdoitt:bin",
+          "type": "STRING"
+        },
+        {
+          "property": "loc_name",
+          "type": "STRING"
+        },
+        {
+          "property": "junction",
+          "type": "STRING"
+        },
+        {
+          "property": "parking:lane:left",
+          "type": "STRING"
+        },
+        {
+          "property": "agricultural",
+          "type": "STRING"
+        },
+        {
+          "property": "goods",
+          "type": "STRING"
+        },
+        {
+          "property": "hov",
+          "type": "STRING"
+        },
+        {
+          "property": "motorcycle",
+          "type": "STRING"
+        },
+        {
+          "property": "psv",
+          "type": "STRING"
+        },
+        {
+          "property": "tourist_bus",
+          "type": "STRING"
+        },
+        {
+          "property": "tiger:zip_left_1",
+          "type": "STRING"
+        },
+        {
+          "property": "building:levels",
+          "type": "STRING"
+        },
+        {
+          "property": "building:material",
+          "type": "STRING"
+        },
+        {
+          "property": "roof:material",
+          "type": "STRING"
+        },
+        {
+          "property": "roof:shape",
+          "type": "STRING"
+        },
+        {
+          "property": "roof:colour",
+          "type": "STRING"
+        },
+        {
+          "property": "theatre:genre",
+          "type": "STRING"
+        },
+        {
+          "property": "service",
+          "type": "STRING"
+        },
+        {
+          "property": "cables",
+          "type": "STRING"
+        },
+        {
+          "property": "circuits",
+          "type": "STRING"
+        },
+        {
+          "property": "power",
+          "type": "STRING"
+        },
+        {
+          "property": "architect",
+          "type": "STRING"
+        },
+        {
+          "property": "heritage",
+          "type": "STRING"
+        },
+        {
+          "property": "heritage:operator",
+          "type": "STRING"
+        },
+        {
+          "property": "heritage:website",
+          "type": "STRING"
+        },
+        {
+          "property": "name:el",
+          "type": "STRING"
+        },
+        {
+          "property": "name:fa",
+          "type": "STRING"
+        },
+        {
+          "property": "name:hi",
+          "type": "STRING"
+        },
+        {
+          "property": "name:kn",
+          "type": "STRING"
+        },
+        {
+          "property": "name:tr",
+          "type": "STRING"
+        },
+        {
+          "property": "name:zh",
+          "type": "STRING"
+        },
+        {
+          "property": "nrhp:inscription_date",
+          "type": "STRING"
+        },
+        {
+          "property": "nrhp:nhl",
+          "type": "STRING"
+        },
+        {
+          "property": "nrhp:nhl:inscription_date",
+          "type": "STRING"
+        },
+        {
+          "property": "owner",
+          "type": "STRING"
+        },
+        {
+          "property": "ref:nrhp",
+          "type": "STRING"
+        },
+        {
+          "property": "smoking",
+          "type": "STRING"
+        },
+        {
+          "property": "handrail",
+          "type": "STRING"
+        },
+        {
+          "property": "step_count",
+          "type": "STRING"
+        },
+        {
+          "property": "bus:lanes",
+          "type": "STRING"
+        },
+        {
+          "property": "lanes:bus",
+          "type": "STRING"
+        },
+        {
+          "property": "motor_vehicle:lanes",
+          "type": "STRING"
+        },
+        {
+          "property": "indoor",
+          "type": "STRING"
+        },
+        {
+          "property": "disused:railway",
+          "type": "STRING"
+        },
+        {
+          "property": "boundary",
+          "type": "STRING"
+        },
+        {
+          "property": "min_height",
+          "type": "STRING"
+        },
+        {
+          "property": "bridge:structure",
+          "type": "STRING"
+        },
+        {
+          "property": "maxheight:physical",
+          "type": "STRING"
+        },
+        {
+          "property": "maxheight:physical:backward",
+          "type": "STRING"
+        },
+        {
+          "property": "maxheight:physical:forward",
+          "type": "STRING"
+        },
+        {
+          "property": "surface:colour",
+          "type": "STRING"
+        },
+        {
+          "property": "type",
+          "type": "STRING"
+        },
+        {
+          "property": "from",
+          "type": "STRING"
+        },
+        {
+          "property": "interval",
+          "type": "STRING"
+        },
+        {
+          "property": "interval:conditional",
+          "type": "STRING"
+        },
+        {
+          "property": "interval:note",
+          "type": "STRING"
+        },
+        {
+          "property": "interval:source",
+          "type": "STRING"
+        },
+        {
+          "property": "opening_hours:note",
+          "type": "STRING"
+        },
+        {
+          "property": "public_transport:version",
+          "type": "STRING"
+        },
+        {
+          "property": "to",
+          "type": "STRING"
+        },
+        {
+          "property": "cycle_network",
+          "type": "STRING"
+        },
+        {
+          "property": "route_master",
+          "type": "STRING"
+        },
+        {
+          "property": "alt_name:es",
+          "type": "STRING"
+        },
+        {
+          "property": "museum",
+          "type": "STRING"
+        },
+        {
+          "property": "admin_level",
+          "type": "STRING"
+        },
+        {
+          "property": "biergarten",
+          "type": "STRING"
+        },
+        {
+          "property": "email",
+          "type": "STRING"
+        },
+        {
+          "property": "intermittent",
+          "type": "STRING"
+        },
+        {
+          "property": "population",
+          "type": "STRING"
+        },
+        {
+          "property": "except",
+          "type": "STRING"
+        },
+        {
+          "property": "old_railway_operator",
+          "type": "STRING"
+        },
+        {
+          "property": "via",
+          "type": "STRING"
+        }
+      ],
+      "OSMWay": [
+        {
+          "property": "way_osm_id",
+          "type": "INTEGER"
+        },
+        {
+          "property": "version",
+          "type": "INTEGER"
+        },
+        {
+          "property": "timestamp",
+          "type": "LOCAL_DATE_TIME"
+        },
+        {
+          "property": "oneway",
+          "type": "STRING"
+        },
+        {
+          "property": "highway",
+          "type": "STRING"
+        },
+        {
+          "property": "name",
+          "type": "STRING"
+        }
+      ],
+      "OSMRelation": [
+        {
+          "property": "relation_osm_id",
+          "type": "INTEGER"
+        },
+        {
+          "property": "version",
+          "type": "INTEGER"
+        },
+        {
+          "property": "timestamp",
+          "type": "LOCAL_DATE_TIME"
+        },
+        {
+          "property": "name",
+          "type": "STRING"
+        }
+      ],
+      "Intersection": [
+        {
+          "property": "node_osm_id",
+          "type": "INTEGER"
+        },
+        {
+          "property": "version",
+          "type": "INTEGER"
+        },
+        {
+          "property": "timestamp",
+          "type": "LOCAL_DATE_TIME"
+        },
+        {
+          "property": "lat",
+          "type": "FLOAT"
+        },
+        {
+          "property": "lon",
+          "type": "FLOAT"
+        },
+        {
+          "property": "location",
+          "type": "POINT"
+        },
+        {
+          "property": "name",
+          "type": "STRING"
+        },
+        {
+          "property": "type",
+          "type": "STRING"
+        }
+      ],
+      "Routable": [
+        {
+          "property": "node_osm_id",
+          "type": "INTEGER"
+        },
+        {
+          "property": "version",
+          "type": "INTEGER"
+        },
+        {
+          "property": "timestamp",
+          "type": "LOCAL_DATE_TIME"
+        },
+        {
+          "property": "lat",
+          "type": "FLOAT"
+        },
+        {
+          "property": "lon",
+          "type": "FLOAT"
+        },
+        {
+          "property": "location",
+          "type": "POINT"
+        }
+      ],
+      "PointOfInterest": [
+        {
+          "property": "name",
+          "type": "STRING"
+        },
+        {
+          "property": "node_osm_id",
+          "type": "INTEGER"
+        },
+        {
+          "property": "version",
+          "type": "INTEGER"
+        },
+        {
+          "property": "timestamp",
+          "type": "LOCAL_DATE_TIME"
+        },
+        {
+          "property": "lat",
+          "type": "FLOAT"
+        },
+        {
+          "property": "lon",
+          "type": "FLOAT"
+        },
+        {
+          "property": "location",
+          "type": "POINT"
+        },
+        {
+          "property": "type",
+          "type": "STRING"
+        }
+      ]
+    },
+    "rel_props": {
+      "NEXT": [
+        {
+          "property": "distance",
+          "type": "FLOAT"
+        }
+      ],
+      "MEMBER": [
+        {
+          "property": "role",
+          "type": "STRING"
+        }
+      ],
+      "ROUTE": [
+        {
+          "property": "length",
+          "type": "INTEGER"
+        },
+        {
+          "property": "count",
+          "type": "INTEGER"
+        },
+        {
+          "property": "distance",
+          "type": "FLOAT"
+        },
+        {
+          "property": "toRel",
+          "type": "INTEGER"
+        },
+        {
+          "property": "fromRel",
+          "type": "INTEGER"
+        }
+      ]
+    },
+    "relationships": [
+      {
+        "start": "OSM",
+        "type": "BBOX",
+        "end": "Bounds"
+      },
+      {
+        "start": "OSMNode",
+        "type": "ROUTE",
+        "end": "OSMNode"
+      },
+      {
+        "start": "OSMNode",
+        "type": "ROUTE",
+        "end": "Intersection"
+      },
+      {
+        "start": "OSMNode",
+        "type": "ROUTE",
+        "end": "Routable"
+      },
+      {
+        "start": "OSMNode",
+        "type": "ROUTE",
+        "end": "PointOfInterest"
+      },
+      {
+        "start": "OSMNode",
+        "type": "TAGS",
+        "end": "OSMTags"
+      },
+      {
+        "start": "OSMNode",
+        "type": "ASSOCIATED",
+        "end": "OSMTags"
+      },
+      {
+        "start": "OSMWay",
+        "type": "TAGS",
+        "end": "OSMTags"
+      },
+      {
+        "start": "OSMWay",
+        "type": "FIRST_NODE",
+        "end": "OSMWayNode"
+      },
+      {
+        "start": "OSMWayNode",
+        "type": "NEXT",
+        "end": "OSMWayNode"
+      },
+      {
+        "start": "OSMWayNode",
+        "type": "NODE",
+        "end": "OSMNode"
+      },
+      {
+        "start": "OSMWayNode",
+        "type": "NODE",
+        "end": "Intersection"
+      },
+      {
+        "start": "OSMWayNode",
+        "type": "NODE",
+        "end": "Routable"
+      },
+      {
+        "start": "OSMWayNode",
+        "type": "NODE",
+        "end": "PointOfInterest"
+      },
+      {
+        "start": "OSMRelation",
+        "type": "TAGS",
+        "end": "OSMTags"
+      },
+      {
+        "start": "OSMRelation",
+        "type": "MEMBER",
+        "end": "OSMWay"
+      },
+      {
+        "start": "OSMRelation",
+        "type": "MEMBER",
+        "end": "OSMNode"
+      },
+      {
+        "start": "OSMRelation",
+        "type": "MEMBER",
+        "end": "OSMRelation"
+      },
+      {
+        "start": "OSMRelation",
+        "type": "MEMBER",
+        "end": "PointOfInterest"
+      },
+      {
+        "start": "OSMRelation",
+        "type": "MEMBER",
+        "end": "Intersection"
+      },
+      {
+        "start": "Intersection",
+        "type": "ROUTE",
+        "end": "OSMNode"
+      },
+      {
+        "start": "Intersection",
+        "type": "ROUTE",
+        "end": "Intersection"
+      },
+      {
+        "start": "Intersection",
+        "type": "ROUTE",
+        "end": "Routable"
+      },
+      {
+        "start": "Intersection",
+        "type": "ROUTE",
+        "end": "PointOfInterest"
+      },
+      {
+        "start": "Intersection",
+        "type": "TAGS",
+        "end": "OSMTags"
+      },
+      {
+        "start": "Intersection",
+        "type": "ASSOCIATED",
+        "end": "OSMTags"
+      },
+      {
+        "start": "Routable",
+        "type": "ROUTE",
+        "end": "OSMNode"
+      },
+      {
+        "start": "Routable",
+        "type": "ROUTE",
+        "end": "Intersection"
+      },
+      {
+        "start": "Routable",
+        "type": "ROUTE",
+        "end": "Routable"
+      },
+      {
+        "start": "PointOfInterest",
+        "type": "ROUTE",
+        "end": "OSMNode"
+      },
+      {
+        "start": "PointOfInterest",
+        "type": "ROUTE",
+        "end": "Intersection"
+      },
+      {
+        "start": "PointOfInterest",
+        "type": "ROUTE",
+        "end": "Routable"
+      },
+      {
+        "start": "PointOfInterest",
+        "type": "ROUTE",
+        "end": "PointOfInterest"
+      },
+      {
+        "start": "PointOfInterest",
+        "type": "ASSOCIATED",
+        "end": "OSMTags"
+      },
+      {
+        "start": "PointOfInterest",
+        "type": "TAGS",
+        "end": "OSMTags"
+      }
+    ],
+    "metadata": {
+      "constraint": [],
+      "index": []
+    }
+  },
+  "neo4j": {
+    "node_props": {
+      "Movie": [
+        {
+          "property": "title",
+          "type": "STRING"
+        },
+        {
+          "property": "released",
+          "type": "INTEGER"
+        },
+        {
+          "property": "tagline",
+          "type": "STRING"
+        }
+      ],
+      "Person": [
+        {
+          "property": "name",
+          "type": "STRING"
+        },
+        {
+          "property": "born",
+          "type": "INTEGER"
+        }
+      ]
+    },
+    "rel_props": {
+      "ACTED_IN": [
+        {
+          "property": "roles",
+          "type": "LIST"
+        }
+      ],
+      "REVIEWED": [
+        {
+          "property": "rating",
+          "type": "INTEGER"
+        },
+        {
+          "property": "summary",
+          "type": "STRING"
+        }
+      ]
+    },
+    "relationships": [
+      {
+        "end": "Movie",
+        "start": "Person",
+        "type": "ACTED_IN"
+      },
+      {
+        "end": "Movie",
+        "start": "Person",
+        "type": "DIRECTED"
+      },
+      {
+        "end": "Movie",
+        "start": "Person",
+        "type": "PRODUCED"
+      },
+      {
+        "end": "Movie",
+        "start": "Person",
+        "type": "WROTE"
+      },
+      {
+        "end": "Person",
+        "start": "Person",
+        "type": "FOLLOWS"
+      },
+      {
+        "end": "Movie",
+        "start": "Person",
+        "type": "REVIEWED"
+      }
+    ],
+    "metadata": {
+      "constraint": [
+        {
+          "id": 3,
+          "name": "movie_title",
+          "type": "UNIQUENESS",
+          "entityType": "NODE",
+          "labelsOrTypes": [
+            "Movie"
+          ],
+          "properties": [
+            "title"
+          ],
+          "ownedIndex": "movie_title",
+          "propertyType": null
+        },
+        {
+          "id": 5,
+          "name": "person_name",
+          "type": "UNIQUENESS",
+          "entityType": "NODE",
+          "labelsOrTypes": [
+            "Person"
+          ],
+          "properties": [
+            "name"
+          ],
+          "ownedIndex": "person_name",
+          "propertyType": null
+        }
+      ],
+      "index": [
+        {
+          "label": "Community",
+          "properties": [
+            "group_id"
+          ],
+          "size": 0,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 0.0
+        },
+        {
+          "label": "Community",
+          "properties": [
+            "uuid"
+          ],
+          "size": 0,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 0.0
+        },
+        {
+          "label": "Entity",
+          "properties": [
+            "uuid"
+          ],
+          "size": 0,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 0.0
+        },
+        {
+          "label": "Entity",
+          "properties": [
+            "created_at"
+          ],
+          "size": 0,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 0.0
+        },
+        {
+          "label": "Entity",
+          "properties": [
+            "name"
+          ],
+          "size": 0,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 0.0
+        },
+        {
+          "label": "Entity",
+          "properties": [
+            "group_id"
+          ],
+          "size": 0,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 0.0
+        },
+        {
+          "label": "Episodic",
+          "properties": [
+            "uuid"
+          ],
+          "size": 0,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 0.0
+        },
+        {
+          "label": "Episodic",
+          "properties": [
+            "group_id"
+          ],
+          "size": 0,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 0.0
+        },
+        {
+          "label": "Episodic",
+          "properties": [
+            "created_at"
+          ],
+          "size": 0,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 0.0
+        },
+        {
+          "label": "Episodic",
+          "properties": [
+            "valid_at"
+          ],
+          "size": 0,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 0.0
+        },
+        {
+          "label": "Movie",
+          "properties": [
+            "title"
+          ],
+          "size": 38,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 38.0
+        },
+        {
+          "label": "Movie",
+          "properties": [
+            "released"
+          ],
+          "size": 38,
+          "type": "RANGE",
+          "valuesSelectivity": 0.47368421052631576,
+          "distinctValues": 18.0
+        },
+        {
+          "label": "Person",
+          "properties": [
+            "name"
+          ],
+          "size": 133,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 133.0
+        },
+        {
+          "label": "Person",
+          "properties": [
+            "born"
+          ],
+          "size": 128,
+          "type": "RANGE",
+          "valuesSelectivity": 0.3984375,
+          "distinctValues": 51.0
+        },
+        {
+          "label": "Saga",
+          "properties": [
+            "name"
+          ],
+          "size": 0,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 0.0
+        },
+        {
+          "label": "Saga",
+          "properties": [
+            "group_id"
+          ],
+          "size": 0,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 0.0
+        },
+        {
+          "label": "Saga",
+          "properties": [
+            "uuid"
+          ],
+          "size": 0,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 0.0
+        }
+      ]
+    }
+  },
+  "companies": {
+    "node_props": {
+      "Person": [
+        {
+          "property": "name",
+          "type": "STRING"
+        },
+        {
+          "property": "id",
+          "type": "STRING"
+        },
+        {
+          "property": "summary",
+          "type": "STRING"
+        }
+      ],
+      "Organization": [
+        {
+          "property": "isDissolved",
+          "type": "BOOLEAN"
+        },
+        {
+          "property": "nbrEmployees",
+          "type": "INTEGER"
+        },
+        {
+          "property": "revenue",
+          "type": "FLOAT"
+        },
+        {
+          "property": "name",
+          "type": "STRING"
+        },
+        {
+          "property": "id",
+          "type": "STRING"
+        },
+        {
+          "property": "motto",
+          "type": "STRING"
+        },
+        {
+          "property": "summary",
+          "type": "STRING"
+        },
+        {
+          "property": "isPublic",
+          "type": "BOOLEAN"
+        },
+        {
+          "property": "diffbotId",
+          "type": "STRING"
+        }
+      ],
+      "IndustryCategory": [
+        {
+          "property": "name",
+          "type": "STRING"
+        },
+        {
+          "property": "id",
+          "type": "STRING"
+        }
+      ],
+      "City": [
+        {
+          "property": "name",
+          "type": "STRING"
+        },
+        {
+          "property": "summary",
+          "type": "STRING"
+        },
+        {
+          "property": "id",
+          "type": "STRING"
+        }
+      ],
+      "Country": [
+        {
+          "property": "name",
+          "type": "STRING"
+        },
+        {
+          "property": "id",
+          "type": "STRING"
+        },
+        {
+          "property": "summary",
+          "type": "STRING"
+        }
+      ],
+      "Article": [
+        {
+          "property": "id",
+          "type": "STRING"
+        },
+        {
+          "property": "sentiment",
+          "type": "FLOAT"
+        },
+        {
+          "property": "siteName",
+          "type": "STRING"
+        },
+        {
+          "property": "summary",
+          "type": "STRING"
+        },
+        {
+          "property": "date",
+          "type": "DATE_TIME"
+        },
+        {
+          "property": "title",
+          "type": "STRING"
+        },
+        {
+          "property": "author",
+          "type": "STRING"
+        }
+      ],
+      "Chunk": [
+        {
+          "property": "id",
+          "type": "STRING"
+        },
+        {
+          "property": "text",
+          "type": "STRING"
+        },
+        {
+          "property": "embedding",
+          "type": "LIST"
+        },
+        {
+          "property": "embedding_google",
+          "type": "LIST"
+        },
+        {
+          "property": "embedding_google_004",
+          "type": "LIST"
+        }
+      ],
+      "Fewshot": [
+        {
+          "property": "Question",
+          "type": "STRING"
+        },
+        {
+          "property": "Cypher",
+          "type": "STRING"
+        },
+        {
+          "property": "id",
+          "type": "INTEGER"
+        },
+        {
+          "property": "embedding",
+          "type": "LIST"
+        }
+      ]
+    },
+    "rel_props": {},
+    "relationships": [
+      {
+        "end": "Person",
+        "start": "Person",
+        "type": "HAS_PARENT"
+      },
+      {
+        "end": "Person",
+        "start": "Person",
+        "type": "HAS_CHILD"
+      },
+      {
+        "end": "City",
+        "start": "Organization",
+        "type": "IN_CITY"
+      },
+      {
+        "end": "IndustryCategory",
+        "start": "Organization",
+        "type": "HAS_CATEGORY"
+      },
+      {
+        "end": "Organization",
+        "start": "Organization",
+        "type": "HAS_SUPPLIER"
+      },
+      {
+        "end": "Organization",
+        "start": "Organization",
+        "type": "HAS_SUBSIDIARY"
+      },
+      {
+        "end": "Person",
+        "start": "Organization",
+        "type": "HAS_BOARD_MEMBER"
+      },
+      {
+        "end": "Person",
+        "start": "Organization",
+        "type": "HAS_CEO"
+      },
+      {
+        "end": "Organization",
+        "start": "Organization",
+        "type": "HAS_COMPETITOR"
+      },
+      {
+        "end": "Person",
+        "start": "Organization",
+        "type": "HAS_INVESTOR"
+      },
+      {
+        "end": "Organization",
+        "start": "Organization",
+        "type": "HAS_INVESTOR"
+      },
+      {
+        "end": "Country",
+        "start": "City",
+        "type": "IN_COUNTRY"
+      },
+      {
+        "end": "Chunk",
+        "start": "Article",
+        "type": "HAS_CHUNK"
+      },
+      {
+        "end": "Organization",
+        "start": "Article",
+        "type": "MENTIONS"
+      }
+    ],
+    "metadata": {
+      "constraint": [
+        {
+          "id": 10,
+          "name": "constraint_ecc04354",
+          "type": "UNIQUENESS",
+          "entityType": "NODE",
+          "labelsOrTypes": [
+            "Article"
+          ],
+          "properties": [
+            "id"
+          ],
+          "ownedIndex": "constraint_ecc04354",
+          "propertyType": null
+        },
+        {
+          "id": 15,
+          "name": "constraint_f7832722",
+          "type": "UNIQUENESS",
+          "entityType": "NODE",
+          "labelsOrTypes": [
+            "_Bloom_Perspective_"
+          ],
+          "properties": [
+            "id"
+          ],
+          "ownedIndex": "constraint_f7832722",
+          "propertyType": null
+        },
+        {
+          "id": 8,
+          "name": "industry_category_id",
+          "type": "UNIQUENESS",
+          "entityType": "NODE",
+          "labelsOrTypes": [
+            "IndustryCategory"
+          ],
+          "properties": [
+            "id"
+          ],
+          "ownedIndex": "industry_category_id",
+          "propertyType": null
+        },
+        {
+          "id": 6,
+          "name": "organization_id",
+          "type": "UNIQUENESS",
+          "entityType": "NODE",
+          "labelsOrTypes": [
+            "Organization"
+          ],
+          "properties": [
+            "id"
+          ],
+          "ownedIndex": "organization_id",
+          "propertyType": null
+        },
+        {
+          "id": 4,
+          "name": "person_id",
+          "type": "UNIQUENESS",
+          "entityType": "NODE",
+          "labelsOrTypes": [
+            "Person"
+          ],
+          "properties": [
+            "id"
+          ],
+          "ownedIndex": "person_id",
+          "propertyType": null
+        }
+      ],
+      "index": [
+        {
+          "label": "Article",
+          "properties": [
+            "id"
+          ],
+          "size": 64191,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 64191.0
+        },
+        {
+          "label": "IndustryCategory",
+          "properties": [
+            "id"
+          ],
+          "size": 253,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 253.0
+        },
+        {
+          "label": "Organization",
+          "properties": [
+            "id"
+          ],
+          "size": 45156,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 45156.0
+        },
+        {
+          "label": "Person",
+          "properties": [
+            "id"
+          ],
+          "size": 7909,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 7909.0
+        },
+        {
+          "label": "_Bloom_Perspective_",
+          "properties": [
+            "id"
+          ],
+          "size": 1,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 1.0
+        }
+      ]
+    }
+  }
+}
