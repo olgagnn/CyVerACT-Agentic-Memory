@@ -31,13 +31,13 @@ class MemoryManager:
                 "vector": question_vector
             })
 
-    def check_episodic_memory(self, question: str, embedder) -> dict:
+    def check_episodic_memory(self, question: str, embedder) -> dict | None:
         """
-        Retrieves a structurally similar previously solved question using a Two-Tier system.
-        Returns a dictionary with the tier, cypher, and score, or None if below threshold.
+        Finds a similar past question to inspire the generator.
+        Returns {previous_question, cypher, score} or None.
         """
         question_vector = embedder.embed_query(question)
-        
+
         query = """
         CALL db.index.vector.queryNodes('question_embeddings', 1, $question_vector)
         YIELD node AS closest_question, score
@@ -52,37 +52,26 @@ class MemoryManager:
             result = session.run(query, {"question_vector": question_vector})
             record = result.single()
 
-            if record:
-                score = record["score"]
-                
-                print("\n=== Pre-Generation Episodic Check ===")
-                print(f"Matched Question: {record['previous_question']}")
-                print(f"Similarity Score: {score:.4f}")
-                
-                # Tier 1: Near-Exact Match
-                if score >= 0.95:
-                    print("Classification: TIER 1 (Near-Exact Match)\n")
-                    print(f"Retrieved Cypher: {record['cypher']}\n")
-                    return {
-                        "tier": "exact",
-                        "cypher": record["cypher"],
-                        "score": score
-                    }
-                
-                # Tier 2: Structural Reference (Threshold lowered to 0.80 to capture entity swaps)
-                elif score >= 0.80:
-                    print("Classification: TIER 2 (Structural Reference)\n")
-                    print(f"Retrieved Cypher: {record['cypher']}\n") 
-                    return {
-                        "tier": "structural",
-                        "cypher": record["cypher"],
-                        "score": score
-                    }
-                
-                else:
-                    print("Classification: BELOW THRESHOLD (No memory injected)\n")
+            if not record:
+                return None
 
-        return None
+            score = record["score"]
+
+            print("\n=== Pre-Generation Episodic Check ===")
+            print(f"Matched Question: {record['previous_question']}")
+            print(f"Similarity Score: {score:.4f}")
+
+            if score >= 0.93:
+                print("Classification: SIMILAR PAST QUESTION. Use this ONLY as a guide for how to structure the MATCH and RETURN clauses. You MUST replace the node labels, relationship types, and properties with the exact entities requested in the current question.\n")
+                print(f"Retrieved Cypher: {record['cypher']}\n")
+                return {
+                    "previous_question": record["previous_question"],
+                    "cypher": record["cypher"],
+                    "score": score,
+                }
+
+            print("Classification: BELOW THRESHOLD (No memory injected)\n")
+            return None
 
     def store_attempt(self, question: str, cypher: str, raw_errors: list, attempt_num: int, embedder):
         """Stores evaluation attempts with SPLIT embeddings for better retrieval."""
@@ -191,7 +180,7 @@ class MemoryManager:
                     continue
                 
                 # 2. STRONG DEDUPLICATION (Groups similar syntax errors regardless of line numbers)
-                error_signature = record['error_message'].split(":")[0].strip()
+                error_signature = record['error_message'].split("(")[0].strip()
                 if error_signature in seen_errors:
                     continue 
                 

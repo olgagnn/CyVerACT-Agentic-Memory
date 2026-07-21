@@ -40,7 +40,7 @@ def cypher_executor(state: OverallState) -> OverallState:
         }
 
     driver = None
-    query_error = None
+    # query_error = None
     try:
         # Driver connection 
         if database_url and database_user and database_password:
@@ -59,17 +59,22 @@ def cypher_executor(state: OverallState) -> OverallState:
             # ============================
             # MEMORY WRITE: Store Answer
             # ============================
-            memory_driver = get_memory_driver()
-            try:
-                memory_manager = MemoryManager(memory_driver)
-                memory_manager.store_successful_answer(
-                    question=question,
-                    final_cypher=cypher_statement,
-                    records_found=len(database_records),
-                    embedder=embedder
-                )
-            finally:
-                memory_driver.close()
+            save_flag = state.get("save_to_memory", True)
+            
+            if save_flag:
+                memory_driver = get_memory_driver()
+                try:
+                    memory_manager = MemoryManager(memory_driver)
+                    memory_manager.store_successful_answer(
+                        question=question,
+                        final_cypher=cypher_statement,
+                        records_found=len(database_records),
+                        embedder=embedder
+                    )
+                finally:
+                    memory_driver.close()
+            else:
+                print("\n[MEMORY MANAGER] save_to_memory is FALSE. Skipping successful pattern storage.\n")
 
         else:
             print("ERROR: Database credentials missing in State inputs.")

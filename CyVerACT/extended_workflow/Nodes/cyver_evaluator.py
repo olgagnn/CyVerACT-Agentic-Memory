@@ -35,11 +35,10 @@ def cyver_evaluator(state: OverallState, config:RunnableConfig) -> OverallState:
     # GET QUESTION FROM STATE
     question = state.get("question")
 
-    # Connect to the database
+    # # Connect to the database
     driver = state.get("neo4j_driver")
     # driver = GraphDatabase.driver(database_url, auth=basic_auth(database_user, database_password) )
 
-    # INSTANTIATE MEMORY MANAGER
     # ========================================================
     # INSTANTIATE MEMORY MANAGER (Using Dedicated Local Memory Driver)
     # ========================================================
@@ -91,18 +90,23 @@ def cyver_evaluator(state: OverallState, config:RunnableConfig) -> OverallState:
     # ========================================================
     # LONG-TERM MEMORY STORAGE: Writing execution record to Neo4j
     # ========================================================
-    memory_driver = get_memory_driver()
-    try:
-        memory_manager = MemoryManager(memory_driver)
-        memory_manager.store_attempt(
-            question=question,
-            cypher=cypher_statement,
-            raw_errors=raw_metadata_collection,
-            attempt_num=current_attempt_num,
-            embedder=embedder
-        )
-    finally:
-        memory_driver.close()
+    save_flag = state.get("save_to_memory", True)
+    
+    if save_flag:
+        memory_driver = get_memory_driver()
+        try:
+            memory_manager = MemoryManager(memory_driver)
+            memory_manager.store_attempt(
+                question=question,
+                cypher=cypher_statement,
+                raw_errors=raw_metadata_collection,
+                attempt_num=current_attempt_num,
+                embedder=embedder
+            )
+        finally:
+            memory_driver.close()
+    else:
+        print("\n[MEMORY MANAGER] save_to_memory is FALSE. Skipping error recording.\n")
     
     current_path = state.get("path", [])
     frequency = Counter(current_path)
