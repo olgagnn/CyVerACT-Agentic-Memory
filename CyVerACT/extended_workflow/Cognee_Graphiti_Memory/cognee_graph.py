@@ -2,9 +2,7 @@ from typing import List, Optional
 from cognee.low_level import DataPoint
 
 
-# ----------------------------
 # Error Type
-# ----------------------------
 class CypherErrorType(DataPoint):
     """
     High-level category of Cypher errors
@@ -13,9 +11,7 @@ class CypherErrorType(DataPoint):
     name: str
 
 
-# ----------------------------
 # Cypher Error
-# ----------------------------
 class CypherError(DataPoint):
     """
     Specific Cypher error instance
@@ -25,9 +21,7 @@ class CypherError(DataPoint):
     is_type: Optional[CypherErrorType] = None
 
 
-# ----------------------------
 # Fix Rule
-# ----------------------------
 class FixRule(DataPoint):
     """
     General reusable rule to fix a type of Cypher error
@@ -36,9 +30,7 @@ class FixRule(DataPoint):
     fixes: Optional[CypherError] = None
 
 
-# ----------------------------
 # Query Example
-# ----------------------------
 class QueryExample(DataPoint):
     """
     Concrete example of a failed query
@@ -49,9 +41,7 @@ class QueryExample(DataPoint):
     related_error: Optional[CypherError] = None
 
 
-# ----------------------------
-# ROOT GRAPH MODEL (CRITICAL)
-# ----------------------------
+# ROOT GRAPH MODEL
 class CypherKnowledgeGraph(DataPoint):
     """
     Root model required by Cognee.

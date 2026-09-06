@@ -1,4 +1,4 @@
-from neo4j import GraphDatabase, basic_auth
+from neo4j import GraphDatabase, basic_auth,  Query
 from Nodes.States.states import OverallState
 
 # IMPORT MEMORY MANAGER
@@ -45,16 +45,34 @@ def cypher_executor(state: OverallState) -> OverallState:
         # Driver connection 
         if database_url and database_user and database_password:
             driver = GraphDatabase.driver(database_url, auth=(database_user, database_password))
-            
+
             # Execute Query
             result = driver.execute_query(cypher_statement, database_=database_name)
-            
+
             # Results formatting in dictionaries
             for record in result.records:
                 database_records.append(record.data())
             
             print(f"Executing Cypher: {cypher_statement}")
             print(f"Records found: {len(database_records)}")
+
+            # Execute Query with timeout and limited result collection -- 500 DATASET TEST !!!
+            # MAX_STORED_RECORDS = 100
+            # QUERY_TIMEOUT = 30
+
+            # query = Query(cypher_statement, timeout=QUERY_TIMEOUT)
+
+            # with driver.session(database=database_name) as session:
+            #     result = session.run(query)
+
+            #     for record in result:
+            #         database_records.append(record.data())
+
+            #         if len(database_records) >= MAX_STORED_RECORDS:
+            #             break
+
+            # print(f"Executing Cypher: {cypher_statement}")
+            # print(f"Records stored: {len(database_records)}")
 
             # ============================
             # MEMORY WRITE: Store Answer

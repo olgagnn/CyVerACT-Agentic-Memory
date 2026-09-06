@@ -2,7 +2,7 @@ from Nodes.States.states import  OverallState, OutputState
 
 def unavailable_output(state: OverallState) -> OutputState:
     """
-    Returns the unvailable answer.
+    Returns the unavailable answer.
     """
     print('Unavailable Output: START')
     # print('Unavailable Output: END')

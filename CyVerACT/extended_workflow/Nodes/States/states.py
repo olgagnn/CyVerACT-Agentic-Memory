@@ -11,7 +11,6 @@ class InputState(TypedDict):
     database_name: str
     database_user: str
     database_password: str
-    iterations: int       # MEMORY CHECK
     save_to_memory: bool  # MEMORY
 
 
@@ -35,7 +34,6 @@ class OverallState(TypedDict):
     completion_tokens: Annotated[List[int], add]
     prompt_tokens: Annotated[List[int], add]
     cypher_history: Annotated[List[str], add] # MEMORY
-    iterations: Annotated[int, add] # MEMORY CHECK
     save_to_memory: bool  # MEMORY
 
 class OutputState(TypedDict):
@@ -49,7 +47,6 @@ class OutputState(TypedDict):
     total_tokens: List[int]
     completion_tokens: List[int]
     prompt_tokens: List[int]
-    iterations: int # MEMORY CHECK
 
 # class UnavailableOutputState(TypedDict):
 #     # answer: str

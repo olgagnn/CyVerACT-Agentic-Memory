@@ -61,7 +61,7 @@ class CogneeMemoryManager:
                 await cognee.prune.prune_data()
                 await cognee.prune.prune_system(metadata=True)
              
-            # # With this I resolved DatabaseNotCreatedError!!!
+            # With this I resolved DatabaseNotCreatedError!!!
             try:
                 await internal_setup()
             except Exception as e:

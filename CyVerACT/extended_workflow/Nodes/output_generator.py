@@ -4,7 +4,7 @@ import os
 
 def output_generator(state: OverallState) -> OutputState:
     """
-    Returns the final query based on the user question and the retieved results.
+    Returns the final query based on the user question and the retrieved results.
     """
     print('Output Generator: START')
 

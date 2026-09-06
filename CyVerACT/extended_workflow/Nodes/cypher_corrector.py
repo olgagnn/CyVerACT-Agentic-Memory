@@ -16,17 +16,7 @@ from langchain_huggingface import HuggingFaceEmbeddings
 
 # INITIALIZE HERE (Outside the function so it doesn't reload on every single retry loop) 
 
-# REMOVED 
-
-                
-                # === Previous Attempts and Their Outcomes ===
-                # {history}
-                # ============================================  
-
-                # {rules_context}
-
-                # {trajectory_context}
-
+# REMOVED     
 
 embedder = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
                 
@@ -38,7 +28,7 @@ system_prompt = '''
 
 human_prompt = '''
                 Fix the Cypher statememnt based on the given errors.
-                The Cypher statement should valid for the given knowledge graph schema. 
+                The Cypher statement should be valid for the given knowledge graph schema. 
                 Use only the provided labels and relationship types and properties in the schema. 
                 Do not use any other node labels, relationship types or properties that are not provided in the schema. 
 
@@ -58,7 +48,13 @@ human_prompt = '''
                 The errors for the Cypher statement are:
                 {errors}
 
+                Previous Attempts and Their Outcomes:
+                {history}
                 
+                {trajectory_context}
+                
+                {rules_context}
+
                 Corrected Cypher statement:
         
                 '''
@@ -104,7 +100,7 @@ def cypher_corrector(state: OverallState, config:RunnableConfig) -> OverallState
     )
 
     # ========================================================
-    # SHORT-TERM MEMORY: Trajectory History 
+    # SHORT-TERM MEMORY: History (NOT COMPRESSED) 
     # ========================================================
     # cypher_history = state.get("cypher_history", [])
     # errors_history = state.get("internal_cypher_errors_history", [])
@@ -123,49 +119,68 @@ def cypher_corrector(state: OverallState, config:RunnableConfig) -> OverallState
     #     history_str = "No previous failed attempts."
 
     # ========================================================
+    # SHORT-TERM MEMORY: History (COMPRESSED)
+    # ========================================================
+    cypher_history = state.get("cypher_history", [])
+    errors_history = state.get("internal_cypher_errors_history", [])
+    
+    # Package the state lists into the format your MemoryManager expects
+    attempts_list = []
+    for i in range(len(cypher_history) - 1):
+        cypher = cypher_history[i]
+        errors = errors_history[i] if i < len(errors_history) else []
+        attempts_list.append({"attempt_num": i + 1, "cypher": cypher, "errors": errors})
+    
+    # Call the new function from MemoryManager
+    if attempts_list:
+        history_str = MemoryManager.compress_short_term_history_prompt(attempts_list)
+    else:
+        history_str = "No previous failed attempts."
+
+    # ========================================================
     # LONG-TERM MEMORY RETRIEVAL: Fetch generic + specific instructions 
     # ========================================================
-    # memory_driver = get_memory_driver()
-    # try:
-    #     memory_manager = MemoryManager(memory_driver)
+    memory_driver = get_memory_driver()
+    try:
+        memory_manager = MemoryManager(memory_driver)
         
-    #     # 1. Fix Rules
-    #     fix_rules = memory_manager.get_fix_rules(cypher_errors_list)
+        # Fix Rules
+        fix_rules = memory_manager.get_fix_rules(cypher_errors_list)
         
-    #     # 2. Episodic Trajectory Injection
-    #     primary_error = cypher_errors_list[0] if cypher_errors_list else ""
+        # Episodic Trajectory Injection
+        primary_error = cypher_errors_list[0] if cypher_errors_list else ""
         
-    #     # Pass the current question and the failed cypher along with the error
-    #     trajectory_data = memory_manager.get_trajectory_fix_context(question, cypher, primary_error, embedder, limit=1) if primary_error else ""
+        # Pass the current question and the failed cypher along with the error
+        trajectory_data = memory_manager.get_trajectory_fix_context(question, cypher, primary_error, embedder, limit=1) if primary_error else ""
         
-    # finally:
-    #     memory_driver.close()
+    finally:
+        memory_driver.close()
       
     # Process Generic Rules
-    # if fix_rules:
-    #     print("\n[MEMORY MANAGER] Triggered! Retrieved the following FixRules:")
-    #     for rule in fix_rules:
-    #         print(f"   -> {rule}")
-    #     print() 
+    if fix_rules:
+        print("\n[MEMORY MANAGER] Triggered! Retrieved the following FixRules:")
+        for rule in fix_rules:
+            print(f"   -> {rule}")
+        print() 
         
-    #     rules_context = (
-    #         "Generic Repair Principles:\n"
-    #         + "\n".join([f"- {rule}" for rule in fix_rules])
-    #         + "\n"
-    #     )
-    # else:
-    #     print("\n[MEMORY MANAGER] No matching FixRules found in database for these errors.\n")
-    #     rules_context = ""
+        rules_context = (
+            "Generic Repair Principles:\n"
+            + "\n".join([f"- {rule}" for rule in fix_rules])
+            + "\n"
+        )
+    else:
+        print("\n[MEMORY MANAGER] No matching FixRules found in database for these errors.\n")
+        rules_context = ""
 
     # Process Episodic Trajectory
-    # if trajectory_data:
-    #     print("\n[MEMORY MANAGER] Triggered! Retrieved Episodic Trajectory Data:")
-    #     print("-" * 40)
-    #     print(trajectory_data)  # <-- This prints the actual retrieved data to your console
-    #     print("-" * 40 + "\n")
-    #     trajectory_context = f"Review the following context and structural guidance to resolve the error:\n{trajectory_data}\n"
-    # else:
-    #     trajectory_context = ""
+    if trajectory_data:
+        print("\n[MEMORY MANAGER] Triggered! Retrieved Episodic Trajectory Data:")
+        print("-" * 40)
+        print(trajectory_data)  # <-- This prints the actual retrieved data to your console
+        print("-" * 40 + "\n")
+        trajectory_context = f"Review the following context and structural guidance to resolve the error:\n{trajectory_data}\n"
+    else:
+        trajectory_context = ""
     
     chat_model = config['configurable']['model']
     
@@ -174,10 +189,10 @@ def cypher_corrector(state: OverallState, config:RunnableConfig) -> OverallState
     else:    
         fix_cypher_chain = fix_cypher_prompt | chat_model | StrOutputParser()
 
-    # print("\n" + "="*50)
-    # print("[MEMORY MANAGER] Error History:")
-    # print(history_str)
-    # print("="*50 + "\n")
+    print("\n" + "="*50)
+    print("[MEMORY MANAGER] Error History:")
+    print(history_str)
+    print("="*50 + "\n")
     
     with get_openai_callback() as cb:
         corrected_cypher = fix_cypher_chain.invoke(
@@ -185,13 +200,13 @@ def cypher_corrector(state: OverallState, config:RunnableConfig) -> OverallState
                 "question": question,
                 "schema": schema,
                 "cypher": cypher,
-                "errors": cypher_errors
-                #"rules_context": rules_context, 
-                #"trajectory_context": trajectory_context,
-                #"history": history_str 
+                "errors": cypher_errors,
+                "rules_context": rules_context, 
+                "trajectory_context": trajectory_context,
+                "history": history_str 
             }
-        )
-    
+        )    
+        
     total_tokens = cb.total_tokens
     prompt_tokens = cb.prompt_tokens
     completion_tokens = cb.completion_tokens
@@ -210,6 +225,5 @@ def cypher_corrector(state: OverallState, config:RunnableConfig) -> OverallState
         "prompt_tokens": [prompt_tokens],
         "completion_tokens": [completion_tokens],
         'cypher_history': [corrected_cypher], 
-        #"history": history_str,
-        "iterations": 1  # <--- ADD THIS (Adds 1 for every correction loop)  
+        "history": history_str,
     }

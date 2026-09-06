@@ -39,15 +39,6 @@ def cyver_evaluator(state: OverallState, config:RunnableConfig) -> OverallState:
     driver = state.get("neo4j_driver")
     # driver = GraphDatabase.driver(database_url, auth=basic_auth(database_user, database_password) )
 
-    # ========================================================
-    # INSTANTIATE MEMORY MANAGER (Using Dedicated Local Memory Driver)
-    # ========================================================
-    memory_driver = state.get("memory_driver")
-    if memory_driver:
-        memory_manager = MemoryManager(memory_driver)  
-    else:
-        memory_manager = None
-
     #---------------CyVer evaluation------------------
     print('CyVer Evaluator: START')
     print('CyVer Evaluation of {}:'.format(cypher_statement))

@@ -15,9 +15,9 @@ from Agent_Memory.memory_driver import get_memory_driver
 from langchain_huggingface import HuggingFaceEmbeddings
 
 # Initialize the embedder locally for memory lookups
-#embedder = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
+embedder = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
 
-# REMOVED \n{episodic_memory}
+# REMOVED 
 
 system_prompt = """
                 Task: Generate Cypher statement to query a graph database. 
@@ -28,10 +28,11 @@ system_prompt = """
                 Do not include any text except the generated Cypher statement.
                 """
 human_prompt =  """
-                Generate Cypher statement to query a graph database,as plain text without any code block formatting or backticks.
+                Generate a Cypher statement to query a graph database, as plain text without any code block formatting or backticks.
                 Use only the provided relationship types and properties in the schema.
                 \nSchema: {schema}
                 \nQuestion: {question}
+                \n{episodic_memory}
                 \nCypher statement:
                 
                 """
@@ -81,22 +82,22 @@ def cypher_generator(state: OverallState, config:RunnableConfig) -> OverallState
     # ============================
     # MEMORY INIT & RETRIEVAL
     # ============================
-    #memory_driver = get_memory_driver()
-    #episodic_memory_str = ""
-    # try:
-    #     memory_manager = MemoryManager(memory_driver)
-    #     memory_manager.init_question(question)
+    memory_driver = get_memory_driver()
+    episodic_memory_str = ""
+    try:
+        memory_manager = MemoryManager(memory_driver)
+        memory_manager.init_question(question)
         
-        # cached_cypher = memory_manager.check_episodic_memory(question, embedder)
-        # if cached_cypher:
-        #     print(f"\n[EPISODIC MEMORY] Found a highly relevant past solution!")
-        #     episodic_memory_str = (
-        #         "Successful historical query patterns are provided below. "
-        #         "Reuse their structural patterns and aggregation logic whenever relevant:\n"
-        #         f"{cached_cypher}"
-        #     )
-    # finally:
-    #     memory_driver.close()
+        cached_cypher = memory_manager.check_episodic_memory(question, embedder)
+        if cached_cypher:
+            print(f"\n[EPISODIC MEMORY] Found a highly relevant past solution!")
+            episodic_memory_str = (
+                "Successful historical query patterns are provided below. "
+                "Reuse their structural patterns and aggregation logic whenever relevant:\n"
+                f"{cached_cypher}"
+            )
+    finally:
+        memory_driver.close()
 
     chat_model = config['configurable']['model']
 
@@ -108,8 +109,8 @@ def cypher_generator(state: OverallState, config:RunnableConfig) -> OverallState
     with get_openai_callback() as cb:
         generated_cypher = text2cypher_chain.invoke({
             "question": question,
-            "schema": schema
-            #"episodic_memory": episodic_memory_str
+            "schema": schema,
+            "episodic_memory": episodic_memory_str
         })
 
     total_tokens = cb.total_tokens
@@ -132,6 +133,5 @@ def cypher_generator(state: OverallState, config:RunnableConfig) -> OverallState
             "total_tokens": [total_tokens],
             "prompt_tokens": [prompt_tokens],
             "completion_tokens": [completion_tokens],
-            "cypher_history": [generated_cypher], # MEMORY
-            "iterations": 1  # MEMORY (the 1st attempt)
+            "cypher_history": [generated_cypher] # MEMORY
             }

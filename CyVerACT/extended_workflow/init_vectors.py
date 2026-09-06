@@ -1,12 +1,15 @@
-from langchain_huggingface import HuggingFaceEmbeddings
+import os
+from dotenv import load_dotenv
 from neo4j import GraphDatabase
 
-# Init local embedding model (384 dimensions)
-embedder = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
+load_dotenv(override=True)
 
-# Connect to db
-URI = "bolt://localhost:7687" 
-AUTH = ("neo4j", "agentmemory")
+URI = os.getenv("NEO4J_URI")
+AUTH = (
+    os.getenv("NEO4J_USERNAME"),
+    os.getenv("NEO4J_PASSWORD")
+)
+
 driver = GraphDatabase.driver(URI, auth=AUTH)
 
 with driver.session() as session:
@@ -43,5 +46,5 @@ with driver.session() as session:
     }}
     """)
 
-print("\nDatabase indexes successfully configured for Split Embeddings!")
+print("\nDatabase vector indexes successfully configured.")
 driver.close()
