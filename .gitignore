@@ -24,3 +24,11 @@ cognee_data/
 lancedb/
 *.lance/
 *.lance-wal
+
+# Generated experiment checkpoints
+CyVerACT/extended_workflow/Outputs_Evaluation/**/temp/**/*.pkl
+
+# Generated experiment checkpoints
+CyVerACT/extended_workflow/Outputs_Evaluation/**/temp/**/*.pkl
+CyVerACT/extended_workflow/Movies_Experiment_Metrics/**/*.pkl
+CyVerACT/extended_workflow/MultiDB_Experiment_Metrics/**/*.pkl

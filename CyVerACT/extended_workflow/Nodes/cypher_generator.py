@@ -86,8 +86,10 @@ def cypher_generator(state: OverallState, config:RunnableConfig) -> OverallState
     episodic_memory_str = ""
     try:
         memory_manager = MemoryManager(memory_driver)
-        memory_manager.init_question(question)
-        
+
+        if state.get("save_to_memory", True):
+            memory_manager.init_question(question)
+
         cached_cypher = memory_manager.check_episodic_memory(question, embedder)
         if cached_cypher:
             print(f"\n[EPISODIC MEMORY] Found a highly relevant past solution!")

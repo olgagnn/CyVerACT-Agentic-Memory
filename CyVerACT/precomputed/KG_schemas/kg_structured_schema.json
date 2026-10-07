@@ -8747,5 +8747,477 @@
         }
       ]
     }
+  },
+  "0406c633": {
+    "node_props": {
+      "Movie": [
+        {
+          "property": "url",
+          "type": "STRING"
+        },
+        {
+          "property": "runtime",
+          "type": "INTEGER"
+        },
+        {
+          "property": "revenue",
+          "type": "INTEGER"
+        },
+        {
+          "property": "budget",
+          "type": "INTEGER"
+        },
+        {
+          "property": "imdbRating",
+          "type": "FLOAT"
+        },
+        {
+          "property": "released",
+          "type": "STRING"
+        },
+        {
+          "property": "countries",
+          "type": "LIST"
+        },
+        {
+          "property": "languages",
+          "type": "LIST"
+        },
+        {
+          "property": "plot",
+          "type": "STRING"
+        },
+        {
+          "property": "imdbVotes",
+          "type": "INTEGER"
+        },
+        {
+          "property": "imdbId",
+          "type": "STRING"
+        },
+        {
+          "property": "year",
+          "type": "INTEGER"
+        },
+        {
+          "property": "poster",
+          "type": "STRING"
+        },
+        {
+          "property": "movieId",
+          "type": "STRING"
+        },
+        {
+          "property": "tmdbId",
+          "type": "STRING"
+        },
+        {
+          "property": "title",
+          "type": "STRING"
+        }
+      ],
+      "Genre": [
+        {
+          "property": "name",
+          "type": "STRING"
+        }
+      ],
+      "User": [
+        {
+          "property": "name",
+          "type": "STRING"
+        },
+        {
+          "property": "userId",
+          "type": "STRING"
+        }
+      ],
+      "Actor": [
+        {
+          "property": "url",
+          "type": "STRING"
+        },
+        {
+          "property": "imdbId",
+          "type": "STRING"
+        },
+        {
+          "property": "tmdbId",
+          "type": "STRING"
+        },
+        {
+          "property": "name",
+          "type": "STRING"
+        },
+        {
+          "property": "bornIn",
+          "type": "STRING"
+        },
+        {
+          "property": "born",
+          "type": "DATE"
+        },
+        {
+          "property": "died",
+          "type": "DATE"
+        },
+        {
+          "property": "poster",
+          "type": "STRING"
+        },
+        {
+          "property": "bio",
+          "type": "STRING"
+        }
+      ],
+      "Person": [
+        {
+          "property": "url",
+          "type": "STRING"
+        },
+        {
+          "property": "imdbId",
+          "type": "STRING"
+        },
+        {
+          "property": "tmdbId",
+          "type": "STRING"
+        },
+        {
+          "property": "name",
+          "type": "STRING"
+        },
+        {
+          "property": "bornIn",
+          "type": "STRING"
+        },
+        {
+          "property": "born",
+          "type": "DATE"
+        },
+        {
+          "property": "died",
+          "type": "DATE"
+        },
+        {
+          "property": "poster",
+          "type": "STRING"
+        },
+        {
+          "property": "bio",
+          "type": "STRING"
+        }
+      ],
+      "Director": [
+        {
+          "property": "url",
+          "type": "STRING"
+        },
+        {
+          "property": "imdbId",
+          "type": "STRING"
+        },
+        {
+          "property": "poster",
+          "type": "STRING"
+        },
+        {
+          "property": "tmdbId",
+          "type": "STRING"
+        },
+        {
+          "property": "name",
+          "type": "STRING"
+        },
+        {
+          "property": "bornIn",
+          "type": "STRING"
+        },
+        {
+          "property": "born",
+          "type": "DATE"
+        },
+        {
+          "property": "died",
+          "type": "DATE"
+        },
+        {
+          "property": "bio",
+          "type": "STRING"
+        }
+      ]
+    },
+    "rel_props": {
+      "RATED": [
+        {
+          "property": "rating",
+          "type": "FLOAT"
+        },
+        {
+          "property": "timestamp",
+          "type": "INTEGER"
+        }
+      ],
+      "ACTED_IN": [
+        {
+          "property": "role",
+          "type": "STRING"
+        }
+      ],
+      "DIRECTED": [
+        {
+          "property": "role",
+          "type": "STRING"
+        }
+      ]
+    },
+    "relationships": [
+      {
+        "end": "Genre",
+        "start": "Movie",
+        "type": "IN_GENRE"
+      },
+      {
+        "end": "Movie",
+        "start": "User",
+        "type": "RATED"
+      },
+      {
+        "end": "Movie",
+        "start": "Actor",
+        "type": "ACTED_IN"
+      },
+      {
+        "end": "Movie",
+        "start": "Actor",
+        "type": "DIRECTED"
+      },
+      {
+        "end": "Movie",
+        "start": "Person",
+        "type": "ACTED_IN"
+      },
+      {
+        "end": "Movie",
+        "start": "Person",
+        "type": "DIRECTED"
+      },
+      {
+        "end": "Movie",
+        "start": "Director",
+        "type": "ACTED_IN"
+      },
+      {
+        "end": "Movie",
+        "start": "Director",
+        "type": "DIRECTED"
+      }
+    ],
+    "metadata": {
+      "constraint": [
+        {
+          "id": 17,
+          "name": "constraint_3b27b0",
+          "type": "UNIQUENESS",
+          "entityType": "NODE",
+          "labelsOrTypes": [
+            "User"
+          ],
+          "properties": [
+            "userId"
+          ],
+          "ownedIndex": "constraint_3b27b0",
+          "propertyType": null
+        },
+        {
+          "id": 15,
+          "name": "constraint_3d5fcb7f",
+          "type": "UNIQUENESS",
+          "entityType": "NODE",
+          "labelsOrTypes": [
+            "Movie"
+          ],
+          "properties": [
+            "movieId"
+          ],
+          "ownedIndex": "constraint_3d5fcb7f",
+          "propertyType": null
+        },
+        {
+          "id": 11,
+          "name": "constraint_4499eae9",
+          "type": "UNIQUENESS",
+          "entityType": "NODE",
+          "labelsOrTypes": [
+            "Person"
+          ],
+          "properties": [
+            "tmdbId"
+          ],
+          "ownedIndex": "constraint_4499eae9",
+          "propertyType": null
+        },
+        {
+          "id": 19,
+          "name": "constraint_737d9c1d",
+          "type": "UNIQUENESS",
+          "entityType": "NODE",
+          "labelsOrTypes": [
+            "Movie"
+          ],
+          "properties": [
+            "tmdbId"
+          ],
+          "ownedIndex": "constraint_737d9c1d",
+          "propertyType": null
+        },
+        {
+          "id": 13,
+          "name": "constraint_f8689281",
+          "type": "UNIQUENESS",
+          "entityType": "NODE",
+          "labelsOrTypes": [
+            "Genre"
+          ],
+          "properties": [
+            "name"
+          ],
+          "ownedIndex": "constraint_f8689281",
+          "propertyType": null
+        }
+      ],
+      "index": [
+        {
+          "label": "Genre",
+          "properties": [
+            "name"
+          ],
+          "size": 20,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 20.0
+        },
+        {
+          "label": "Movie",
+          "properties": [
+            "title"
+          ],
+          "size": 9125,
+          "type": "RANGE",
+          "valuesSelectivity": 0.9745753424657534,
+          "distinctValues": 8893.0
+        },
+        {
+          "label": "Movie",
+          "properties": [
+            "tagline"
+          ],
+          "size": 0,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 0.0
+        },
+        {
+          "label": "Movie",
+          "properties": [
+            "year"
+          ],
+          "size": 9096,
+          "type": "RANGE",
+          "valuesSelectivity": 0.011323658751099384,
+          "distinctValues": 103.0
+        },
+        {
+          "label": "Movie",
+          "properties": [
+            "imdbRating"
+          ],
+          "size": 9058,
+          "type": "RANGE",
+          "valuesSelectivity": 0.008500772797527048,
+          "distinctValues": 77.0
+        },
+        {
+          "label": "Movie",
+          "properties": [
+            "released"
+          ],
+          "size": 9041,
+          "type": "RANGE",
+          "valuesSelectivity": 0.5335692954319212,
+          "distinctValues": 4824.0
+        },
+        {
+          "label": "Movie",
+          "properties": [
+            "imdbId"
+          ],
+          "size": 9125,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 9125.0
+        },
+        {
+          "label": "Movie",
+          "properties": [
+            "movieId"
+          ],
+          "size": 9125,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 9125.0
+        },
+        {
+          "label": "Movie",
+          "properties": [
+            "tmdbId"
+          ],
+          "size": 9121,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 9121.0
+        },
+        {
+          "label": "Person",
+          "properties": [
+            "name"
+          ],
+          "size": 19047,
+          "type": "RANGE",
+          "valuesSelectivity": 0.99826744369192,
+          "distinctValues": 19014.0
+        },
+        {
+          "label": "Person",
+          "properties": [
+            "tmdbId"
+          ],
+          "size": 19047,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 19047.0
+        },
+        {
+          "label": "User",
+          "properties": [
+            "name"
+          ],
+          "size": 671,
+          "type": "RANGE",
+          "valuesSelectivity": 0.9970193740685543,
+          "distinctValues": 669.0
+        },
+        {
+          "label": "User",
+          "properties": [
+            "userId"
+          ],
+          "size": 671,
+          "type": "RANGE",
+          "valuesSelectivity": 1.0,
+          "distinctValues": 671.0
+        }
+      ]
+    }
   }
 }

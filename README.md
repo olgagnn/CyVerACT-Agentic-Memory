@@ -4,25 +4,48 @@ This repository contains the original **CyVerACT** Text-to-Cypher workflow toget
 
 > **«Διαχείριση μνήμης σε συνομιλιακούς AI πράκτορες για την υποστήριξη ερωτημάτων πάνω σε γράφους γνώσης.»**
 
-The extension investigates whether a conversational Text-to-Cypher agent can improve over repeated interactions by storing and retrieving previous successful queries, failed attempts, database errors, and correction trajectories in a dedicated Neo4j memory graph.
+The thesis extension investigates whether a Text-to-Cypher agent can reuse experience from previous executions by storing and retrieving successful solutions, failed Cypher attempts, validation errors, and correction trajectories in a dedicated Neo4j memory graph.
 
-The main implementation is under [`CyVerACT/extended_workflow`](CyVerACT/extended_workflow).
+The main thesis implementation is located under:
+
+```text
+CyVerACT/extended_workflow/
+```
+
+The rest of the repository also preserves the original CyVerACT code and earlier exploratory/testing material.
 
 ---
 
 ## Overview
 
-The extended workflow keeps CyVerACT's validation-and-correction loop and adds structured long-term memory at three points:
+The extended workflow preserves the original CyVerACT validation-and-correction loop and adds three memory mechanisms:
 
-- **History** — short-term access to previous failed Cypher attempts and their validation errors.
-- **Trajectory retrieval** — retrieval of similar historical failures and correction trajectories from the memory graph.
-- **Generator helper** — retrieval of semantically similar previously resolved questions before Cypher generation.
+- **Generator Helper** — retrieves a semantically similar previously resolved question and successful Cypher query before initial generation.
+- **History** — provides the Cypher Corrector with failed attempts from the current execution.
+- **Trajectory Retrieval** — retrieves related historical failures and successful correction trajectories from long-term memory.
 
-The final workflow follows the sequence:
+The workflow follows:
 
-`Schema Filtering → Cypher Generator → CyVer Evaluator → Cypher Corrector / Cypher Executor → Output`
+```text
+Schema Filtering
+    ↓
+Cypher Generator
+    ↓
+CyVer Evaluator
+    ├── valid → Cypher Executor → Output
+    └── errors → Cypher Corrector → CyVer Evaluator
+                         ↓
+              Full-schema fallback
+              after filtered-schema limit
+```
 
-When the filtered schema is insufficient, the workflow transitions to the full database schema and continues the correction loop. The evaluator uses CyVer validators for syntax, schema and property-level errors.
+The experiments use:
+
+- 5 correction attempts with the filtered schema;
+- up to 10 total attempts after full-schema fallback;
+- LangGraph `recursion_limit = 50`.
+
+The evaluator combines CyVer syntax, schema, and property validators.
 
 ![Extended CyVerACT workflow](CyVerACT/extended_workflow/Images/extended_graph.png)
 
@@ -30,7 +53,7 @@ When the filtered schema is insufficient, the workflow transitions to the full d
 
 ## Memory architecture
 
-Long-term memory is stored in a separate Neo4j database from the target knowledge graph.
+Long-term memory is stored in a Neo4j graph that is logically separate from the target knowledge graph.
 
 ```text
 (Question)-[:RESOLVED_WITH]->(Answer)
@@ -44,23 +67,42 @@ Long-term memory is stored in a separate Neo4j database from the target knowledg
                                                                                +--[:FIXED_WITH]->(FixRule)
 ```
 
-The memory graph stores three vector representations using `all-MiniLM-L6-v2` embeddings with 384 dimensions and cosine similarity:
+Main node types:
 
-| Representation | Neo4j vector index | Purpose |
+| Node | Purpose |
+|---|---|
+| `Question` | Natural-language question and optional embedding |
+| `Attempt` | Generated/corrected Cypher attempt |
+| `CypherError` | Validation/database error plus retrieval embeddings |
+| `ErrorType` | Canonical CyVer error/warning type |
+| `FixRule` | Predefined correction guidance |
+| `Answer` | Successfully executed validator-clean Cypher |
+
+The implementation uses `sentence-transformers/all-MiniLM-L6-v2` embeddings with 384 dimensions and cosine similarity.
+
+| Representation | Neo4j vector index | Use |
 |---|---|---|
-| `Question.embedding` | `question_embeddings` | Retrieve similar previously resolved questions |
-| `CypherError.error_embedding` | `error_vector_embeddings` | Retrieve semantically similar database/validation errors |
-| `CypherError.trajectory_embedding` | `trajectory_vector_embeddings` | Represent the structure of the failed correction trajectory |
+| `Question.embedding` | `question_embeddings` | Similar successful-question retrieval |
+| `CypherError.error_embedding` | `error_vector_embeddings` | Candidate retrieval by error similarity |
+| `CypherError.trajectory_embedding` | `trajectory_vector_embeddings` | Stored trajectory representation |
 
-The thesis implementation uses a question-similarity threshold of **0.93**. Trajectory retrieval combines error similarity and trajectory similarity using a **0.7 / 0.3** weighted score and retains candidates above **0.80**.
+Generator Helper uses a question-similarity threshold of **0.93**.
+
+Trajectory retrieval first obtains candidates from the error vector index and then combines error similarity with direct trajectory cosine similarity:
+
+```text
+score = 0.7 × error_similarity + 0.3 × trajectory_similarity
+```
+
+Candidates are retained when the combined score is at least **0.80**.
 
 ---
 
 ## Experimental configurations
 
-The Movies knowledge-graph experiments compare seven configurations:
+Seven configurations are evaluated:
 
-| Configuration | History | Trajectory retrieval | Generator helper |
+| Configuration | History | Trajectory Retrieval | Generator Helper |
 |---|:---:|:---:|:---:|
 | Baseline | — | — | — |
 | History Only | ✓ | — | — |
@@ -68,45 +110,75 @@ The Movies knowledge-graph experiments compare seven configurations:
 | Trajectory + History | ✓ | ✓ | — |
 | Gen Helper + History | ✓ | — | ✓ |
 | Gen Helper + Trajectory | — | ✓ | ✓ |
-| All-In | ✓ | ✓ | ✓ |
+| CyVerACT All-In | ✓ | ✓ | ✓ |
 
-`FixRule` knowledge is part of the structured correction memory and is not treated as an independent experimental dimension.
+The experiments were executed as **manually configured source variants** rather than through runtime feature flags. Before each run, the corresponding memory-related calls in the Generator and Corrector were enabled or disabled according to the target configuration. The current repository contains the cleaned integrated workflow; archived outputs preserve the completed experimental runs.
 
 ---
 
-## Thesis experiment
+## Movies thesis experiment
 
-The main thesis experiment uses the **Movies** Neo4j knowledge graph with three LLMs:
+The primary thesis experiment uses the Neo4j **Movies** knowledge graph with:
 
-- Llama 3.1 8B Instruct
-- Qwen 2.5 7B Instruct
-- Llama 3.2 3B Instruct
+- Llama-3.1-8B-Instruct
+- Qwen-2.5-7B-Instruct
+- Llama-3.2-3B-Instruct
 
-For each model, the experiment uses **50 memory-population queries** and **100 evaluation queries**. The seven configurations above are evaluated independently.
+Dataset split:
 
-Headline results for the best memory-enabled configuration of each model are shown below.
+- **50** memory-population questions
+- **100** evaluation questions
 
-| Model | KG Valid — Baseline | KG Valid — Best | Pass@1 — Baseline | Pass@1 — Best |
-|---|---:|---:|---:|---:|
-| Llama 3.1 8B | 88% | 91% | 19% | 24% |
-| Qwen 2.5 7B | 73% | 83% | 20% | 24% |
-| Llama 3.2 3B | 44% | 65% | 7% | 10% |
+During evaluation, `save_to_memory=False` prevents the evaluation set from being written into long-term memory.
 
-The full evaluated tables and diagrams are available under [`CyVerACT/extended_workflow/Figures/Movies_Dataset`](CyVerACT/extended_workflow/Figures/Movies_Dataset).
+Headline KG-valid results:
 
-![Main evaluation metrics](CyVerACT/extended_workflow/Figures/Movies_Dataset/Metric_Tables/main_metrics_table.png)
+| Model | Baseline | Best memory-enabled result |
+|---|---:|---:|
+| Llama-3.1-8B-Instruct | 88% | 91% |
+| Qwen-2.5-7B-Instruct | 73% | 83% |
+| Llama-3.2-3B-Instruct | 44% | 65% |
+
+The largest improvement is observed for the smallest model. Improvements in execution-result agreement are more limited than improvements in technical validity, so memory does not imply semantic correctness.
+
+Figures and metric tables are stored under:
+
+```text
+CyVerACT/extended_workflow/Figures/Movies_Dataset/
+```
 
 ---
 
 ## Multi-database extension
 
-The repository also contains an extended benchmark built from five Neo4j demo databases:
+A second experiment evaluates the same memory mechanisms across five heterogeneous Neo4j schemas:
 
-`northwind`, `companies`, `twitch`, `grandstack`, and `recommendations`.
+```text
+northwind
+companies
+twitch
+grandstack
+recommendations
+```
 
-The combined dataset contains **500 evaluation queries** and **250 memory-population queries**. This extension is kept separate from the final Movies thesis experiment and is intended to test how the memory mechanisms generalize across heterogeneous schemas and larger result spaces.
+The final dataset contains:
 
-The corresponding datasets are stored in [`CyVerACT/extended_workflow/Multi_DBs_Datasets`](CyVerACT/extended_workflow/Multi_DBs_Datasets).
+- **500** evaluation questions — 100 per database
+- **250** memory-population questions — 50 per database
+
+The experiment and its figures are complete. The results are kept separate from the primary Movies experiment while their final role in the thesis narrative is reviewed.
+
+Datasets:
+
+```text
+CyVerACT/extended_workflow/Multi_DBs_Datasets/
+```
+
+Figures:
+
+```text
+CyVerACT/extended_workflow/Figures/MultiDB_Dataset/
+```
 
 ---
 
@@ -116,10 +188,10 @@ The corresponding datasets are stored in [`CyVerACT/extended_workflow/Multi_DBs_
 agentic-memory/
 ├── README.md
 ├── CyVerACT/
-│   ├── CyVer_custom/                 # CyVer validators
-│   ├── data/                         # Original benchmark datasets
-│   ├── qachain_workflow/             # QA-chain baseline workflow
-│   ├── extended_workflow/            # Memory-enhanced CyVerACT workflow
+│   ├── CyVer_custom/                     # Original CyVer validators
+│   ├── data/                             # Original benchmark data
+│   ├── qachain_workflow/                 # Earlier/original workflow material
+│   ├── extended_workflow/                # Thesis implementation
 │   │   ├── Agent_Memory/
 │   │   │   ├── memory_driver.py
 │   │   │   └── memory_manager.py
@@ -131,32 +203,42 @@ agentic-memory/
 │   │   │   ├── cyver_evaluator.py
 │   │   │   ├── cypher_corrector.py
 │   │   │   └── cypher_executor.py
-│   │   ├── Cognee_Graphiti_Memory/   # Exploratory external-memory prototypes
+│   │   ├── Cognee_Graphiti_Memory/       # Exploratory framework prototypes
 │   │   ├── Movies_DB_Datasets/
 │   │   ├── Multi_DBs_Datasets/
 │   │   ├── Outputs_Evaluation/
-│   │   ├── New_Movies_Experiment_Metrics/
+│   │   │   ├── Movies_Experiment/
+│   │   │   └── MultiDB_Experiment/
+│   │   ├── Movies_Experiment_Metrics/
+│   │   ├── MultiDB_Experiment_Metrics/
 │   │   ├── Figures/
+│   │   ├── init_memory_graph.py
 │   │   ├── init_vectors.py
 │   │   ├── graph.py
 │   │   ├── dataset_creation.ipynb
 │   │   ├── get_main_workflow_results.ipynb
-│   │   └── get_metrics_diagrams.ipynb
+│   │   ├── get_metrics_diagrams_moviesdb.ipynb
+│   │   ├── get_metrics_diagrams_multidbs.ipynb
+│   │   └── get_workflow_results_TEST.ipynb
 │   ├── requirements.txt
 │   └── requirements_3_10_12.txt
 ├── cognee_requirements.txt
 └── zep_requirements.txt
 ```
 
-The `Cognee_Graphiti_Memory` directory contains exploratory prototypes used during framework comparison. These experiments are not part of the final evaluated memory architecture.
+`get_workflow_results_TEST.ipynb` and other legacy notebooks are preserved as historical/testing material and are not the recommended entry point for reproducing the final thesis experiments.
+
+`Cognee_Graphiti_Memory/` contains exploratory framework integrations and is not part of the final evaluated memory architecture.
 
 ---
 
 ## Setup
 
-### 1. Create a Python environment
+### 1. Python environment
 
-Python 3.10 is recommended. A dependency snapshot for the Python 3.10.12 development environment is included.
+The cleaned thesis notebooks use **Python 3.11**.
+
+Create an environment:
 
 ```bash
 python -m venv .venv
@@ -174,17 +256,19 @@ Linux/macOS:
 source .venv/bin/activate
 ```
 
-Install the CyVerACT dependencies:
+Install the project dependencies:
 
 ```bash
-pip install -r CyVerACT/requirements_3_10_12.txt
+pip install -r CyVerACT/requirements.txt
 ```
 
-The broader environment snapshot is also available as `CyVerACT/requirements.txt`.
+`requirements_3_10_12.txt` is retained as an earlier CyVerACT environment snapshot.
 
-### 2. Configure environment variables
+### 2. Environment variables
 
-Create a local `.env` file. At minimum, the memory module requires a Neo4j connection:
+Create a local `.env` file. Do not commit credentials.
+
+For the memory Neo4j database:
 
 ```env
 NEO4J_URI=neo4j://localhost:7687
@@ -192,123 +276,167 @@ NEO4J_USERNAME=neo4j
 NEO4J_PASSWORD=your_password
 ```
 
-Add the credentials required by the model provider you intend to use, for example:
+For the cleaned experiment runner using OpenRouter:
 
 ```env
 OPENROUTER_API_KEY=...
-OPENAI_API_KEY=...
-DEDICATED_HF_URL_LLAMA_3_1_8B=...
-DEDICATED_HF_URL_LLAMA_3_2_3B=...
-DEDICATED_HF_URL_QWEN_2_5_7B=...
 ```
 
-Only the variables required by the selected model/provider need to be configured. Do not commit `.env` files or access tokens.
+Target-database credentials for the multi-database dataset are supplied by the dataset rows used by the experiment runner.
 
-### 3. Initialize the memory vector indexes
+### 3. Initialize the memory graph
 
-From the extended workflow directory:
+From:
 
 ```bash
 cd CyVerACT/extended_workflow
+```
+
+create the predefined `ErrorType → FixRule` mappings:
+
+```bash
+python init_memory_graph.py
+```
+
+Then create the three vector indexes:
+
+```bash
 python init_vectors.py
 ```
 
-This creates the three Neo4j vector indexes used by the memory manager.
+Both initialization steps are idempotent and can safely be rerun.
 
 ---
 
 ## Running the experiments
 
-The cleaned workflow is split into three notebooks so that dataset generation, workflow execution and evaluation remain independent.
-
-### Dataset creation
-
-Open:
+### Dataset preparation
 
 ```text
 CyVerACT/extended_workflow/dataset_creation.ipynb
 ```
 
-The notebook contains separate sections for the Movies dataset and the five-database extension. Existing final datasets are loaded if present; they are not regenerated unnecessarily.
+The notebook contains the Movies and multi-database dataset preparation logic. Existing final datasets are reused when present.
 
 ### Workflow execution
-
-Open:
 
 ```text
 CyVerACT/extended_workflow/get_main_workflow_results.ipynb
 ```
 
-Use this notebook to populate memory, run the selected model/configuration and save raw workflow outputs under `Outputs_Evaluation/`.
+The cleaned runner supports both experiment families:
 
-The active memory configuration is determined by the corresponding generator/corrector setup used for the experiment. Saved outputs in the repository preserve the completed thesis runs.
+```python
+EXPERIMENT = "movies"
+```
+
+or:
+
+```python
+EXPERIMENT = "multidb"
+```
+
+The notebook contains a separate memory-population cell and evaluation cell.
+
+Run the memory-population cell only when initializing/rebuilding the long-term memory database. Evaluation runs use:
+
+```python
+save_to_memory=False
+```
+
+Raw workflow outputs are grouped under:
+
+```text
+Outputs_Evaluation/Movies_Experiment/
+Outputs_Evaluation/MultiDB_Experiment/
+```
+
+with configuration folders such as `BASELINE`, `HISTORY_ONLY`, `TRAJECTORY_ONLY`, and `MEMORY_ALL_IN`.
+
+Temporary `.pkl` checkpoints are stored under each experiment's `temp/` directory. The runner resumes completed rows from the corresponding `.xlsx` result file.
 
 ### Metrics and figures
 
-Open:
+Movies:
 
 ```text
-CyVerACT/extended_workflow/get_metrics_diagrams.ipynb
+CyVerACT/extended_workflow/get_metrics_diagrams_moviesdb.ipynb
 ```
 
-This notebook:
+Multi-database:
 
-1. loads the raw workflow output files,
-2. computes evaluation metrics when an evaluated file does not already exist,
-3. stores evaluated files under `New_Movies_Experiment_Metrics/`, and
-4. generates the final diagrams and metric tables under `Figures/Movies_Dataset/`.
+```text
+CyVerACT/extended_workflow/get_metrics_diagrams_multidbs.ipynb
+```
+
+Evaluated files are stored under:
+
+```text
+Movies_Experiment_Metrics/
+MultiDB_Experiment_Metrics/
+```
+
+and figures/tables under:
+
+```text
+Figures/Movies_Dataset/
+Figures/MultiDB_Dataset/
+```
 
 ---
 
 ## Evaluation
 
-The evaluation pipeline reports both structural validity and semantic/output similarity metrics, including:
+The evaluation separates technical validity from semantic/output agreement.
 
 | Metric | Interpretation |
 |---|---|
 | KG Valid | Generated Cypher passes the CyVer validation pipeline |
-| Pass@1 | Generated query output matches the reference output |
-| Positive Jaccard | Output Jaccard similarity is greater than zero |
-| Mean Jaccard | Average output-set overlap |
-| BLEU | Token-level query similarity |
+| Pass@1 Output | Generated-query output matches the reference-query output under the evaluation procedure |
+| Positive Jaccard Output | Output-set Jaccard similarity is greater than zero |
+| Mean Jaccard Output | Average overlap between generated-query and reference-query outputs |
+| BLEU | Token-level Cypher similarity |
 | ROUGE-L F1 | Longest-common-subsequence similarity |
-| Jaro Similarity | Character-level query similarity |
-| Jaccard Similarity | Query-token set similarity |
+| Jaro Similarity | Character-level Cypher similarity |
+| Jaccard Similarity | Token-set similarity between generated and reference Cypher |
 
-For the thesis experiment, output-based metrics are computed from database execution rather than from the truncated workflow display state.
+KG validity is necessary but not sufficient for semantic correctness.
 
----
-
-## Important implementation notes
-
-- The target knowledge graph and the long-term memory graph are logically separate Neo4j databases.
-- The workflow first operates on a filtered schema and can fall back to the full schema after repeated correction attempts.
-- Long-term successful-answer memory currently treats validator-clean, executable Cypher as a successful episode; semantic correctness is assessed separately by the evaluation pipeline.
-- Retrieval thresholds and weighting coefficients are fixed experimental hyperparameters rather than learned values.
-- Very large result sets in the multi-database benchmark require care during output-based evaluation. Truncating both queries to the first *N* rows is not considered equivalent to full-result Pass@1 evaluation.
+For the filtered/full-schema diagrams, schema phase is derived from the actual workflow `path`: a KG-valid result is classified as **Full Schema** when the path contains `schema_retriever`; otherwise it is classified as **Filtered Schema**.
 
 ---
 
-## Key files
+## Key thesis files
 
 | File | Role |
 |---|---|
 | `extended_workflow/graph.py` | Compiles the LangGraph workflow |
-| `extended_workflow/Agent_Memory/memory_manager.py` | Stores and retrieves episodic and trajectory memory |
-| `extended_workflow/Agent_Memory/memory_driver.py` | Creates the Neo4j memory connection |
+| `extended_workflow/Agent_Memory/memory_manager.py` | Stores and retrieves episodic/trajectory memory |
+| `extended_workflow/Agent_Memory/memory_driver.py` | Connects to the Neo4j memory database |
+| `extended_workflow/init_memory_graph.py` | Initializes predefined ErrorType/FixRule knowledge |
 | `extended_workflow/init_vectors.py` | Creates memory vector indexes |
-| `extended_workflow/Nodes/cypher_generator.py` | Generates Cypher and optionally uses retrieved successful examples |
-| `extended_workflow/Nodes/cyver_evaluator.py` | Runs CyVer validators and records failed attempts |
-| `extended_workflow/Nodes/cypher_corrector.py` | Corrects failed Cypher using history/trajectory context |
-| `extended_workflow/Nodes/cypher_executor.py` | Executes validated Cypher and stores successful episodes |
-| `extended_workflow/dataset_creation.ipynb` | Creates/loads the thesis datasets |
-| `extended_workflow/get_main_workflow_results.ipynb` | Runs experiments and saves raw results |
-| `extended_workflow/get_metrics_diagrams.ipynb` | Calculates metrics and produces final figures/tables |
+| `extended_workflow/Nodes/cypher_generator.py` | Initial Cypher generation and Generator Helper retrieval |
+| `extended_workflow/Nodes/cyver_evaluator.py` | CyVer validation and optional attempt/error storage |
+| `extended_workflow/Nodes/cypher_corrector.py` | Correction using history, trajectories, and FixRules |
+| `extended_workflow/Nodes/cypher_executor.py` | Executes validator-clean Cypher |
+| `extended_workflow/dataset_creation.ipynb` | Prepares/loads final datasets |
+| `extended_workflow/get_main_workflow_results.ipynb` | Main Movies/MultiDB experiment runner |
+| `extended_workflow/get_metrics_diagrams_moviesdb.ipynb` | Movies metrics and figures |
+| `extended_workflow/get_metrics_diagrams_multidbs.ipynb` | MultiDB metrics and figures |
+
+---
+
+## Reproducibility notes
+
+- The seven ablation configurations were executed as manually configured source variants, not runtime boolean switches.
+- Saved experimental outputs are preserved as the archival record of the reported runs.
+- The current repository is a cleaned maintained implementation and includes post-experiment code cleanup/fixes; therefore the checked-in source should not be interpreted as a byte-for-byte snapshot of every historical ablation run.
+- Movies memory/evaluation splits are distinct dataset rows, but two identical natural-language question strings occur across the two subsets as separate benchmark records with different reference Cypher queries.
+- The multi-database memory and evaluation files have no exact overlap on `(database_name, question)`.
+- Very large output sets require care in output-based evaluation; arbitrary truncation is not equivalent to full-result Pass@1 evaluation.
 
 ---
 
 ## Project status
 
-The **Movies knowledge-graph thesis experiment is complete**. The repository also contains an ongoing multi-database extension for evaluating the same memory mechanisms across five heterogeneous Neo4j databases.
-
-This repository is research code. The final architecture prioritizes transparency, reproducibility and controlled ablation experiments over production-oriented concerns such as memory lifecycle management, learned retrieval policies and semantic verification before long-term memory promotion.
+The Movies thesis experiment and the 500-query multi-database extension have been completed. The repository preserves the original CyVerACT material, the thesis memory extension, final datasets, evaluated metrics, and generated figures.

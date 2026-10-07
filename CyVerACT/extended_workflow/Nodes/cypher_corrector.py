@@ -27,7 +27,7 @@ system_prompt = '''
             '''
 
 human_prompt = '''
-                Fix the Cypher statememnt based on the given errors.
+                Fix the Cypher statement based on the given errors.
                 The Cypher statement should be valid for the given knowledge graph schema. 
                 Use only the provided labels and relationship types and properties in the schema. 
                 Do not use any other node labels, relationship types or properties that are not provided in the schema. 
@@ -100,38 +100,24 @@ def cypher_corrector(state: OverallState, config:RunnableConfig) -> OverallState
     )
 
     # ========================================================
-    # SHORT-TERM MEMORY: History (NOT COMPRESSED) 
-    # ========================================================
-    # cypher_history = state.get("cypher_history", [])
-    # errors_history = state.get("internal_cypher_errors_history", [])
-    
-    # history_str = ""
-    # for i in range(len(cypher_history) - 1):
-    #     history_str += f"Attempt {i+1}:\n"
-    #     history_str += f"Cypher: {cypher_history[i]}\n"
-        
-    #     if i < len(errors_history):
-    #         past_errors = "\n".join([f"  - {err}" for err in errors_history[i]])
-    #         history_str += f"Errors:\n{past_errors}\n"
-    #     history_str += "-" * 40 + "\n"
-
-    # if not history_str.strip():
-    #     history_str = "No previous failed attempts."
-
-    # ========================================================
     # SHORT-TERM MEMORY: History (COMPRESSED)
     # ========================================================
     cypher_history = state.get("cypher_history", [])
     errors_history = state.get("internal_cypher_errors_history", [])
     
-    # Package the state lists into the format your MemoryManager expects
+    # State lists into the format MemoryManager expects
     attempts_list = []
     for i in range(len(cypher_history) - 1):
-        cypher = cypher_history[i]
-        errors = errors_history[i] if i < len(errors_history) else []
-        attempts_list.append({"attempt_num": i + 1, "cypher": cypher, "errors": errors})
-    
-    # Call the new function from MemoryManager
+        past_cypher = cypher_history[i]
+        past_errors = errors_history[i] if i < len(errors_history) else []
+
+        attempts_list.append({
+            "attempt_num": i + 1,
+            "cypher": past_cypher,
+            "errors": past_errors
+        })
+
+    # Compress previous attempts for prompt context
     if attempts_list:
         history_str = MemoryManager.compress_short_term_history_prompt(attempts_list)
     else:
@@ -176,7 +162,7 @@ def cypher_corrector(state: OverallState, config:RunnableConfig) -> OverallState
     if trajectory_data:
         print("\n[MEMORY MANAGER] Triggered! Retrieved Episodic Trajectory Data:")
         print("-" * 40)
-        print(trajectory_data)  # <-- This prints the actual retrieved data to your console
+        print(trajectory_data) 
         print("-" * 40 + "\n")
         trajectory_context = f"Review the following context and structural guidance to resolve the error:\n{trajectory_data}\n"
     else:
