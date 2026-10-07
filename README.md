@@ -430,7 +430,7 @@ For the filtered/full-schema diagrams, schema phase is derived from the actual w
 
 - The seven ablation configurations were executed as manually configured source variants, not runtime boolean switches.
 - Saved experimental outputs are preserved as the archival record of the reported runs.
-- The current repository is a cleaned maintained implementation and includes post-experiment code cleanup/fixes; therefore the checked-in source should not be interpreted as a byte-for-byte snapshot of every historical ablation run.
+- The current repository is a cleaned maintained implementation and includes post-experiment code cleanup/fixes.
 - Movies memory/evaluation splits are distinct dataset rows, but two identical natural-language question strings occur across the two subsets as separate benchmark records with different reference Cypher queries.
 - The multi-database memory and evaluation files have no exact overlap on `(database_name, question)`.
 - Very large output sets require care in output-based evaluation; arbitrary truncation is not equivalent to full-result Pass@1 evaluation.
