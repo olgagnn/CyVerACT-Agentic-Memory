@@ -54,7 +54,7 @@ The main notebooks are:
 - [`run_reproducible_workflow.ipynb`](CyVerACT/extended_workflow/run_reproducible_workflow.ipynb) — single queries, custom Excel datasets (`single_db` or `per_row` connections), and Movies/MultiDB experiments with the seven runtime memory configurations.
 - [`get_main_workflow_results.ipynb`](CyVerACT/extended_workflow/get_main_workflow_results.ipynb) — original Movies/MultiDB experimental workflow and archived-result organization.
 
-For setup instructions, memory initialization, experimental configurations, metrics, and reproducibility notes, see the **[Project Wiki](/NETMODE/agentic-memory/-/wikis/home)**.
+For setup instructions, memory initialization, experimental configurations, metrics, and reproducibility notes, see the **[Project Wiki](https://gitlab.com/netmode/agentic-memory/-/wikis)**.
 
 ## Attribution
 
