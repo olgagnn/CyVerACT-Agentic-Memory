@@ -5,21 +5,21 @@ School of Electrical and Computer Engineering, National Technical University of 
 
 *Διαχείριση μνήμης σε συνομιλιακούς AI πράκτορες για την υποστήριξη ερωτημάτων πάνω σε γράφους γνώσης*
 
-This thesis extends the original **CyVerACT** Text-to-Cypher workflow with a Neo4j-based memory graph. The aim is to investigate whether previous successful queries and correction attempts can improve Cypher generation and validation.
+This repository contains the implementation developed for the diploma thesis, which extends the original **CyVerACT** Text-to-Cypher workflow with a Neo4j-based memory graph. The goal is to investigate whether previous successful queries and correction attempts can improve Cypher generation and validation.
 
-The extension combines **Generator Helper**, **short-term History**, **Trajectory Retrieval**, and predefined **FixRules** with the existing CyVer validation-and-correction loop.
+The proposed extension combines **Generator Helper**, **short-term History**, **Trajectory Retrieval**, and predefined **FixRules** with the existing CyVer validation-and-correction loop.
 
 ## Memory-Enhanced Workflow
 
 ![Memory-enhanced CyVerACT workflow](CyVerACT/extended_workflow/Figures/README/memory_enabled_workflow.png)
 
-*Extension of the CyVerACT workflow with memory retrieval during generation and correction (thesis Figure 3.3; adapted from the original CyVerACT architecture).*
+*Extension of the CyVerACT workflow with memory retrieval during generation and correction (thesis Figure 3.3; adapted from the original CyVerACT architecture).* 
 
 ## Neo4j Memory Graph
 
 ![Neo4j memory graph schema](CyVerACT/extended_workflow/Figures/README/memory_graph_schema.png)
 
-*The memory graph connects questions, Cypher attempts, validation errors, error types, correction rules, and successful solutions (thesis Figure 3.4).*
+*The memory graph connects questions, Cypher attempts, validation errors, error types, correction rules, and successful solutions (thesis Figure 3.4).* 
 
 ## Experimental Results
 
@@ -35,11 +35,11 @@ The main evaluation used the **Neo4j Movies** graph, **100 evaluation questions*
 
 ### KG Valid by Query Difficulty
 
-![KG Valid by difficulty, model, and memory configuration](CyVerACT/extended_workflow/Figures/README/kg_valid_by_difficulty.png)
+![KG Valid by difficulty, model, and memory configuration](CyVerACT/extended_workflow/Figures/Movies_Dataset/Diagrams/kg_valid_by_difficulty.png)
 
 *Thesis Figure 4.12 — KG Valid across Easy, Medium, and Hard questions for all three language models and seven configurations. Values in parentheses indicate changes relative to the Baseline within each difficulty category.*
 
-A further experiment included **500 evaluation questions across five Neo4j databases**. Full metrics, datasets, and experimental limitations are described in the Wiki.
+A further experiment included **500 evaluation questions across five Neo4j databases**. Full metrics, datasets, and experimental details are documented in the project Wiki.
 
 ## Reproducing the Workflow
 
@@ -51,10 +51,10 @@ pip install -r requirements.txt
 
 The main notebooks are:
 
-- [`run_reproducible_workflow.ipynb`](CyVerACT/extended_workflow/run_reproducible_workflow.ipynb) — single queries, custom Excel datasets (`single_db` or `per_row` connections), and Movies/MultiDB experiments; seven runtime memory configurations.
+- [`run_reproducible_workflow.ipynb`](CyVerACT/extended_workflow/run_reproducible_workflow.ipynb) — single queries, custom Excel datasets (`single_db` or `per_row` connections), and Movies/MultiDB experiments with the seven runtime memory configurations.
 - [`get_main_workflow_results.ipynb`](CyVerACT/extended_workflow/get_main_workflow_results.ipynb) — original Movies/MultiDB experimental workflow and archived-result organization.
 
-Setup instructions, memory initialization, experimental configurations, metrics, and reproducibility notes are available in the **[Project Wiki](https://gitlab.com/NETMODE/agentic-memory/-/wikis/home)**.
+For setup instructions, memory initialization, experimental configurations, metrics, and reproducibility notes, see the **[Project Wiki](/NETMODE/agentic-memory/-/wikis/home)**.
 
 ## Attribution
 
