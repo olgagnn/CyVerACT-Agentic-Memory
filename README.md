@@ -9,6 +9,10 @@ This repository contains the implementation developed for the diploma thesis, wh
 
 The proposed extension combines **Generator Helper**, **short-term History**, **Trajectory Retrieval**, and predefined **FixRules** with the existing CyVer validation-and-correction loop.
 
+## Documentation
+
+Detailed documentation, including the memory architecture, experimental configurations, datasets, evaluation metrics, and instructions for reproducing the experiments, is available in the **[Project Wiki](https://gitlab.com/netmode/agentic-memory/-/wikis)**.
+
 ## Memory-Enhanced Workflow
 
 ![Memory-enhanced CyVerACT workflow](CyVerACT/extended_workflow/Figures/README/memory_enabled_workflow.png)
@@ -53,8 +57,6 @@ The main notebooks are:
 
 - [`run_reproducible_workflow.ipynb`](CyVerACT/extended_workflow/run_reproducible_workflow.ipynb) — single queries, custom Excel datasets (`single_db` or `per_row` connections), and Movies/MultiDB experiments with the seven runtime memory configurations.
 - [`get_main_workflow_results.ipynb`](CyVerACT/extended_workflow/get_main_workflow_results.ipynb) — original Movies/MultiDB experimental workflow and archived-result organization.
-
-For setup instructions, memory initialization, experimental configurations, metrics, and reproducibility notes, see the **[Project Wiki](https://gitlab.com/netmode/agentic-memory/-/wikis)**.
 
 ## Attribution
 
