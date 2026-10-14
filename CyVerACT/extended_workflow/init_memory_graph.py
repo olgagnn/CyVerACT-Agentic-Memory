@@ -1,5 +1,5 @@
 from Agent_Memory.memory_driver import get_memory_driver
-# Initializing memory with da rules
+# Initializing memory with the rules
 
 ERROR_FIX_RULES = [
     {

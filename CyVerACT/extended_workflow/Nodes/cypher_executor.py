@@ -56,24 +56,6 @@ def cypher_executor(state: OverallState) -> OverallState:
             print(f"Executing Cypher: {cypher_statement}")
             print(f"Records found: {len(database_records)}")
 
-            # Execute Query with timeout and limited result collection -- 500 DATASET TEST !!!
-            # MAX_STORED_RECORDS = 100
-            # QUERY_TIMEOUT = 30
-
-            # query = Query(cypher_statement, timeout=QUERY_TIMEOUT)
-
-            # with driver.session(database=database_name) as session:
-            #     result = session.run(query)
-
-            #     for record in result:
-            #         database_records.append(record.data())
-
-            #         if len(database_records) >= MAX_STORED_RECORDS:
-            #             break
-
-            # print(f"Executing Cypher: {cypher_statement}")
-            # print(f"Records stored: {len(database_records)}")
-
             # ============================
             # MEMORY WRITE: Store Answer
             # ============================

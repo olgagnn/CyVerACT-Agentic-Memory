@@ -17,8 +17,6 @@ from langchain_huggingface import HuggingFaceEmbeddings
 # Initialize the embedder locally for memory lookups
 embedder = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
 
-# REMOVED 
-
 system_prompt = """
                 Task: Generate Cypher statement to query a graph database. 
                 Instructions: Use only the provided relationship types and properties in the schema.
@@ -36,6 +34,16 @@ human_prompt =  """
                 \nCypher statement:
                 
                 """
+
+human_prompt_no_memory = """
+                Generate a Cypher statement to query a graph database, as plain text without any code block formatting or backticks.
+                Use only the provided relationship types and properties in the schema.
+                \nSchema: {schema}
+                \nQuestion: {question}
+                \nCypher statement:
+
+                """
+
 text2cypher_prompt = ChatPromptTemplate.from_messages(
     [
         (
@@ -70,7 +78,16 @@ text2cypher_prompt_flattened = ChatPromptTemplate.from_messages(
     ]
 )
 
-## Create the node for the Cypher generator
+text2cypher_prompt_no_memory = ChatPromptTemplate.from_messages([
+    ("system", system_prompt),
+    ("human", human_prompt_no_memory)
+])
+
+text2cypher_prompt_flattened_no_memory = ChatPromptTemplate.from_messages([
+    ("human", system_prompt + human_prompt_no_memory)
+])
+
+# Create the node for the Cypher generator
 def cypher_generator(state: OverallState, config:RunnableConfig) -> OverallState:
     """
     Generates a cypher statement based on the provided schema and user input
@@ -79,41 +96,78 @@ def cypher_generator(state: OverallState, config:RunnableConfig) -> OverallState
     schema = state.get("schema")
     question = state.get("question")
 
-    # ============================
-    # MEMORY INIT & RETRIEVAL
-    # ============================
-    memory_driver = get_memory_driver()
+    # ================================
+    # MEMORY INIT & RETRIEVAL & CONFIG
+    # ================================
+    use_generator_helper = config["configurable"].get(
+        "use_generator_helper", True
+    )
+    save_to_memory = state.get("save_to_memory", True)
+
     episodic_memory_str = ""
-    try:
-        memory_manager = MemoryManager(memory_driver)
 
-        if state.get("save_to_memory", True):
-            memory_manager.init_question(question)
+    # Initialize memory and/or retrieve episodic context
+    if save_to_memory or use_generator_helper:
+        memory_driver = get_memory_driver()
 
-        cached_cypher = memory_manager.check_episodic_memory(question, embedder)
-        if cached_cypher:
-            print(f"\n[EPISODIC MEMORY] Found a highly relevant past solution!")
-            episodic_memory_str = (
-                "Successful historical query patterns are provided below. "
-                "Reuse their structural patterns and aggregation logic whenever relevant:\n"
-                f"{cached_cypher}"
-            )
-    finally:
-        memory_driver.close()
+        try:
+            memory_manager = MemoryManager(memory_driver)
+
+            # Initialize the question independently of Generator Helper
+            if save_to_memory:
+                memory_manager.init_question(question)
+
+            # Retrieve episodic memory only when Generator Helper is enabled
+            if use_generator_helper:
+                cached_cypher = memory_manager.check_episodic_memory(
+                    question, embedder
+                )
+
+                if cached_cypher:
+                    print("\n[EPISODIC MEMORY] Found a highly relevant past solution!")
+                    episodic_memory_str = (
+                        "Successful historical query patterns are provided below. "
+                        "Reuse their structural patterns and aggregation logic whenever relevant:\n"
+                        f"{cached_cypher}"
+                    )
+
+        finally:
+            memory_driver.close()
 
     chat_model = config['configurable']['model']
 
-    if model_name == 'gemma2_9b' or model_name == 'finetuned_gemma2_9b' or model_name =='finetuned_gemma2_9b_local':
-        text2cypher_chain = text2cypher_prompt_flattened | chat_model | StrOutputParser()
-    else:    
-        text2cypher_chain = text2cypher_prompt | chat_model | StrOutputParser()
+    is_gemma = model_name in {
+    'gemma2_9b',
+    'finetuned_gemma2_9b',
+    'finetuned_gemma2_9b_local'
+    }
+
+    if use_generator_helper:
+        selected_prompt = (
+            text2cypher_prompt_flattened
+            if is_gemma
+            else text2cypher_prompt
+        )
+    else:
+        selected_prompt = (
+            text2cypher_prompt_flattened_no_memory
+            if is_gemma
+            else text2cypher_prompt_no_memory
+        )
+
+    text2cypher_chain = selected_prompt | chat_model | StrOutputParser()
+   
+    prompt_inputs = {
+    "question": question,
+    "schema": schema
+    }
+
+    if use_generator_helper:
+        prompt_inputs["episodic_memory"] = episodic_memory_str
 
     with get_openai_callback() as cb:
-        generated_cypher = text2cypher_chain.invoke({
-            "question": question,
-            "schema": schema,
-            "episodic_memory": episodic_memory_str
-        })
+        generated_cypher = text2cypher_chain.invoke(prompt_inputs)
+    
 
     total_tokens = cb.total_tokens
     prompt_tokens = cb.prompt_tokens

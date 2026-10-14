@@ -59,38 +59,17 @@ human_prompt = '''
         
                 '''
 
-fix_cypher_prompt = ChatPromptTemplate.from_messages(
-    [
-        (
-            "system",
-            (system_prompt
-            ),
-        ),
-        (
-            "human",
-            (
-                human_prompt
-            ),
-        ),
-    ]
-)
-
-fix_cypher_prompt_flattened = ChatPromptTemplate.from_messages(
-    [
-        (
-            "human",
-            (
-                system_prompt + human_prompt
-            ),
-        ),
-    ]
-)
-
 def cypher_corrector(state: OverallState, config:RunnableConfig) -> OverallState:
     """
     Correct the Cypher statement based on the provided errors.
     """
     model_name = config['configurable']['model_name']
+
+    # Memory configuration
+    use_history = config["configurable"].get("use_history", True)
+    use_trajectory = config["configurable"].get("use_trajectory", True)
+    use_fix_rules = config["configurable"].get("use_fix_rules", True)
+
     question = state.get("question")
     cypher = state.get("cypher_statement")
     schema = state.get("schema")
@@ -102,45 +81,58 @@ def cypher_corrector(state: OverallState, config:RunnableConfig) -> OverallState
     # ========================================================
     # SHORT-TERM MEMORY: History (COMPRESSED)
     # ========================================================
-    cypher_history = state.get("cypher_history", [])
-    errors_history = state.get("internal_cypher_errors_history", [])
-    
-    # State lists into the format MemoryManager expects
-    attempts_list = []
-    for i in range(len(cypher_history) - 1):
-        past_cypher = cypher_history[i]
-        past_errors = errors_history[i] if i < len(errors_history) else []
+    history_str = ""
 
-        attempts_list.append({
-            "attempt_num": i + 1,
-            "cypher": past_cypher,
-            "errors": past_errors
-        })
+    if use_history:
+        cypher_history = state.get("cypher_history", [])
+        errors_history = state.get("internal_cypher_errors_history", [])
 
-    # Compress previous attempts for prompt context
-    if attempts_list:
-        history_str = MemoryManager.compress_short_term_history_prompt(attempts_list)
-    else:
-        history_str = "No previous failed attempts."
+        attempts_list = []
+
+        for i in range(len(cypher_history) - 1):
+            past_cypher = cypher_history[i]
+            past_errors = errors_history[i] if i < len(errors_history) else []
+
+            attempts_list.append({
+                "attempt_num": i + 1,
+                "cypher": past_cypher,
+                "errors": past_errors
+            })
+
+        if attempts_list:
+            history_str = MemoryManager.compress_short_term_history_prompt(
+                attempts_list
+            )
+        else:
+            history_str = "No previous failed attempts."
 
     # ========================================================
     # LONG-TERM MEMORY RETRIEVAL: Fetch generic + specific instructions 
     # ========================================================
-    memory_driver = get_memory_driver()
-    try:
-        memory_manager = MemoryManager(memory_driver)
-        
-        # Fix Rules
-        fix_rules = memory_manager.get_fix_rules(cypher_errors_list)
-        
-        # Episodic Trajectory Injection
-        primary_error = cypher_errors_list[0] if cypher_errors_list else ""
-        
-        # Pass the current question and the failed cypher along with the error
-        trajectory_data = memory_manager.get_trajectory_fix_context(question, cypher, primary_error, embedder, limit=1) if primary_error else ""
-        
-    finally:
-        memory_driver.close()
+    fix_rules = []
+    trajectory_data = ""
+
+    if use_fix_rules or use_trajectory:
+        memory_driver = get_memory_driver()
+
+        try:
+            memory_manager = MemoryManager(memory_driver)
+
+            # FixRules retrieval
+            if use_fix_rules:
+                fix_rules = memory_manager.get_fix_rules(cypher_errors_list)
+                    
+            # Trajectory retrieval
+            if use_trajectory:
+                primary_error = cypher_errors_list[0] if cypher_errors_list else ""
+
+                if primary_error:
+                    trajectory_data = memory_manager.get_trajectory_fix_context(
+                        question, cypher, primary_error, embedder, limit=1
+                    )
+
+        finally:
+            memory_driver.close()
       
     # Process Generic Rules
     if fix_rules:
@@ -155,7 +147,8 @@ def cypher_corrector(state: OverallState, config:RunnableConfig) -> OverallState
             + "\n"
         )
     else:
-        print("\n[MEMORY MANAGER] No matching FixRules found in database for these errors.\n")
+        if use_fix_rules:
+            print("\n[MEMORY MANAGER] No matching FixRules found in database for these errors.\n")
         rules_context = ""
 
     # Process Episodic Trajectory
@@ -167,31 +160,89 @@ def cypher_corrector(state: OverallState, config:RunnableConfig) -> OverallState
         trajectory_context = f"Review the following context and structural guidance to resolve the error:\n{trajectory_data}\n"
     else:
         trajectory_context = ""
+
+    # Build prompt based on enabled memory mechanisms
+    selected_human_prompt = human_prompt
+
+    if not use_history:
+        selected_human_prompt = selected_human_prompt.replace(
+            "                Previous Attempts and Their Outcomes:\n"
+            "                {history}\n"
+            "                \n",
+            ""
+        )
+
+    if not use_trajectory:
+        selected_human_prompt = selected_human_prompt.replace(
+            "                {trajectory_context}\n"
+            "                \n",
+            ""
+        )
+
+    if not use_fix_rules:
+        selected_human_prompt = selected_human_prompt.replace(
+            "                {rules_context}\n\n",
+            ""
+        )
     
     chat_model = config['configurable']['model']
     
-    if model_name == 'gemma2_9b' or model_name == 'finetuned_gemma2_9b' or model_name == 'finetuned_gemma2_9b_local':
-        fix_cypher_chain = fix_cypher_prompt_flattened | chat_model | StrOutputParser()
-    else:    
-        fix_cypher_chain = fix_cypher_prompt | chat_model | StrOutputParser()
+    if model_name in {
+    'gemma2_9b',
+    'finetuned_gemma2_9b',
+    'finetuned_gemma2_9b_local'
+    }:
+        selected_prompt = ChatPromptTemplate.from_messages([
+            ("human", system_prompt + selected_human_prompt)
+        ])
+    else:
+        selected_prompt = ChatPromptTemplate.from_messages([
+            ("system", system_prompt),
+            ("human", selected_human_prompt)
+        ])
 
-    print("\n" + "="*50)
-    print("[MEMORY MANAGER] Error History:")
-    print(history_str)
-    print("="*50 + "\n")
+    # Validate prompt variables for the selected configuration
+    expected_variables = {"question", "schema", "cypher", "errors"}
+
+    if use_history:
+        expected_variables.add("history")
+
+    if use_trajectory:
+        expected_variables.add("trajectory_context")
+
+    if use_fix_rules:
+        expected_variables.add("rules_context")
+
+    assert set(selected_prompt.input_variables) == expected_variables, (
+        f"Unexpected prompt variables: {selected_prompt.input_variables}"
+    )
+
+    fix_cypher_chain = selected_prompt | chat_model | StrOutputParser()
     
+    if use_history:
+        print("\n" + "="*50)
+        print("[MEMORY MANAGER] Error History:")
+        print(history_str)
+        print("="*50 + "\n")
+    
+    prompt_inputs = {
+    "question": question,
+    "schema": schema,
+    "cypher": cypher,
+    "errors": cypher_errors
+    }
+
+    if use_history:
+        prompt_inputs["history"] = history_str
+
+    if use_trajectory:
+        prompt_inputs["trajectory_context"] = trajectory_context
+
+    if use_fix_rules:
+        prompt_inputs["rules_context"] = rules_context
+
     with get_openai_callback() as cb:
-        corrected_cypher = fix_cypher_chain.invoke(
-            {
-                "question": question,
-                "schema": schema,
-                "cypher": cypher,
-                "errors": cypher_errors,
-                "rules_context": rules_context, 
-                "trajectory_context": trajectory_context,
-                "history": history_str 
-            }
-        )    
+        corrected_cypher = fix_cypher_chain.invoke(prompt_inputs)
         
     total_tokens = cb.total_tokens
     prompt_tokens = cb.prompt_tokens
@@ -210,6 +261,5 @@ def cypher_corrector(state: OverallState, config:RunnableConfig) -> OverallState
         "total_tokens": [total_tokens],
         "prompt_tokens": [prompt_tokens],
         "completion_tokens": [completion_tokens],
-        'cypher_history': [corrected_cypher], 
-        "history": history_str,
+        'cypher_history': [corrected_cypher]
     }
