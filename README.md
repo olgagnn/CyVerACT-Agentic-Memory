@@ -9,6 +9,18 @@ This repository contains the implementation developed for the diploma thesis, wh
 
 The proposed extension combines **Generator Helper**, **short-term History**, **Trajectory Retrieval**, and predefined **FixRules** with the existing CyVer validation-and-correction loop.
 
+## Diploma Thesis
+
+**Title:** Διαχείριση μνήμης σε συνομιλιακούς AI πράκτορες
+για την υποστήριξη ερωτημάτων πάνω σε γράφους γνώσης
+
+**Institution:** National Technical University of Athens (NTUA)  
+**School:** Electrical and Computer Engineering  
+**Year:** 2026  
+**Grade:** 10/10
+
+**[Read the Full Diploma Thesis (PDF)](Thesis/Thesis_Olga_Giannouchou.pdf)**
+
 ## Documentation
 
 Detailed documentation, including the memory architecture, experimental configurations, datasets, evaluation metrics, and instructions for reproducing the experiments, is available in the **[Project Wiki](https://github.com/olgagnn/CyVerACT-Agentic-Memory/wiki)**.
