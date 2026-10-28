@@ -11,7 +11,7 @@ The proposed extension combines **Generator Helper**, **short-term History**, **
 
 ## Documentation
 
-Detailed documentation, including the memory architecture, experimental configurations, datasets, evaluation metrics, and instructions for reproducing the experiments, is available in the **[Project Wiki](https://gitlab.com/netmode/agentic-memory/-/wikis)**.
+Detailed documentation, including the memory architecture, experimental configurations, datasets, evaluation metrics, and instructions for reproducing the experiments, is available in the **[Project Wiki](https://github.com/olgagnn/CyVerACT-Agentic-Memory/wiki)**.
 
 ## Memory-Enhanced Workflow
 
