@@ -1,6 +1,6 @@
 # Agentic Memory for CyVerACT
 
-**Diploma Thesis — Olga Giannouchou**  
+**Diploma Thesis - Olga Giannouchou**  
 School of Electrical and Computer Engineering, National Technical University of Athens (NTUA), 2026
 
 *Διαχείριση μνήμης σε συνομιλιακούς AI πράκτορες για την υποστήριξη ερωτημάτων πάνω σε γράφους γνώσης*
